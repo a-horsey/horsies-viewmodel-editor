@@ -16,7 +16,7 @@ A powerful viewmodel editor for Team Fortress 2
 - Other class or weapon specific settings
 
 ## Instructions:
-- Download it and place it in your game's "custom" folder or "tf" folder. I suggest the "tf" folder.
+- Download it and place the main folder in your game's "custom" folder or "tf" folder. I suggest the "tf" folder.
 - Edit the class-specific settings files however you wish. I suggest using something other than standard notepad
 - Launch GENERATE.bat
 - Check [this](https://developer.valvesoftware.com/wiki/$origin) for more info on how positioning works. More detailed info to be added in the future.
