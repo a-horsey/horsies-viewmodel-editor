@@ -1,0 +1,316 @@
+(if this looks weird, disable word wrap in your text editor)
+
+Pyro settings:
+	
+•••Primaries:
+=========================================================================================================================================================
+	••Flame Throwers:
+		•Position:
+			X_position=0																																																																																																																					&::flamethrowers
+			Y_position=0																																																																																																																					&::flamethrowers
+			Z_position=0																																																																																																																					&::flamethrowers
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::flamethrowers
+			Y_rotation=0																																																																																																																					&::flamethrowers
+			Z_rotation=0																																																																																																																					&::flamethrowers
+		•Hidden(y/n)=n    																																																																																																																				&::flamethrowers
+			Keep_draw_visible(y/n)=n																																																																																																																&::flamethrowers
+			Keep_attack_visible(y/n)=n																																																																																																															&::flamethrowers	
+			Keep_idle_visible(y/n)=n																																																																																																																&::flamethrowers
+			Keep_flames_visible(y/n)=n																																																																																																															&::flamethrowers
+		•Static_draw(y/n)=n																																																																																																																				&::flamethrowers
+		•Static_attack(y/n)=n     																																																																																																																	&::flamethrowers
+		•More_static_idle(y/n)=n																																																																																																																	&::flamethrowers
+=========================================================================================================================================================
+
+•••Secondaries:
+=========================================================================================================================================================
+	••Shotguns:
+		•Position:
+			X_position=0																																																																																																																					&::shotguns
+			Y_position=0																																																																																																																					&::shotguns
+			Z_position=0																																																																																																																					&::shotguns
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::shotguns
+			Y_rotation=0																																																																																																																					&::shotguns
+			Z_rotation=0																																																																																																																					&::shotguns
+		•Hidden(y/n)=n    																																																																																																																				&::shotguns
+			Keep_draw_visible(y/n)=n																																																																																																																&::shotguns
+			Keep_attack_visible(y/n)=n																																																																																																															&::shotguns
+			Keep_reload_visible(y/n)=n																																																																																																															&::shotguns		
+			Keep_idle_visible(y/n)=n																																																																																																																&::shotguns
+		•Static_draw(y/n)=n																																																																																																																				&::shotguns
+		•Static_reload(y/n)=n     																																																																																																																	&::shotguns
+		•Static_attack(y/n)=n     																																																																																																																	&::shotguns
+		•More_static_idle(y/n)=n																																																																																																																	&::shotguns
+		•Remove_shells(y/n)=n																																																																																																																		&::shotguns
+=========================================================================================================================================================
+	••Flare Guns:
+		•Position:
+			X_position=0																																																																																																																					&::flareguns
+			Y_position=0																																																																																																																					&::flareguns
+			Z_position=0																																																																																																																					&::flareguns
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::flareguns
+			Y_rotation=0																																																																																																																					&::flareguns
+			Z_rotation=0																																																																																																																					&::flareguns
+		•Hidden(y/n)=n    																																																																																																																				&::flareguns
+			Keep_draw_visible(y/n)=n																																																																																																																&::flareguns
+			Keep_attack_visible(y/n)=n																																																																																																															&::flareguns	
+			Keep_idle_visible(y/n)=n																																																																																																																&::flareguns
+		•Static_draw(y/n)=n																																																																																																																				&::flareguns
+		•Static_attack(y/n)=n     																																																																																																																	&::flareguns
+		•More_static_idle(y/n)=n																																																																																																																	&::flareguns
+=========================================================================================================================================================
+	••Manmelter:
+		•Position:
+			X_position=0																																																																																																																					&::manmelter
+			Y_position=0																																																																																																																					&::manmelter
+			Z_position=0																																																																																																																					&::manmelter
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::manmelter
+			Y_rotation=0																																																																																																																					&::manmelter
+			Z_rotation=0																																																																																																																					&::manmelter
+		•Hidden(y/n)=n    																																																																																																																				&::manmelter
+			Keep_draw_visible(y/n)=n																																																																																																																&::manmelter
+			Keep_attack_visible(y/n)=n																																																																																																															&::manmelter	
+			Keep_idle_visible(y/n)=n																																																																																																																&::manmelter
+		•Static_draw(y/n)=n																																																																																																																				&::manmelter
+		•Static_attack(y/n)=n     																																																																																																																	&::manmelter
+		•More_static_idle(y/n)=n																																																																																																																	&::manmelter
+=========================================================================================================================================================
+	••Thermal Thruster:
+		•Position:
+			X_position=0																																																																																																																					&::thermalthruster
+			Y_position=0																																																																																																																					&::thermalthruster
+			Z_position=0																																																																																																																					&::thermalthruster
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::thermalthruster
+			Y_rotation=0																																																																																																																					&::thermalthruster
+			Z_rotation=0																																																																																																																					&::thermalthruster
+		•Hidden(y/n)=n    																																																																																																																				&::thermalthruster
+			Keep_draw_visible(y/n)=n																																																																																																																&::thermalthruster
+			Keep_attack_visible(y/n)=n																																																																																																															&::thermalthruster	
+			Keep_idle_visible(y/n)=n																																																																																																																&::thermalthruster
+		•Static_draw(y/n)=n																																																																																																																				&::thermalthruster
+		•Static_attack(y/n)=n     																																																																																																																	&::thermalthruster
+		•More_static_idle(y/n)=n																																																																																																																	&::thermalthruster
+=========================================================================================================================================================
+	••Gas Passer:
+		•Position:
+			X_position=0																																																																																																																					&::gaspasser
+			Y_position=0																																																																																																																					&::gaspasser
+			Z_position=0																																																																																																																					&::gaspasser
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::gaspasser
+			Y_rotation=0																																																																																																																					&::gaspasser
+			Z_rotation=0																																																																																																																					&::gaspasser
+		•Hidden(y/n)=n    																																																																																																																				&::gaspasser
+			Keep_draw_visible(y/n)=n																																																																																																																&::gaspasser
+			Keep_attack_visible(y/n)=n																																																																																																															&::gaspasser
+			Keep_idle_visible(y/n)=n																																																																																																																&::gaspasser
+		•Static_draw(y/n)=n																																																																																																																				&::gaspasser
+		•Static_attack(y/n)=n     																																																																																																																	&::gaspasser
+		•More_static_idle(y/n)=n																																																																																																																	&::gaspasser
+=========================================================================================================================================================
+
+
+•••Melee:
+=========================================================================================================================================================
+	••Melee:
+		•Position:
+			X_position=0																																																																																																																					&::fireaxe
+			Y_position=0																																																																																																																					&::fireaxe
+			Z_position=0																																																																																																																					&::fireaxe
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::fireaxe
+			Y_rotation=0																																																																																																																					&::fireaxe
+			Z_rotation=0																																																																																																																					&::fireaxe
+		•Hidden(y/n)=n    																																																																																																																				&::fireaxe
+			Keep_draw_visible(y/n)=n																																																																																																																&::fireaxe
+			Keep_attack_visible(y/n)=n																																																																																																															&::fireaxe	
+			Keep_idle_visible(y/n)=n																																																																																																																&::fireaxe
+		•Static_draw(y/n)=n																																																																																																																				&::fireaxe
+		•Static_attack(y/n)=n     																																																																																																																	&::fireaxe
+		•More_static_idle(y/n)=n																																																																																																																	&::fireaxe
+=========================================================================================================================================================
+	••Hot Hand:
+		•Position:
+			X_position=0																																																																																																																					&::hothand
+			Y_position=0																																																																																																																					&::hothand
+			Z_position=0																																																																																																																					&::hothand
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::hothand
+			Y_rotation=0																																																																																																																					&::hothand
+			Z_rotation=0																																																																																																																					&::hothand
+		•Hidden(y/n)=n    																																																																																																																				&::hothand
+			Keep_draw_visible(y/n)=n																																																																																																																&::hothand
+			Keep_attack_visible(y/n)=n																																																																																																															&::hothand	
+			Keep_idle_visible(y/n)=n																																																																																																																&::hothand
+		•Static_draw(y/n)=n																																																																																																																				&::hothand
+		•Static_attack(y/n)=n     																																																																																																																	&::hothand
+		•More_static_idle(y/n)=n																																																																																																																	&::hothand
+=========================================================================================================================================================
+	••Melee Allclass:
+		•Position:
+			X_position=0																																																																																																																					&::meleeallclass
+			Y_position=0																																																																																																																					&::meleeallclass
+			Z_position=0																																																																																																																					&::meleeallclass
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::meleeallclass
+			Y_rotation=0																																																																																																																					&::meleeallclass
+			Z_rotation=0																																																																																																																					&::meleeallclass
+		•Hidden(y/n)=n    																																																																																																																				&::meleeallclass
+			Keep_draw_visible(y/n)=n																																																																																																																&::meleeallclass
+			Keep_attack_visible(y/n)=n																																																																																																															&::meleeallclass	
+			Keep_idle_visible(y/n)=n																																																																																																																&::meleeallclass
+		•Static_draw(y/n)=n																																																																																																																				&::meleeallclass
+		•Static_attack(y/n)=n     																																																																																																																	&::meleeallclass
+		•More_static_idle(y/n)=n																																																																																																																	&::meleeallclass
+=========================================================================================================================================================
+
+•••Special weapons:
+=========================================================================================================================================================
+	••Grappling Hook:
+		•Position:
+			X_position=0																																																																																																																				&::grapplehook
+			Y_position=0																																																																																																																				&::grapplehook
+			Z_position=0																																																																																																																				&::grapplehook
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::grapplehook
+			Y_rotation=0																																																																																																																				&::grapplehook
+			Z_rotation=0																																																																																																																				&::grapplehook
+		•Hidden(y/n)=n    																																																																																																																			&::grapplehook
+=========================================================================================================================================================
+	••Passtime Ball:
+		•Position:
+			X_position=0																																																																																																																				&::passtimeball
+			Y_position=0																																																																																																																				&::passtimeball
+			Z_position=0																																																																																																																				&::passtimeball
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::passtimeball
+			Y_rotation=0																																																																																																																				&::passtimeball
+			Z_rotation=0																																																																																																																				&::passtimeball
+		•Hidden(y/n)=n    																																																																																																																			&::passtimeball
+=========================================================================================================================================================
+	••Spell Cast:
+		•Position:
+			X_position=0																																																																																																																				&::spellcast
+			Y_position=0																																																																																																																				&::spellcast
+			Z_position=0																																																																																																																				&::spellcast
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::spellcast
+			Y_rotation=0																																																																																																																				&::spellcast
+			Z_rotation=0																																																																																																																				&::spellcast
+		•Hidden(y/n)=n    																																																																																																																			&::spellcast
+=========================================================================================================================================================
+	••Throw:
+		•Position:
+			X_position=0																																																																																																																					&::throw
+			Y_position=0																																																																																																																					&::throw
+			Z_position=0																																																																																																																					&::throw
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::throw
+			Y_rotation=0																																																																																																																					&::throw
+			Z_rotation=0																																																																																																																					&::throw
+		•Hidden(y/n)=n    																																																																																																																				&::throw
+			Keep_draw_visible(y/n)=n																																																																																																																&::throw
+			Keep_attack_visible(y/n)=n																																																																																																															&::throw
+			Keep_idle_visible(y/n)=n																																																																																																																&::throw
+		•Static_draw(y/n)=n																																																																																																																				&::throw
+		•Static_attack(y/n)=n     																																																																																																																	&::throw
+		•More_static_idle(y/n)=n																																																																																																																	&::throw
+=========================================================================================================================================================
+
+•••Inspects:
+=========================================================================================================================================================
+	••Flame Throwers Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::flamethrowersinspect
+			Y_position=0																																																																																																																				&::flamethrowersinspect
+			Z_position=0																																																																																																																				&::flamethrowersinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::flamethrowersinspect
+			Y_rotation=0																																																																																																																				&::flamethrowersinspect
+			Z_rotation=0																																																																																																																				&::flamethrowersinspect
+		•Hidden(y/n)=n    																																																																																																																			&::flamethrowersinspect
+=========================================================================================================================================================
+	••Dragon's Fury Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::dragonsfuryinspect
+			Y_position=0																																																																																																																				&::dragonsfuryinspect
+			Z_position=0																																																																																																																				&::dragonsfuryinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::dragonsfuryinspect
+			Y_rotation=0																																																																																																																				&::dragonsfuryinspect
+			Z_rotation=0																																																																																																																				&::dragonsfuryinspect
+		•Hidden(y/n)=n    																																																																																																																			&::dragonsfuryinspect
+=========================================================================================================================================================
+	••Phlogistinator Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::phlogistinatorinspect
+			Y_position=0																																																																																																																				&::phlogistinatorinspect
+			Z_position=0																																																																																																																				&::phlogistinatorinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::phlogistinatorinspect
+			Y_rotation=0																																																																																																																				&::phlogistinatorinspect
+			Z_rotation=0																																																																																																																				&::phlogistinatorinspect
+		•Hidden(y/n)=n    																																																																																																																			&::phlogistinatorinspect
+=========================================================================================================================================================
+	••Secondaries Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::secondariesinspect
+			Y_position=0																																																																																																																				&::secondariesinspect
+			Z_position=0																																																																																																																				&::secondariesinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::secondariesinspect
+			Y_rotation=0																																																																																																																				&::secondariesinspect
+			Z_rotation=0																																																																																																																				&::secondariesinspect
+		•Hidden(y/n)=n    																																																																																																																			&::secondariesinspect
+=========================================================================================================================================================
+	••Flare Guns Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::flaregunsinspect
+			Y_position=0																																																																																																																				&::flaregunsinspect
+			Z_position=0																																																																																																																				&::flaregunsinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::flaregunsinspect
+			Y_rotation=0																																																																																																																				&::flaregunsinspect
+			Z_rotation=0																																																																																																																				&::flaregunsinspect
+		•Hidden(y/n)=n    																																																																																																																			&::flaregunsinspect
+=========================================================================================================================================================
+	••Melee Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::meleeinspect
+			Y_position=0																																																																																																																				&::meleeinspect
+			Z_position=0																																																																																																																				&::meleeinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::meleeinspect
+			Y_rotation=0																																																																																																																				&::meleeinspect
+			Z_rotation=0																																																																																																																				&::meleeinspect
+		•Hidden(y/n)=n    																																																																																																																			&::meleeinspect
+=========================================================================================================================================================
+	••Hot Hand Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::hothandinspect
+			Y_position=0																																																																																																																				&::hothandinspect
+			Z_position=0																																																																																																																				&::hothandinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::hothandinspect
+			Y_rotation=0																																																																																																																				&::hothandinspect
+			Z_rotation=0																																																																																																																				&::hothandinspect
+		•Hidden(y/n)=n    																																																																																																																			&::hothandinspect
+=========================================================================================================================================================
+	••Melee Allclass Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::meleeallclassinspect
+			Y_position=0																																																																																																																				&::meleeallclassinspect
+			Z_position=0																																																																																																																				&::meleeallclassinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::meleeallclassinspect
+			Y_rotation=0																																																																																																																				&::meleeallclassinspect
+			Z_rotation=0																																																																																																																				&::meleeallclassinspect
+		•Hidden(y/n)=n    																																																																																																																			&::meleeallclassinspect
+=========================================================================================================================================================
+
+

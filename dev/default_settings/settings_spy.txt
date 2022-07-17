@@ -1,0 +1,287 @@
+Spy settings:
+	
+•••Primaries:
+=========================================================================================================================================================
+	••Revolvers:
+		•Position:
+			X_position=0																																																																																																																					&::revolvers
+			Y_position=0																																																																																																																					&::revolvers
+			Z_position=0																																																																																																																					&::revolvers
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::revolvers
+			Y_rotation=0																																																																																																																					&::revolvers
+			Z_rotation=0																																																																																																																					&::revolvers
+		•Hidden(y/n)=n    																																																																																																																				&::revolvers
+			Keep_draw_visible(y/n)=n																																																																																																																&::revolvers
+			Keep_attack_visible(y/n)=n																																																																																																															&::revolvers
+			Keep_reload_visible(y/n)=n																																																																																																															&::revolvers		
+			Keep_idle_visible(y/n)=n																																																																																																																&::revolvers
+		•Static_draw(y/n)=n     																																																																																																																		&::revolvers
+		•Static_reload(y/n)=n     																																																																																																																	&::revolvers
+		•Static_attack(y/n)=n     																																																																																																																	&::revolvers
+		•More_static_idle(y/n)=n																																																																																																																	&::revolvers
+=========================================================================================================================================================
+
+•••Secondaries:
+=========================================================================================================================================================
+	••Sapper:
+		•Position:
+			X_position=0																																																																																																																					&::sapper
+			Y_position=0																																																																																																																					&::sapper
+			Z_position=0																																																																																																																					&::sapper
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::sapper
+			Y_rotation=0																																																																																																																					&::sapper
+			Z_rotation=0																																																																																																																					&::sapper
+		•Hidden(y/n)=n    																																																																																																																				&::sapper
+			Keep_draw_visible(y/n)=n																																																																																																																&::sapper
+			Keep_idle_visible(y/n)=n																																																																																																																&::sapper
+		•Static_draw(y/n)=n     																																																																																																																		&::sapper
+		•More_static_idle(y/n)=n																																																																																																																	&::sapper
+=========================================================================================================================================================
+	••Red Tape Recorder:
+		•Position:
+			X_position=0																																																																																																																					&::redtaperecorder
+			Y_position=0																																																																																																																					&::redtaperecorder
+			Z_position=0																																																																																																																					&::redtaperecorder
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::redtaperecorder
+			Y_rotation=0																																																																																																																					&::redtaperecorder
+			Z_rotation=0																																																																																																																					&::redtaperecorder
+		•Hidden(y/n)=n    																																																																																																																				&::redtaperecorder
+			Keep_draw_visible(y/n)=n																																																																																																																&::redtaperecorder
+			Keep_idle_visible(y/n)=n																																																																																																																&::redtaperecorder
+		•Static_draw(y/n)=n     																																																																																																																		&::redtaperecorder
+		•More_static_idle(y/n)=n																																																																																																																	&::redtaperecorder
+=========================================================================================================================================================
+	••Snack Attack:
+		•Position:
+			X_position=0																																																																																																																					&::snackattack
+			Y_position=0																																																																																																																					&::snackattack
+			Z_position=0																																																																																																																					&::snackattack
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::snackattack
+			Y_rotation=0																																																																																																																					&::snackattack
+			Z_rotation=0																																																																																																																					&::snackattack
+		•Hidden(y/n)=n    																																																																																																																				&::snackattack
+			Keep_draw_visible(y/n)=n																																																																																																																&::snackattack
+			Keep_idle_visible(y/n)=n																																																																																																																&::snackattack
+		•Static_draw(y/n)=n     																																																																																																																		&::snackattack
+		•More_static_idle(y/n)=n																																																																																																																	&::snackattack
+
+•••Melee:
+=========================================================================================================================================================
+	••Butterfly Knife:
+		•Position:
+			X_position=0																																																																																																																																&::butterfly
+			Y_position=0																																																																																																																														&::butterfly
+			Z_position=0																																																																																																																													&::butterfly
+		•Rotation: 
+			X_rotation=0																																																																																																																															&::butterfly
+			Y_rotation=0																																																																																																																													&::butterfly
+			Z_rotation=0																																																																																																																													&::butterfly
+		•Hidden(y/n)=n    																																																																																																																													&::butterfly
+			Keep_draw_visible(y/n)=n																																																																																																																									&::butterfly
+			Keep_attack_visible(y/n)=n																																																																																																																						&::butterfly
+			Keep_idle_visible(y/n)=n																																																																																																																									&::butterfly
+			Keep_backstab_detection_visible(y/n)=n     																																																																																																																		&::butterfly
+			Keep_backstab_visible(y/n)=n     																																																																																																																						&::butterfly
+		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::butterfly
+		•Static_draw(y/n)=n     																																																																																																																									&::butterfly
+		•Static_attack(y/n)=n     																																																																																																																								&::butterfly
+		•More_static_idle(y/n)=n																																																																																																																								&::butterfly
+		•Static_backstab_detection(y/n)=n     																																																																																																																					&::butterfly
+		•Static_backstab(y/n)=n     																																																																																																																								&::butterfly
+=========================================================================================================================================================
+	••Kunai, Eternal Reward and Big Earner:
+		•Position:
+			X_position=0																																																																																																																													&::kunaiyerbigearner
+			Y_position=0																																																																																																																												&::kunaiyerbigearner
+			Z_position=0																																																																																																																													&::kunaiyerbigearner
+		•Rotation: 
+			X_rotation=0																																																																																																																													&::kunaiyerbigearner
+			Y_rotation=0																																																																																																																													&::kunaiyerbigearner
+			Z_rotation=0																																																																																																																													&::kunaiyerbigearner
+		•Hidden(y/n)=n    																																																																																																																												&::kunaiyerbigearner
+			Keep_draw_visible(y/n)=n																																																																																																																									&::kunaiyerbigearner
+			Keep_attack_visible(y/n)=n																																																																																																																								&::kunaiyerbigearner
+			Keep_idle_visible(y/n)=n																																																																																																																									&::kunaiyerbigearner
+			Keep_backstab_detection_visible(y/n)=n     																																																																																																																		&::kunaiyerbigearner
+			Keep_backstab_visible(y/n)=n     																																																																																																																						&::kunaiyerbigearner
+		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::kunaiyerbigearner
+		•Static_draw(y/n)=n     																																																																																																																											&::kunaiyerbigearner
+		•Static_attack(y/n)=n     																																																																																																																												&::kunaiyerbigearner
+		•More_static_idle(y/n)=n																																																																																																																										&::kunaiyerbigearner
+		•Static_backstab_detection(y/n)=n     																																																																																																																					&::kunaiyerbigearner
+		•Static_backstab(y/n)=n     																																																																																																																								&::kunaiyerbigearner
+=========================================================================================================================================================
+	••Sharp Dresser:
+		•Position:
+			X_position=0																																																																																																																											&::sharpdresser
+			Y_position=0																																																																																																																												&::sharpdresser
+			Z_position=0																																																																																																																											&::sharpdresser
+		•Rotation: 
+			X_rotation=0																																																																																																																												&::sharpdresser
+			Y_rotation=0																																																																																																																											&::sharpdresser
+			Z_rotation=0																																																																																																																											&::sharpdresser
+		•Hidden(y/n)=n    																																																																																																																											&::sharpdresser
+			Keep_draw_visible(y/n)=n																																																																																																																								&::sharpdresser
+			Keep_attack_visible(y/n)=n																																																																																																																						&::sharpdresser
+			Keep_idle_visible(y/n)=n																																																																																																																								&::sharpdresser
+			Keep_backstab_detection_visible(y/n)=n     																																																																																																																		&::sharpdresser
+			Keep_backstab_visible(y/n)=n     																																																																																																																						&::sharpdresser
+		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::sharpdresser
+		•Static_draw(y/n)=n     																																																																																																																										&::sharpdresser
+		•Static_attack(y/n)=n     																																																																																																																										&::sharpdresser
+		•More_static_idle(y/n)=n																																																																																																																										&::sharpdresser
+		•Static_backstab_detection(y/n)=n     																																																																																																																					&::sharpdresser
+		•Static_backstab(y/n)=n     																																																																																																																								&::sharpdresser
+=========================================================================================================================================================
+	••All-class Melee:
+		•Position:
+			X_position=0																																																																																																																					&::allclassmelee
+			Y_position=0																																																																																																																					&::allclassmelee
+			Z_position=0																																																																																																																					&::allclassmelee
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::allclassmelee
+			Y_rotation=0																																																																																																																					&::allclassmelee
+			Z_rotation=0																																																																																																																					&::allclassmelee
+		•Hidden(y/n)=n    																																																																																																																				&::allclassmelee
+			Keep_draw_visible(y/n)=n																																																																																																																&::allclassmelee
+			Keep_attack_visible(y/n)=n																																																																																																															&::allclassmelee
+			Keep_idle_visible(y/n)=n																																																																																																																&::allclassmelee
+		•Static_draw(y/n)=n     																																																																																																																		&::allclassmelee
+		•Static_attack(y/n)=n     																																																																																																																	&::allclassmelee
+		•More_static_idle(y/n)=n																																																																																																																	&::allclassmelee
+=========================================================================================================================================================
+
+•••Special weapons:
+=========================================================================================================================================================
+	••Grappling Hook:
+		•Position:
+			X_position=0																																																																																																																				&::grapplehook
+			Y_position=0																																																																																																																				&::grapplehook
+			Z_position=0																																																																																																																				&::grapplehook
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::grapplehook
+			Y_rotation=0																																																																																																																				&::grapplehook
+			Z_rotation=0																																																																																																																				&::grapplehook
+		•Hidden(y/n)=n    																																																																																																																			&::grapplehook
+=========================================================================================================================================================
+	••Passtime Ball:
+		•Position:
+			X_position=0																																																																																																																				&::passtimeball
+			Y_position=0																																																																																																																				&::passtimeball
+			Z_position=0																																																																																																																				&::passtimeball
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::passtimeball
+			Y_rotation=0																																																																																																																				&::passtimeball
+			Z_rotation=0																																																																																																																				&::passtimeball
+		•Hidden(y/n)=n    																																																																																																																			&::passtimeball
+=========================================================================================================================================================
+	••Spell Cast:
+		•Position:
+			X_position=0																																																																																																																				&::spellcast
+			Y_position=0																																																																																																																				&::spellcast
+			Z_position=0																																																																																																																				&::spellcast
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::spellcast
+			Y_rotation=0																																																																																																																				&::spellcast
+			Z_rotation=0																																																																																																																				&::spellcast
+		•Hidden(y/n)=n    																																																																																																																			&::spellcast
+=========================================================================================================================================================
+	••Throw:
+		•Position:
+			X_position=0																																																																																																																				&::throw
+			Y_position=0																																																																																																																				&::throw
+			Z_position=0																																																																																																																				&::throw
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::throw
+			Y_rotation=0																																																																																																																				&::throw
+			Z_rotation=0																																																																																																																				&::throw
+		•Hidden(y/n)=n    																																																																																																																			&::throw
+			Keep_draw_visible(y/n)=n																																																																																																																&::throw
+			Keep_attack_visible(y/n)=n																																																																																																															&::throw
+			Keep_idle_visible(y/n)=n																																																																																																																&::throw
+		•Static_draw(y/n)=n																																																																																																																				&::throw
+		•Static_attack(y/n)=n     																																																																																																																	&::throw
+		•More_static_idle(y/n)=n																																																																																																																	&::throw
+=========================================================================================================================================================
+
+•••Inspect animations:
+=========================================================================================================================================================
+	••Revolvers Inspects:
+		•Position:
+			X_position=0																																																																																																																				&::revolversinspects
+			Y_position=0																																																																																																																				&::revolversinspects
+			Z_position=0																																																																																																																				&::revolversinspects
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::revolversinspects
+			Y_rotation=0																																																																																																																				&::revolversinspects
+			Z_rotation=0																																																																																																																				&::revolversinspects
+		•Hidden(y/n)=n    																																																																																																																			&::revolversinspects
+=========================================================================================================================================================
+	••All Sappers Inspects:
+		•Position:
+			X_position=0																																																																																																																				&::sappersinspects
+			Y_position=0																																																																																																																				&::sappersinspects
+			Z_position=0																																																																																																																				&::sappersinspects
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::sappersinspects
+			Y_rotation=0																																																																																																																				&::sappersinspects
+			Z_rotation=0																																																																																																																				&::sappersinspects
+		•Hidden(y/n)=n    																																																																																																																			&::sappersinspects
+=========================================================================================================================================================
+	••Snack Attack Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::snackattackinspects
+			Y_position=0																																																																																																																				&::snackattackinspects
+			Z_position=0																																																																																																																				&::snackattackinspects
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::snackattackinspects
+			Y_rotation=0																																																																																																																				&::snackattackinspects
+			Z_rotation=0																																																																																																																				&::snackattackinspects
+		•Hidden(y/n)=n    																																																																																																																			&::snackattackinspects
+=========================================================================================================================================================
+	••Butterfly Knife Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::knivesinspects
+			Y_position=0																																																																																																																				&::knivesinspects
+			Z_position=0																																																																																																																				&::knivesinspects
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::knivesinspects
+			Y_rotation=0																																																																																																																				&::knivesinspects
+			Z_rotation=0																																																																																																																				&::knivesinspects
+		•Hidden(y/n)=n    																																																																																																																			&::knivesinspects
+=========================================================================================================================================================
+	••Kunai, Eternal Reward and Big Earner Inspects:
+		•Position:
+			X_position=0																																																																																																																				&::kunaiyerbigearnerinspects
+			Y_position=0																																																																																																																				&::kunaiyerbigearnerinspects
+			Z_position=0																																																																																																																				&::kunaiyerbigearnerinspects
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::kunaiyerbigearnerinspects
+			Y_rotation=0																																																																																																																				&::kunaiyerbigearnerinspects
+			Z_rotation=0																																																																																																																				&::kunaiyerbigearnerinspects
+		•Hidden(y/n)=n    																																																																																																																			&::kunaiyerbigearnerinspects
+=========================================================================================================================================================
+	••Sharp Dresser Inspect:
+		•Position:
+			X_position=0																																																																																																																				&::sharpdresserinspect
+			Y_position=0																																																																																																																				&::sharpdresserinspect
+			Z_position=0																																																																																																																				&::sharpdresserinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																				&::sharpdresserinspect
+			Y_rotation=0																																																																																																																				&::sharpdresserinspect
+			Z_rotation=0																																																																																																																				&::sharpdresserinspect
+		•Hidden(y/n)=n    																																																																																																																			&::sharpdresserinspect
+=========================================================================================================================================================
+
+
+
+
+
+
+
+
+

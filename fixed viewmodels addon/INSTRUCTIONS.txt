@@ -1,0 +1,9 @@
+	This program fully supports the Fixed Viewmodels pack
+	It fixes hundreds of default viewmodel animations, such as the extra hands on The Originals and sappers
+	https://gamebanana.com/mods/206440 - all credits go to the author
+
+How to add them:
+	1. Download it from here (direct link): https://gamebanana.com/dl/469246
+	2. Open the zip and extract the main .VPK in this folder (fixed viewmodels addon)
+	3. Done, the program will automatically apply it next time you start GENERATE.bat
+
