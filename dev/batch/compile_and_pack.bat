@@ -113,7 +113,7 @@ cd %tf_folder%
 IF EXIST "models_backup" ren "models_backup" "models"
 
 ::set vpk package name
-set vpk_name=testorino_lol
+set vpk_name=_Horsie'sViewmodelEditor
 
 ::rename temp vpk folder
 cd %dev_folder%
