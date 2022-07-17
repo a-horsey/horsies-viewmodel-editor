@@ -25,5 +25,3 @@ A powerful viewmodel editor for Team Fortress 2
 - Download the Fixed Viewmodels mod from [here](https://gamebanana.com/dl/469246) (direct link)
 - Extract the main vpk in "fixed viewmodels addon"
 - Done, the tool will automatically install it next time you run GENERATE.BAT
-
-## Credits - to be added
