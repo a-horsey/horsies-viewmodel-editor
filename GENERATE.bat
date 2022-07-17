@@ -432,11 +432,9 @@ rd /s /q "decompiled_animations_temp"
 :finished
 color 20
 title FINISHED
-cd %dev_folder%
-taskbarflash --all
 
 :horse
-::cls
+cls
 echo                       ~~%%%%%%%%_,_,
 echo                   ~~%%%%%%%%%-"/./
 echo                 ~~%%%%%%%-'   /  `.
