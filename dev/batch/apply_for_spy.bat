@@ -409,7 +409,7 @@ set sequence_6=eternal_backstab_up
 set sequence_7=eternal_backstab_down
 set sequence_8=eternal_backstab_idle
 set sequence_9=eternal_stun
-set sequence_10=none
+set sequence_10=eternal_draw
 
 ::set some spy-exclusive stuff for the backstab scripts
 
