@@ -112,8 +112,8 @@ move "models" "%dev_folder%\create_vpk_temp\models"
 cd %tf_folder%
 IF EXIST "models_backup" ren "models_backup" "models"
 
-::set vpk package name
-set vpk_name=_Horsie'sViewmodelEditor
+::set vpk package name - not needed, set in generate.bat now
+::set vpk_name=_Horsie'sViewmodelEditor
 
 ::rename temp vpk folder
 cd %dev_folder%
@@ -143,7 +143,7 @@ IF EXIST "%vpk_name%_004.vpk" del "%vpk_name%_004.vpk"
 ::copy preload files
 cd %dev_folder%
 xcopy "preload_files" "%vpk_name%" /e /q
-cd %dev_folder%\%vpk_name%
+cd "%dev_folder%\%vpk_name%"
 IF NOT EXIST "cfg" mkdir "cfg"
 
 ::check main menu setting
@@ -155,19 +155,23 @@ cd %dev_folder%
 HLExtract.exe -s -p "%tf_folder%\tf2_misc_dir.vpk" -d "%vpk_name%\cfg" -e "cfg\valve.rc"
 cd %dev_folder%\%vpk_name%\cfg
 IF EXIST valve.rc ren "valve.rc" "valve_rc_temp"
+
 ::scan for other valve.rc files in custom
 cd %dev_folder%\%vpk_name%
 IF EXIST preloading_temp del preloading_temp
 dir "%custom_folder%" /s /b | find /i "valve.rc" >> preloading_temp
 set "custom_valve_rc=""
 for /f "delims=*" %%f in (preloading_temp) do set custom_valve_rc=%%f
+
 ::replace valve.rc based on files found
 IF EXIST preloading_temp del preloading_temp
 IF EXIST "%custom_valve_rc%" copy "%custom_valve_rc%" "%dev_folder%\%vpk_name%\cfg\valve_rc_temp"
 cd %dev_folder%\%vpk_name%\cfg
 IF EXIST valve_rc_temp ren "valve_rc_temp" "valve.rc"
+
 ::add preloading
 echo exec preloading.cfg >> valve.rc
+
 :automatic_preloading_end
 
 ::create vpks
