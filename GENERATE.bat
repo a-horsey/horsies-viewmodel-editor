@@ -25,8 +25,8 @@ echo Wrong folder!
 echo Please make sure the program is placed inside your game's "custom" folder or "tf" folder.
 echo.
 pause
-goto :eof
 endlocal
+goto :eof
 
 :custom_folder
 ::Set folders
@@ -39,7 +39,6 @@ set batch_folder=%dev_folder%\batch
 set animations_folder=%dev_folder%\decompiled_animations
 cd ..\
 set tf_folder=%cd%
-echo %tf_folder%
 cd ..\
 cd bin
 set bin_folder=%cd%
@@ -72,6 +71,25 @@ cd %vm_customizer_folder%
 goto :check_and_set_folders_done
 :check_and_set_folders_done
 
+:check_if_vpk_is_in_use
+set vpk_name=_Horsie'sViewmodelEditor
+cd %custom_folder%
+IF NOT EXIST "%vpk_name%_000.vpk" goto :del_temp
+2>nul (
+	>>%vpk_name%_000.vpk echo off
+ )	&& (goto :del_temp) || (goto :vpk_in_use)
+goto :del_temp
+
+:vpk_in_use
+color 4f
+echo Error! Game is currently running.
+echo Please close the game and try again.
+echo.
+pause
+endlocal
+goto :eof
+
+:del_temp
 ::delete temp just in case
 cd %dev_folder%
 IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
