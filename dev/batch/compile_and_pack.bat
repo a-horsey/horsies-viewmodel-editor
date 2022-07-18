@@ -1,6 +1,27 @@
 ::this script compiles all the animations
 ::creates a vpk with the animations and other files (such as preloading files)
 
+::check_if_vpk_is_in_use
+cd %custom_folder%
+IF NOT EXIST "%vpk_name%_000.vpk" goto :start_compiling
+2>nul (
+	>>%vpk_name%_000.vpk echo off
+ )	&& (goto :start_compiling) || (goto :vpk_in_use)
+goto :start_compiling
+
+:vpk_in_use
+cd %dev_folder%
+IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
+cls
+color 4f
+echo Error! Game is currently running.
+echo Please close the game and try again.
+echo.
+pause
+endlocal
+exit
+
+:start_compiling
 ::make backup if models folder first, in case user has any custom files in there
 cd %tf_folder%
 IF EXIST "models" ren "models" "models_backup" 
