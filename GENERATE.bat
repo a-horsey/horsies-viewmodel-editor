@@ -113,7 +113,7 @@ echo.  ~~%%%%%%%%%'           :     `-.     (,;
 echo. ~~%%%%%%%%'             :         `._\_.'
 echo. ~~%%%%%%' Welcome to Horsie's Viewmodel Editor!
 echo.
-echo. Options: 
+echo.Options: 
 echo.	1. Start
 echo. 	2. Toggle automatic preloading (currently %automatic_preloading_status%)
 echo. 	3. Toggle fixed viewmodels support (currently %fixed_vm_addon_status%)
