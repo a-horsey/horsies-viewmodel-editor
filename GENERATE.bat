@@ -375,7 +375,7 @@ cd %dev_folder%
 IF EXIST "decompiled_animations_temp" RMDIR /S /Q "decompiled_animations_temp"
 IF NOT EXIST "decompiled_animations_temp" mkdir "decompiled_animations_temp"
 xcopy /y "decompiled_animations" "decompiled_animations_temp" /e /q
-IF %fixed_vm_addon%==on xcopy /y "decompiled_fixed_animations" "decompiled_animations_temp" /e /q
+IF %fixed_vm_addon%==on IF EXIST "decompiled_fixed_animations" xcopy /y "decompiled_fixed_animations" "decompiled_animations_temp" /e /q
 set decompiled_animations_temp=%dev_folder%\decompiled_animations_temp
 set qc_folder_temp=%dev_folder%\decompiled_animations_temp
 
