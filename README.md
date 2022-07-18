@@ -3,9 +3,9 @@ A powerful viewmodel editor for Team Fortress 2
 ## Features
 
 - Edit your viewmodels however you want. Includes many possible settings for every weapon
-- Automatic preloading. Preloads the animations at game start without you having to do anything. Can optionally be disabled in the menu.
-- Fully supports the [Fixed Viewmodels](https://gamebanana.com/mods/206440) pack. All credits for creating the pack go to the author. This fixes hundreds of default animations, such as the extra hands when using The Original or sapper.
-- Everything is automatic, just pick your settings and the tool will extract, decompile, edit, compile and pack the animations.
+- Automatic preloading. Preloads the animations at game start without you having to do anything. Can optionally be disabled in the menu
+- Fully supports the [Fixed Viewmodels](https://gamebanana.com/mods/206440) pack. All credits for creating the pack go to the author. This fixes hundreds of default animations, such as the extra hands when using the original or sapper
+- Everything is automatic, just pick your settings and the tool will extract, decompile, edit, compile and pack the animations
 
 ## List of some per-weapon settings:
 - Change position on X, Y and Z axis
@@ -19,9 +19,9 @@ A powerful viewmodel editor for Team Fortress 2
 - Download it and place the main folder in your game's "custom" folder or "tf" folder. I suggest the "tf" folder.
 - Edit the class-specific settings files however you wish. I suggest using something other than standard notepad
 - Launch GENERATE.bat
-- Check [this](https://developer.valvesoftware.com/wiki/$origin) for more info on how positioning works. More detailed info to be added in the future.
+- Check [this](https://developer.valvesoftware.com/wiki/$origin) for more info on how positioning works. More detailed info to be added in the future
 
 ## Installing Fixed Viewmodels (highly recommended):
 - Download the Fixed Viewmodels mod from [here](https://gamebanana.com/dl/469246) (direct link)
 - Extract the main vpk in "fixed viewmodels addon"
-- Done, the tool will automatically install it next time you run GENERATE.BAT
+- Done, the tool will automatically install it next time you run GENERATE.bat
