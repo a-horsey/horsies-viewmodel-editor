@@ -34,10 +34,6 @@ set •Replace_backstab_with_normal_attack(y/n)=n
 set •Static_backstab_detection(y/n)=n
 set •Static_backstab(y/n)=n
 
-:: temp
-::set settings_file=settings_scout.txt
-::set "settings_label=&::scatterguns"
-
 ::delete temp files just in case
 IF EXIST extract_settings_temp del extract_settings_temp
 IF EXIST extract_settings_temp_2 del extract_settings_temp_2
@@ -78,12 +74,12 @@ IF %•Static_reload(y/n)%=="" set •Static_reload(y/n)=n
 IF %•Static_attack(y/n)%=="" set •Static_attack(y/n)=n
 IF %•More_static_idle(y/n)%=="" set •More_static_idle(y/n)=n
 IF %•Remove_shells(y/n)%=="" set •Remove_shells(y/n)=n
- ::spy stuff - not needed for spy
-::IF %Keep_backstab_detection_visible%=="" set Keep_backstab_detection_visible(y/n)=n
-::IF %Keep_backstab_visible%=="" set Keep_backstab_visible(y/n)=n
-::IF %•Replace_backstab_with_normal_attack%=="" set •Replace_backstab_with_normal_attack(y/n)=n
-::IF %•Static_backstab_detection%=="" set •Static_backstab_detection(y/n)=n
-::IF %•Static_backstab%=="" set •Static_backstab(y/n)=n
+ ::spy stuff 
+IF %Keep_backstab_detection_visible(y/n)%=="" set Keep_backstab_detection_visible(y/n)=n
+IF %Keep_backstab_visible(y/n)%=="" set Keep_backstab_visible(y/n)=n
+IF %•Replace_backstab_with_normal_attack(y/n)%=="" set •Replace_backstab_with_normal_attack(y/n)=n
+IF %•Static_backstab_detection(y/n)%=="" set •Static_backstab_detection(y/n)=n
+IF %•Static_backstab(y/n)%=="" set •Static_backstab(y/n)=n
 
 ::remove caps from yes values for all variables
 ::could just use "IF /I" to avoid this but am too big brain
