@@ -82,21 +82,16 @@ set attack_sequence_1=bw_charge
 set attack_sequence_2=bw_fire
 set attack_sequence_3=bw_shake
 set attack_sequence_4=bw_dryfire
-set attack_sequence_5=bw_noammo
-set attack_sequence_6=bw_idle2
+set attack_sequence_5=bw_idle2
+set attack_sequence_6=bw_noammo
 
 ::set attack smds
 set attack_smd_1=bw_charge.smd
 set attack_smd_2=bw_fire.smd
 set attack_smd_3=bw_shake.smd
 set attack_smd_4=bw_dryfire.smd
-set attack_smd_5=bw_noammo.smd
-set attack_smd_6=bw_idle2.smd
-
-::set reload sequences reload sequences
-::adds snap to seq_2 for rare weapons that need it - set to "true" to use
-set reload_sequence_2_is_alternative_start=false
-::seq_1 should be reload_start or the unique reload
+set attack_smd_5=bw_idle2.smd
+set attack_smd_6=bw_noammo.smd
 
 ::set reload smds
 
@@ -110,6 +105,7 @@ set sequence_4=bw_fire
 set sequence_5=bw_noammo
 set sequence_6=bw_shake
 set sequence_7=bw_dryfire
+set sequence_8=bw_idle2
 
 ::call files
 cd %batch_folder%
@@ -160,8 +156,8 @@ set reload_sequence_2_is_alternative_start=false
 ::set extra sequences for hiding
 
 ::name all the sequences for positioning
-set sequence_1=
-set sequence_2=bw_idle3
+set sequence_1=bw_idle3
+set sequence_2=none
 
 ::call files
 cd %batch_folder%
