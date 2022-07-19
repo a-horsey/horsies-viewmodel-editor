@@ -97,6 +97,8 @@ IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
 ::set default options
 set automatic_preloading=on
 set fixed_vm_addon=on
+::fixed viewmodels files check
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set fixed_vm_addon=off
 
 set apply_only_for_scout=false
 set apply_only_for_soldier=false
@@ -115,6 +117,7 @@ IF %automatic_preloading%==on set automatic_preloading_status=ON
 IF %automatic_preloading%==off set automatic_preloading_status=OFF
 
 IF %fixed_vm_addon%==on set toggle_fixed_vm_addon=goto :fixed_vm_addon_off
+IF %fixed_vm_addon%==off set toggle_fixed_vm_addon=goto :fixed_vm_addon_on
 IF %fixed_vm_addon%==on set fixed_vm_addon_status=ON
 IF %fixed_vm_addon%==off set fixed_vm_addon_status=OFF
 
@@ -133,24 +136,23 @@ echo. ~~%%%%%%' Welcome to Horsie's Viewmodel Editor!
 echo.
 echo.Options: 
 echo.	1. Start
-echo. 	2. Toggle automatic preloading (currently %automatic_preloading_status%)
-echo. 	3. Toggle fixed viewmodels support (currently %fixed_vm_addon_status%)
-echo. 	4. Developer settings
-echo.	5. Exit
+echo. 	2. Include automatic preloading (currently %automatic_preloading_status%)
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	3. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	3. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
+echo. 	0. Developer settings
 
 SET /P M=Choose an option: 
+IF %M%==0 goto :dev_menu
 IF %M%==1 goto :exit_menu
 IF %M%==2 %toggle_preloading%
 IF %M%==3 %toggle_fixed_vm_addon%
-IF %M%==4 goto :dev_menu
-IF %M%==5 goto :eof
-IF NOT %M%==1 IF NOT %M%==2 goto :main_menu IF NOT %M%==3 goto :main_menu IF NOT %M%==4 goto :main_menu IF NOT %M%==5 goto :main_menu
+IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3 goto :main_menu
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set toggle_fixed_vm_addon=goto :main_menu
 
 :preloading_off
 cls
 echo Warning: Automatic preloading is highly recommended.
 echo The edited viewmodels will not work in most servers without it.
-echo If you do disable it, you can add "exec preloading" to your autoexec to bring it back without reapplying settings.
 echo.
 SET /P M=Are you sure that you want to proceed (Y/N):
 IF /i %M%==n goto :main_menu
@@ -165,20 +167,11 @@ set toggle_preloading=goto :preloading_off
 goto :main_menu
 
 :fixed_vm_addon_off
-cls
-echo Fixed viewmodels support does nothing if you do not extract the VPK in the "fixed viewmodels addon" folder.
-echo More instructions are in that folder.
-echo.
-pause
 set fixed_vm_addon=off
 set toggle_fixed_vm_addon=goto :fixed_vm_addon_on
 goto :main_menu
 
 :fixed_vm_addon_on
-cls
-echo Fixed viewmodels support does nothing if you do not extract the VPK in the "fixed viewmodels addon" folder.
-echo More instructions are in that folder.
-pause
 set fixed_vm_addon=on
 set toggle_fixed_vm_addon=goto :fixed_vm_addon_off
 goto :main_menu
@@ -210,8 +203,10 @@ echo.	8. Start and apply only Engineer
 echo.	9. Start and apply only Medic
 echo.	10. Start and apply only Sniper
 echo.	11. Start and apply only Spy
+IF EXIST "%custom_folder%\%vpk_name%_dir.vpk" echo.	12. Remove VPKs from custom
 SET /P M=Choose dev option:
-IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3 IF NOT %M%==4 IF NOT %M%==5 IF NOT %M%==6 IF NOT %M%==7 IF NOT %M%==8 IF NOT %M%==9 IF NOT %M%==10 IF NOT %M%==11 goto :dev_menu
+IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3 IF NOT %M%==4 IF NOT %M%==5 IF NOT %M%==6 IF NOT %M%==7 IF NOT %M%==8 IF NOT %M%==9 IF NOT %M%==10 IF NOT %M%==11 IF NOT %M%==12 goto :dev_menu
+IF NOT EXIST "%custom_folder%\%vpk_name%_dir.vpk" IF %M%==12 goto :dev_menu
 
 IF %M%==0 goto :main_menu
 IF %M%==1 goto :remove_extracted_animations_prompt
@@ -225,6 +220,7 @@ IF %M%==8 goto :apply_only_for_engineer_prompt
 IF %M%==9 goto :apply_only_for_medic_prompt
 IF %M%==10 goto :apply_only_for_sniper_prompt
 IF %M%==11 goto :apply_only_for_spy_prompt
+IF %M%==12 goto :remove_vpks_prompt
 
 :remove_extracted_animations_prompt
 cls
@@ -358,6 +354,24 @@ IF /i %M%==n goto :dev_menu
 IF /i %M%==y (
 	set apply_only_for_spy=true
 	goto :exit_menu )
+
+:remove_vpks_prompt
+cls
+echo This removes the generated VPKs from your custom folder.
+echo You don't have to do this before applying new settings, only if you just want to remove the mod.
+echo.
+SET /P M=Do you want to proceed (Y/N):
+IF /i %M%==y (
+	echo Removing VPKs...
+	IF EXIST  "%custom_folder%\%vpk_name%_dir.vpk" del "%custom_folder%\%vpk_name%_dir.vpk"
+	IF EXIST  "%custom_folder%\%vpk_name%_000.vpk" del "%custom_folder%\%vpk_name%_000.vpk"
+	IF EXIST  "%custom_folder%\%vpk_name%_001.vpk" del "%custom_folder%\%vpk_name%_001.vpk"
+	IF EXIST  "%custom_folder%\%vpk_name%_002.vpk" del "%custom_folder%\%vpk_name%_002.vpk"
+	IF EXIST  "%custom_folder%\%vpk_name%_003.vpk" del "%custom_folder%\%vpk_name%_003.vpk"
+	IF EXIST  "%custom_folder%\%vpk_name%_004.vpk" del "%custom_folder%\%vpk_name%_004.vpk"
+	goto :dev_menu )
+IF /i %M%==n goto :dev_menu
+IF /i NOT %M%==y IF /i NOT %M%==n goto :remove_vpks_prompt
 
 :exit_menu
 cls
