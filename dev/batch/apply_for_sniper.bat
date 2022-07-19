@@ -83,6 +83,7 @@ set attack_sequence_2=bw_fire
 set attack_sequence_3=bw_shake
 set attack_sequence_4=bw_dryfire
 set attack_sequence_5=bw_noammo
+set attack_sequence_6=bw_idle2
 
 ::set attack smds
 set attack_smd_1=bw_charge.smd
@@ -90,6 +91,7 @@ set attack_smd_2=bw_fire.smd
 set attack_smd_3=bw_shake.smd
 set attack_smd_4=bw_dryfire.smd
 set attack_smd_5=bw_noammo.smd
+set attack_smd_6=bw_idle2.smd
 
 ::set reload sequences reload sequences
 ::adds snap to seq_2 for rare weapons that need it - set to "true" to use
@@ -138,14 +140,15 @@ set "settings_label=&::huntsman"
 ::set draw smd
 
 ::set idle
-set idle_sequence=bw_idle2
+set idle_sequence=bw_idle
 ::set idle smd
-set idle_smd=bw_idle2.smd
+set idle_smd=bw_idle.smd
 
 ::set attack sequences
-
+set attack_sequence_1=bw_idle3
 
 ::set attack smds
+set attack_smd_1=bw_idle3.smd
 
 ::set reload sequences reload sequences
 ::adds snap to seq_2 for rare weapons that need it - set to "true" to use
@@ -157,56 +160,8 @@ set reload_sequence_2_is_alternative_start=false
 ::set extra sequences for hiding
 
 ::name all the sequences for positioning
-set sequence_1=bw_idle2
-
-::call files
-cd %batch_folder%
-call extract_settings.bat
-cd %batch_folder%
-call snap_to_draws.bat
-cd %batch_folder%
-call hide_weapon.bat
-cd %batch_folder%
-call apply_position_and_rotation.bat
-cd %batch_folder%
-call remove_reload.bat
-cd %batch_folder%
-call static_draw_idle_attack.bat
-cd %batch_folder%
-call remove_shells.bat
-endlocal
-
-:huntsman_part3
-setlocal
-cd %batch_folder%
-call reset_settings.bat
-::settings label for this weapon
-set "settings_label=&::huntsman"
-
-::set draw
-
-::set draw smd
-
-::set idle
-set idle_sequence=bw_idle3
-::set idle smd
-set idle_smd=bw_idle3.smd
-
-::set attack sequences
-
-::set attack smds
-
-::set reload sequences reload sequences
-::adds snap to seq_2 for rare weapons that need it - set to "true" to use
-set reload_sequence_2_is_alternative_start=false
-::seq_1 should be reload_start or the unique reload
-
-::set reload smds
-
-::set extra sequences for hiding
-
-::name all the sequences for positioning
-set sequence_1=bw_idle3
+set sequence_1=
+set sequence_2=bw_idle3
 
 ::call files
 cd %batch_folder%
