@@ -75,8 +75,8 @@ IF %draw_sequence%==ed_draw goto :remove_drink_particle
 goto :check_setting_idle
 :remove_drink_particle
 cd %qc_folder_temp%
-findstr /i /v /l "AE_CL_CREATE_PARTICLE_EFFECT" %qc_file% >> remove_draw_temp
-move remove_draw_temp %qc_file%
+findstr /i /v /l "AE_CL_CREATE_PARTICLE_EFFECT" %qc_file% >> temp_draw_idle_drinks_special
+move temp_draw_idle_drinks_special %qc_file%
 
 
 :check_setting_idle
