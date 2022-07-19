@@ -145,7 +145,7 @@ set idle_sequence=ss_idle
 set idle_smd=ss_idle.smd
 
 ::set attack sequences
-set attack_sequence_1=SS_fire
+set attack_sequence_1=ss_fire
 set attack_sequence_2=ss_alt_fire
 
 ::set attack smds
@@ -166,8 +166,8 @@ set reload_smd_1=ss_reload.smd
 
 ::name all the sequences for positioning
 set sequence_1=ss_draw
-set sequence_2=SS_idle
-set sequence_3=SS_fire
+set sequence_2=ss_idle
+set sequence_3=ss_fire
 set sequence_4=ss_alt_fire
 set sequence_5=ss_reload
 
