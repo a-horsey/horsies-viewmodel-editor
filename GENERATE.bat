@@ -7,13 +7,13 @@ cls
 :check_and_set_folders
 ::Check folders
 set vm_customizer_folder=%~dp0
-cd %vm_customizer_folder%
+cd "%vm_customizer_folder%"
 set vm_customizer_folder=%cd%
-cd %vm_customizer_folder%
+cd "%vm_customizer_folder%"
 for %%I in (.) do set base_folder=%%~nxI
 cd ..\
 for %%I in (.) do set check_folder=%%~nxI
-cd %base_folder%
+cd "%base_folder%"
 set "base_folder=%base_folder: =%"
 set "check_folder=%check_folder: =%"
 IF /I %check_folder%==custom goto :custom_folder
@@ -30,7 +30,7 @@ goto :eof
 
 :custom_folder
 ::Set folders
-cd %vm_customizer_folder%
+cd "%vm_customizer_folder%"
 set vm_customizer_folder=%cd%
 cd ..\
 set custom_folder=%cd%
@@ -42,16 +42,16 @@ set tf_folder=%cd%
 cd ..\
 cd bin
 set bin_folder=%cd%
-cd %tf_folder%
+cd "%tf_folder%"
 cls
 IF NOT EXIST tf2_misc_dir.vpk goto :wrong_folder
 IF NOT EXIST gameinfo.txt goto :wrong_folder
-cd %vm_customizer_folder%
+cd "%vm_customizer_folder%"
 goto :check_and_set_folders_done
 
 :tf_folder
 ::Set folders
-cd %vm_customizer_folder%
+cd "%vm_customizer_folder%"
 set vm_customizer_folder=%cd%
 set dev_folder=%vm_customizer_folder%\dev
 set animations_folder=%dev_folder%\decompiled_animations
@@ -62,12 +62,12 @@ set custom_folder=%tf_folder%\custom
 cd ..\
 cd bin
 set bin_folder=%cd%
-cd %tf_folder%
+cd "%tf_folder%"
 cls
 IF NOT EXIST tf2_misc_dir.vpk goto :wrong_folder
 IF NOT EXIST gameinfo.txt goto :wrong_folder
-cd %vm_customizer_folder%
-cd %vm_customizer_folder%
+cd "%vm_customizer_folder%"
+cd "%vm_customizer_folder%"
 goto :check_and_set_folders_done
 :check_and_set_folders_done
 
@@ -91,7 +91,7 @@ goto :eof
 
 :del_temp
 ::delete temp just in case
-cd %dev_folder%
+cd "%dev_folder%"
 IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
 
 ::set default options
@@ -385,7 +385,7 @@ IF %fixed_vm_addon%==on call "%vm_customizer_folder%\dev\batch\extract_fixed_ani
 ::Create temp folder + set variables
 title Creating temp folder...
 echo Creating temp folder...
-cd %dev_folder%
+cd "%dev_folder%"
 IF EXIST "decompiled_animations_temp" RMDIR /S /Q "decompiled_animations_temp"
 IF NOT EXIST "decompiled_animations_temp" mkdir "decompiled_animations_temp"
 xcopy /y "decompiled_animations" "decompiled_animations_temp" /e /q
@@ -394,7 +394,7 @@ set decompiled_animations_temp=%dev_folder%\decompiled_animations_temp
 set qc_folder_temp=%dev_folder%\decompiled_animations_temp
 
 ::check for dev settings
-cd %batch_folder%
+cd "%batch_folder%"
 IF %apply_only_for_scout%==true (
 	call apply_for_scout.bat
 	goto :compile )
@@ -432,28 +432,28 @@ IF %apply_only_for_spy%==true (
 	goto :compile )
 	
 ::call settings batch files
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_scout.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_soldier.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_pyro.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_demoman.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_heavy.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_engineer.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_medic.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_sniper.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_for_spy.bat
 
 :compile
 ::compile and pack
-cd %batch_folder%
+cd "%batch_folder%"
 call compile_and_pack.bat
 
 :del_temp
