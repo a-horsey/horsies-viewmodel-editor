@@ -33,6 +33,9 @@ set Keep_backstab_visible(y/n)=n
 set •Replace_backstab_with_normal_attack(y/n)=n
 set •Static_backstab_detection(y/n)=n
 set •Static_backstab(y/n)=n
+ ::special stuff
+set Keep_shove_visible(y/n)=n
+set •Static_shove(y/n)=n
 
 ::delete temp files just in case
 IF EXIST extract_settings_temp del extract_settings_temp
@@ -80,6 +83,9 @@ IF %Keep_backstab_visible(y/n)%=="" set Keep_backstab_visible(y/n)=n
 IF %•Replace_backstab_with_normal_attack(y/n)%=="" set •Replace_backstab_with_normal_attack(y/n)=n
 IF %•Static_backstab_detection(y/n)%=="" set •Static_backstab_detection(y/n)=n
 IF %•Static_backstab(y/n)%=="" set •Static_backstab(y/n)=n
+ ::special stuff
+IF %Keep_shove_visible(y/n)%=="" set Keep_shove_visible(y/n)=n
+IF %•Static_shove(y/n)%=="" set •Static_shove(y/n)=n
 
 ::remove caps from yes values for all variables
 ::could just use "IF /I" to avoid this but am too big brain
@@ -102,6 +108,9 @@ set Keep_backstab_visible(y/n)=%Keep_backstab_visible(y/n):Y=y%
 set •Replace_backstab_with_normal_attack(y/n)=%•Replace_backstab_with_normal_attack(y/n):Y=y%
 set •Static_backstab_detection(y/n)=%•Static_backstab_detection(y/n):Y=y%
 set •Static_backstab(y/n)=%•Static_backstab(y/n):Y=y%
+ ::special  stuff
+set Keep_shove_visible(y/n)=%Keep_shove_visible(y/n):Y=y%
+set •Static_shove(y/n)=%•Static_shove(y/n):Y=y% 
 
 ::delete temp
 IF EXIST extract_settings_temp del extract_settings_temp

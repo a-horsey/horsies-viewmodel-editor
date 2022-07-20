@@ -152,6 +152,9 @@ set attack_sequence_2=ss_alt_fire
 set attack_smd_1=ss_fire.smd
 set attack_smd_2=ss_alt_fire.smd
 
+::set shove
+set shove_sequence=ss_alt_fire
+set shove_smd=ss_alt_fire.smd
 
 ::set reload sequences reload sequences
 ::adds snap to seq_2 for rare weapons that need it - set to "true" to use

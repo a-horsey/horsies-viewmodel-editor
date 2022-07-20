@@ -266,7 +266,18 @@ echo fadeout 0.0 >> %qc_file%
 echo } >> %qc_file%
 :hide_other_end
 
-
+:hide_special
+IF %shove_sequence%==none goto :hide_special_end
+echo $append %shove_sequence% { >> %qc_file%
+IF %Keep_shove_visible(y/n)%==y echo origin %X_position% %Y_position% %Z_position% >> %qc_file%
+IF %Keep_shove_visible(y/n)%==y echo angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
+IF %Keep_shove_visible(y/n)%==y echo } >> %qc_file%
+IF %Keep_shove_visible(y/n)%==y goto :hide_special_end
+echo %hide_origin_value% >> %qc_file%
+echo fadein 0.0 >> %qc_file%
+echo fadeout 0.0 >> %qc_file%
+echo } >> %qc_file%
+:hide_special_end
 
 
 

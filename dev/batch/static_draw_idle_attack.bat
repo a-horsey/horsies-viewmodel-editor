@@ -104,13 +104,13 @@ echo numframes %idle_smd_frames% >> %qc_file%
 echo } >> %qc_file%
 
 :check_setting_attack
-IF NOT %•Static_attack(y/n)%==y goto :EOF
+IF NOT %•Static_attack(y/n)%==y goto :check_shove
 :check_attack_1
 IF NOT %•Hidden(y/n)%==y goto :process_attack
 IF %•Hidden(y/n)%==y goto :check_attack_2
 :check_attack_2
 IF %Keep_attack_visible(y/n)%==y goto :process_attack
-IF NOT %Keep_attack_visible(y/n)%==y goto :EOF
+IF NOT %Keep_attack_visible(y/n)%==y goto :check_shove
 
 :process_attack
 cd "%smd_folder%"
@@ -244,3 +244,41 @@ IF EXIST %attack_smd_5% (
 IF EXIST %attack_smd_6% (
 	copy %idle_smd% %attack_smd_6%
 	)
+
+
+::special stuff
+:check_shove
+IF NOT %•Static_shove(y/n)%==y goto :process_shove_done
+:check_shove_1
+IF NOT %•Hidden(y/n)%==y goto :process_shove
+IF %•Hidden(y/n)%==y goto :check_shove_2
+:check_shove_2
+IF %Keep_shove_visible(y/n)%==y goto :process_shove
+IF NOT %Keep_shove_visible(y/n)%==y goto :process_shove_done
+
+:process_shove
+:count_frames_shove
+cd %smd_folder%
+::count frames for idle_smd
+IF NOT EXIST %shove_smd% goto :count_frames_attack_done
+set smd_to_count=%shove_smd%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A shove_smd_frames=%%b
+    )
+  )
+
+:add_frames_shove
+cd %qc_folder_temp%
+IF %shove_sequence%==none goto :add_frames_done
+echo $append %shove_sequence% { >> %qc_file%
+echo frame 0 0 >> %qc_file%
+echo numframes %shove_smd_frames% >> %qc_file%
+echo fadein 0.2 >> %qc_file%
+echo } >> %qc_file%
+
+:replace_shove_smd
+cd %smd_folder%
+IF EXIST %shove_smd% (
+	copy %idle_smd% %shove_smd%
+	)
+:process_shove_done

@@ -84,3 +84,7 @@ set backstab_detect_smd_down=none
 set backstab_detect_smd_idle=none
 ::diagonal stabs
 set diagonal_stab_smd=none
+
+::special stuff
+set shove_sequence=none
+set shove_smd=none
