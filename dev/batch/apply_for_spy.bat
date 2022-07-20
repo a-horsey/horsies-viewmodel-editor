@@ -336,7 +336,7 @@ set backstab_detect_smd_down=knife_backstab_down.smd
 set backstab_detect_smd_idle=knife_backstab_idle.smd
 
 ::diagonal stabs
-set diagonal_stab_smd=knife_stab_c.smd
+set diagonal_stab_smd=knife_stab_b.smd
 
 ::call files
 cd "%batch_folder%"
