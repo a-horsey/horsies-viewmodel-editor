@@ -38,25 +38,19 @@ IF %Keep_draw_visible(y/n)%==y goto :process_draw
 IF NOT %Keep_draw_visible(y/n)%==y goto :check_setting_idle
 
 :process_draw
-cd %smd_folder%
+cd "%smd_folder%"
+
 :count_frames_draw
-::count frames for idle_smd
 IF NOT EXIST %draw_smd% goto :count_frames_draw_done
-::set inputs
-set input_file=%draw_smd%
-::remove temp files just in case
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_static_idle_attack
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_static_idle_attack') do set draw_smd_frames=%%C
-::remove temp files
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
+set smd_to_count=%draw_smd%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A draw_smd_frames=%%b
+    )
+  )
 :count_frames_draw_done
 
 ::add frame numbers for draw
-cd %qc_folder_temp%
-:add_frames_idle
+cd "%qc_folder_temp%"
 IF %draw_sequence%==none goto :add_frames_done
 echo $append %draw_sequence% { >> %qc_file%
 echo frame 0 0 >> %qc_file%
@@ -64,9 +58,9 @@ echo numframes %draw_smd_frames% >> %qc_file%
 echo } >> %qc_file%
 
 ::replace smd with idle
-cd %smd_folder%
+cd "%smd_folder%"
 :replace draw_smd
-IF EXIST %draw_smd%  IF EXIST %idle_smd% (
+IF EXIST %draw_smd% IF EXIST %idle_smd% (
 	copy %idle_smd% %draw_smd%
 	)
 	
@@ -74,7 +68,7 @@ IF EXIST %draw_smd%  IF EXIST %idle_smd% (
 IF %draw_sequence%==ed_draw goto :remove_drink_particle
 goto :check_setting_idle
 :remove_drink_particle
-cd %qc_folder_temp%
+cd "%qc_folder_temp%"
 findstr /i /v /l "AE_CL_CREATE_PARTICLE_EFFECT" %qc_file% >> temp_draw_idle_drinks_special
 move temp_draw_idle_drinks_special %qc_file%
 
@@ -89,24 +83,19 @@ IF %Keep_idle_visible(y/n)%==y goto :process_idle
 IF NOT %Keep_idle_visible(y/n)%==y goto :check_setting_attack
 
 :process_idle
-cd %smd_folder%
+cd "%smd_folder%"
+
 :count_frames_idle
-::count frames for idle_smd
 IF NOT EXIST %idle_smd% goto :count_frames_idle_done
-::set inputs
-set input_file=%idle_smd%
-::remove temp files just in case
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_static_idle_attack
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_static_idle_attack') do set idle_smd_frames=%%C
-::remove temp files
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
+set smd_to_count=%idle_smd%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A idle_smd_frames=%%b
+    )
+  )
 :count_frames_idle_done
 
 ::add frame numbers for idle
-cd %qc_folder_temp%
+cd "%qc_folder_temp%"
 :add_frames_idle
 IF %idle_sequence%==none goto :add_frames_done
 echo $append %idle_sequence% { >> %qc_file%
@@ -124,94 +113,58 @@ IF %Keep_attack_visible(y/n)%==y goto :process_attack
 IF NOT %Keep_attack_visible(y/n)%==y goto :EOF
 
 :process_attack
-cd %smd_folder%
+cd "%smd_folder%"
 :count_frames_attack_1
-::count frames for idle_smd
 IF NOT EXIST %attack_smd_1% goto :count_frames_attack_done
-::set inputs
-set input_file=%attack_smd_1%
-::remove temp files just in case
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_static_idle_attack
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_static_idle_attack') do set attack_smd_1_frames=%%C
-::remove temp files
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
+set smd_to_count=%attack_smd_1%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A attack_smd_1_frames=%%b
+    )
+  )
 
 :count_frames_attack_2
-::count frames for idle_smd
 IF NOT EXIST %attack_smd_2% goto :count_frames_attack_done
-::set inputs
-set input_file=%attack_smd_2%
-::remove temp files just in case
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_static_idle_attack
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_static_idle_attack') do set attack_smd_2_frames=%%C
-::remove temp files
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
+set smd_to_count=%attack_smd_2%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A attack_smd_2_frames=%%b
+    )
+  )
 
 :count_frames_attack_3
-::count frames for idle_smd
 IF NOT EXIST %attack_smd_3% goto :count_frames_attack_done
-::set inputs
-set input_file=%attack_smd_3%
-::remove temp files just in case
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_static_idle_attack
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_static_idle_attack') do set attack_smd_3_frames=%%C
-::remove temp files
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
+set smd_to_count=%attack_smd_3%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A attack_smd_3_frames=%%b
+    )
+  )
 
 :count_frames_attack_4
-::count frames for idle_smd
 IF NOT EXIST %attack_smd_4% goto :count_frames_attack_done
-::set inputs
-set input_file=%attack_smd_4%
-::remove temp files just in case
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_static_idle_attack
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_static_idle_attack') do set attack_smd_4_frames=%%C
-::remove temp files
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
+set smd_to_count=%attack_smd_4%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A attack_smd_4_frames=%%b
+    )
+  )
 
 :count_frames_attack_5
-::count frames for idle_smd
 IF NOT EXIST %attack_smd_5% goto :count_frames_attack_done
-::set inputs
-set input_file=%attack_smd_5%
-::remove temp files just in case
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_static_idle_attack
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_static_idle_attack') do set attack_smd_5_frames=%%C
-::remove temp files
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
+set smd_to_count=%attack_smd_5%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A attack_smd_5_frames=%%b
+    )
+  )
 
 :count_frames_attack_6
-::count frames for idle_smd
 IF NOT EXIST %attack_smd_6% goto :count_frames_attack_done
-::set inputs
-set input_file=%attack_smd_6%
-::remove temp files just in case
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_static_idle_attack
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_static_idle_attack') do set attack_smd_6_frames=%%C
-::remove temp files
-IF EXIST "temp_static_idle_attack" del "temp_static_idle_attack"
+set smd_to_count=%attack_smd_6%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A attack_smd_6_frames=%%b
+    )
+  )
 :count_frames_attack_done
 
 ::add frame numbers for attack
-cd %qc_folder_temp%
+cd "%qc_folder_temp%"
 :add_frames_attack_1
 IF %attack_sequence_1%==none goto :add_frames_done
 echo $append %attack_sequence_1% { >> %qc_file%
@@ -261,7 +214,7 @@ echo fadein 0.2 >> %qc_file%
 echo } >> %qc_file%
 :add_frames_done
 
-cd %smd_folder%
+cd "%smd_folder%"
 :replace attack_smd_1
 IF EXIST %attack_smd_1% (
 	copy %idle_smd% %attack_smd_1%

@@ -5,7 +5,7 @@
 ::exit if hidden is no
 IF NOT %•Hidden(y/n)%==y goto :EOF
 
-cd %qc_folder_temp%
+cd "%qc_folder_temp%"
 :hide_backstab
 :hide_backstab_1
 IF %backstab_attack_sequence%==none goto :hide_backstab_end

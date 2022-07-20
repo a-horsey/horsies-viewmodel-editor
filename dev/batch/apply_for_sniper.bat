@@ -2,14 +2,14 @@
 title Applying Sniper Settings...
 echo Applying Sniper Settings...
 set settings_file=settings_sniper.txt
-set smd_folder=%qc_folder_temp%\c_sniper_animations_anims
+set "smd_folder=%qc_folder_temp%\c_sniper_animations_anims"
 set qc_file=c_sniper_animations.qc
-cd %batch_folder%
+cd "%batch_folder%"
 call replace_snap.bat
 
 :sniper_rifles
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::sniperrifles"
@@ -44,25 +44,25 @@ set sequence_2=fire
 set sequence_3=idle
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :huntsman
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::huntsman"
@@ -108,25 +108,25 @@ set sequence_7=bw_dryfire
 set sequence_8=bw_idle2
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :huntsman_part2
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::huntsman"
@@ -160,25 +160,25 @@ set sequence_1=bw_idle3
 set sequence_2=none
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :smgs
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::smgs"
@@ -216,25 +216,25 @@ set sequence_3=smg_fire
 set sequence_4=smg_reload
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :jarate
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::jarate"
@@ -270,25 +270,25 @@ set sequence_2=pj_idle
 set sequence_3=pj_fire
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :bread_jarate
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::breadjar"
@@ -321,25 +321,25 @@ set sequence_2=bm_draw
 set sequence_3=bm_idle
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :melee
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::melee"
@@ -380,25 +380,25 @@ set sequence_4=m_swing_b
 set sequence_5=m_swing_c
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :allclass_melee
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::allclassmelee"
@@ -439,25 +439,25 @@ set sequence_4=melee_allclass_swing_b
 set sequence_5=melee_allclass_swing_c
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :grappling_hook
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::grapplehook"
@@ -499,25 +499,25 @@ set sequence_6=grapple_pull_idle
 set sequence_7=grapple_pull_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :passtime_ball
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::passtimeball"
@@ -559,25 +559,25 @@ set sequence_6=PASSTIME_ball_throw_start
 set sequence_7=PASSTIME_ball_throw_loop
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :spell_cast
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::spellcast"
@@ -606,25 +606,25 @@ set sequence_1=spell_draw
 set sequence_2=spell_fire
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :throw
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::throw"
@@ -659,25 +659,25 @@ set sequence_2=throw_idle
 set sequence_3=throw_fire
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :snipers_inspects
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::primaryinspect"
@@ -710,25 +710,25 @@ set sequence_2=primary_inspect_idle
 set sequence_3=primary_inspect_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :sydney_inspect
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::sydneysleeperinspect"
@@ -761,25 +761,25 @@ set sequence_2=primary_alt1_inspect_idle
 set sequence_3=primary_alt1_inspect_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :huntsman_inspect
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::huntsmaninspect"
@@ -812,25 +812,25 @@ set sequence_2=item2_inspect_idle
 set sequence_3=item2_inspect_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :smgs_inspects
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::smgsinspects"
@@ -863,25 +863,25 @@ set sequence_2=secondary_inspect_idle
 set sequence_3=secondary_inspect_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :jarate_inspect
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::jarateinspects"
@@ -914,25 +914,25 @@ set sequence_2=item1_inspect_idle
 set sequence_3=item1_inspect_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :bread_jarate_inspect
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::breadjarinspect"
@@ -965,25 +965,25 @@ set sequence_2=breadjar_inspect_idle
 set sequence_3=breadjar_inspect_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :melee_inspect
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::meleeinspect"
@@ -1016,25 +1016,25 @@ set sequence_2=melee_inspect_idle
 set sequence_3=melee_inspect_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 
 :melee_allclass_inspect
 setlocal
-cd %batch_folder%
+cd "%batch_folder%"
 call reset_settings.bat
 ::settings label for this weapon
 set "settings_label=&::meleeallclassinspect"
@@ -1067,19 +1067,19 @@ set sequence_2=melee_allclass_inspect_idle
 set sequence_3=melee_allclass_inspect_end
 
 ::call files
-cd %batch_folder%
+cd "%batch_folder%"
 call extract_settings.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call snap_to_draws.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call hide_weapon.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call apply_position_and_rotation.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_reload.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call static_draw_idle_attack.bat
-cd %batch_folder%
+cd "%batch_folder%"
 call remove_shells.bat
 endlocal
 

@@ -1,12 +1,12 @@
 @echo off
 ::extract settings file
-cd %decompiled_animations_temp% 
+cd "%decompiled_animations_temp%"
 IF EXIST %settings_file% goto :extract_settings
-cd %vm_customizer_folder%
+cd "%vm_customizer_folder%"
 copy "%settings_file%" "%decompiled_animations_temp%\%settings_file%"
 
 :extract_settings
-cd %qc_folder_temp%
+cd "%qc_folder_temp%"
 ::set all possible settings to default values before - prevents crashes
 set X_position=0
 set Y_position=0

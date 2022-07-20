@@ -12,123 +12,83 @@ IF NOT %Keep_reload_visible(y/n)%==y goto :EOF
 
 ::count the frames for each smd and turn them into variables
 :start
-cd %smd_folder%
+cd "%smd_folder%"
 
 :count_smd_1
 ::count frames for reload_smd_1
 IF NOT EXIST %reload_smd_1% goto :counting_done
-::set inputs
-set input_file=%reload_smd_1%
-::remove temp files just in case
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_remove_reload
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_remove_reload') do set reload_smd_1_frames=%%C
-::remove temp files
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
+set smd_to_count=%reload_smd_1%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A reload_smd_1_frames=%%b
+    )
+  )
 
 :count_smd_2
 ::count frames for reload_smd_2
 IF NOT EXIST %reload_smd_2% goto :counting_done
-::set inputs
-set input_file=%reload_smd_2%
-::remove temp files just in case
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_remove_reload
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_remove_reload') do set reload_smd_2_frames=%%C
-::remove temp files
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
+set smd_to_count=%reload_smd_2%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A reload_smd_2_frames=%%b
+    )
+  )
 
 :count_smd_3
 ::count frames for reload_smd_3
 IF NOT EXIST %reload_smd_3% goto :counting_done
-::set inputs
-set input_file=%reload_smd_3%
-::remove temp files just in case
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_remove_reload
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_remove_reload') do set reload_smd_3_frames=%%C
-::remove temp files
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
+set smd_to_count=%reload_smd_3%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A reload_smd_3_frames=%%b
+    )
+  )
 
 :count_smd_4
 ::count frames for reload_smd_4
 IF NOT EXIST %reload_smd_4% goto :counting_done
-::set inputs
-set input_file=%reload_smd_4%
-::remove temp files just in case
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_remove_reload
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_remove_reload') do set reload_smd_4_frames=%%C
-::remove temp files
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
+set smd_to_count=%reload_smd_4%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A reload_smd_4_frames=%%b
+    )
+  )
 
 :count_smd_5
-::count frames for reload_smd_1
+::count frames for reload_smd_5
 IF NOT EXIST %reload_smd_5% goto :counting_done
-::set inputs
-set input_file=%reload_smd_5%
-::remove temp files just in case
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_remove_reload
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_remove_reload') do set reload_smd_5_frames=%%C
-::remove temp files
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
+set smd_to_count=%reload_smd_5%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A reload_smd_5_frames=%%b
+    )
+  )
 
 :count_smd_6
 ::count frames for reload_smd_6
 IF NOT EXIST %reload_smd_6% goto :counting_done
-::set inputs
-set input_file=%reload_smd_6%
-::remove temp files just in case
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_remove_reload
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_remove_reload') do set reload_smd_6_frames=%%C
-::remove temp files
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
+set smd_to_count=%reload_smd_6%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A reload_smd_6_frames=%%b
+    )
+  )
 
 :count_smd_7
 ::count frames for reload_smd_7
 IF NOT EXIST %reload_smd_7% goto :counting_done
-::set inputs
-set input_file=%reload_smd_7%
-::remove temp files just in case
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_remove_reload
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_remove_reload') do set reload_smd_7_frames=%%C
-::remove temp files
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
+set smd_to_count=%reload_smd_7%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A reload_smd_7_frames=%%b
+    )
+  )
 
 :count_smd_8
 ::count frames for reload_smd_8
 IF NOT EXIST %reload_smd_8% goto :counting_done
-::set inputs
-set input_file=%reload_smd_8%
-::remove temp files just in case
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
-::extract "time" lines from smd
-findstr "time" %input_file% >> temp_remove_reload
-::count number of lines
-for /f %%C in ('Find /V /C "" ^< c:temp_remove_reload') do set reload_smd_8_frames=%%C
-::remove temp files
-IF EXIST "temp_remove_reload" del "temp_remove_reload"
+set smd_to_count=%reload_smd_8%
+  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
+    set /A reload_smd_8_frames=%%b
+    )
+  )
 :counting_done
 
 ::replace reload SMD with idle SMD
-cd %smd_folder%
+cd "%smd_folder%"
 
 :replace reload_smd_1
 IF EXIST %reload_smd_1% (
@@ -164,7 +124,7 @@ IF EXIST %reload_smd_8% (
 	)
 
 ::add frame numbers to qc files, also remove snap (fadein 0.0) for reload_1
-cd %qc_folder_temp%
+cd "%qc_folder_temp%"
 :frames_1
 IF %reload_sequence_1%==none goto :EOF
 echo $append %reload_sequence_1% { >> %qc_file%
