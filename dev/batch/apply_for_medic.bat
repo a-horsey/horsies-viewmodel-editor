@@ -49,8 +49,6 @@ set sequence_4=sg_reload
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -60,6 +58,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :mediguns
@@ -108,8 +108,6 @@ set sequence_5=fire_off
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -119,6 +117,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :melee
@@ -168,8 +168,6 @@ set sequence_5=bs_swing_c
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -179,6 +177,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :allclass_melee
@@ -222,8 +222,6 @@ set sequence_3=melee_allclass_swing
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -233,6 +231,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :grappling_hook
@@ -282,8 +282,6 @@ set sequence_7=grapple_pull_end
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -293,6 +291,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :passtime_ball
@@ -342,8 +342,6 @@ set sequence_7=PASSTIME_ball_throw_loop
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -353,6 +351,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :spell_cast
@@ -389,8 +389,6 @@ set sequence_2=spell_fire
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -400,6 +398,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :throw
@@ -442,8 +442,6 @@ set sequence_3=throw_fire
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -453,6 +451,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :primary_inspects
@@ -493,8 +493,6 @@ set sequence_3=primary_inspect_end
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -504,6 +502,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :medigun_inspects
@@ -544,8 +544,6 @@ set sequence_3=secondary_inspect_end
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -555,6 +553,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :melee_inspects
@@ -595,8 +595,6 @@ set sequence_3=melee_inspect_end
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -606,6 +604,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 :allclass_melee_inspects
@@ -646,8 +646,6 @@ set sequence_3=melee_allclass_inspect_end
 cd "%batch_folder%"
 call extract_settings.bat
 cd "%batch_folder%"
-call snap_to_draws.bat
-cd "%batch_folder%"
 call hide_weapon.bat
 cd "%batch_folder%"
 call apply_position_and_rotation.bat
@@ -657,6 +655,8 @@ cd "%batch_folder%"
 call static_draw_idle_attack.bat
 cd "%batch_folder%"
 call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
 endlocal
 
 ::delete settings file 
