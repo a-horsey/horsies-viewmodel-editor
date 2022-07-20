@@ -57,10 +57,12 @@ Scout settings:
 			Keep_attack_visible(y/n)=n																																																																																																															&::shortstop
 			Keep_reload_visible(y/n)=n																																																																																																															&::shortstop		
 			Keep_idle_visible(y/n)=n																																																																																																																&::shortstop
+			Keep_shove_visible(y/n)=n																																																																																																																&::shortstop
 		•Static_draw(y/n)=n																																																																																																																				&::shortstop			
 		•Static_reload(y/n)=n     																																																																																																																	&::shortstop
 		•Static_attack(y/n)=n     																																																																																																																	&::shortstop
 		•More_static_idle(y/n)=n																																																																																																																	&::shortstop
+		•Static_shove(y/n)=n																																																																																																																	&::shortstop
 =========================================================================================================================================================
 
 •••Secondaries:
