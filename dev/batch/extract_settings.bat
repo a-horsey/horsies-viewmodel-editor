@@ -30,6 +30,7 @@ set •Remove_shells(y/n)=n
  ::spy stuff
 set Keep_backstab_detection_visible(y/n)=n
 set Keep_backstab_visible(y/n)=n
+set •Instant_backstab_detection(y/n)=n
 set •Replace_backstab_with_normal_attack(y/n)=n
 set •Static_backstab_detection(y/n)=n
 set •Static_backstab(y/n)=n
@@ -81,6 +82,7 @@ IF NOT DEFINED •Remove_shells(y/n) set •Remove_shells(y/n)=n
  ::spy stuff 
 IF NOT DEFINED Keep_backstab_detection_visible(y/n) set Keep_backstab_detection_visible(y/n)=n
 IF NOT DEFINED Keep_backstab_visible(y/n) set Keep_backstab_visible(y/n)=n
+IF NOT DEFINED •Instant_backstab_detection(y/n) set •Instant_backstab_detection(y/n)=n
 IF NOT DEFINED •Replace_backstab_with_normal_attack(y/n) set •Replace_backstab_with_normal_attack(y/n)=n
 IF NOT DEFINED •Static_backstab_detection(y/n) set •Static_backstab_detection(y/n)=n
 IF NOT DEFINED •Static_backstab(y/n) set •Static_backstab(y/n)=n
@@ -105,6 +107,7 @@ SET •Remove_shells(y/n)=%•Remove_shells(y/n):Y=y%
  ::spy stuff
 set Keep_backstab_detection_visible(y/n)=%Keep_backstab_detection_visible(y/n):Y=y%
 set Keep_backstab_visible(y/n)=%Keep_backstab_visible(y/n):Y=y%
+set •Instant_backstab_detection(y/n)=%•Instant_backstab_detection(y/n):Y=y%
 set •Replace_backstab_with_normal_attack(y/n)=%•Replace_backstab_with_normal_attack(y/n):Y=y%
 set •Static_backstab_detection(y/n)=%•Static_backstab_detection(y/n):Y=y%
 set •Static_backstab(y/n)=%•Static_backstab(y/n):Y=y%

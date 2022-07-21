@@ -347,6 +347,8 @@ call hide_weapon.bat
 cd "%batch_folder%"
 call spy_hide_backstabs.bat
 cd "%batch_folder%"
+call spy_instant_backstab_detection.bat
+cd "%batch_folder%"
 call spy_replace_backstab.bat
 cd "%batch_folder%"
 call spy_static_backstabs.bat
@@ -442,6 +444,8 @@ call hide_weapon.bat
 cd "%batch_folder%"
 call spy_hide_backstabs.bat
 cd "%batch_folder%"
+call spy_instant_backstab_detection.bat
+cd "%batch_folder%"
 call spy_replace_backstab.bat
 cd "%batch_folder%"
 call spy_static_backstabs.bat
@@ -536,6 +540,8 @@ call hide_weapon.bat
 ::call spy exclusive files
 cd "%batch_folder%"
 call spy_hide_backstabs.bat
+cd "%batch_folder%"
+call spy_instant_backstab_detection.bat
 cd "%batch_folder%"
 call spy_replace_backstab.bat
 cd "%batch_folder%"
