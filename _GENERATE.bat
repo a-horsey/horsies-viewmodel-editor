@@ -97,6 +97,7 @@ IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
 ::set default options
 set automatic_preloading=on
 set fixed_vm_addon=on
+set disable_tracers=on
 ::fixed viewmodels files check
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set fixed_vm_addon=off
 
@@ -115,6 +116,12 @@ set apply_only_for_spy=false
 IF %automatic_preloading%==on set toggle_preloading=goto :preloading_off
 IF %automatic_preloading%==on set automatic_preloading_status=ON
 IF %automatic_preloading%==off set automatic_preloading_status=OFF
+
+IF %disable_tracers%==on set toggle_tracers=goto :disable_tracers_off
+IF %disable_tracers%==on set disable_tracers_status=ON
+IF %disable_tracers%==off set disable_tracers_status=OFF
+
+
 
 IF %fixed_vm_addon%==on set toggle_fixed_vm_addon=goto :fixed_vm_addon_off
 IF %fixed_vm_addon%==off set toggle_fixed_vm_addon=goto :fixed_vm_addon_on
@@ -137,16 +144,18 @@ echo.
 echo.Options: 
 echo.	1. Start
 echo. 	2. Include automatic preloading (currently %automatic_preloading_status%)
-IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	3. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
-IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	3. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
+echo. 	3. Disable 1st person bullet tracers (currently %disable_tracers_status%)
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	4. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	4. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
 echo. 	0. Developer settings
 
 SET /P M=Choose an option: 
 IF %M%==0 goto :dev_menu
 IF %M%==1 goto :exit_menu
 IF %M%==2 %toggle_preloading%
-IF %M%==3 %toggle_fixed_vm_addon%
-IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3 goto :main_menu
+IF %M%==3 %toggle_tracers%
+IF %M%==4 %toggle_fixed_vm_addon%
+IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3  IF NOT %M%==4 goto :main_menu
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set toggle_fixed_vm_addon=goto :main_menu
 
 :preloading_off
@@ -164,6 +173,23 @@ goto :main_menu
 :preloading_on
 set automatic_preloading=on
 set toggle_preloading=goto :preloading_off
+goto :main_menu
+
+:disable_tracers_off
+cls
+echo Warning: 1st person tracers are bugged with hidden weapons.
+echo It's highly recommended that you just leave them disabled.
+echo.
+SET /P M=Are you sure that you want to proceed (Y/N):
+IF /i %M%==n goto :main_menu
+IF /i NOT %M%==y IF /i NOT %M%==n goto :disable_tracers_off
+set disable_tracers=off
+set toggle_tracers=goto :tracers_on
+goto :main_menu
+
+:disable_tracers_on
+set disable_tracers=on
+set toggle_tracers=goto :tracers_off
 goto :main_menu
 
 :fixed_vm_addon_off
