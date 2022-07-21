@@ -51,7 +51,7 @@ cd "%qc_folder_temp%"
 IF %backstab_detect_sequence_up%==none goto :add_frames_det_done
 echo $append %backstab_detect_sequence_up% { >> %qc_file%
 echo numframes %backstab_detect_smd_up_frames% >> %qc_file%
-echo fadein 0.0 >> %qc_file%
+echo snap >> %qc_file%
 echo frame 0 0 >> %qc_file%
 echo } >> %qc_file%
 
@@ -59,7 +59,7 @@ echo } >> %qc_file%
 IF %backstab_detect_sequence_down%==none goto :add_frames_det_done
 echo $append %backstab_detect_sequence_down% { >> %qc_file%
 echo numframes %backstab_detect_smd_down_frames% >> %qc_file%
-echo fadein 0.0 >> %qc_file%
+echo snap >> %qc_file%
 echo fadeout 0.0 >> %qc_file%
 echo frame 0 0 >> %qc_file%
 echo } >> %qc_file%
@@ -68,9 +68,10 @@ echo } >> %qc_file%
 IF %backstab_detect_sequence_idle%==none goto :add_frames_det_done
 echo $append %backstab_detect_sequence_idle% { >> %qc_file%
 echo numframes %backstab_detect_smd_idle_frames% >> %qc_file%
-echo fadein 0.0 >> %qc_file%
+echo snap >> %qc_file%
 echo frame 0 0 >> %qc_file%
 echo } >> %qc_file%
+:add_frames_det_done
 
 ::replace smds
 cd "%smd_folder%"
@@ -82,4 +83,3 @@ IF EXIST %backstab_detect_smd_up% IF EXIST %backstab_detect_smd_idle% (
 IF EXIST %backstab_detect_smd_down% IF EXIST %idle_smd% (
 	copy %idle_smd% %backstab_detect_smd_down%
 	)
-:add_frames_det_done
