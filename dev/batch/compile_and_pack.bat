@@ -160,15 +160,15 @@ IF EXIST "%vpk_name%_002.vpk" del "%vpk_name%_002.vpk"
 IF EXIST "%vpk_name%_003.vpk" del "%vpk_name%_003.vpk"
 IF EXIST "%vpk_name%_004.vpk" del "%vpk_name%_004.vpk"
 
-:automatic_preloading
+
 ::copy preload files
 cd %dev_folder%
 xcopy "preload_files" "%vpk_name%" /e /q
 cd "%dev_folder%\%vpk_name%"
 IF NOT EXIST "cfg" mkdir "cfg"
 
-::check main menu setting
-IF %automatic_preloading%==off goto :automatic_preloading_end
+:automatic_preloading
+IF %automatic_preloading%==off IF %disable_tracers%==off goto :automatic_preloading_end
 
 ::add automatic preloading
 ::extract and rename valve.rc
@@ -190,8 +190,9 @@ IF EXIST "%custom_valve_rc%" copy "%custom_valve_rc%" "%dev_folder%\%vpk_name%\c
 cd %dev_folder%\%vpk_name%\cfg
 IF EXIST valve_rc_temp ren "valve_rc_temp" "valve.rc"
 
-::add preloading
-echo exec preloading.cfg >> valve.rc
+::add preloading and tracer disabling
+IF %automatic_preloading%==on echo exec preloading.cfg >> valve.rc
+IF %disable_tracers%==on echo r_drawtracers_firstperson 0 >> valve.rc
 
 :automatic_preloading_end
 
