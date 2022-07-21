@@ -73,7 +73,6 @@ IF NOT DEFINED Keep_idle_visible(y/n) set Keep_idle_visible(y/n)=n
 IF NOT DEFINED Keep_attack_visible(y/n) set Keep_attack_visible(y/n)=n
 IF NOT DEFINED Keep_flames_visible(y/n) set Keep_flames_visible(y/n)=n
 IF NOT DEFINED Keep_beam_visible(y/n) set Keep_beam_visible(y/n)=n
-IF NOT DEFINED Keep_beam_visible(y/n) set Keep_backstab_detection_visible(y/n)=n
 IF NOT DEFINED •Static_draw(y/n) set •Static_draw(y/n)=n
 IF NOT DEFINED •Static_reload(y/n) set •Static_reload(y/n)=n
 IF NOT DEFINED •Static_attack(y/n) set •Static_attack(y/n)=n
@@ -98,7 +97,6 @@ SET Keep_idle_visible(y/n)=%Keep_idle_visible(y/n):Y=y%
 SET Keep_attack_visible(y/n)=%Keep_attack_visible(y/n):Y=y%
 SET Keep_flames_visible(y/n)=%Keep_flames_visible(y/n):Y=y%
 SET Keep_beam_visible(y/n)=%Keep_beam_visible(y/n):Y=y%
-SET Keep_backstab_detection_visible(y/n)=%Keep_backstab_detection_visible(y/n):Y=y%
 SET •Static_draw(y/n)=%•Static_draw(y/n):Y=y%
 SET •Static_reload(y/n)=%•Static_reload(y/n):Y=y%
 SET •Static_attack(y/n)=%•Static_attack(y/n):Y=y%
