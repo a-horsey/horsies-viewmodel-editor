@@ -26,3 +26,11 @@ A powerful viewmodel editor for Team Fortress 2
 - Download the Fixed Viewmodels mod from [here](https://gamebanana.com/dl/469246) (direct link)
 - Extract the main vpk in "fixed viewmodels addon"
 - Done, the tool will automatically install it next time you run GENERATE.bat
+
+## Credits:
+- UltraTechX - made [CrowbarCommandLine](https://github.com/UltraTechX/Crowbar-Command-Line)
+- [Ryan "Nemesis" Gregg](https://developer.valvesoftware.com/wiki/User:Nem) - made [HLLib](https://developer.valvesoftware.com/wiki/HLLib)
+- yttrium, JarateKing, mastercoms and other users in the mastercomfig discord - provided a lot of important information when I first started making viewmodel stuff
+- Flewvar - helped test a lot of theories related to viewmodels
+- Discord user Arlwiss - did extensive testing and found a lot of bugs/issues
+- [Valve Developer Community](https://developer.valvesoftware.com/wiki/Main_Page) - contains all the information needed to make something like this 
