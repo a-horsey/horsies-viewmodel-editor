@@ -88,6 +88,7 @@ Spy settings:
 			Keep_idle_visible(y/n)=n																																																																																																																									&::butterfly
 			Keep_backstab_detection_visible(y/n)=n     																																																																																																																		&::butterfly
 			Keep_backstab_visible(y/n)=n     																																																																																																																						&::butterfly
+		•Instant_backstab_detection(y/n)=n     																																																																																																																	&::butterfly
 		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::butterfly
 		•Static_draw(y/n)=n     																																																																																																																									&::butterfly
 		•Static_attack(y/n)=n     																																																																																																																								&::butterfly
@@ -110,6 +111,7 @@ Spy settings:
 			Keep_idle_visible(y/n)=n																																																																																																																									&::kunaiyerbigearner
 			Keep_backstab_detection_visible(y/n)=n     																																																																																																																		&::kunaiyerbigearner
 			Keep_backstab_visible(y/n)=n     																																																																																																																						&::kunaiyerbigearner
+		•Instant_backstab_detection(y/n)=n     																																																																																																																	&::kunaiyerbigearner
 		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::kunaiyerbigearner
 		•Static_draw(y/n)=n     																																																																																																																											&::kunaiyerbigearner
 		•Static_attack(y/n)=n     																																																																																																																												&::kunaiyerbigearner
@@ -132,6 +134,7 @@ Spy settings:
 			Keep_idle_visible(y/n)=n																																																																																																																								&::sharpdresser
 			Keep_backstab_detection_visible(y/n)=n     																																																																																																																		&::sharpdresser
 			Keep_backstab_visible(y/n)=n     																																																																																																																						&::sharpdresser
+		•Instant_backstab_detection(y/n)=n     																																																																																																																	&::sharpdresser
 		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::sharpdresser
 		•Static_draw(y/n)=n     																																																																																																																										&::sharpdresser
 		•Static_attack(y/n)=n     																																																																																																																										&::sharpdresser
