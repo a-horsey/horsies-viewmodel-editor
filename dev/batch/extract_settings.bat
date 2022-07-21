@@ -53,6 +53,7 @@ for /f "tokens=* delims= " %%a in (extract_settings_temp_2) do (
 set /a N+=1
 echo ^set %%a>>extracted_settings.bat
 )
+
 ::apply variables
 call extracted_settings.bat
 
@@ -65,27 +66,28 @@ set /A Y_rotation=%Y_rotation%
 set /A Z_rotation=%Z_rotation%
 
 ::reset not defined variables
-IF %•Hidden(y/n)%=="" set •Hidden(y/n)=n
-IF %Keep_draw_visible(y/n)%=="" set Keep_draw_visible(y/n)=n
-IF %Keep_reload_visible(y/n)%=="" set Keep_reload_visible(y/n)=n
-IF %Keep_idle_visible(y/n)%=="" set Keep_idle_visible(y/n)=n
-IF %Keep_attack_visible(y/n)%=="" set Keep_attack_visible(y/n)=n
-IF %Keep_flames_visible(y/n)%=="" set Keep_flames_visible(y/n)=n
-IF %Keep_beam_visible(y/n)%=="" set Keep_beam_visible(y/n)=n
-IF %Keep_beam_visible(y/n)%=="" set Keep_backstab_detection_visible(y/n)=n
-IF %•Static_reload(y/n)%=="" set •Static_reload(y/n)=n
-IF %•Static_attack(y/n)%=="" set •Static_attack(y/n)=n
-IF %•More_static_idle(y/n)%=="" set •More_static_idle(y/n)=n
-IF %•Remove_shells(y/n)%=="" set •Remove_shells(y/n)=n
+IF NOT DEFINED •Hidden(y/n) set •Hidden(y/n)=n
+IF NOT DEFINED Keep_draw_visible(y/n) set Keep_draw_visible(y/n)=n
+IF NOT DEFINED Keep_reload_visible(y/n) set Keep_reload_visible(y/n)=n
+IF NOT DEFINED Keep_idle_visible(y/n) set Keep_idle_visible(y/n)=n
+IF NOT DEFINED Keep_attack_visible(y/n) set Keep_attack_visible(y/n)=n
+IF NOT DEFINED Keep_flames_visible(y/n) set Keep_flames_visible(y/n)=n
+IF NOT DEFINED Keep_beam_visible(y/n) set Keep_beam_visible(y/n)=n
+IF NOT DEFINED Keep_beam_visible(y/n) set Keep_backstab_detection_visible(y/n)=n
+IF NOT DEFINED •Static_draw(y/n) set •Static_draw(y/n)=n
+IF NOT DEFINED •Static_reload(y/n) set •Static_reload(y/n)=n
+IF NOT DEFINED •Static_attack(y/n) set •Static_attack(y/n)=n
+IF NOT DEFINED •More_static_idle(y/n) set •More_static_idle(y/n)=n
+IF NOT DEFINED •Remove_shells(y/n) set •Remove_shells(y/n)=n
  ::spy stuff 
-IF %Keep_backstab_detection_visible(y/n)%=="" set Keep_backstab_detection_visible(y/n)=n
-IF %Keep_backstab_visible(y/n)%=="" set Keep_backstab_visible(y/n)=n
-IF %•Replace_backstab_with_normal_attack(y/n)%=="" set •Replace_backstab_with_normal_attack(y/n)=n
-IF %•Static_backstab_detection(y/n)%=="" set •Static_backstab_detection(y/n)=n
-IF %•Static_backstab(y/n)%=="" set •Static_backstab(y/n)=n
+IF NOT DEFINED Keep_backstab_detection_visible(y/n) set Keep_backstab_detection_visible(y/n)=n
+IF NOT DEFINED Keep_backstab_visible(y/n) set Keep_backstab_visible(y/n)=n
+IF NOT DEFINED •Replace_backstab_with_normal_attack(y/n) set •Replace_backstab_with_normal_attack(y/n)=n
+IF NOT DEFINED •Static_backstab_detection(y/n) set •Static_backstab_detection(y/n)=n
+IF NOT DEFINED •Static_backstab(y/n) set •Static_backstab(y/n)=n
  ::special stuff
-IF %Keep_shove_visible(y/n)%=="" set Keep_shove_visible(y/n)=n
-IF %•Static_shove(y/n)%=="" set •Static_shove(y/n)=n
+IF NOT DEFINED Keep_shove_visible(y/n) set Keep_shove_visible(y/n)=n
+IF NOT DEFINED •Static_shove(y/n) set •Static_shove(y/n)=n
 
 ::remove caps from yes values for all variables
 ::could just use "IF /I" to avoid this but am too big brain
@@ -110,7 +112,7 @@ set •Static_backstab_detection(y/n)=%•Static_backstab_detection(y/n):Y=y%
 set •Static_backstab(y/n)=%•Static_backstab(y/n):Y=y%
  ::special  stuff
 set Keep_shove_visible(y/n)=%Keep_shove_visible(y/n):Y=y%
-set •Static_shove(y/n)=%•Static_shove(y/n):Y=y% 
+set •Static_shove(y/n)=%•Static_shove(y/n):Y=y%
 
 ::delete temp
 IF EXIST extract_settings_temp del extract_settings_temp
