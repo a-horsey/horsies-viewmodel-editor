@@ -1,3 +1,5 @@
+https://github.com/a-horsey/horsies-viewmodel-editor
+
 	Welcome to Horsie's Viewmodel Editor! 
 	To change the settings, open the settings.txt files for each class.
 	For example, to change scout settings open settings_scout.txt
