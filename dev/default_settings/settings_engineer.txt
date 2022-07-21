@@ -38,8 +38,6 @@ Engineer settings:
 			Keep_attack_visible(y/n)=n																																																																																																																&::pomson
 			Keep_reload_visible(y/n)=n																																																																																																																&::pomson		
 			Keep_idle_visible(y/n)=n																																																																																																																	&::pomson
-			Keep_flames_visible(y/n)=n																																																																																																																&::pomson
-			Keep_beam_visible(y/n)=n																																																																																																																	&::pomson
 		•Static_draw(y/n)=n     																																																																																																																		&::pomson
 		•Static_reload(y/n)=n     																																																																																																																		&::pomson
 		•Static_attack(y/n)=n     																																																																																																																		&::pomson
