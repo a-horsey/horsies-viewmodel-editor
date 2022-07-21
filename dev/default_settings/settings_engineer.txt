@@ -1,3 +1,5 @@
+(if this looks weird, disable word wrap in your text editor)
+
 Engineer settings:
 	
 •••Primaries:
@@ -85,7 +87,7 @@ Engineer settings:
 
 •••Melee
 ===================================================================================================================================================
-	••Wrenches:
+	••Wrenches (doesn't include Southern Hospitality):
 		•Position:
 			X_position=0																																																																																																																					&::wrenches
 			Y_position=0																																																																																																																					&::wrenches
@@ -136,7 +138,7 @@ Engineer settings:
 		•Static_attack(y/n)=n     																																																																																																																		&::southernhospitality
 		•More_static_idle(y/n)=n																																																																																																																		&::southernhospitality
 =========================================================================================================================================================
-	••All-class Melees:
+	••All-class Melee:
 		•Position:
 			X_position=0																																																																																																																					&::allclassmelee
 			Y_position=0																																																																																																																					&::allclassmelee
@@ -154,7 +156,7 @@ Engineer settings:
 		•More_static_idle(y/n)=n																																																																																																																		&::allclassmelee
 =========================================================================================================================================================
 
-•••Special weapons
+•••Special weapons:
 =========================================================================================================================================================
 	••Build PDA:
 		•Position:

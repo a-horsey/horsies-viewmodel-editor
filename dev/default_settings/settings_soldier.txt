@@ -1,8 +1,10 @@
+(if this looks weird, disable word wrap in your text editor)
+
 Soldier settings:
 
 •••Primaries:
 =========================================================================================================================================================
-	••Rocket Launchers:
+	••Rocket Launchers (doesn't include The Original):
 		•Position:
 			X_position=0																																																																																																																				&::rocketlaunchers
 			Y_position=0																																																																																																																				&::rocketlaunchers
@@ -154,7 +156,7 @@ Soldier settings:
 		•More_static_idle(y/n)=n																																																																																																																	&::allclassmelee
 =========================================================================================================================================================
 
-•••Special weapons
+•••Special weapons:
 =========================================================================================================================================================
 	••Grappling Hook:
 		•Position:
@@ -231,7 +233,7 @@ Soldier settings:
 			Z_rotation=0																																																																																																																				&::originalinspect
 		•Hidden(y/n)=n    																																																																																																																			&::originalinspect
 =========================================================================================================================================================
-	••Secondary Inspect:
+	••Shotgun Inspect:
 		•Position:
 			X_position=0																																																																																																																				&::secondaryinspect
 			Y_position=0																																																																																																																				&::secondaryinspect
@@ -275,7 +277,7 @@ Soldier settings:
 			Z_rotation=0																																																																																																																				&::concherorinspect
 		•Hidden(y/n)=n    																																																																																																																			&::concherorinspect
 =========================================================================================================================================================
-	••Melee Inspect:
+	••Melee Inspects:
 		•Position:
 			X_position=0																																																																																																																				&::meleeinspect
 			Y_position=0																																																																																																																				&::meleeinspect
@@ -286,7 +288,7 @@ Soldier settings:
 			Z_rotation=0																																																																																																																				&::meleeinspect
 		•Hidden(y/n)=n    																																																																																																																			&::meleeinspect
 =========================================================================================================================================================
-	••Melee Allclass Inspect:
+	••All-class Melee Inspect:
 		•Position:
 			X_position=0																																																																																																																				&::meleeallclassinspect
 			Y_position=0																																																																																																																				&::meleeallclassinspect

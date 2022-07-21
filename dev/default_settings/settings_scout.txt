@@ -24,7 +24,7 @@ Scout settings:
 		•More_static_idle(y/n)=n																																																																																																																	&::scatterguns
 		•Remove_shells(y/n)=n																																																																																																																		&::scatterguns
 =========================================================================================================================================================
-	••Double Barrels:
+	••Double Barrels (Soda Popper and Force-a-Nature):
 		•Position:
 			X_position=0																																																																																																																			&::doublebarrels
 			Y_position=0																																																																																																																			&::doublebarrels
@@ -103,7 +103,7 @@ Scout settings:
 		•Static_attack(y/n)=n     																																																																																																																	&::cleaver
 		•More_static_idle(y/n)=n																																																																																																																	&::cleaver
 =========================================================================================================================================================
-	••Drinks:
+	••Drinks and Mad Milk:
 		•Position:
 			X_position=0																																																																																																																				&::drinks
 			Y_position=0																																																																																																																				&::drinks
@@ -247,7 +247,7 @@ Scout settings:
 
 •••Inspect animations:
 =========================================================================================================================================================
-	••Primary Inspect:
+	••Scatterguns Inspects:
 		•Position:
 			X_position=0																																																																																																																				&::primaryinspect
 			Y_position=0																																																																																																																				&::primaryinspect
@@ -269,7 +269,7 @@ Scout settings:
 			Z_rotation=0																																																																																																																				&::shortstopinspect
 		•Hidden(y/n)=n    																																																																																																																			&::shortstopinspect
 =========================================================================================================================================================
-	••Double Barrel Inspect:
+	••Double Barrels Inspects:
 		•Position:
 			X_position=0																																																																																																																				&::doublebarrelinspect
 			Y_position=0																																																																																																																				&::doublebarrelinspect
@@ -280,7 +280,7 @@ Scout settings:
 			Z_rotation=0																																																																																																																				&::doublebarrelinspect
 		•Hidden(y/n)=n    																																																																																																																			&::doublebarrelinspect
 =========================================================================================================================================================
-	••Secondary Inspect:
+	••Pistol Inspect:
 		•Position:
 			X_position=0																																																																																																																				&::secondaryinspect
 			Y_position=0																																																																																																																				&::secondaryinspect

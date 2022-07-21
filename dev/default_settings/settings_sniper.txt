@@ -1,3 +1,5 @@
+(if this looks weird, disable word wrap in your text editor)
+
 Sniper settings:
 	
 •••Primaries:
@@ -253,7 +255,7 @@ Sniper settings:
 			Z_rotation=0																																																																																																																				&::breadjarinspect
 		•Hidden(y/n)=n    																																																																																																																			&::breadjarinspect
 =========================================================================================================================================================
-	••Melee Inspect:
+	••Melee Inspects:
 		•Position:
 			X_position=0																																																																																																																				&::meleeinspect
 			Y_position=0																																																																																																																				&::meleeinspect
