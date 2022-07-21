@@ -48,7 +48,7 @@ Demoman settings:
 
 •••Melee:
 =========================================================================================================================================================
-	••Melee:
+	••Melee (includes Persian Persuader):
 		•Position:
 			X_position=0																																																																																																																					&::melee
 			Y_position=0																																																																																																																					&::melee
@@ -65,7 +65,7 @@ Demoman settings:
 		•Static_attack(y/n)=n     																																																																																																																		&::melee
 		•More_static_idle(y/n)=n																																																																																																																		&::melee
 =========================================================================================================================================================
-	••Swords:
+	••Swords (does not include Persian Persuader):
 		•Position:
 			X_position=0																																																																																																																					&::swords
 			Y_position=0																																																																																																																					&::swords
@@ -96,11 +96,11 @@ Demoman settings:
 			Keep_attack_visible(y/n)=n																																																																																																																&::allclassmelee	
 			Keep_idle_visible(y/n)=n																																																																																																																	&::allclassmelee
 		•Static_draw(y/n)=n     																																																																																																																		&::allclassmelee
-		•Static_reload(y/n)=n     																																																																																																																		&::allclassmelee
 		•Static_attack(y/n)=n     																																																																																																																		&::allclassmelee
+		•More_static_idle(y/n)=n																																																																																																																		&::allclassmelee
 =========================================================================================================================================================
 
-•••Special weapons
+•••Special weapons:
 =========================================================================================================================================================
 	••Grappling Hook:
 		•Position:
@@ -188,7 +188,7 @@ Demoman settings:
 			Z_rotation=0																																																																																																																				&::sblaunchersinspects
 		•Hidden(y/n)=n    																																																																																																																			&::sblaunchersinspects
 =========================================================================================================================================================
-	••Melee Inspect:
+	••Melee Inspects:
 		•Position:
 			X_position=0																																																																																																																				&::meleeinspect
 			Y_position=0																																																																																																																				&::meleeinspect
@@ -199,7 +199,7 @@ Demoman settings:
 			Z_rotation=0																																																																																																																				&::meleeinspect
 		•Hidden(y/n)=n    																																																																																																																			&::meleeinspect
 =========================================================================================================================================================
-	••Swords Inspect:
+	••Swords Inspects:
 		•Position:
 			X_position=0																																																																																																																				&::claidinspect
 			Y_position=0																																																																																																																				&::claidinspect
@@ -210,7 +210,7 @@ Demoman settings:
 			Z_rotation=0																																																																																																																				&::claidinspect
 		•Hidden(y/n)=n    																																																																																																																			&::claidinspect
 =========================================================================================================================================================
-	••All-class Melee Inspect:
+	••All-class Melee Inspects:
 		•Position:
 			X_position=0																																																																																																																				&::allclassmeleeinspect
 			Y_position=0																																																																																																																				&::allclassmeleeinspect

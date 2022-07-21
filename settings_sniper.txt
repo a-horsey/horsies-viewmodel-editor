@@ -255,7 +255,7 @@ Sniper settings:
 			Z_rotation=0																																																																																																																				&::breadjarinspect
 		•Hidden(y/n)=n    																																																																																																																			&::breadjarinspect
 =========================================================================================================================================================
-	••Melee Inspect:
+	••Melee Inspects:
 		•Position:
 			X_position=0																																																																																																																				&::meleeinspect
 			Y_position=0																																																																																																																				&::meleeinspect
