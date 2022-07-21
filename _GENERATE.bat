@@ -184,12 +184,12 @@ SET /P M=Are you sure that you want to proceed (Y/N):
 IF /i %M%==n goto :main_menu
 IF /i NOT %M%==y IF /i NOT %M%==n goto :disable_tracers_off
 set disable_tracers=off
-set toggle_tracers=goto :tracers_on
+set toggle_tracers=goto :disable_tracers_on
 goto :main_menu
 
 :disable_tracers_on
 set disable_tracers=on
-set toggle_tracers=goto :tracers_off
+set toggle_tracers=goto :disable_tracers_off
 goto :main_menu
 
 :fixed_vm_addon_off
