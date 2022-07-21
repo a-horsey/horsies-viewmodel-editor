@@ -3,7 +3,7 @@ A powerful viewmodel editor for Team Fortress 2
 ## Features
 
 - Edit your viewmodels however you want. Includes many possible settings for every weapon
-- Automatic preloading. Preloads the animations at game start without you having to do anything. Can optionally be disabled in the menu
+- Automatic preloading. Preloads the animations at game start without you having to do anything. Preloading allows you to use these in any server, no matter the sv_pure setting. Can optionally be disabled in the menu
 - Fully supports the [Fixed Viewmodels](https://gamebanana.com/mods/206440) pack. All credits for creating the pack go to the author. This fixes hundreds of default animations, such as the extra hands when using the original or sapper
 - Everything is automatic, just pick your settings and the tool will extract, decompile, edit, compile and pack the animations
 
