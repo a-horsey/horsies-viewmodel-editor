@@ -53,6 +53,7 @@ set sequence_3=fj_reload_start
 set sequence_4=fj_reload_loop
 set sequence_5=fj_reload_end
 set sequence_6=fj_fire_alt
+set sequence_7=fj_draw
 
 
 ::call files
