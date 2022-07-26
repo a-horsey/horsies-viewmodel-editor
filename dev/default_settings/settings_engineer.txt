@@ -173,7 +173,7 @@ Engineer settings:
 =========================================================================================================================================================
 	••Destroy PDA:
 		•Position:
-			X_position=-12																																																																																																																					&::destroypda
+			X_position=0																																																																																																																					&::destroypda
 			Y_position=0																																																																																																																					&::destroypda
 			Z_position=0																																																																																																																					&::destroypda
 		•Rotation: 
