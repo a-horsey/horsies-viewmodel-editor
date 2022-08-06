@@ -109,6 +109,7 @@ IF NOT EXIST c_medic_animations.qc goto :animation_extract_error
 IF NOT EXIST c_sniper_animations.qc goto :animation_extract_error
 IF NOT EXIST c_spy_animations.qc goto :animation_extract_error
 echo If this file exists, the files have been extracted already. > animations_already_extracted.txt
+cls
 echo Fixed animations extracted...
 exit /b
 
