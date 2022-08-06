@@ -144,7 +144,7 @@ echo.
 echo.Options: 
 echo.	1. Start
 echo. 	2. Include automatic preloading (currently %automatic_preloading_status%)
-echo. 	3. Disable 1st person bullet tracers (currently %disable_tracers_status%)
+echo. 	3. Remove 1st person bullet tracers (currently %disable_tracers_status%)
 IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	4. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	4. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
 echo. 	0. Developer settings
@@ -176,13 +176,6 @@ set toggle_preloading=goto :preloading_off
 goto :main_menu
 
 :disable_tracers_off
-cls
-echo Warning: 1st person tracers are bugged with hidden weapons.
-echo It's highly recommended that you just leave them disabled.
-echo.
-SET /P M=Are you sure that you want to proceed (Y/N):
-IF /i %M%==n goto :main_menu
-IF /i NOT %M%==y IF /i NOT %M%==n goto :disable_tracers_off
 set disable_tracers=off
 set toggle_tracers=goto :disable_tracers_on
 goto :main_menu
