@@ -1,16 +1,18 @@
 @echo off
 
 ::set values
-set hide_origin_value=origin 0 -999 0
+set hide_origin_value=origin 0 -170 5
 set hide_origin_value_keep_flames_visible=origin 0 -85 35
-set hide_origin_value_keep_beam_visible= origin 0 -85 55
+set hide_origin_value_keep_beam_visible= origin 0 -85 50
 
 ::exit if hidden is no
 IF NOT %•Hidden(y/n)%==y goto :EOF
 ::apply values for beam/flames
 IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 9999 9999 9999
+IF %attack_sequence_1%==ft_fire set hide_origin_value=origin 9999 9999 9999
 IF %Keep_flames_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_flames_visible%
 IF %Keep_beam_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_beam_visible%
+
 cd "%qc_folder_temp%"
 
 :hide_draw
