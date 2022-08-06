@@ -1,4 +1,6 @@
-(if this looks weird, disable word wrap in your text editor)
+If this looks weird, disable word wrap in your text editor.
+Don't copy-paste stuff, it will break things.
+
 
 Demoman settings:
 	
