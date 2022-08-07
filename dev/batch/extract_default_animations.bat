@@ -40,7 +40,7 @@ HLExtract.exe -s -p "%tf_folder%\tf2_misc_dir.vpk" -d "%animations_folder%" -e "
 
 ::Decompile them
 ::Workaround for crowbar settings bug present in CrowbarCommandLine - part 1
-cd %appdata%
+cd /d %appdata%
 IF EXIST "ZeqMacaw\" cd "ZeqMacaw\"
 IF EXIST "Crowbar 0.68\" cd "Crowbar 0.68\"
 IF EXIST "Crowbar Settings.xml_backup" goto :start_decompiling
@@ -60,7 +60,7 @@ CrowbarCommandLineDecomp.exe -p "%animations_folder%\c_medic_animations.mdl" -o 
 CrowbarCommandLineDecomp.exe -p "%animations_folder%\c_sniper_animations.mdl" -o "%animations_folder%"
 CrowbarCommandLineDecomp.exe -p "%animations_folder%\c_spy_animations.mdl" -o "%animations_folder%"
 ::Workaround - part 2 - restores user settings if they exist
-cd %appdata%
+cd /d %appdata%
 IF EXIST "ZeqMacaw\" cd "ZeqMacaw\"
 IF EXIST "Crowbar 0.68\" cd "Crowbar 0.68\"
 IF EXIST "Crowbar Settings.xml" del "Crowbar Settings.xml"

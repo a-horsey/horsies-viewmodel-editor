@@ -59,7 +59,7 @@ HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animation
 
 ::Decompile them
 ::Workaround for crowbar settings bug present in CrowbarCommandLine - part 1
-cd %appdata%
+cd /d %appdata%
 IF EXIST "ZeqMacaw\" cd "ZeqMacaw\"
 IF EXIST "Crowbar 0.68\" cd "Crowbar 0.68\"
 IF EXIST "Crowbar Settings.xml_backup" goto :start_decompiling
@@ -79,7 +79,7 @@ CrowbarCommandLineDecomp.exe -p "%dev_folder%\decompiled_fixed_animations\c_medi
 CrowbarCommandLineDecomp.exe -p "%dev_folder%\decompiled_fixed_animations\c_sniper_animations.mdl" -o "%dev_folder%\decompiled_fixed_animations"
 CrowbarCommandLineDecomp.exe -p "%dev_folder%\decompiled_fixed_animations\c_spy_animations.mdl" -o "%dev_folder%\decompiled_fixed_animations"
 ::Workaround - part 2 - restores user settings if they exist
-cd %appdata%
+cd /d %appdata%
 IF EXIST "ZeqMacaw\" cd "ZeqMacaw\"
 IF EXIST "Crowbar 0.68\" cd "Crowbar 0.68\"
 IF EXIST "Crowbar Settings.xml" del "Crowbar Settings.xml"
