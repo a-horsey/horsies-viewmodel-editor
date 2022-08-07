@@ -40,14 +40,14 @@ HLExtract.exe -s -p "%tf_folder%\tf2_misc_dir.vpk" -d "%animations_folder%" -e "
 
 ::Decompile them
 ::Workaround for crowbar settings bug present in CrowbarCommandLine - part 1
-cd /d %appdata%
+cd /d "%appdata%"
 IF EXIST "ZeqMacaw\" cd "ZeqMacaw\"
 IF EXIST "Crowbar 0.68\" cd "Crowbar 0.68\"
 IF EXIST "Crowbar Settings.xml_backup" goto :start_decompiling
 IF EXIST "Crowbar Settings.xml" ren "Crowbar Settings.xml" "Crowbar Settings.xml_backup"
 ::Actual decompiling
 :start_decompiling
-cd "%dev_folder%"
+cd /d "%dev_folder%"
 title Decompiling animations...
 echo Decompiling animations...
 CrowbarCommandLineDecomp.exe -p "%animations_folder%\c_scout_animations.mdl" -o "%animations_folder%"
@@ -60,12 +60,12 @@ CrowbarCommandLineDecomp.exe -p "%animations_folder%\c_medic_animations.mdl" -o 
 CrowbarCommandLineDecomp.exe -p "%animations_folder%\c_sniper_animations.mdl" -o "%animations_folder%"
 CrowbarCommandLineDecomp.exe -p "%animations_folder%\c_spy_animations.mdl" -o "%animations_folder%"
 ::Workaround - part 2 - restores user settings if they exist
-cd /d %appdata%
+cd /d "%appdata%"
 IF EXIST "ZeqMacaw\" cd "ZeqMacaw\"
 IF EXIST "Crowbar 0.68\" cd "Crowbar 0.68\"
 IF EXIST "Crowbar Settings.xml" del "Crowbar Settings.xml"
 IF EXIST "Crowbar Settings.xml_backup" ren "Crowbar Settings.xml_backup" "Crowbar Settings.xml"
-cd "%dev_folder%"
+cd /d "%dev_folder%"
 
 ::Delete raw MDLs
 del "%animations_folder%\c_scout_animations.mdl"
