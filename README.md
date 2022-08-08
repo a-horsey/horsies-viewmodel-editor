@@ -1,6 +1,6 @@
 # Horsie's Viewmodel Editor
-![Thumbnail](https://i.imgur.com/hOtzUZ7.png)
 A powerful viewmodel editor for Team Fortress 2
+![Thumbnail](https://i.imgur.com/hOtzUZ7.png)
 ## Features
 
 - Edit your viewmodels however you want. Includes many possible settings for every weapon
