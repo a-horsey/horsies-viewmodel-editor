@@ -48,10 +48,12 @@ echo } >> %qc_file%
 :hide_backstab_detection_2
 IF %backstab_detect_sequence_down%==none goto :hide_backstab_detection_end
 echo $append %backstab_detect_sequence_down% { >> %qc_file%
+IF %•Instant_backstab_detection(y/n)%==y goto :hide_if_instant_backstab_is_on
 IF %Keep_backstab_detection_visible(y/n)%==y echo origin %X_position% %Y_position% %Z_position% >> %qc_file%
 IF %Keep_backstab_detection_visible(y/n)%==y echo angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF %Keep_backstab_detection_visible(y/n)%==y echo } >> %qc_file%
 IF %Keep_backstab_detection_visible(y/n)%==y goto :hide_backstab_detection_3
+:hide_if_instant_backstab_is_on
 echo %hide_origin_value% >> %qc_file%
 echo fadein 0.0 >> %qc_file%
 echo fadeout 0.0 >> %qc_file%
