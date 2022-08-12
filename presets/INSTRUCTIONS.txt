@@ -1,0 +1,16 @@
+Currently there is 1 preset: centered guns.
+It does what it says, which is center weapons.
+It only centers weapons that make sense, so a few weapons still have the default positions:
+	•Food and drink items
+	•Throwables like the jarate and mad milk
+	•The huntsman
+	•All melee weapons 
+	•Inspects are still in the default position
+There are a couple caveats:
+	•It's made with minimal viewmodels in mind, so make sure to have that on (tf_use_min_viewmodels 1). Fov shouldn't matter.
+	•There is a normal tf2 bug with minimal viewmodels:
+		The stock shotgun, if strange or has a skin, has a different offset from all the other shotguns or a non-strange non-skinned one
+		This preset is made for a normal stock shotgun
+		If you use a strange/skinned shotgun, you can manually go in the settings and change the X_position closer to 0 (if it's -10, try something like -6/-7)
+To use the preset just go in the folder, copy the settings files and paste them in the main folder.
+	
