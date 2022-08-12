@@ -26,12 +26,12 @@ Sniper settings:
 =========================================================================================================================================================
 	••Huntsman:
 		•Position:
-			X_position=-5																																																																																																																					&::huntsman
+			X_position=0																																																																																																																					&::huntsman
 			Y_position=0																																																																																																																					&::huntsman
 			Z_position=0																																																																																																																					&::huntsman
 		•Rotation: 
 			X_rotation=0																																																																																																																					&::huntsman
-			Y_rotation=-80																																																																																																																					&::huntsman
+			Y_rotation=0																																																																																																																					&::huntsman
 			Z_rotation=0																																																																																																																					&::huntsman
 		•Hidden(y/n)=n    																																																																																																																				&::huntsman
 			Keep_draw_visible(y/n)=n																																																																																																																&::huntsman
