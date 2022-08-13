@@ -717,7 +717,7 @@ set reload_sequence_2_is_alternative_start=false
 
 ::name all the sequences for positioning
 set sequence_1=box_draw
-set sequence_2=pda_idle
+set sequence_2=box_idle
 
 ::call files
 cd "%batch_folder%"
@@ -989,6 +989,57 @@ set other_sequence_3=primary_inspect_end
 set sequence_1=primary_inspect_start
 set sequence_2=primary_inspect_idle
 set sequence_3=primary_inspect_end
+
+::call files
+cd "%batch_folder%"
+call extract_settings.bat
+cd "%batch_folder%"
+call hide_weapon.bat
+cd "%batch_folder%"
+call apply_position_and_rotation.bat
+cd "%batch_folder%"
+call remove_reload.bat
+cd "%batch_folder%"
+call static_draw_idle_attack.bat
+cd "%batch_folder%"
+call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
+endlocal
+
+:widowmaker_inspect
+setlocal
+cd "%batch_folder%"
+call reset_settings.bat
+::settings label for this weapon
+set "settings_label=&::widowmakerinspect"
+
+::set draw
+
+::set idle
+
+::set idle smd
+
+::set attack sequences
+
+::set attack smds
+
+::set reload sequences reload sequences
+::adds snap to seq_2 for rare weapons that need it - set to "true" to use
+set reload_sequence_2_is_alternative_start=false
+::seq_1 should be reload_start or the unique reload
+
+::set reload smds
+
+::set extra sequences for hiding
+set other_sequence_1=primary_alt1_inspect_start
+set other_sequence_2=primary_alt1_inspect_idle
+set other_sequence_3=primary_alt1_inspect_end
+
+::name all the sequences for positioning
+set sequence_1=primary_alt1_inspect_start
+set sequence_2=primary_alt1_inspect_idle
+set sequence_3=primary_alt1_inspect_end
 
 ::call files
 cd "%batch_folder%"
