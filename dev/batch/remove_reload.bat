@@ -92,35 +92,35 @@ cd "%smd_folder%"
 
 :replace reload_smd_1
 IF EXIST %reload_smd_1% (
-	copy %idle_smd% %reload_smd_1%
+	copy %idle_smd% %reload_smd_1% >nul
 	)
 :replace reload_smd_2
 IF EXIST %reload_smd_2% (
-	copy %idle_smd% %reload_smd_2%
+	copy %idle_smd% %reload_smd_2% >nul
 	)
 :replace reload_smd_3
 IF EXIST %reload_smd_3% (
-	copy %idle_smd% %reload_smd_3%
+	copy %idle_smd% %reload_smd_3% >nul
 	)
 :replace reload_smd_4
 IF EXIST %reload_smd_4% (
-	copy %idle_smd% %reload_smd_4%
+	copy %idle_smd% %reload_smd_4% >nul
 	)
 :replace reload_smd_5
 IF EXIST %reload_smd_5% (
-	copy %idle_smd% %reload_smd_5%
+	copy %idle_smd% %reload_smd_5% >nul
 	)
 :replace reload_smd_6
 IF EXIST %reload_smd_6% (
-	copy %idle_smd% %reload_smd_6%
+	copy %idle_smd% %reload_smd_6% >nul
 	)
 :replace reload_smd_7
 IF EXIST %reload_smd_7% (
-	copy %idle_smd% %reload_smd_7%
+	copy %idle_smd% %reload_smd_7% >nul
 	)
 :replace reload_smd_8
 IF EXIST %reload_smd_8% (
-	copy %idle_smd% %reload_smd_8%
+	copy %idle_smd% %reload_smd_8% >nul
 	)
 
 ::add frame numbers to qc files, also remove snap (fadein 0.0) for reload_1

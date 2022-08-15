@@ -39,5 +39,5 @@ echo } >> %qc_file%
 cd "%smd_folder%"
 :replace draw_smd
 IF EXIST %backstab_attack_smd%  IF EXIST %diagonal_stab_smd% (
-	copy %diagonal_stab_smd% %backstab_attack_smd%
+	copy %diagonal_stab_smd% %backstab_attack_smd% >nul
 	)

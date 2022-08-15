@@ -77,9 +77,9 @@ echo } >> %qc_file%
 cd "%smd_folder%"
 
 IF EXIST %backstab_detect_smd_up% IF EXIST %backstab_detect_smd_idle% (
-	copy %backstab_detect_smd_idle% %backstab_detect_smd_up%
+	copy %backstab_detect_smd_idle% %backstab_detect_smd_up% >nul
 	)
 	
 IF EXIST %backstab_detect_smd_down% IF EXIST %idle_smd% (
-	copy %idle_smd% %backstab_detect_smd_down%
+	copy %idle_smd% %backstab_detect_smd_down% >nul
 	)

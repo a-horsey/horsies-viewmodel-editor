@@ -51,7 +51,7 @@ echo } >> %qc_file%
 cd "%smd_folder%"
 :replace draw_smd
 IF EXIST %backstab_attack_smd% IF EXIST %idle_smd% (
-	copy %idle_smd% %backstab_attack_smd%
+	copy %idle_smd% %backstab_attack_smd% >nul
 	)
 	
 :check_backstab_detection
@@ -127,15 +127,15 @@ echo } >> %qc_file%
 cd "%smd_folder%"
 
 IF EXIST %backstab_detect_smd_up% IF EXIST %idle_smd% (
-	copy %idle_smd% %backstab_detect_smd_up%
+	copy %idle_smd% %backstab_detect_smd_up% >nul
 	)
 	
 IF EXIST %backstab_detect_smd_down% IF EXIST %idle_smd% (
-	copy %idle_smd% %backstab_detect_smd_down%
+	copy %idle_smd% %backstab_detect_smd_down% >nul
 	)
 	
 IF EXIST %backstab_detect_smd_idle% IF EXIST %idle_smd% (
-	copy %idle_smd% %backstab_detect_smd_idle%
+	copy %idle_smd% %backstab_detect_smd_idle% >nul
 	)
 
 

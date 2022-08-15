@@ -3,7 +3,7 @@
 cd "%decompiled_animations_temp%"
 IF EXIST %settings_file% goto :extract_settings
 cd "%vm_customizer_folder%"
-copy "%settings_file%" "%decompiled_animations_temp%\%settings_file%"
+copy "%settings_file%" "%decompiled_animations_temp%\%settings_file%" >nul
 
 :extract_settings
 cd "%qc_folder_temp%"

@@ -1,6 +1,6 @@
 @echo off
 title Applying Engineer Settings...
-echo Applying Engineer Settings...
+echo		 Applying Engineer Settings...
 set settings_file=settings_engineer.txt
 set "smd_folder=%qc_folder_temp%\c_engineer_animations_anims"
 set qc_file=c_engineer_animations.qc
@@ -73,7 +73,7 @@ cd "%batch_folder%"
 call snap_to_draws.bat
 endlocal
 
-:weapon_name
+:pomson
 setlocal
 cd "%batch_folder%"
 call reset_settings.bat

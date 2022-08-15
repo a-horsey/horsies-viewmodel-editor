@@ -61,7 +61,7 @@ echo } >> %qc_file%
 cd "%smd_folder%"
 :replace draw_smd
 IF EXIST %draw_smd% IF EXIST %idle_smd% (
-	copy %idle_smd% %draw_smd%
+	copy %idle_smd% %draw_smd% >nul
 	)
 	
 ::special check for scout to remove buggy particle if the weapon is a drink
@@ -70,7 +70,7 @@ goto :check_setting_idle
 :remove_drink_particle
 cd "%qc_folder_temp%"
 findstr /i /v /l "AE_CL_CREATE_PARTICLE_EFFECT" %qc_file% >> temp_draw_idle_drinks_special
-move temp_draw_idle_drinks_special %qc_file%
+move temp_draw_idle_drinks_special %qc_file% >nul
 
 
 :check_setting_idle
@@ -217,32 +217,32 @@ echo } >> %qc_file%
 cd "%smd_folder%"
 :replace attack_smd_1
 IF EXIST %attack_smd_1% (
-	copy %idle_smd% %attack_smd_1%
+	copy %idle_smd% %attack_smd_1% >nul
 	)
 	
 :replace attack_smd_2
 IF EXIST %attack_smd_2% (
-	copy %idle_smd% %attack_smd_2%
+	copy %idle_smd% %attack_smd_2% >nul
 	)
 	
 :replace attack_smd_3
 IF EXIST %attack_smd_3% (
-	copy %idle_smd% %attack_smd_3%
+	copy %idle_smd% %attack_smd_3% >nul
 	)
 	
 :replace attack_smd_4
 IF EXIST %attack_smd_4% (
-	copy %idle_smd% %attack_smd_4%
+	copy %idle_smd% %attack_smd_4% >nul
 	)
 	
 :replace attack_smd_5
 IF EXIST %attack_smd_5% (
-	copy %idle_smd% %attack_smd_5%
+	copy %idle_smd% %attack_smd_5% >nul
 	)
 	
 :replace attack_smd_6
 IF EXIST %attack_smd_6% (
-	copy %idle_smd% %attack_smd_6%
+	copy %idle_smd% %attack_smd_6% >nul
 	)
 
 
@@ -279,6 +279,6 @@ echo } >> %qc_file%
 :replace_shove_smd
 cd %smd_folder%
 IF EXIST %shove_smd% (
-	copy %idle_smd% %shove_smd%
+	copy %idle_smd% %shove_smd% >nul
 	)
 :process_shove_done
