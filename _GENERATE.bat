@@ -264,7 +264,7 @@ echo.
 SET /P M=Are you sure you want to proceed (Y/N):
 IF /i %M%==y (
 	echo Restoring settings...
-	xcopy /y "%dev_folder%\default_settings" "%vm_customizer_folder%" /e /q
+	xcopy /y "%dev_folder%\default_settings" "%vm_customizer_folder%" /e /q >nul
 	goto :dev_menu )
 IF /i %M%==n goto :dev_menu
 IF /i NOT %M%==y IF /i NOT %M%==n goto :restore_settings_prompt
@@ -407,11 +407,14 @@ echo Creating temp folder...
 cd "%dev_folder%"
 IF EXIST "decompiled_animations_temp" RMDIR /S /Q "decompiled_animations_temp"
 IF NOT EXIST "decompiled_animations_temp" mkdir "decompiled_animations_temp"
-xcopy /y "decompiled_animations" "decompiled_animations_temp" /e /q
-IF %fixed_vm_addon%==on IF EXIST "decompiled_fixed_animations" xcopy /y "decompiled_fixed_animations" "decompiled_animations_temp" /e /q
+xcopy /y "decompiled_animations" "decompiled_animations_temp" /e /q >nul
+IF %fixed_vm_addon%==on IF EXIST "decompiled_fixed_animations" xcopy /y "decompiled_fixed_animations" "decompiled_animations_temp" /e /q >nul
 set decompiled_animations_temp=%dev_folder%\decompiled_animations_temp
 set qc_folder_temp=%dev_folder%\decompiled_animations_temp
 
+:apply settings
+echo.
+echo Applying the settings:
 ::check for dev settings
 cd "%batch_folder%"
 IF %apply_only_for_scout%==true (
@@ -471,6 +474,8 @@ cd "%batch_folder%"
 call apply_for_spy.bat
 
 :compile
+echo.
+echo Compiling the animations:
 ::compile and pack
 cd "%batch_folder%"
 call compile_and_pack.bat
@@ -482,7 +487,7 @@ rd /s /q "decompiled_animations_temp"
 
 :finished
 color 20
-title FINISHED
+title Done!
 
 :horse
 cls
