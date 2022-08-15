@@ -6,6 +6,7 @@ set "smd_folder=%qc_folder_temp%\c_soldier_animations_anims"
 set qc_file=c_soldier_animations.qc
 cd "%batch_folder%"
 call replace_snap.bat
+
 :rocket_launchers
 setlocal
 cd "%batch_folder%"
@@ -60,6 +61,66 @@ set sequence_6=dh_reload_finish
 set sequence_7=dh_reload_start_alt
 set sequence_8=dh_reload_loop_alt
 set sequence_9=dh_reload_finish_alt
+
+::call files
+cd "%batch_folder%"
+call extract_settings.bat
+cd "%batch_folder%"
+call hide_weapon.bat
+cd "%batch_folder%"
+call apply_position_and_rotation.bat
+cd "%batch_folder%"
+call remove_reload.bat
+cd "%batch_folder%"
+call static_draw_idle_attack.bat
+cd "%batch_folder%"
+call remove_shells.bat
+cd "%batch_folder%"
+call snap_to_draws.bat
+endlocal
+
+:mangler_extras
+setlocal
+cd "%batch_folder%"
+call reset_settings.bat
+::settings label for this weapon
+set "settings_label=&::rocketlaunchers"
+
+::set draw
+
+::set draw smd
+
+::set idle
+set idle_sequence=dh_idle
+::set idle smd
+set idle_smd=dh_idle.smd
+
+::set attack sequences
+set attack_sequence_1=mangler_fire_super
+
+::set attack smds
+set attack_smd_1=mangler_fire_super.smd
+
+::set reload sequences reload sequences
+::adds snap to seq_2 for rare weapons that need it - set to "true" to use
+set reload_sequence_2_is_alternative_start=false
+::seq_1 should be reload_start or the unique reload
+set reload_sequence_1=mangler_reload_start
+set reload_sequence_2=mangler_reload_loop
+set reload_sequence_3=mangler_reload_finish
+
+::set reload smds
+set reload_smd_1=mangler_reload_start.smd
+set reload_smd_2=mangler_reload_loop.smd
+set reload_smd_3=mangler_reload_finish.smd
+
+::set extra sequences for hiding
+
+::name all the sequences for positioning
+set sequence_1=mangler_fire_super
+set sequence_2=mangler_reload_start
+set sequence_3=mangler_reload_loop
+set sequence_4=mangler_reload_finish
 
 ::call files
 cd "%batch_folder%"
