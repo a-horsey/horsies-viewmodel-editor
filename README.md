@@ -12,7 +12,7 @@ A powerful viewmodel editor for Team Fortress 2
 - Change position on X, Y and Z axis
 - Change rotation on X, Y and Z axis
 - Hide
-- Hide but keep chosen animations visible, such as: draw animations, reload animations, idle animations, attack animation, and many more depending on class and weapon
+- Hide but keep chosen animations visible, such as: draw animations, reload animations, idle animations, attack animations, and many more depending on class and weapon
 - Make any animations static. This makes them not move and look like the idle animation. Some examples: the draw animations, the reload animations, the attack animations, the idle animations(makes them more static) and more depending on class and weapon
 - Other class or weapon specific settings
 - More info can be found in [_README.txt](https://github.com/a-horsey/horsies-viewmodel-editor/blob/main/_README.txt)
