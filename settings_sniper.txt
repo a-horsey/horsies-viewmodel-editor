@@ -38,7 +38,6 @@ Sniper settings:
 			Keep_attack_visible(y/n)=n																																																																																																															&::huntsman	
 			Keep_idle_visible(y/n)=n																																																																																																																&::huntsman
 		•Static_draw(y/n)=n     																																																																																																																		&::huntsman
-		•Static_reload(y/n)=n     																																																																																																																	&::huntsman
 		•Static_attack(y/n)=n     																																																																																																																	&::huntsman
 		•More_static_idle(y/n)=n																																																																																																																	&::huntsman
 =========================================================================================================================================================

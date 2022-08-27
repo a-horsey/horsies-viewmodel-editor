@@ -57,14 +57,14 @@ Scout settings:
 		•Hidden(y/n)=n    																																																																																																																			&::shortstop
 			Keep_draw_visible(y/n)=n																																																																																																																&::shortstop
 			Keep_attack_visible(y/n)=n																																																																																																															&::shortstop
+			Keep__secondary_attack_visible(y/n)=n																																																																																																															&::shortstop
 			Keep_reload_visible(y/n)=n																																																																																																															&::shortstop		
 			Keep_idle_visible(y/n)=n																																																																																																																&::shortstop
-			Keep_shove_visible(y/n)=n																																																																																																																&::shortstop
 		•Static_draw(y/n)=n																																																																																																																				&::shortstop			
 		•Static_reload(y/n)=n     																																																																																																																	&::shortstop
 		•Static_attack(y/n)=n     																																																																																																																	&::shortstop
+		•Static_secondary_attack(y/n)=n     																																																																																																																	&::shortstop
 		•More_static_idle(y/n)=n																																																																																																																	&::shortstop
-		•Static_shove(y/n)=n																																																																																																																	&::shortstop
 =========================================================================================================================================================
 
 •••Secondaries:
@@ -159,7 +159,7 @@ Scout settings:
 		•Static_attack(y/n)=n     																																																																																																																	&::melee
 		•More_static_idle(y/n)=n																																																																																																																	&::melee
 =========================================================================================================================================================
-	••Sandman:
+	••Sandman and Wrap Assassin:
 		•Position:
 			X_position=0																																																																																																																				&::sandman
 			Y_position=0																																																																																																																				&::sandman
@@ -171,9 +171,11 @@ Scout settings:
 		•Hidden(y/n)=n    																																																																																																																			&::sandman
 			Keep_draw_visible(y/n)=n																																																																																																																&::sandman
 			Keep_attack_visible(y/n)=n																																																																																																															&::sandman
+			Keep_secondary_attack_visible(y/n)=n																																																																																																															&::sandman
 			Keep_idle_visible(y/n)=n																																																																																																																&::sandman
 		•Static_draw(y/n)=n																																																																																																																				&::sandman
 		•Static_attack(y/n)=n     																																																																																																																	&::sandman
+		•Static_secondary_attack(y/n)=n     																																																																																																																	&::sandman
 		•More_static_idle(y/n)=n																																																																																																																	&::sandman
 =========================================================================================================================================================
 	••All-class melee weapons:
