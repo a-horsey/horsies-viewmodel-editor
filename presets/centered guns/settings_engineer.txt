@@ -266,6 +266,17 @@ Engineer settings:
 			Z_rotation=0																																																																																																																					&::shotgunsinspects
 		•Hidden(y/n)=n    																																																																																																																				&::shotgunsinspects
 =========================================================================================================================================================
+	••Widowmaker Inspect:
+		•Position:
+			X_position=0																																																																																																																					&::widowmakerinspect
+			Y_position=0																																																																																																																					&::widowmakerinspect
+			Z_position=0																																																																																																																					&::widowmakerinspect
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::widowmakerinspect
+			Y_rotation=0																																																																																																																					&::widowmakerinspect
+			Z_rotation=0																																																																																																																					&::widowmakerinspect
+		•Hidden(y/n)=n    																																																																																																																					&::widowmakerinspect
+=========================================================================================================================================================
 	••Pomson Inspect:
 		•Position:
 			X_position=0																																																																																																																					&::pomsoninspects
