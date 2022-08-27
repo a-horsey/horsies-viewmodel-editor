@@ -18,10 +18,12 @@ Pyro settings:
 		•Hidden(y/n)=n    																																																																																																																				&::flamethrowers
 			Keep_draw_visible(y/n)=n																																																																																																																&::flamethrowers
 			Keep_attack_visible(y/n)=n																																																																																																															&::flamethrowers	
+			Keep_secondary_attack_visible(y/n)=n																																																																																																															&::flamethrowers	
 			Keep_idle_visible(y/n)=n																																																																																																																&::flamethrowers
 			Keep_flames_visible(y/n)=n																																																																																																															&::flamethrowers
 		•Static_draw(y/n)=n																																																																																																																				&::flamethrowers
 		•Static_attack(y/n)=n     																																																																																																																	&::flamethrowers
+		•Static_secondary_attack(y/n)=n     																																																																																																																	&::flamethrowers
 		•More_static_idle(y/n)=n																																																																																																																	&::flamethrowers
 =========================================================================================================================================================
 
@@ -97,6 +99,7 @@ Pyro settings:
 		•Static_draw(y/n)=n																																																																																																																				&::thermalthruster
 		•Static_attack(y/n)=n     																																																																																																																	&::thermalthruster
 		•More_static_idle(y/n)=n																																																																																																																	&::thermalthruster
+		•Remove_left_arm(y/n)=n																																																																																																																	&::thermalthruster
 =========================================================================================================================================================
 	••Gas Passer:
 		•Position:
