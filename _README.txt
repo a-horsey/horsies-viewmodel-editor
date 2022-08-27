@@ -65,6 +65,8 @@ Such as removing shell ejection or some fancy spy knife settings.
 				Static_backstab - makes the knife not move when actually backstabbing someone.
 	•Shotguns, scatterguns, sniper rifles:
 				Remove_shells - makes the weapon not eject shells when reloading/attacking.
+	•Thermal Thruster:
+				Remove_left_arm - removes the left arm for this weapon.
 				
 				
 	
