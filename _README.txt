@@ -43,6 +43,7 @@ Such as removing shell ejection or some fancy spy knife settings.
 	•Draw animations - these play when you just switched to that particular weapon.
 	•Reload animations - these play when you reload the weapon.
 	•Attack animations - these play when you're attacking with the weapon.
+	•Secondary attack animations - these play when you're doing the secondary attack, usually by pressing mouse2.
 	•Idle animations - these play when the weapon is idle.
 		Enabling the option "•More_static_idle" will make the idle not sway when standing still.
 		(the weapon will still sway when moving, as that is hardcoded)
@@ -55,9 +56,6 @@ Such as removing shell ejection or some fancy spy knife settings.
 	•Flamethrowers:
 				Keep_flames_visible - keeps the flames visible if weapon is hidden.
 					(always visible if attack is not hidden)
-	•Shortstop:
-				Keep_shove_visible - keeps the shove visible if weapon is hidden.
-				Static_shove - makes the shove static.
 	•All spy knives: 
 				Keep_backstab_detection_visible - keeps the backstab detection (knife rising up) visible if weapon is hidden.
 				Keep_backstab_visible - keeps the actual backstab visible if weapon is hidden.
