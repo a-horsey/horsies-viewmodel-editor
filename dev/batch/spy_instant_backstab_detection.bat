@@ -42,15 +42,15 @@ cd "%qc_folder_temp%"
 
 :add_frames_backstab_detect_smd_up
 IF %backstab_detect_sequence_up%==none goto :add_frames_det_done
-echo $append %backstab_detect_sequence_up% numframes %backstab_detect_smd_up_frames% fadein 0.0 fadeout 0.0 frame 0 0 >> %qc_file%
+echo $append %backstab_detect_sequence_up% numframes %backstab_detect_smd_up_frames% snap frame 0 0 >> %qc_file%
 
 :add_frames_backstab_detect_smd_down
 IF %backstab_detect_sequence_down%==none goto :add_frames_det_done
-echo $append %backstab_detect_sequence_down% numframes %backstab_detect_smd_down_frames% fadein 0.0 fadeout 0.0 frame 0 0 >> %qc_file%
+echo $append %backstab_detect_sequence_down% numframes %backstab_detect_smd_down_frames% snap frame 0 0 >> %qc_file%
 
 :add_frames_backstab_detect_smd_idle
 IF %backstab_detect_sequence_idle%==none goto :add_frames_det_done
-echo $append %backstab_detect_sequence_idle% numframes %backstab_detect_smd_idle_frames% fadein 0.0 fadeout 0.0 frame 0 0 >> %qc_file%
+echo $append %backstab_detect_sequence_idle% numframes %backstab_detect_smd_idle_frames% snap frame 0 0 >> %qc_file%
 :add_frames_det_done
 
 ::replace smds
