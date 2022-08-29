@@ -57,7 +57,7 @@ Scout settings:
 		•Hidden(y/n)=n    																																																																																																																			&::shortstop
 			Keep_draw_visible(y/n)=n																																																																																																																&::shortstop
 			Keep_attack_visible(y/n)=n																																																																																																															&::shortstop
-			Keep__secondary_attack_visible(y/n)=n																																																																																																															&::shortstop
+			Keep_secondary_attack_visible(y/n)=n																																																																																																															&::shortstop
 			Keep_reload_visible(y/n)=n																																																																																																															&::shortstop		
 			Keep_idle_visible(y/n)=n																																																																																																																&::shortstop
 		•Static_draw(y/n)=n																																																																																																																				&::shortstop			
