@@ -103,23 +103,6 @@ Engineer settings:
 		•Static_attack(y/n)=n     																																																																																																																		&::wrenches
 		•More_static_idle(y/n)=n																																																																																																																		&::wrenches
 =========================================================================================================================================================
-	••Gunslinger:
-		•Position:
-			X_position=0																																																																																																																					&::gunslinger
-			Y_position=0																																																																																																																					&::gunslinger
-			Z_position=0																																																																																																																					&::gunslinger
-		•Rotation: 
-			X_rotation=0																																																																																																																					&::gunslinger
-			Y_rotation=0																																																																																																																					&::gunslinger
-			Z_rotation=0																																																																																																																					&::gunslinger
-		•Hidden(y/n)=n    																																																																																																																				&::gunslinger
-			Keep_draw_visible(y/n)=n																																																																																																																	&::gunslinger
-			Keep_attack_visible(y/n)=n																																																																																																																&::gunslinger	
-			Keep_idle_visible(y/n)=n																																																																																																																	&::gunslinger
-		•Static_draw(y/n)=n     																																																																																																																		&::gunslinger
-		•Static_attack(y/n)=n     																																																																																																																		&::gunslinger
-		•More_static_idle(y/n)=n																																																																																																																		&::gunslinger
-=========================================================================================================================================================
 	••Southern Hospitality:
 		•Position:
 			X_position=0																																																																																																																					&::southernhospitality
@@ -136,6 +119,23 @@ Engineer settings:
 		•Static_draw(y/n)=n     																																																																																																																		&::southernhospitality
 		•Static_attack(y/n)=n     																																																																																																																		&::southernhospitality
 		•More_static_idle(y/n)=n																																																																																																																		&::southernhospitality
+=========================================================================================================================================================
+	••Gunslinger:
+		•Position:
+			X_position=0																																																																																																																					&::gunslinger
+			Y_position=0																																																																																																																					&::gunslinger
+			Z_position=0																																																																																																																					&::gunslinger
+		•Rotation: 
+			X_rotation=0																																																																																																																					&::gunslinger
+			Y_rotation=0																																																																																																																					&::gunslinger
+			Z_rotation=0																																																																																																																					&::gunslinger
+		•Hidden(y/n)=n    																																																																																																																				&::gunslinger
+			Keep_draw_visible(y/n)=n																																																																																																																	&::gunslinger
+			Keep_attack_visible(y/n)=n																																																																																																																&::gunslinger	
+			Keep_idle_visible(y/n)=n																																																																																																																	&::gunslinger
+		•Static_draw(y/n)=n     																																																																																																																		&::gunslinger
+		•Static_attack(y/n)=n     																																																																																																																		&::gunslinger
+		•More_static_idle(y/n)=n																																																																																																																		&::gunslinger
 =========================================================================================================================================================
 	••All-class Melee:
 		•Position:
