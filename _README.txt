@@ -18,11 +18,11 @@ All credits for creating it go to the author.
 	Here are some of the settings:
 1. Changing positions:
 	You can change the positions of weapons on X, Y and Z axis. 
-To see what each axis does, please check _reference_positioning.png in this folder.
+To see what each axis does, please check guide_position.png in this folder.
 
 2. Changing rotations:
 	You can change the rotations of weapons on X, Y and Z axis. 
-To see what each axis does, please check _reference_rotation.png in this folder.
+To see what each axis does, please check guide_rotation.png in this folder.
 
 3. Hiding weapons:
 	There is a setting for each weapon that lets you hide that particular weapon.
