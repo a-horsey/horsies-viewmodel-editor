@@ -34,6 +34,7 @@ set Keep_backstab_detection_visible(y/n)=n
 set Keep_backstab_visible(y/n)=n
 set •Instant_backstab_detection(y/n)=n
 set •Replace_backstab_with_normal_attack(y/n)=n
+set Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=horizontal_swipe
 set •Static_backstab_detection(y/n)=n
 set •Static_backstab(y/n)=n
  ::secondary attack
@@ -88,6 +89,7 @@ IF NOT DEFINED Keep_backstab_detection_visible(y/n) set Keep_backstab_detection_
 IF NOT DEFINED Keep_backstab_visible(y/n) set Keep_backstab_visible(y/n)=n
 IF NOT DEFINED •Instant_backstab_detection(y/n) set •Instant_backstab_detection(y/n)=n
 IF NOT DEFINED •Replace_backstab_with_normal_attack(y/n) set •Replace_backstab_with_normal_attack(y/n)=n
+IF NOT DEFINED Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe) set Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=horizontal_swipe
 IF NOT DEFINED •Static_backstab_detection(y/n) set •Static_backstab_detection(y/n)=n
 IF NOT DEFINED •Static_backstab(y/n) set •Static_backstab(y/n)=n
  ::secondary attack
@@ -115,11 +117,18 @@ set Keep_backstab_detection_visible(y/n)=%Keep_backstab_detection_visible(y/n):Y
 set Keep_backstab_visible(y/n)=%Keep_backstab_visible(y/n):Y=y%
 set •Instant_backstab_detection(y/n)=%•Instant_backstab_detection(y/n):Y=y%
 set •Replace_backstab_with_normal_attack(y/n)=%•Replace_backstab_with_normal_attack(y/n):Y=y%
+IF /I %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==poke set Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=poke
+IF /I %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==horizontal_swipe set Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=horizontal_swipe
+IF /I %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==diagonal_swipe set Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=diagonal_swipe
 set •Static_backstab_detection(y/n)=%•Static_backstab_detection(y/n):Y=y%
 set •Static_backstab(y/n)=%•Static_backstab(y/n):Y=y%
  ::secondary attack
 set Keep_secondary_attack_visible(y/n)=%Keep_secondary_attack_visible(y/n):Y=y%
 set •Static_secondary_attack(y/n)=%•Static_secondary_attack(y/n):Y=y%
+
+::extra fixes
+::used for other special condition settings
+IF NOT %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==poke IF NOT %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==horizontal_swipe IF NOT %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==diagonal_swipe set Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=horizontal_swipe
 
 ::delete temp
 IF EXIST extract_settings_temp del extract_settings_temp

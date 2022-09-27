@@ -83,11 +83,9 @@ set idle_sequence=dh_idle
 ::set idle smd
 set idle_smd=dh_idle.smd
 
-::set attack sequences
-set attack_sequence_1=mangler_fire_super
-
-::set attack smds
-set attack_smd_1=mangler_fire_super.smd
+::set secondary attack
+set secondary_attack_sequence_1=mangler_fire_super
+set secondary_attack_smd_1=mangler_fire_super.smd
 
 ::set reload sequences reload sequences
 ::adds snap to seq_2 for rare weapons that need it - set to "true" to use

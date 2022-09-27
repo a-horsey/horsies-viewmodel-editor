@@ -93,4 +93,6 @@ set backstab_detect_smd_up=none
 set backstab_detect_smd_down=none
 set backstab_detect_smd_idle=none
 ::diagonal stabs
+set poke_stab_smd=none
+set horizontal_stab_smd=none
 set diagonal_stab_smd=none

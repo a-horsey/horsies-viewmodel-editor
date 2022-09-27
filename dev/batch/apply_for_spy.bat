@@ -275,7 +275,9 @@ set backstab_detect_smd_up=knife_backstab_up.smd
 set backstab_detect_smd_down=knife_backstab_down.smd
 set backstab_detect_smd_idle=knife_backstab_idle.smd
 
-::diagonal stabs
+::normal attacks
+set poke_stab_smd=knife_stab_a.smd
+set horizontal_stab_smd=knife_stab_b.smd
 set diagonal_stab_smd=knife_stab_c.smd
 
 ::apply settings
@@ -349,7 +351,9 @@ set backstab_detect_smd_up=eternal_backstab_up.smd
 set backstab_detect_smd_down=eternal_backstab_down.smd
 set backstab_detect_smd_idle=eternal_backstab_idle.smd
 
-::diagonal stabs
+::normal attacks
+set poke_stab_smd=eternal_stab_a.smd
+set horizontal_stab_smd=eternal_stab_b.smd
 set diagonal_stab_smd=eternal_stab_c.smd
 
 ::apply settings
@@ -423,7 +427,9 @@ set backstab_detect_smd_up=acr_backstab_up.smd
 set backstab_detect_smd_down=acr_backstab_down.smd
 set backstab_detect_smd_idle=acr_backstab_idle.smd
 
-::diagonal stabs
+::normal attacks
+set poke_stab_smd=acr_stab_a.smd
+set horizontal_stab_smd=acr_stab_b.smd
 set diagonal_stab_smd=acr_stab_c.smd
 
 ::apply settings

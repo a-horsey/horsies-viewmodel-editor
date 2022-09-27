@@ -12,6 +12,10 @@ IF %•Hidden(y/n)%==y IF %Keep_backstab_visible(y/n)%==y goto :process_backstab
 :process_backstab
 cd "%smd_folder%"
 
+IF %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==poke set normal_attack_smd=%poke_stab_smd%
+IF %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==horizontal_swipe set normal_attack_smd=%horizontal_stab_smd%
+IF %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==diagonal_swipe set normal_attack_smd=%diagonal_stab_smd%
+
 :count_frames_backstab
 IF NOT EXIST %backstab_attack_smd% goto :count_frames_backstab_done
 set smd_to_count=%backstab_attack_smd%
@@ -31,6 +35,6 @@ echo $append %backstab_attack_sequence% numframes %backstab_frames% >> %qc_file%
 ::replace smd with idle
 cd "%smd_folder%"
 :replace draw_smd
-IF EXIST %backstab_attack_smd%  IF EXIST %diagonal_stab_smd% (
-	copy %diagonal_stab_smd% %backstab_attack_smd% >nul
+IF EXIST %backstab_attack_smd%  IF EXIST %normal_attack_smd% (
+	copy %normal_attack_smd% %backstab_attack_smd% >nul
 	)

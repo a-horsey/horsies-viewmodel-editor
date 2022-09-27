@@ -122,11 +122,9 @@ set idle_smd=ss_idle.smd
 
 ::set attack sequences
 set attack_sequence_1=ss_fire
-set attack_sequence_2=ss_alt_fire
 
 ::set attack smds
 set attack_smd_1=ss_fire.smd
-set attack_smd_2=ss_alt_fire.smd
 
 ::set secondary attack
 set secondary_attack_sequence_1=ss_alt_fire

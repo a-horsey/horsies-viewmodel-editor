@@ -26,10 +26,9 @@ set idle_smd=ft_idle.smd
 
 ::set attack sequences
 set attack_sequence_1=ft_fire
-set attack_sequence_2=ft_alt_fire
+
 ::set attack smds
 set attack_smd_1=ft_fire.smd
-set attack_smd_2=ft_alt_fire.smd
 
 ::set secondary attack
 set secondary_attack_sequence_1=ft_alt_fire
