@@ -91,6 +91,7 @@ Spy settings:
 			Keep_backstab_visible(y/n)=n     																																																																																																																						&::butterfly
 		•Instant_backstab_detection(y/n)=n     																																																																																																																	&::butterfly
 		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::butterfly
+			Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=horizontal_swipe     																																																																																																																	&::butterfly
 		•Static_draw(y/n)=n     																																																																																																																									&::butterfly
 		•Static_attack(y/n)=n     																																																																																																																								&::butterfly
 		•More_static_idle(y/n)=n																																																																																																																								&::butterfly
@@ -114,6 +115,7 @@ Spy settings:
 			Keep_backstab_visible(y/n)=n     																																																																																																																						&::kunaiyerbigearner
 		•Instant_backstab_detection(y/n)=n     																																																																																																																	&::kunaiyerbigearner
 		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::kunaiyerbigearner
+			Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=horizontal_swipe     																																																																																																																	&::kunaiyerbigearner
 		•Static_draw(y/n)=n     																																																																																																																											&::kunaiyerbigearner
 		•Static_attack(y/n)=n     																																																																																																																												&::kunaiyerbigearner
 		•More_static_idle(y/n)=n																																																																																																																										&::kunaiyerbigearner
@@ -137,6 +139,7 @@ Spy settings:
 			Keep_backstab_visible(y/n)=n     																																																																																																																						&::sharpdresser
 		•Instant_backstab_detection(y/n)=n     																																																																																																																	&::sharpdresser
 		•Replace_backstab_with_normal_attack(y/n)=n     																																																																																																																	&::sharpdresser
+			Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=horizontal_swipe     																																																																																																																	&::sharpdresser
 		•Static_draw(y/n)=n     																																																																																																																										&::sharpdresser
 		•Static_attack(y/n)=n     																																																																																																																										&::sharpdresser
 		•More_static_idle(y/n)=n																																																																																																																										&::sharpdresser

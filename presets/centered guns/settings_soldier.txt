@@ -18,11 +18,13 @@ Soldier settings:
 		•Hidden(y/n)=n    																																																																																																																			&::rocketlaunchers
 			Keep_draw_visible(y/n)=n																																																																																																																&::rocketlaunchers
 			Keep_attack_visible(y/n)=n																																																																																																															&::rocketlaunchers
+			Keep_secondary_attack_visible(y/n)=n																																																																																																															&::rocketlaunchers
 			Keep_reload_visible(y/n)=n																																																																																																															&::rocketlaunchers		
 			Keep_idle_visible(y/n)=n																																																																																																																&::rocketlaunchers
 		•Static_draw(y/n)=n																																																																																																																				&::rocketlaunchers
 		•Static_reload(y/n)=n     																																																																																																																	&::rocketlaunchers
 		•Static_attack(y/n)=n     																																																																																																																	&::rocketlaunchers
+		•Static_secondary_attack(y/n)=n     																																																																																																																	&::rocketlaunchers
 		•More_static_idle(y/n)=n																																																																																																																	&::rocketlaunchers
 =========================================================================================================================================================
 	••Original:
