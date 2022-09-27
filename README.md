@@ -21,7 +21,7 @@ A powerful viewmodel editor for Team Fortress 2
 - Download it and place the main folder in your game's "custom" folder or "tf" folder. I suggest the "tf" folder.
 - Edit the class-specific settings files however you wish. I suggest using something other than standard notepad
 - Launch GENERATE.bat
-- Check [_reference_positioning](https://raw.githubusercontent.com/a-horsey/horsies-viewmodel-editor/main/_reference_positioning.png) and [_reference_rotation](https://raw.githubusercontent.com/a-horsey/horsies-viewmodel-editor/main/_reference_rotation.png) for some info on how positioning and rotation work. Also [this](https://developer.valvesoftware.com/wiki/$origin) could be useful
+- Check [guide_position](https://raw.githubusercontent.com/a-horsey/horsies-viewmodel-editor/main/guide_position.png) and [guide_rotation](https://raw.githubusercontent.com/a-horsey/horsies-viewmodel-editor/main/guide_rotation.png) for some info on how positioning and rotation work. Also [this](https://developer.valvesoftware.com/wiki/$origin) could be useful
 
 ## Installing Fixed Viewmodels (highly recommended):
 - Download the Fixed Viewmodels mod from [here](https://gamebanana.com/dl/469246) (direct link)
