@@ -250,8 +250,10 @@ set idle_sequence=rocketpack_idle
 set idle_smd=rocketpack_idle.smd
 
 ::set attack sequences
+set attack_sequence_1=rocketpack_idle2
 
 ::set attack smds
+set attack_smd_1=rocketpack_idle2.smd
 
 ::set reload sequences reload sequences
 ::adds snap to seq_2 for rare weapons that need it - set to "true" to use
@@ -265,6 +267,7 @@ set reload_sequence_2_is_alternative_start=false
 ::name all the sequences for positioning
 set sequence_1=rocketpack_draw
 set sequence_2=rocketpack_idle
+set sequence_3=rocketpack_idle2
 
 ::apply settings
 cd "%batch_folder%"
@@ -284,9 +287,9 @@ set draw_sequence=rocketpack_holster
 set draw_smd=rocketpack_holster.smd
 
 ::set idle
-set idle_sequence=rocketpack_idle2
+set idle_sequence=rocketpack_idle
 ::set idle smd
-set idle_smd=rocketpack_idle2.smd
+set idle_smd=rocketpack_idle.smd
 
 ::set attack sequences
 
@@ -302,8 +305,7 @@ set reload_sequence_2_is_alternative_start=false
 ::set extra sequences for hiding
 
 ::name all the sequences for positioning
-set sequence_1=rocketpack_idle2
-set sequence_2=rocketpack_holster
+set sequence_1=rocketpack_holster
 
 ::apply settings
 cd "%batch_folder%"
