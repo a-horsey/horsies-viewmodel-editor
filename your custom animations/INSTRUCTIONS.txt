@@ -1,6 +1,6 @@
 	This program (partially) supports custom viewmodel animations.
 	It automatically checks if the mod is compatible and installs it.
-	Uncompatible mods will be automatically deleted from this folder.
+	Incompatible mods will be automatically deleted from this folder.
 	
 
 How to install custom animations:
