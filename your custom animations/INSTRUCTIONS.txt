@@ -1,0 +1,20 @@
+	This program (partially) supports custom viewmodel animations.
+	It automatically checks if the mod is compatible and installs it.
+	Uncompatible mods will be automatically deleted from this folder.
+	
+
+How to install custom animations:
+	1. Download any viewmodel animations you wish to use
+	2. Place them in this folder ("your custom animations")
+	3. Run GENERATE.bat again and install
+
+How to uninstall a mod:
+	1. Remove its VPK from this folder
+	2. Run GENERATE.bat again and install
+	
+WARNING: even if a mod passes the check and installs properly, there's no guarantee that it will work without issues.
+	It is possible that some settings might not work as intended for some mods, or some other issues could show up.
+
+
+
+	
