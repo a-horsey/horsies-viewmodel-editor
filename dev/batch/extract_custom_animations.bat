@@ -24,7 +24,9 @@ IF NOT EXIST "%dev_folder%\decompiled_custom_animations\last_used_vpks" goto :ch
 FC "%vm_customizer_folder%\your custom animations\custom_vm_temp" "%dev_folder%\decompiled_custom_animations\last_used_vpks" >nul
 IF %errorlevel%==0 goto :check_for_changes_done
 echo Custom animations changed, checking...
-del /Q "%dev_folder%\decompiled_custom_animations\*"
+cd "%dev_folder%"
+IF EXIST "decompiled_custom_animations_temp"  rd /s /q "decompiled_custom_animations_temp"
+IF EXIST "decompiled_custom_animations"  rd /s /q "decompiled_custom_animations"
 :check_for_changes_done
 
 
