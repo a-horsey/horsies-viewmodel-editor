@@ -113,7 +113,7 @@ IF NOT EXIST "%vm_customizer_folder%\your custom animations\*.vpk" IF EXIST "%de
 ::set default options
 set automatic_preloading=on
 set fixed_vm_addon=on
-set disable_tracers=on
+set disable_tracers=off
 set hide_errors=on
 set custom_vm=on
 set apply_for_specific_classes=false
@@ -129,6 +129,7 @@ IF %automatic_preloading%==on set automatic_preloading_status=X
 IF %automatic_preloading%==off set automatic_preloading_status=_
 
 IF %disable_tracers%==on set toggle_tracers=goto :disable_tracers_off
+IF %disable_tracers%==off set toggle_tracers=goto :disable_tracers_on
 IF %disable_tracers%==on set disable_tracers_status=X
 IF %disable_tracers%==off set disable_tracers_status=_
 
@@ -645,7 +646,7 @@ echo Compiling the animations:
 ::compile and pack
 cd "%batch_folder%"
 call compile_and_pack.bat
-pause
+
 :del_temp
 ::delete temp
 cd %dev_folder%
@@ -656,6 +657,7 @@ color 20
 title Done!
 
 :horse
+cls
 echo                       ~~%%%%%%%%_,_,
 echo                   ~~%%%%%%%%%-"/./
 echo                 ~~%%%%%%%-'   /  `.
