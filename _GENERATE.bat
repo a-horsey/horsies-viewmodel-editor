@@ -89,6 +89,21 @@ endlocal
 pause
 goto :eof
 
+:del_temp
+::delete temp just in case
+cd "%dev_folder%"
+IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
+
+::set default options
+set automatic_preloading=on
+set fixed_vm_addon=on
+set disable_tracers=on
+
+set apply_for_specific_classes=false
+
+::fixed viewmodels files check
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set fixed_vm_addon=off
+
 ::restore default settings files if they are missing
 cd "%vm_customizer_folder%"
 IF NOT EXIST settings_scout.txt copy "%dev_folder%\default_settings\settings_scout.txt" "%vm_customizer_folder%\settings_scout.txt" >nul
@@ -101,27 +116,6 @@ IF NOT EXIST settings_medic.txt copy "%dev_folder%\default_settings\settings_med
 IF NOT EXIST settings_sniper.txt copy "%dev_folder%\default_settings\settings_sniper.txt" "%vm_customizer_folder%\settings_sniper.txt" >nul
 IF NOT EXIST settings_spy.txt copy "%dev_folder%\default_settings\settings_spy.txt" "%vm_customizer_folder%\settings_spy.txt" >nul
 
-:del_temp
-::delete temp just in case
-cd "%dev_folder%"
-IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
-::delete custom anims temp too
-IF EXIST "decompiled_custom_animations_temp" rd /s /q "decompiled_custom_animations_temp"
-::delete custom animations folder if no vpks detected
-IF NOT EXIST "%vm_customizer_folder%\your custom animations\*.vpk" IF EXIST "%dev_folder%\decompiled_custom_animations" rd /s /q "decompiled_custom_animations"
-
-::set default options
-set automatic_preloading=on
-set fixed_vm_addon=on
-set disable_tracers=on
-set hide_errors=on
-set custom_vm=on
-set apply_for_specific_classes=false
-
-::fixed viewmodels files check
-IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set fixed_vm_addon=off
-
-
 :main_menu
 ::set some menu variables
 IF %automatic_preloading%==on set toggle_preloading=goto :preloading_off
@@ -132,19 +126,12 @@ IF %disable_tracers%==on set toggle_tracers=goto :disable_tracers_off
 IF %disable_tracers%==on set disable_tracers_status=X
 IF %disable_tracers%==off set disable_tracers_status=_
 
-IF %hide_errors%==on set toggle_errors=goto :hide_errors_off
-IF %hide_errors%==on set hide_errors_status=X
-IF %hide_errors%==off set hide_errors_status=_
+
 
 IF %fixed_vm_addon%==on set toggle_fixed_vm_addon=goto :fixed_vm_addon_off
 IF %fixed_vm_addon%==off set toggle_fixed_vm_addon=goto :fixed_vm_addon_on
 IF %fixed_vm_addon%==on set fixed_vm_addon_status=X
 IF %fixed_vm_addon%==off set fixed_vm_addon_status=_
-
-IF %custom_vm%==on set toggle_custom_vm=goto :custom_vm_off%
-IF %custom_vm%==off set toggle_custom_vm=goto :custom_vm_on%
-IF %custom_vm%==on set custom_vm_status=X
-IF %custom_vm%==off set custom_vm_status=_
 
 set apply_for_specific_classes=false
 set apply_per_class_scout=false
@@ -177,10 +164,8 @@ echo.
 echo.Options:
 echo. 	3. [%automatic_preloading_status%] Include automatic preloading
 echo. 	4. [%disable_tracers_status%] Remove 1st person bullet tracers
-echo.	5. [%hide_errors_status%] Hide console errors
-IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	6. [%fixed_vm_addon_status%] Include Fixed Viewmodels
-IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	5. [%fixed_vm_addon_status%] Include Fixed Viewmodels
-IF EXIST "%vm_customizer_folder%\your custom animations\*vpk" echo. 	7. [%custom_vm_status%] Include Custom Animations
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	5. [%fixed_vm_addon_status%] Include Fixed Viewmodels
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	5. Include Fixed Viewmodels (currently %fixed_vm_addon_status%)
 echo. 	0. Developer settings
 echo.
 SET /P M=Choose an option: 
@@ -189,12 +174,9 @@ IF %M%==1 goto :install_for_all_classes_prompt
 IF %M%==2 goto :pick_classes_menu
 IF %M%==3 %toggle_preloading%
 IF %M%==4 %toggle_tracers%
-IF %M%==5 %toggle_errors%
-IF %M%==6 %toggle_fixed_vm_addon%
-IF %M%==7 %toggle_custom_vm%
-IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3  IF NOT %M%==4 IF NOT %M%==5 IF NOT %M%==6 IF NOT %M%==7 goto :main_menu
+IF %M%==5 %toggle_fixed_vm_addon%
+IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3  IF NOT %M%==4 IF NOT %M%==5 goto :main_menu
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set toggle_fixed_vm_addon=goto :main_menu
-IF NOT EXIST "%vm_customizer_folder%\your custom animations\*vpk" set toggle_custom_vm=goto :main_menu
 
 :install_for_all_classes_prompt
 cls 
@@ -235,23 +217,6 @@ set disable_tracers=on
 set toggle_tracers=goto :disable_tracers_off
 goto :main_menu
 
-:hide_errors_off
-cls
-echo This option hides the console errors caused by some of the mod's options.
-echo Without it, the console might be hard to read due to spam.
-echo.
-SET /P M=Are you sure that you want to proceed (Y/N):
-IF /i %M%==n goto :main_menu
-IF /i NOT %M%==y IF /i NOT %M%==n goto :hide_errors_off
-set hide_errors=off
-set toggle_errors=goto :hide_errors_on
-goto :main_menu
-
-:hide_errors_on
-set hide_errors=on
-set toggle_errors=goto :hide_errors_off
-goto :main_menu
-
 :fixed_vm_addon_off
 set fixed_vm_addon=off
 set toggle_fixed_vm_addon=goto :fixed_vm_addon_on
@@ -260,16 +225,6 @@ goto :main_menu
 :fixed_vm_addon_on
 set fixed_vm_addon=on
 set toggle_fixed_vm_addon=goto :fixed_vm_addon_off
-goto :main_menu
-
-:custom_vm_off
-set custom_vm=off
-set toggle_custom_vm=goto :custom_vm_on
-goto :main_menu
-
-:custom_vm_on
-set custom_vm=on
-set toggle_custom_vm=goto :custom_vm_off
 goto :main_menu
 
 :pick_classes_menu
@@ -522,7 +477,7 @@ IF %M%==3 goto :remove_vpks_prompt
 
 :remove_extracted_animations_prompt
 cls
-echo This removes all the files extracted from the game, the fixed viewmodels pack and from custom animations (if present).
+echo This removes all the files extracted from the game and the fixed viewmodels pack (if present).
 echo They will be extracted again when you press start.
 echo Only recommended if something is really wrong or the game got updated.
 echo.
@@ -531,8 +486,6 @@ IF /i %M%==y (
 	echo Removing all extracted animations...
 	IF EXIST  "%dev_folder%\decompiled_animations" rd /s /q "%dev_folder%\decompiled_animations"
 	IF EXIST  "%dev_folder%\decompiled_fixed_animations" rd /s /q "%dev_folder%\decompiled_fixed_animations"
-	IF EXIST  "%dev_folder%\decompiled_custom_animations" rd /s /q "%dev_folder%\decompiled_custom_animations"
-	IF EXIST  "%dev_folder%\decompiled_custom_animations_temp" rd /s /q "%dev_folder%\decompiled_custom_animations_temp"
 	goto :dev_menu )
 IF /i %M%==n goto :dev_menu
 IF /i NOT %M%==y IF /i NOT %M%==n goto :remove_extracted_animations_prompt
@@ -574,9 +527,6 @@ call "%vm_customizer_folder%\dev\batch\extract_default_animations.bat"
 ::Check for and extract fixed viewmodels
 IF %fixed_vm_addon%==on call "%vm_customizer_folder%\dev\batch\extract_fixed_animations.bat"
 
-::Check for and extract custom animations
-IF %custom_vm%==on call "%vm_customizer_folder%\dev\batch\extract_custom_animations.bat"
-
 ::Create temp folder + set variables
 title Creating temp folder...
 echo Creating temp folder...
@@ -585,7 +535,6 @@ IF EXIST "decompiled_animations_temp" RMDIR /S /Q "decompiled_animations_temp"
 IF NOT EXIST "decompiled_animations_temp" mkdir "decompiled_animations_temp"
 xcopy /y "decompiled_animations" "decompiled_animations_temp" /e /q >nul
 IF %fixed_vm_addon%==on IF EXIST "decompiled_fixed_animations" xcopy /y "decompiled_fixed_animations" "decompiled_animations_temp" /e /q >nul
-IF %custom_vm%==on IF EXIST "decompiled_custom_animations" xcopy /y "decompiled_custom_animations" "decompiled_animations_temp" /e /q >nul
 set decompiled_animations_temp=%dev_folder%\decompiled_animations_temp
 set qc_folder_temp=%dev_folder%\decompiled_animations_temp
 
@@ -645,7 +594,7 @@ echo Compiling the animations:
 ::compile and pack
 cd "%batch_folder%"
 call compile_and_pack.bat
-pause
+
 :del_temp
 ::delete temp
 cd %dev_folder%
@@ -656,6 +605,7 @@ color 20
 title Done!
 
 :horse
+cls
 echo                       ~~%%%%%%%%_,_,
 echo                   ~~%%%%%%%%%-"/./
 echo                 ~~%%%%%%%-'   /  `.
