@@ -114,6 +114,7 @@ IF NOT EXIST "%vm_customizer_folder%\your custom animations\*.vpk" IF EXIST "%de
 set automatic_preloading=on
 set fixed_vm_addon=on
 set disable_tracers=on
+set hide_errors=on
 set custom_vm=on
 set apply_for_specific_classes=false
 
@@ -131,7 +132,9 @@ IF %disable_tracers%==on set toggle_tracers=goto :disable_tracers_off
 IF %disable_tracers%==on set disable_tracers_status=X
 IF %disable_tracers%==off set disable_tracers_status=_
 
-
+IF %hide_errors%==on set toggle_errors=goto :hide_errors_off
+IF %hide_errors%==on set hide_errors_status=X
+IF %hide_errors%==off set hide_errors_status=_
 
 IF %fixed_vm_addon%==on set toggle_fixed_vm_addon=goto :fixed_vm_addon_off
 IF %fixed_vm_addon%==off set toggle_fixed_vm_addon=goto :fixed_vm_addon_on
@@ -174,9 +177,10 @@ echo.
 echo.Options:
 echo. 	3. [%automatic_preloading_status%] Include automatic preloading
 echo. 	4. [%disable_tracers_status%] Remove 1st person bullet tracers
-IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	5. [%fixed_vm_addon_status%] Include Fixed Viewmodels
+echo.	5. [%hide_errors_status%] Hide console errors
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	6. [%fixed_vm_addon_status%] Include Fixed Viewmodels
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	5. [%fixed_vm_addon_status%] Include Fixed Viewmodels
-IF EXIST "%vm_customizer_folder%\your custom animations\*vpk" echo. 	6. [%custom_vm_status%] Include Custom Animations
+IF EXIST "%vm_customizer_folder%\your custom animations\*vpk" echo. 	7. [%custom_vm_status%] Include Custom Animations
 echo. 	0. Developer settings
 echo.
 SET /P M=Choose an option: 
@@ -185,9 +189,10 @@ IF %M%==1 goto :install_for_all_classes_prompt
 IF %M%==2 goto :pick_classes_menu
 IF %M%==3 %toggle_preloading%
 IF %M%==4 %toggle_tracers%
-IF %M%==5 %toggle_fixed_vm_addon%
-IF %M%==6 %toggle_custom_vm%
-IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3  IF NOT %M%==4 IF NOT %M%==5 IF NOT %M%==6 goto :main_menu
+IF %M%==5 %toggle_errors%
+IF %M%==6 %toggle_fixed_vm_addon%
+IF %M%==7 %toggle_custom_vm%
+IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3  IF NOT %M%==4 IF NOT %M%==5 IF NOT %M%==6 IF NOT %M%==7 goto :main_menu
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set toggle_fixed_vm_addon=goto :main_menu
 IF NOT EXIST "%vm_customizer_folder%\your custom animations\*vpk" set toggle_custom_vm=goto :main_menu
 
@@ -228,6 +233,23 @@ goto :main_menu
 :disable_tracers_on
 set disable_tracers=on
 set toggle_tracers=goto :disable_tracers_off
+goto :main_menu
+
+:hide_errors_off
+cls
+echo This option hides the console errors caused by some of the mod's options.
+echo Without it, the console might be hard to read due to spam.
+echo.
+SET /P M=Are you sure that you want to proceed (Y/N):
+IF /i %M%==n goto :main_menu
+IF /i NOT %M%==y IF /i NOT %M%==n goto :hide_errors_off
+set hide_errors=off
+set toggle_errors=goto :hide_errors_on
+goto :main_menu
+
+:hide_errors_on
+set hide_errors=on
+set toggle_errors=goto :hide_errors_off
 goto :main_menu
 
 :fixed_vm_addon_off
@@ -500,7 +522,7 @@ IF %M%==3 goto :remove_vpks_prompt
 
 :remove_extracted_animations_prompt
 cls
-echo This removes all the files extracted from the game and the fixed viewmodels pack (if present).
+echo This removes all the files extracted from the game, the fixed viewmodels pack and from custom animations (if present).
 echo They will be extracted again when you press start.
 echo Only recommended if something is really wrong or the game got updated.
 echo.
@@ -509,6 +531,8 @@ IF /i %M%==y (
 	echo Removing all extracted animations...
 	IF EXIST  "%dev_folder%\decompiled_animations" rd /s /q "%dev_folder%\decompiled_animations"
 	IF EXIST  "%dev_folder%\decompiled_fixed_animations" rd /s /q "%dev_folder%\decompiled_fixed_animations"
+	IF EXIST  "%dev_folder%\decompiled_custom_animations" rd /s /q "%dev_folder%\decompiled_custom_animations"
+	IF EXIST  "%dev_folder%\decompiled_custom_animations_temp" rd /s /q "%dev_folder%\decompiled_custom_animations_temp"
 	goto :dev_menu )
 IF /i %M%==n goto :dev_menu
 IF /i NOT %M%==y IF /i NOT %M%==n goto :remove_extracted_animations_prompt
@@ -621,7 +645,7 @@ echo Compiling the animations:
 ::compile and pack
 cd "%batch_folder%"
 call compile_and_pack.bat
-
+pause
 :del_temp
 ::delete temp
 cd %dev_folder%
@@ -632,7 +656,6 @@ color 20
 title Done!
 
 :horse
-cls
 echo                       ~~%%%%%%%%_,_,
 echo                   ~~%%%%%%%%%-"/./
 echo                 ~~%%%%%%%-'   /  `.
