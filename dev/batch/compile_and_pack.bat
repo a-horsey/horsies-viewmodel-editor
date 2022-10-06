@@ -154,7 +154,7 @@ cd "%dev_folder%\%vpk_name%"
 IF NOT EXIST "cfg" mkdir "cfg"
 
 :automatic_preloading
-IF %automatic_preloading%==off IF %disable_tracers%==off goto :automatic_preloading_end
+IF %automatic_preloading%==off IF %disable_tracers%==off IF %hide_errors%==off goto :automatic_preloading_end
 
 ::add automatic preloading
 ::extract and rename valve.rc
@@ -176,9 +176,11 @@ IF EXIST "%custom_valve_rc%" copy "%custom_valve_rc%" "%dev_folder%\%vpk_name%\c
 cd "%dev_folder%\%vpk_name%\cfg"
 IF EXIST valve_rc_temp ren "valve_rc_temp" "valve.rc"
 
-::add preloading and tracer disabling
+::add preloading, tracer disabling and error hiding
 IF %automatic_preloading%==on echo exec preloading.cfg >> valve.rc
 IF %disable_tracers%==on echo r_drawtracers_firstperson 0 >> valve.rc
+IF %hide_errors%==on echo con_filter_enable 1; con_filter_text_out "particle" >> valve.rc
+
 
 :automatic_preloading_end
 

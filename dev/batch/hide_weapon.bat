@@ -4,18 +4,16 @@
 IF NOT %•Hidden(y/n)%==y goto :EOF
 
 ::set values
-set hide_origin_value=origin 0 -170 5
+set hide_origin_value=origin 0 -170 5 blend "animation_destroyer" 0 0
 set hide_origin_value_keep_flames_visible=origin 0 -85 35
 set hide_origin_value_keep_beam_visible=origin 0 -85 50
-
 ::apply values for beam/flames
-IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 9999 9999 9999
-IF %attack_sequence_1%==ft_fire set hide_origin_value=origin -9999 -9999 -9999
+IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 999 999 999 blend "animation_destroyer" 0 0
+IF %attack_sequence_1%==ft_fire set hide_origin_value=origin -999 -999 -999 blend "animation_destroyer" 0 0
 IF %Keep_flames_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_flames_visible%
 IF %Keep_beam_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_beam_visible%
-
 ::change values for other specific weapons
-IF %attack_sequence_1%==db_fire set hide_origin_value=origin 0 -242 5
+IF %attack_sequence_1%==db_fire set hide_origin_value=origin 0 -242 5 blend "animation_destroyer" 0 0
 
 cd "%qc_folder_temp%"
 
@@ -66,6 +64,10 @@ IF NOT %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_6% %hide_orig
 
 
 :hide_reload
+
+::set values
+set hide_origin_value=origin 0 -150 2600
+
 :hide_reload_1
 IF %reload_sequence_1%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_1% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
@@ -108,6 +110,19 @@ IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_8% %hide_orig
 :hide_reload_end
 
 :hide_other
+
+::set values
+set hide_origin_value=origin 0 -170 5 blend "animation_destroyer" 0 0
+set hide_origin_value_keep_flames_visible=origin 0 -85 35
+set hide_origin_value_keep_beam_visible=origin 0 -85 50
+::apply values for beam/flames
+IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 999 999 999 blend "animation_destroyer" 0 0
+IF %attack_sequence_1%==ft_fire set hide_origin_value=origin -999 -999 -999 blend "animation_destroyer" 0 0
+IF %Keep_flames_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_flames_visible%
+IF %Keep_beam_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_beam_visible%
+::change values for other specific weapons
+IF %attack_sequence_1%==db_fire set hide_origin_value=origin 0 -242 5 blend "animation_destroyer" 0 0
+
 :hide_other_1
 IF %other_sequence_1%==none goto :hide_other_end
 echo $append %other_sequence_1% %hide_origin_value% fadein 0.0 fadeout 0.0 >> %qc_file% 
