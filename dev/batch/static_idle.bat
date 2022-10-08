@@ -1,3 +1,4 @@
+SETLOCAL ENABLEDELAYEDEXPANSION
 @echo off
 
 :check_setting_idle
@@ -7,18 +8,57 @@ IF %•Hidden(y/n)%==y IF NOT %Keep_idle_visible(y/n)%==y goto :EOF
 IF %•Hidden(y/n)%==y IF %Keep_idle_visible(y/n)%==y goto :process_idle
 
 :process_idle
+IF %idle_smd%==none goto :EOF
+
+:extract_nodes
 cd "%smd_folder%"
+IF EXIST nodes del nodes >nul
+FOR /F "tokens=*" %%A IN (%idle_smd%) DO (
+	echo %%A
+	IF %%A==skeleton goto :nodes_extracted ) >> nodes
+:nodes_extracted
 
-:count_frames_idle
-IF NOT EXIST %idle_smd% goto :count_frames_idle_done
-set smd_to_count=%idle_smd%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A idle_smd_frames=%%b
-    )
-  )
-:count_frames_idle_done
+:static_idle
+set smd_to_make_static=%idle_smd%
+call :smd_statinator
 
-::add frame numbers for idle
+:apply_fade_values
 cd "%qc_folder_temp%"
-:add_frames_idle
-IF NOT %idle_sequence%==none echo $append %idle_sequence% frame 0 0 numframes %idle_smd_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+set fade_values=fadein 0.2 fadeout 0.2
+echo $append %idle_sequence% %fade_values% >> %qc_file%
+
+:delete_temp_and_exit
+cd "%smd_folder%"
+IF EXIST nodes del nodes >nul
+IF EXIST first_frame del first_frame >nul
+IF EXIST framecount del framecount >nul
+IF EXIST addedframes del addedframes >nul
+IF EXIST static.smd del static.smd >nul
+goto :EOF
+
+:smd_statinator
+cd "%smd_folder%"
+::delete temp - except nodes
+IF EXIST first_frame del first_frame >nul
+IF EXIST framecount del framecount >nul
+IF EXIST addedframes del addedframes >nul
+IF EXIST static.smd del static.smd >nul
+::extract first frame of idle
+set echo_now=off
+FOR /F "tokens=*" %%A IN (%idle_smd%) DO (
+	IF "%%A" EQU "time 0" set echo_now=on
+	IF NOT "%%A" EQU "time 0" IF NOT "%%A" EQU "time 1" IF !echo_now!==on ECHO %%A
+	IF "%%A" EQU "time 1" goto :first_frame_extracted ) >> first_frame
+:first_frame_extracted
+::extract number of frames
+findstr /i /c:"time" "%smd_to_make_static%" > framecount
+::add frames
+FOR /F "tokens=*" %%A IN (framecount) DO (
+	echo %%A
+	type first_frame ) >> addedframes
+::build file and replace original
+copy "nodes" + "addedframes" "static.smd" >nul
+echo end >> static.smd
+move "static.smd" "%smd_to_make_static%" >nul
+::exit call
+exit /b

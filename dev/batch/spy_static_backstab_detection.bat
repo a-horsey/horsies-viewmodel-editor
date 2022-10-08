@@ -1,13 +1,13 @@
 SETLOCAL ENABLEDELAYEDEXPANSION
 @echo off
 
-:check_setting__secondary_attack
-IF NOT %•Static_secondary_attack(y/n)%==y goto :EOF
-IF NOT %•Hidden(y/n)%==y goto :process_secondary_attack
-IF %•Hidden(y/n)%==y IF NOT %Keep_secondary_attack_visible(y/n)%==y goto :EOF
-IF %•Hidden(y/n)%==y IF %Keep_secondary_attack_visible(y/n)%==y goto :process_secondary_attack
+:check_backstab_detection
+IF NOT %•Static_backstab_detection(y/n)%==y goto :EOF
+IF NOT %•Hidden(y/n)%==y goto :process_backstab_detection
+IF %•Hidden(y/n)%==y IF NOT %Keep_backstab_detection_visible(y/n)%==y goto :EOF
+IF %•Hidden(y/n)%==y IF %Keep_backstab_detection_visible(y/n)%==y goto :process_backstab_detection
 
-:process_secondary_attack
+:process_backstab_detection
 IF %idle_smd%==none goto :EOF
 
 :extract_nodes
@@ -18,40 +18,34 @@ FOR /F "tokens=*" %%A IN (%idle_smd%) DO (
 	IF %%A==skeleton goto :nodes_extracted ) >> nodes
 :nodes_extracted
 
-:static_secondary_attack
-IF %secondary_attack_smd_1%==none goto :static_secondary_attack_done
-set smd_to_make_static=%secondary_attack_smd_1%
+:static_backstab_detection
+IF %backstab_detect_smd_up%==none goto :static_backstab_detection_done
+set smd_to_make_static=%backstab_detect_smd_up%
 call :smd_statinator
 
-IF %secondary_attack_smd_2%==none goto :static_secondary_attack_done
-set smd_to_make_static=%secondary_attack_smd_2%
+IF %backstab_detect_smd_down%==none goto :static_backstab_detection_done
+set smd_to_make_static=%backstab_detect_smd_down%
 call :smd_statinator
 
-IF %secondary_attack_smd_3%==none goto ::static_secondary_attack_done
-set smd_to_make_static=%secondary_attack_smd_3%
+IF %backstab_detect_smd_idle%==none goto :static_backstab_detection_done
+set smd_to_make_static=%backstab_detect_smd_idle%
 call :smd_statinator
-
-IF %secondary_attack_smd_4%==none goto :static_secondary_attack_done
-set smd_to_make_static=%secondary_attack_smd_4%
-call :smd_statinator
-:static_secondary_attack_done
+:static_backstab_detection_done
 
 :apply_fade_values
 cd "%qc_folder_temp%"
-set fade_values=fadein 0.2 fadeout 0.2
+set fade_values=fadein 0.1 fadeout 0.1
 
-IF %secondary_attack_sequence_1%==none goto :apply_fade_values_done
-echo $append %secondary_attack_sequence_1% %fade_values% >> %qc_file%
+IF %backstab_detect_sequence_up%==none goto :apply_fade_values_done
+echo $append %backstab_detect_sequence_up% %fade_values% >> %qc_file%
 
-IF %secondary_attack_sequence_2%==none goto :apply_fade_values_done
-echo $append %secondary_attack_sequence_2% %fade_values% >> %qc_file%
+IF %backstab_detect_sequence_down%==none goto :apply_fade_values_done
+echo $append %backstab_detect_sequence_down% %fade_values% >> %qc_file%
 
-IF %secondary_attack_sequence_3%==none goto :apply_fade_values_done
-echo $append %secondary_attack_sequence_3% %fade_values% >> %qc_file%
-
-IF %secondary_attack_sequence_4%==none goto :apply_fade_values_done
-echo $append %secondary_attack_sequence_4% %fade_values% >> %qc_file%
+IF %backstab_detect_sequence_idle%==none goto :apply_fade_values_done
+echo $append %backstab_detect_sequence_idle% %fade_values% >> %qc_file%
 :apply_fade_values_done
+
 
 :delete_temp_and_exit
 cd "%smd_folder%"

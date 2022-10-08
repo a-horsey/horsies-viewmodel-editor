@@ -17,7 +17,9 @@ IF %qc_file%==c_spy_animations.qc call spy_instant_backstab_detection.bat
 cd "%batch_folder%"
 IF %qc_file%==c_spy_animations.qc call spy_replace_backstab.bat
 cd "%batch_folder%"
-IF %qc_file%==c_spy_animations.qc call spy_static_backstabs.bat
+IF %qc_file%==c_spy_animations.qc call spy_static_backstab.bat
+cd "%batch_folder%"
+IF %qc_file%==c_spy_animations.qc call spy_static_backstab_detection.bat
 
 cd "%batch_folder%"
 call change_position_and_rotation.bat

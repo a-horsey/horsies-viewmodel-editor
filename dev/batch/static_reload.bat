@@ -1,3 +1,4 @@
+SETLOCAL ENABLEDELAYEDEXPANSION
 @echo off
 
 ::some logic to not apply if the reload animation is hidden
@@ -7,148 +8,113 @@ IF %•Hidden(y/n)%==y IF NOT %Keep_reload_visible(y/n)%==y goto :EOF
 IF %•Hidden(y/n)%==y IF %Keep_reload_visible(y/n)%==y goto :process_reload
 
 :process_reload
+IF %idle_smd%==none goto :EOF
+
+:extract_nodes
 cd "%smd_folder%"
+IF EXIST nodes del nodes >nul
+FOR /F "tokens=*" %%A IN (%idle_smd%) DO (
+	echo %%A
+	IF %%A==skeleton goto :nodes_extracted ) >> nodes
+:nodes_extracted
 
-:count_smd_1
-::count frames for reload_smd_1
-IF NOT EXIST %reload_smd_1% goto :counting_done
-set smd_to_count=%reload_smd_1%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A reload_smd_1_frames=%%b
-    )
-  )
+:static_reload
+IF %reload_smd_1%==none goto :static_reload_done
+set smd_to_make_static=%reload_smd_1%
+call :smd_statinator
 
-:count_smd_2
-::count frames for reload_smd_2
-IF NOT EXIST %reload_smd_2% goto :counting_done
-set smd_to_count=%reload_smd_2%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A reload_smd_2_frames=%%b
-    )
-  )
+IF %reload_smd_2%==none goto :static_reload_done
+set smd_to_make_static=%reload_smd_2%
+call :smd_statinator
 
-:count_smd_3
-::count frames for reload_smd_3
-IF NOT EXIST %reload_smd_3% goto :counting_done
-set smd_to_count=%reload_smd_3%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A reload_smd_3_frames=%%b
-    )
-  )
+IF %reload_smd_3%==none goto :static_reload_done
+set smd_to_make_static=%reload_smd_3%
+call :smd_statinator
 
-:count_smd_4
-::count frames for reload_smd_4
-IF NOT EXIST %reload_smd_4% goto :counting_done
-set smd_to_count=%reload_smd_4%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A reload_smd_4_frames=%%b
-    )
-  )
+IF %reload_smd_4%==none goto :static_reload_done
+set smd_to_make_static=%reload_smd_4%
+call :smd_statinator
 
-:count_smd_5
-::count frames for reload_smd_5
-IF NOT EXIST %reload_smd_5% goto :counting_done
-set smd_to_count=%reload_smd_5%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A reload_smd_5_frames=%%b
-    )
-  )
+IF %reload_smd_5%==none goto :static_reload_done
+set smd_to_make_static=%reload_smd_5%
+call :smd_statinator
 
-:count_smd_6
-::count frames for reload_smd_6
-IF NOT EXIST %reload_smd_6% goto :counting_done
-set smd_to_count=%reload_smd_6%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A reload_smd_6_frames=%%b
-    )
-  )
+IF %reload_smd_6%==none goto :static_reload_done
+set smd_to_make_static=%reload_smd_6%
+call :smd_statinator
 
-:count_smd_7
-::count frames for reload_smd_7
-IF NOT EXIST %reload_smd_7% goto :counting_done
-set smd_to_count=%reload_smd_7%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A reload_smd_7_frames=%%b
-    )
-  )
+IF %reload_smd_7%==none goto :static_reload_done
+set smd_to_make_static=%reload_smd_7%
+call :smd_statinator
 
-:count_smd_8
-::count frames for reload_smd_8
-IF NOT EXIST %reload_smd_8% goto :counting_done
-set smd_to_count=%reload_smd_8%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A reload_smd_8_frames=%%b
-    )
-  )
-:counting_done
+IF %reload_smd_8%==none goto :static_reload_done
+set smd_to_make_static=%reload_smd_8%
+call :smd_statinator
+:static_reload_done
 
-::replace reload SMD with idle SMD
-cd "%smd_folder%"
 
-:replace reload_smd_1
-IF EXIST %reload_smd_1% (
-	copy %idle_smd% %reload_smd_1% >nul
-	)
-:replace reload_smd_2
-IF EXIST %reload_smd_2% (
-	copy %idle_smd% %reload_smd_2% >nul
-	)
-:replace reload_smd_3
-IF EXIST %reload_smd_3% (
-	copy %idle_smd% %reload_smd_3% >nul
-	)
-:replace reload_smd_4
-IF EXIST %reload_smd_4% (
-	copy %idle_smd% %reload_smd_4% >nul
-	)
-:replace reload_smd_5
-IF EXIST %reload_smd_5% (
-	copy %idle_smd% %reload_smd_5% >nul
-	)
-:replace reload_smd_6
-IF EXIST %reload_smd_6% (
-	copy %idle_smd% %reload_smd_6% >nul
-	)
-:replace reload_smd_7
-IF EXIST %reload_smd_7% (
-	copy %idle_smd% %reload_smd_7% >nul
-	)
-:replace reload_smd_8
-IF EXIST %reload_smd_8% (
-	copy %idle_smd% %reload_smd_8% >nul
-	)
-
-::add frame numbers to qc files, also remove snap (fadein 0.0) for reload_1
+:apply_fade_values
 cd "%qc_folder_temp%"
-:frames_1
-IF %reload_sequence_1%==none goto :EOF
-echo $append %reload_sequence_1% frame 0 0 numframes %reload_smd_1_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+set fade_values=fadein 0.2 fadeout 0.2
 
-:frames_2
-IF %reload_sequence_2%==none goto :EOF
-echo $append %reload_sequence_2% frame 0 0 numframes %reload_smd_2_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+IF %reload_sequence_1%==none goto :apply_fade_values_done
+echo $append %reload_sequence_1% %fade_values% >> %qc_file%
 
-:frames_3
-IF %reload_sequence_3%==none goto :EOF
-echo $append %reload_sequence_3% frame 0 0 numframes %reload_smd_3_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+IF %reload_sequence_2%==none goto :apply_fade_values_done
+echo $append %reload_sequence_2% %fade_values% >> %qc_file%
 
-:frames_4
-IF %reload_sequence_4%==none goto :EOF
-echo $append %reload_sequence_4% frame 0 0 numframes %reload_smd_4_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+IF %reload_sequence_3%==none goto :apply_fade_values_done
+echo $append %reload_sequence_3% %fade_values% >> %qc_file%
 
-:frames_5
-IF %reload_sequence_5%==none goto :EOF
-echo $append %reload_sequence_5% frame 0 0 numframes %reload_smd_5_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+IF %reload_sequence_4%==none goto :apply_fade_values_done
+echo $append %reload_sequence_4% %fade_values% >> %qc_file%
 
-:frames_6
-IF %reload_sequence_6%==none goto :EOF
-echo $append %reload_sequence_6% frame 0 0 numframes %reload_smd_6_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+IF %reload_sequence_5%==none goto :apply_fade_values_done
+echo $append %reload_sequence_5% %fade_values% >> %qc_file%
 
-:frames_7
-IF %reload_sequence_7%==none goto :EOF
-echo $append %reload_sequence_7% frame 0 0 numframes %reload_smd_7_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+IF %reload_sequence_6%==none goto :apply_fade_values_done
+echo $append %reload_sequence_6% %fade_values% >> %qc_file%
 
-:frames_8
-IF %reload_sequence_8%==none goto :EOF
-echo $append %reload_sequence_8% frame 0 0 numframes %reload_smd_8_frames% fadein 0.2 fadeout 0.2 >> %qc_file%
+IF %reload_sequence_7%==none goto :apply_fade_values_done
+echo $append %reload_sequence_7% %fade_values% >> %qc_file%
 
+IF %reload_sequence_8%==none goto :apply_fade_values_done
+echo $append %reload_sequence_8% %fade_values% >> %qc_file%
+:apply_fade_values_done
+
+
+:delete_temp_and_exit
+cd "%smd_folder%"
+IF EXIST nodes del nodes >nul
+IF EXIST first_frame del first_frame >nul
+IF EXIST framecount del framecount >nul
+IF EXIST addedframes del addedframes >nul
+IF EXIST static.smd del static.smd >nul
+goto :EOF
+
+:smd_statinator
+cd "%smd_folder%"
+::delete temp - except nodes
+IF EXIST first_frame del first_frame >nul
+IF EXIST framecount del framecount >nul
+IF EXIST addedframes del addedframes >nul
+IF EXIST static.smd del static.smd >nul
+::extract first frame of idle
+set echo_now=off
+FOR /F "tokens=*" %%A IN (%idle_smd%) DO (
+	IF "%%A" EQU "time 0" set echo_now=on
+	IF NOT "%%A" EQU "time 0" IF NOT "%%A" EQU "time 1" IF !echo_now!==on ECHO %%A
+	IF "%%A" EQU "time 1" goto :first_frame_extracted ) >> first_frame
+:first_frame_extracted
+::extract number of frames
+findstr /i /c:"time" "%smd_to_make_static%" > framecount
+::add frames
+FOR /F "tokens=*" %%A IN (framecount) DO (
+	echo %%A
+	type first_frame ) >> addedframes
+::build file and replace original
+copy "nodes" + "addedframes" "static.smd" >nul
+echo end >> static.smd
+move "static.smd" "%smd_to_make_static%" >nul
+::exit call
+exit /b

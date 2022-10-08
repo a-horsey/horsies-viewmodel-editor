@@ -1,5 +1,4 @@
-::this script makes the backstab detections instant
-
+SETLOCAL ENABLEDELAYEDEXPANSION
 @echo off
 
 :check_instant_backstab
@@ -10,56 +9,77 @@ IF %•Hidden(y/n)%==y IF NOT %Keep_backstab_detection_visible(y/n)%==y goto :EO
 IF %•Hidden(y/n)%==y IF %Keep_backstab_detection_visible(y/n)%==y goto :process_backstab_detections
 
 :process_backstab_detections
+IF %backstab_detect_smd_idle%==none goto :EOF
+
+:extract_nodes
 cd "%smd_folder%"
+IF EXIST nodes del nodes >nul
+FOR /F "tokens=*" %%A IN (%backstab_detect_smd_idle%) DO (
+	echo %%A
+	IF %%A==skeleton goto :nodes_extracted ) >> nodes
+:nodes_extracted
 
-:count_frames_backstab_up
-IF NOT EXIST %backstab_detect_smd_up% goto :count_frames_backstab_det_done
-set smd_to_count=%backstab_detect_smd_up%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A backstab_detect_smd_up_frames=%%b
-    )
-  )
+:instant_backstab_detection
+IF %backstab_detect_smd_up%==none goto :instant_backstab_detection_done
+set smd_to_make_instant=%backstab_detect_smd_up%
+call :backstab_instantinator
 
-:count_frames_backstab_down
-IF NOT EXIST %backstab_detect_smd_down% goto :count_frames_backstab_det_done
-set smd_to_count=%backstab_detect_smd_down%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A backstab_detect_smd_down_frames=%%b
-    )
-  )
+IF %backstab_detect_smd_down%==none goto :instant_backstab_detection_done
+set smd_to_make_instant=%backstab_detect_smd_down%
+call :backstab_instantinator
 
-:count_frames_backstab_idle
-IF NOT EXIST %backstab_detect_smd_idle% goto :count_frames_backstab_det_done
-set smd_to_count=%backstab_detect_smd_idle%
-  for /f "usebackq" %%b in (`type %smd_to_count% ^| find "time" /c`) do (
-    set /A backstab_detect_smd_idle_frames=%%b
-    )
-  )
-:count_frames_backstab_det_done
+IF %backstab_detect_smd_idle%==none goto :instant_backstab_detection_done
+set smd_to_make_instant=%backstab_detect_smd_idle%
+call :backstab_instantinator
+:instant_backstab_detection_done
 
-::add frames to qc
+:apply_fade_values
 cd "%qc_folder_temp%"
+set fade_values=snap fadein 0.0 fadeout 0.0
 
-:add_frames_backstab_detect_smd_up
-IF %backstab_detect_sequence_up%==none goto :add_frames_det_done
-echo $append %backstab_detect_sequence_up% numframes %backstab_detect_smd_up_frames% snap frame 0 0 >> %qc_file%
+IF %backstab_detect_sequence_up%==none goto :apply_fade_values_done
+echo $append %backstab_detect_sequence_up% %fade_values% >> %qc_file%
 
-:add_frames_backstab_detect_smd_down
-IF %backstab_detect_sequence_down%==none goto :add_frames_det_done
-echo $append %backstab_detect_sequence_down% numframes %backstab_detect_smd_down_frames% snap frame 0 0 >> %qc_file%
+IF %backstab_detect_sequence_down%==none goto :apply_fade_values_done
+echo $append %backstab_detect_sequence_down% %fade_values% >> %qc_file%
 
-:add_frames_backstab_detect_smd_idle
-IF %backstab_detect_sequence_idle%==none goto :add_frames_det_done
-echo $append %backstab_detect_sequence_idle% numframes %backstab_detect_smd_idle_frames% snap frame 0 0 >> %qc_file%
-:add_frames_det_done
+IF %backstab_detect_sequence_idle%==none goto :apply_fade_values_done
+echo $append %backstab_detect_sequence_idle% %fade_values% >> %qc_file%
+:apply_fade_values_done
 
-::replace smds
+
+:delete_temp_and_exit
 cd "%smd_folder%"
+IF EXIST nodes del nodes >nul
+IF EXIST first_frame del first_frame >nul
+IF EXIST framecount del framecount >nul
+IF EXIST addedframes del addedframes >nul
+IF EXIST static.smd del static.smd >nul
+goto :EOF
 
-IF EXIST %backstab_detect_smd_up% IF EXIST %backstab_detect_smd_idle% (
-	copy %backstab_detect_smd_idle% %backstab_detect_smd_up% >nul
-	)
-	
-IF EXIST %backstab_detect_smd_down% IF EXIST %idle_smd% (
-	copy %idle_smd% %backstab_detect_smd_down% >nul
-	)
+:backstab_instantinator
+cd "%smd_folder%"
+::delete temp - except nodes
+IF EXIST first_frame del first_frame >nul
+IF EXIST framecount del framecount >nul
+IF EXIST addedframes del addedframes >nul
+IF EXIST static.smd del static.smd >nul
+::extract first frame of idle
+set echo_now=off
+FOR /F "tokens=*" %%A IN (%backstab_detect_smd_idle%) DO (
+	IF "%%A" EQU "time 0" set echo_now=on
+	IF NOT "%%A" EQU "time 0" IF NOT "%%A" EQU "time 1" IF !echo_now!==on ECHO %%A
+	IF "%%A" EQU "time 1" goto :first_frame_extracted ) >> first_frame
+:first_frame_extracted
+::extract number of frames
+findstr /i /c:"time" "%smd_to_make_instant%" > framecount
+::add frames
+FOR /F "tokens=*" %%A IN (framecount) DO (
+	echo %%A
+	type first_frame ) >> addedframes
+::build file and replace original
+copy "nodes" + "addedframes" "static.smd" >nul
+echo end >> static.smd
+move "static.smd" "%smd_to_make_instant%" >nul
+::exit call
+exit /b
