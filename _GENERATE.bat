@@ -1,4 +1,4 @@
-setlocal
+SETLOCAL ENABLEDELAYEDEXPANSION
 @echo off
 color E0
 title Horsie's Viewmodel Editor
@@ -34,7 +34,7 @@ cd "%vm_customizer_folder%"
 set vm_customizer_folder=%cd%
 cd ..\
 set custom_folder=%cd%
-set dev_folder=%vm_customizer_folder%\dev
+set dev_folder=%vm_customizer_folder%\_dev
 set batch_folder=%dev_folder%\batch
 set animations_folder=%dev_folder%\decompiled_animations
 cd ..\
@@ -53,7 +53,7 @@ goto :check_and_set_folders_done
 ::Set folders
 cd "%vm_customizer_folder%"
 set vm_customizer_folder=%cd%
-set dev_folder=%vm_customizer_folder%\dev
+set dev_folder=%vm_customizer_folder%\_dev
 set animations_folder=%dev_folder%\decompiled_animations
 set batch_folder=%dev_folder%\batch
 cd ..\
@@ -89,6 +89,16 @@ endlocal
 pause
 goto :eof
 
+
+:del_temp
+::delete temp just in case
+cd "%dev_folder%"
+IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
+::delete custom anims temp too
+IF EXIST "decompiled_custom_animations_temp" rd /s /q "decompiled_custom_animations_temp"
+::delete custom animations folder if no vpks detected
+IF NOT EXIST "%vm_customizer_folder%\custom animations\*.vpk" IF EXIST "%dev_folder%\decompiled_custom_animations" rd /s /q "decompiled_custom_animations"
+
 ::restore default settings files if they are missing
 cd "%vm_customizer_folder%"
 IF NOT EXIST settings_scout.txt copy "%dev_folder%\default_settings\settings_scout.txt" "%vm_customizer_folder%\settings_scout.txt" >nul
@@ -100,15 +110,6 @@ IF NOT EXIST settings_engineer.txt copy "%dev_folder%\default_settings\settings_
 IF NOT EXIST settings_medic.txt copy "%dev_folder%\default_settings\settings_medic.txt" "%vm_customizer_folder%\settings_medic.txt" >nul
 IF NOT EXIST settings_sniper.txt copy "%dev_folder%\default_settings\settings_sniper.txt" "%vm_customizer_folder%\settings_sniper.txt" >nul
 IF NOT EXIST settings_spy.txt copy "%dev_folder%\default_settings\settings_spy.txt" "%vm_customizer_folder%\settings_spy.txt" >nul
-
-:del_temp
-::delete temp just in case
-cd "%dev_folder%"
-IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
-::delete custom anims temp too
-IF EXIST "decompiled_custom_animations_temp" rd /s /q "decompiled_custom_animations_temp"
-::delete custom animations folder if no vpks detected
-IF NOT EXIST "%vm_customizer_folder%\your custom animations\*.vpk" IF EXIST "%dev_folder%\decompiled_custom_animations" rd /s /q "decompiled_custom_animations"
 
 ::set default options
 set automatic_preloading=on
@@ -179,10 +180,17 @@ echo.Options:
 echo. 	3. [%automatic_preloading_status%] Include automatic preloading
 echo. 	4. [%disable_tracers_status%] Remove 1st person bullet tracers
 echo.	5. [%hide_errors_status%] Hide console errors
+echo. 	0. Developer settings
+set custom_or_fixed_vm_present=false
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" set custom_or_fixed_vm_present=true
+IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set custom_or_fixed_vm_present=true
+IF EXIST "%vm_customizer_folder%\custom animations\*vpk" set custom_or_fixed_vm_present=true
+IF %custom_or_fixed_vm_present%==true (
+	echo.
+	echo Toggle animations: )
 IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	6. [%fixed_vm_addon_status%] Include Fixed Viewmodels
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	5. [%fixed_vm_addon_status%] Include Fixed Viewmodels
-IF EXIST "%vm_customizer_folder%\your custom animations\*vpk" echo. 	7. [%custom_vm_status%] Include Custom Animations
-echo. 	0. Developer settings
+IF EXIST "%vm_customizer_folder%\custom animations\*vpk" echo. 	7. [%custom_vm_status%] Include Custom Animations
 echo.
 SET /P M=Choose an option: 
 IF %M%==0 goto :dev_menu
@@ -195,7 +203,7 @@ IF %M%==6 %toggle_fixed_vm_addon%
 IF %M%==7 %toggle_custom_vm%
 IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3  IF NOT %M%==4 IF NOT %M%==5 IF NOT %M%==6 IF NOT %M%==7 goto :main_menu
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set toggle_fixed_vm_addon=goto :main_menu
-IF NOT EXIST "%vm_customizer_folder%\your custom animations\*vpk" set toggle_custom_vm=goto :main_menu
+IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" set toggle_custom_vm=goto :main_menu
 
 :install_for_all_classes_prompt
 cls 
@@ -570,17 +578,15 @@ IF /i NOT %M%==y IF /i NOT %M%==n goto :remove_vpks_prompt
 cls
 color 30
 ::Extract default animations if needed
-call "%vm_customizer_folder%\dev\batch\extract_default_animations.bat"
+call "%vm_customizer_folder%\_dev\batch\extract_default_animations.bat"
 
 ::Check for and extract fixed viewmodels
-IF %fixed_vm_addon%==on call "%vm_customizer_folder%\dev\batch\extract_fixed_animations.bat"
+IF %fixed_vm_addon%==on call "%vm_customizer_folder%\_dev\batch\extract_fixed_animations.bat"
 
 ::Check for and extract custom animations
-IF %custom_vm%==on call "%vm_customizer_folder%\dev\batch\extract_custom_animations.bat"
+IF %custom_vm%==on call "%vm_customizer_folder%\_dev\batch\extract_custom_animations.bat"
 
 ::Create temp folder + set variables
-title Creating temp folder...
-echo Creating temp folder...
 cd "%dev_folder%"
 IF EXIST "decompiled_animations_temp" RMDIR /S /Q "decompiled_animations_temp"
 IF NOT EXIST "decompiled_animations_temp" mkdir "decompiled_animations_temp"
