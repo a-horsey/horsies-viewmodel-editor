@@ -1,0 +1,403 @@
+Make sure not to break the tags.
+
+
+Soldier settings:
+
+•••Primaries:
+=========================================================================================================================================================
+&::rocketlaunchers
+
+	••Rocket Launchers (doesn't include The Original):
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_secondary_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•Static_secondary_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::rocketlaunchers
+=========================================================================================================================================================
+&::original
+
+	••Original:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::original
+=========================================================================================================================================================
+
+•••Secondaries:
+=========================================================================================================================================================
+&::shotguns
+
+	••Shotguns:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_shells(y/n)=n
+
+&::shotguns
+=========================================================================================================================================================
+&::bison
+
+	••Bison:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::bison
+=========================================================================================================================================================
+&::buffbannerbb
+
+	••Buff Banner and Battalion's Backup:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::buffbannerbb
+=========================================================================================================================================================
+&::concheror
+
+	••Concheror:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::concheror
+=========================================================================================================================================================
+
+•••Melee:
+=========================================================================================================================================================
+&::melee
+
+	••Melee:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n		
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::melee
+=========================================================================================================================================================
+&::allclassmelee
+
+	••All-class Melee:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::allclassmelee
+=========================================================================================================================================================
+
+•••Special weapons:
+=========================================================================================================================================================
+&::grapplehook
+
+	••Grappling Hook:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::grapplehook
+=========================================================================================================================================================
+&::passtimeball
+
+	••Passtime Ball:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::passtimeball
+=========================================================================================================================================================
+&::spellcast
+
+	••Spell Cast:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::spellcast
+=========================================================================================================================================================
+&::throw
+
+	••Throw:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::throw
+=========================================================================================================================================================
+
+•••Inspects
+=========================================================================================================================================================
+&::primaryinspect
+
+	••Rocket Launchers Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::primaryinspect
+=========================================================================================================================================================
+&::originalinspect
+
+	••Original Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::originalinspect
+=========================================================================================================================================================
+&::secondaryinspect
+
+	••Shotgun Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::secondaryinspect
+=========================================================================================================================================================
+&::bisoninspect
+
+	••Bison Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::bisoninspect
+=========================================================================================================================================================
+&::bufbannerbbinspect
+
+	••Buff Banner and Battalion's Backup Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::bufbannerbbinspect
+=========================================================================================================================================================
+&::concherorinspect
+
+	••Concheror Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::concherorinspect
+=========================================================================================================================================================
+&::meleeinspect
+
+	••Melee Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::meleeinspect
+=========================================================================================================================================================
+&::meleeallclassinspect
+
+	••All-class Melee Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::meleeallclassinspect
+=========================================================================================================================================================
+&::zatoichiinspect
+
+	••Zatoichi Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::zatoichiinspect
+=========================================================================================================================================================
+
+
+
+

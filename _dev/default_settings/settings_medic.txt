@@ -1,0 +1,233 @@
+Make sure not to break the tags.
+
+
+Medic settings:
+	
+•••Primaries:
+=========================================================================================================================================================
+&::syringecrossbow
+
+	••Syringe Guns and Crossbow:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n		
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::syringecrossbow
+=========================================================================================================================================================
+
+•••Secondaries:
+=========================================================================================================================================================
+&::mediguns
+
+	••Mediguns:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+			Keep_beam_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::mediguns
+=========================================================================================================================================================
+
+•••Melee:
+=========================================================================================================================================================
+&::melee
+
+	••Melee:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::melee
+=========================================================================================================================================================
+&::allclassmelee
+
+	••All-class Melee and Solemn Vow:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::allclassmelee
+=========================================================================================================================================================
+
+•••Special weapons:
+=========================================================================================================================================================
+&::grapplehook
+
+	••Grappling Hook:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::grapplehook
+=========================================================================================================================================================
+&::passtimeball
+
+	••Passtime Ball:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::passtimeball
+=========================================================================================================================================================
+&::spellcast
+
+	••Spell Cast:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::spellcast
+=========================================================================================================================================================
+&::throw
+
+	••Throw:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::throw
+=========================================================================================================================================================
+
+•••Inspect animations:
+=========================================================================================================================================================
+&::syringecrossbowinspect
+
+	••Syringe Guns and Crossbow Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::syringecrossbowinspect
+=========================================================================================================================================================
+&::medigunsinspects
+
+	••Mediguns Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::medigunsinspects
+=========================================================================================================================================================
+&::meleeinspects
+
+	••Melee Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::meleeinspects
+=========================================================================================================================================================
+&::allclassmeleeinspects
+
+	••All-class Melee Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::allclassmeleeinspects
+=========================================================================================================================================================
+

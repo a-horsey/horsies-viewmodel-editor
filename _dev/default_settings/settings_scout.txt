@@ -1,0 +1,445 @@
+Make sure not to break the tags.
+
+
+Scout settings:
+	
+•••Primaries:
+=========================================================================================================================================================
+&::scatterguns
+
+	••Scatterguns:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_reload_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n	
+		•More_static_idle(y/n)=n
+		•Remove_shells(y/n)=n
+
+&::scatterguns
+=========================================================================================================================================================
+&::doublebarrels
+																															
+	••Double Barrels (Soda Popper and Force-a-Nature):
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n		
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n		
+		
+&::doublebarrels
+=========================================================================================================================================================
+&::shortstop
+
+	••Shortstop:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_secondary_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n		
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n			
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•Static_secondary_attack(y/n)=n
+		•More_static_idle(y/n)=n	
+		
+&::shortstop
+=========================================================================================================================================================
+
+•••Secondaries:
+=========================================================================================================================================================
+&::pistols
+
+	••Pistols:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n		
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::pistols
+=========================================================================================================================================================
+&::cleaver
+
+	••Cleaver:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n	
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		
+&::cleaver
+=========================================================================================================================================================
+&::drinks
+
+	••Drinks and Mad Milk:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n		
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::drinks
+=========================================================================================================================================================
+&::breadjar
+
+	••Mutated Milk:
+		•Position:
+			X_position=0																     
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n		
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n	
+		
+&::breadjar
+=========================================================================================================================================================
+
+•••Melee:
+=========================================================================================================================================================
+&::melee
+
+	••Melee weapons:
+		•Position:
+			X_position=0																     
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		
+&::melee
+=========================================================================================================================================================
+&::sandman
+
+	••Sandman and Wrap Assassin:
+		•Position:
+			X_position=0																     
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_secondary_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•Static_secondary_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::sandman
+=========================================================================================================================================================
+&::allclassmelee
+
+	••All-class melee weapons:
+		•Position:
+			X_position=0																     
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		
+&::allclassmelee
+=========================================================================================================================================================
+
+•••Special weapons:
+=========================================================================================================================================================
+ &::grapplehook
+
+	••Grappling Hook:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		
+&::grapplehook
+=========================================================================================================================================================
+&::passtimeball
+
+	••Passtime Ball:
+		•Position:
+			X_position=0																     
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::passtimeball
+=========================================================================================================================================================
+&::spellcast
+	••Spell Cast:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::spellcast
+=========================================================================================================================================================
+&::throw
+
+	••Throw:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		
+&::throw
+=========================================================================================================================================================
+
+•••Inspect animations:
+=========================================================================================================================================================
+&::primaryinspect
+
+	••Scatterguns Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		
+&::primaryinspect
+=========================================================================================================================================================
+&::shortstopinspect
+
+	••Shortstop Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::shortstopinspect
+=========================================================================================================================================================
+&::doublebarrelinspect
+
+	••Double Barrels Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n    	
+		
+&::doublebarrelinspect
+=========================================================================================================================================================
+&::secondaryinspect
+
+	••Pistol Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		
+&::secondaryinspect
+=========================================================================================================================================================
+&::cleaverinspect
+
+	••Cleaver Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::cleaverinspect
+=========================================================================================================================================================
+&::drinksinspect
+
+	••Drinks Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+	
+&::drinksinspect
+=========================================================================================================================================================
+&::mutatedmilkinspect
+
+	••Mutated Milk Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::mutatedmilkinspect
+=========================================================================================================================================================
+&::meleeinspect
+
+	••Melee Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		
+&::meleeinspect
+=========================================================================================================================================================
+&::meleeallclassinspect
+
+	••All-class Melee Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::meleeallclassinspect
+=========================================================================================================================================================
+
+
+
