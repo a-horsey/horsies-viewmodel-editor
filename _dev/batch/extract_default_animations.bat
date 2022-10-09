@@ -60,7 +60,6 @@ CrowbarDecompiler.exe "%animations_folder%\c_engineer_animations.mdl" "%animatio
 CrowbarDecompiler.exe "%animations_folder%\c_medic_animations.mdl" "%animations_folder%" >nul
 CrowbarDecompiler.exe "%animations_folder%\c_sniper_animations.mdl" "%animations_folder%" >nul
 CrowbarDecompiler.exe "%animations_folder%\c_spy_animations.mdl" "%animations_folder%" >nul
-pause
 ::Restore settings
 cd /d "%appdata%"
 cd /d "%appdata%"
