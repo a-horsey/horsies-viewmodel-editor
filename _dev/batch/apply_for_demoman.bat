@@ -4,7 +4,9 @@ echo		 Applying Demoman Settings...
 set settings_file=settings_demoman.txt
 set "smd_folder=%qc_folder_temp%\c_demo_animations_anims"
 set qc_file=c_demo_animations.qc
-
+::replace snap
+cd "%batch_folder%"
+call replace_snap.bat
 
 :grenade_launchers
 setlocal

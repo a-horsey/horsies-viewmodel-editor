@@ -20,10 +20,12 @@ Spy settings:
 			Keep_attack_visible(y/n)=n
 			Keep_reload_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::revolvers
 =========================================================================================================================================================
@@ -46,6 +48,7 @@ Spy settings:
 			Keep_idle_visible(y/n)=n
 		•Static_draw(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::sapper
 =========================================================================================================================================================
@@ -65,6 +68,7 @@ Spy settings:
 			Keep_idle_visible(y/n)=n
 		•Static_draw(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::redtaperecorder
 =========================================================================================================================================================
@@ -84,6 +88,7 @@ Spy settings:
 			Keep_idle_visible(y/n)=n
 		•Static_draw(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::snackattack
 =========================================================================================================================================================
@@ -115,6 +120,7 @@ Spy settings:
 		•More_static_idle(y/n)=n
 		•Static_backstab_detection(y/n)=n
 		•Static_backstab(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::butterfly
 =========================================================================================================================================================
@@ -143,6 +149,7 @@ Spy settings:
 		•More_static_idle(y/n)=n
 		•Static_backstab_detection(y/n)=n
 		•Static_backstab(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::kunaiyerbigearner
 =========================================================================================================================================================
@@ -171,6 +178,7 @@ Spy settings:
 		•More_static_idle(y/n)=n
 		•Static_backstab_detection(y/n)=n
 		•Static_backstab(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::sharpdresser
 =========================================================================================================================================================
@@ -192,6 +200,7 @@ Spy settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::allclassmelee
 =========================================================================================================================================================
@@ -279,6 +288,7 @@ Spy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::revolversinspects
 =========================================================================================================================================================
@@ -294,6 +304,7 @@ Spy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::sappersinspects
 =========================================================================================================================================================
@@ -309,6 +320,7 @@ Spy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::snackattackinspects
 =========================================================================================================================================================
@@ -324,6 +336,7 @@ Spy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::knivesinspects
 =========================================================================================================================================================
@@ -339,6 +352,7 @@ Spy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::kunaiyerbigearnerinspects
 =========================================================================================================================================================
@@ -354,6 +368,7 @@ Spy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::sharpdresserinspect
 =========================================================================================================================================================

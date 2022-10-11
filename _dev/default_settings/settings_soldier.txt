@@ -27,6 +27,7 @@ Soldier settings:
 		•Static_attack(y/n)=n
 		•Static_secondary_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::rocketlaunchers
 =========================================================================================================================================================
@@ -50,6 +51,7 @@ Soldier settings:
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::original
 =========================================================================================================================================================
@@ -72,11 +74,13 @@ Soldier settings:
 			Keep_attack_visible(y/n)=n
 			Keep_reload_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
 		•Remove_shells(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::shotguns
 =========================================================================================================================================================
@@ -100,6 +104,7 @@ Soldier settings:
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::bison
 =========================================================================================================================================================
@@ -121,6 +126,7 @@ Soldier settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::buffbannerbb
 =========================================================================================================================================================
@@ -142,6 +148,7 @@ Soldier settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::concheror
 =========================================================================================================================================================
@@ -166,6 +173,7 @@ Soldier settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::melee
 =========================================================================================================================================================
@@ -187,6 +195,7 @@ Soldier settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::allclassmelee
 =========================================================================================================================================================
@@ -274,6 +283,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::primaryinspect
 =========================================================================================================================================================
@@ -289,6 +299,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::originalinspect
 =========================================================================================================================================================
@@ -304,6 +315,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::secondaryinspect
 =========================================================================================================================================================
@@ -319,6 +331,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::bisoninspect
 =========================================================================================================================================================
@@ -334,6 +347,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::bufbannerbbinspect
 =========================================================================================================================================================
@@ -349,6 +363,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::concherorinspect
 =========================================================================================================================================================
@@ -364,6 +379,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::meleeinspect
 =========================================================================================================================================================
@@ -379,6 +395,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::meleeallclassinspect
 =========================================================================================================================================================
@@ -394,6 +411,7 @@ Soldier settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::zatoichiinspect
 =========================================================================================================================================================

@@ -66,33 +66,34 @@ IF %attack_sequence_6%==none goto :apply_fade_values_done
 echo $append %attack_sequence_6% %fade_values% >> %qc_file%
 :apply_fade_values_done
 
-:remove_snap
-cd "%qc_folder_temp%"
 
-IF %attack_sequence_1%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%attack_sequence_1%
-call :snap_remover
+:: :remove_snap
+:: cd "%qc_folder_temp%"
 
-IF %attack_sequence_2%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%attack_sequence_2%
-call :snap_remover
+:: IF %attack_sequence_1%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%attack_sequence_1%
+:: call :snap_remover
 
-IF %attack_sequence_3%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%attack_sequence_3%
-call :snap_remover
+:: IF %attack_sequence_2%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%attack_sequence_2%
+:: call :snap_remover
 
-IF %attack_sequence_4%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%attack_sequence_4%
-call :snap_remover
+:: IF %attack_sequence_3%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%attack_sequence_3%
+:: call :snap_remover
 
-IF %attack_sequence_5%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%attack_sequence_5%
-call :snap_remover
+:: IF %attack_sequence_4%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%attack_sequence_4%
+:: call :snap_remover
 
-IF %attack_sequence_6%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%attack_sequence_6%
-call :snap_remover
-:remove_snap_done
+:: IF %attack_sequence_5%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%attack_sequence_5%
+:: call :snap_remover
+
+:: IF %attack_sequence_6%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%attack_sequence_6%
+:: call :snap_remover
+:: :remove_snap_done
 
 :delete_temp_and_exit
 cd "%smd_folder%"

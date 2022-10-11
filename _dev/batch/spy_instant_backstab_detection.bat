@@ -40,7 +40,7 @@ IF %backstab_detect_sequence_up%==none goto :apply_fade_values_done
 echo $append %backstab_detect_sequence_up% %fade_values% >> %qc_file%
 
 IF %backstab_detect_sequence_down%==none goto :apply_fade_values_done
-echo $append %backstab_detect_sequence_down% %fade_values% >> %qc_file%
+echo $append %backstab_detect_sequence_down% snap fadein 0.0 fadeout 0.1 >> %qc_file%
 
 IF %backstab_detect_sequence_idle%==none goto :apply_fade_values_done
 echo $append %backstab_detect_sequence_idle% %fade_values% >> %qc_file%

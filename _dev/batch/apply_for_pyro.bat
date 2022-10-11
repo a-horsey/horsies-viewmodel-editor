@@ -4,7 +4,9 @@ echo		 Applying Pyro Settings...
 set settings_file=settings_pyro.txt
 set "smd_folder=%qc_folder_temp%\c_pyro_animations_anims"
 set qc_file=c_pyro_animations.qc
-
+::replace snap
+cd "%batch_folder%"
+call replace_snap.bat
 
 :flame_throwers
 setlocal

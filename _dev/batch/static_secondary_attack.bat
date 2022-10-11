@@ -26,7 +26,7 @@ IF %secondary_attack_smd_2%==none goto :static_secondary_attack_done
 set smd_to_make_static=%secondary_attack_smd_2%
 call :smd_statinator
 
-IF %secondary_attack_smd_3%==none goto ::static_secondary_attack_done
+IF %secondary_attack_smd_3%==none goto :static_secondary_attack_done
 set smd_to_make_static=%secondary_attack_smd_3%
 call :smd_statinator
 
@@ -52,25 +52,26 @@ IF %secondary_attack_sequence_4%==none goto :apply_fade_values_done
 echo $append %secondary_attack_sequence_4% %fade_values% >> %qc_file%
 :apply_fade_values_done
 
-:remove_snap
-cd "%qc_folder_temp%"
+:: :remove_snap
+:: cd "%qc_folder_temp%"
 
-IF %secondary_attack_sequence_1%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%secondary_attack_sequence_1%
-call :snap_remover
+:: IF %secondary_attack_sequence_1%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%secondary_attack_sequence_1%
+:: call :snap_remover
+:: exit /b
 
-IF %secondary_attack_sequence_2%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%secondary_attack_sequence_2%
-call :snap_remover
+:: IF %secondary_attack_sequence_2%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%secondary_attack_sequence_2%
+:: call :snap_remover
 
-IF %secondary_attack_sequence_3%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%secondary_attack_sequence_3%
-call :snap_remover
+:: IF %secondary_attack_sequence_3%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%secondary_attack_sequence_3%
+:: call :snap_remover
 
-IF %secondary_attack_sequence_4%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%secondary_attack_sequence_4%
-call :snap_remover
-:remove_snap_done
+:: IF %secondary_attack_sequence_4%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%secondary_attack_sequence_4%
+:: call :snap_remover
+:: :remove_snap_done
 
 :delete_temp_and_exit
 cd "%smd_folder%"
@@ -111,6 +112,7 @@ exit /b
 
 goto :EOF
 :snap_remover
+exit /b
 cd "%qc_folder_temp%"
 ::del temp first
 IF EXIST "removed_snap.qc" del "removed_snap.qc" >nul

@@ -45,21 +45,21 @@ IF %backstab_detect_sequence_idle%==none goto :apply_fade_values_done
 echo $append %backstab_detect_sequence_idle% %fade_values% >> %qc_file%
 :apply_fade_values_done
 
-:remove_snap
-cd "%qc_folder_temp%"
+:: :remove_snap
+:: cd "%qc_folder_temp%"
 
-IF %backstab_detect_sequence_up%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%backstab_detect_sequence_up%
-call :snap_remover
+:: IF %backstab_detect_sequence_up%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%backstab_detect_sequence_up%
+:: call :snap_remover
 
-IF %backstab_detect_sequence_down%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%backstab_detect_sequence_down%
-call :snap_remover
+:: IF %backstab_detect_sequence_down%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%backstab_detect_sequence_down%
+:: call :snap_remover
 
-IF %backstab_detect_sequence_idle%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%backstab_detect_sequence_idle%
-call :snap_remover
-:remove_snap_done
+:: IF %backstab_detect_sequence_idle%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%backstab_detect_sequence_idle%
+:: call :snap_remover
+:: :remove_snap_done
 
 :delete_temp_and_exit
 cd "%smd_folder%"

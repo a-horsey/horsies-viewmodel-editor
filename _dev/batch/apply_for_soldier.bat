@@ -4,7 +4,9 @@ echo		 Applying Soldier Settings...
 set settings_file=settings_soldier.txt
 set "smd_folder=%qc_folder_temp%\c_soldier_animations_anims"
 set qc_file=c_soldier_animations.qc
-
+::replace snap
+cd "%batch_folder%"
+call replace_snap.bat
 
 :rocket_launchers
 setlocal

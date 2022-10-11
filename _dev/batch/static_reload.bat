@@ -81,41 +81,41 @@ IF %reload_sequence_8%==none goto :apply_fade_values_done
 echo $append %reload_sequence_8% %fade_values% >> %qc_file%
 :apply_fade_values_done
 
-:remove_snap
-cd "%qc_folder_temp%"
+:: :remove_snap
+:: cd "%qc_folder_temp%"
 
-IF %reload_sequence_1%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%reload_sequence_1%
-call :snap_remover
+:: IF %reload_sequence_1%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%reload_sequence_1%
+:: call :snap_remover
 
-IF %reload_sequence_2%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%reload_sequence_2%
-call :snap_remover
+:: IF %reload_sequence_2%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%reload_sequence_2%
+:: call :snap_remover
 
-IF %reload_sequence_3%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%reload_sequence_3%
-call :snap_remover
+:: IF %reload_sequence_3%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%reload_sequence_3%
+:: call :snap_remover
 
-IF %reload_sequence_4%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%reload_sequence_4%
-call :snap_remover
+:: IF %reload_sequence_4%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%reload_sequence_4%
+:: call :snap_remover
 
-IF %reload_sequence_5%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%reload_sequence_5%
-call :snap_remover
+:: IF %reload_sequence_5%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%reload_sequence_5%
+:: call :snap_remover
 
-IF %reload_sequence_6%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%reload_sequence_6%
-call :snap_remover
+:: IF %reload_sequence_6%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%reload_sequence_6%
+:: call :snap_remover
 
-IF %reload_sequence_7%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%reload_sequence_7%
-call :snap_remover
+:: IF %reload_sequence_7%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%reload_sequence_7%
+:: call :snap_remover
 
-IF %reload_sequence_8%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%reload_sequence_8%
-call :snap_remover
-:remove_snap_done
+:: IF %reload_sequence_8%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%reload_sequence_8%
+:: call :snap_remover
+:: :remove_snap_done
 
 :remove_snap
 cd "%qc_folder_temp%"

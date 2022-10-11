@@ -652,7 +652,6 @@ echo Compiling the animations:
 ::compile and pack
 cd "%batch_folder%"
 call compile_and_pack.bat
-
 :del_temp
 ::delete temp
 cd %dev_folder%

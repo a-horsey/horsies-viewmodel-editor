@@ -21,6 +21,7 @@ set Keep_attack_visible(y/n)=n
 set Keep_flames_visible(y/n)=n
 set Keep_beam_visible(y/n)=n
 set Keep_backstab_detection_visible(y/n)=n
+set Keep_tracers_visible(y/n)=y
 set •Static_draw(y/n)=n
 set •Static_reload(y/n)=n
 set •Static_attack(y/n)=n
@@ -46,7 +47,7 @@ IF EXIST settings_temp del settings_temp >nul
 
 ::check if labels are intact first
 set labels_number=0
-if exist label_check del label_check >nul
+IF EXIST label_check del label_check >nul
 findstr /R /C:"\<%settings_label%\>" "%settings_file%" | find /c "%settings_label%" > label_check
 FOR /F %%b in (label_check) do set labels_number=%%b
 IF NOT %labels_number%==2 (
@@ -89,6 +90,7 @@ IF NOT DEFINED Keep_idle_visible(y/n) set Keep_idle_visible(y/n)=n
 IF NOT DEFINED Keep_attack_visible(y/n) set Keep_attack_visible(y/n)=n
 IF NOT DEFINED Keep_flames_visible(y/n) set Keep_flames_visible(y/n)=n
 IF NOT DEFINED Keep_beam_visible(y/n) set Keep_beam_visible(y/n)=n
+IF NOT DEFINED Keep_tracers_visible(y/n) set Keep_tracers_visible(y/n)=y
 IF NOT DEFINED •Static_draw(y/n) set •Static_draw(y/n)=n
 IF NOT DEFINED •Static_reload(y/n) set •Static_reload(y/n)=n
 IF NOT DEFINED •Static_attack(y/n) set •Static_attack(y/n)=n
@@ -117,6 +119,8 @@ SET Keep_idle_visible(y/n)=%Keep_idle_visible(y/n):Y=y%
 SET Keep_attack_visible(y/n)=%Keep_attack_visible(y/n):Y=y%
 SET Keep_flames_visible(y/n)=%Keep_flames_visible(y/n):Y=y%
 SET Keep_beam_visible(y/n)=%Keep_beam_visible(y/n):Y=y%
+set Keep_tracers_visible(y/n)=%Keep_tracers_visible(y/n):Y=y%
+set Keep_tracers_visible(y/n)=%Keep_tracers_visible(y/n):N=n%
 SET •Static_draw(y/n)=%•Static_draw(y/n):Y=y%
 SET •Static_reload(y/n)=%•Static_reload(y/n):Y=y%
 SET •Static_attack(y/n)=%•Static_attack(y/n):Y=y%

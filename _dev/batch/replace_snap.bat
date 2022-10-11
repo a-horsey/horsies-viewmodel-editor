@@ -1,39 +1,20 @@
-::legacy script previously used for removing snap and replacing it with fadein/fadeout logic
-::currently unused
+::used for replacing snap with fadein and fadeout values in the whole qc
+::also removes fadein 0.2 and fadeout 0.2 as they are default anyway
 
 @echo off
 cd "%qc_folder_temp%"
-set qc_file_output=%qc_file%_edited
 
-::delete output and temp files just in case they exist already
-IF EXIST "%qc_file_output%" del "%qc_file_output%"
-IF EXIST "temp_replace_snap" del "temp_replace_snap"
-IF EXIST "temp_replace_snap_2" del "temp_replace_snap_2"
-
-::remove fadein and fadeout 0.2 as they are default anyway
-findstr /i /v /c:"fadein 0.2" %qc_file% > temp_replace_snap
-findstr /i /v /c:"fadeout 0.2" temp_replace_snap > temp_replace_snap_2
-IF EXIST "temp_replace_snap" del "temp_replace_snap"
-IF EXIST "temp_replace_snap_2" ren "temp_replace_snap_2" "temp_replace_snap"
-
-::add fadeout and fadein values under snap 
-FOR /F "tokens=*" %%A IN (temp_replace_snap) DO (
-  ECHO.%%A
-  IF "%%A" EQU "snap" (
-    ECHO.fadein 0.0
-	ECHO.fadeout 0.1
-  )
-) >> temp_replace_snap_2
-IF EXIST "temp_replace_snap" del "temp_replace_snap"
-IF EXIST "temp_replace_snap_2" ren "temp_replace_snap_2" "temp_replace_snap"
-
-::remove snap
-findstr /i /v /c:"snap" temp_replace_snap > %qc_file_output%
-
-::remove temp files
-IF EXIST "temp_replace_snap" del "temp_replace_snap"
-IF EXIST "temp_replace_snap_2" del "temp_replace_snap_2"
-
-::replace original files
-IF EXIST "%qc_file%" del "%qc_file%"
-IF EXIST "%qc_file_output%" ren "%qc_file_output%" "%qc_file%"
+IF EXIST snap_replaced.qc del snap_replace.qc >nul
+FOR /F "tokens=*" %%A IN (%qc_file%) DO (
+	IF NOT "%%A" EQU "snap" IF NOT "%%A" EQU "fadein 0.2" IF NOT "%%A" EQU "fadeout 0.2" IF NOT "%%A" EQU "}" ECHO.%%A
+	IF "%%A" EQU "snap" set snap_detected=yes
+	IF "%%A" EQU "}" IF NOT !snap_detected!==yes ECHO.}
+	IF "%%A" EQU "}" IF !snap_detected!==yes (
+		ECHO.fadein 0.0
+		ECHO.fadeout 0.1
+		ECHO.}
+		set snap_detected=no )
+	) >> snap_replaced.qc
+move "snap_replaced.qc" "%qc_file%" >nul
+IF EXIST snap_replaced.qc del snap_replace.qc >nul
+	

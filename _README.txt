@@ -5,7 +5,7 @@ https://github.com/a-horsey/horsies-viewmodel-editor
 	For example, to change scout settings open settings_scout.txt
 	To apply the settings, run GENERATE.bat
 	
-	Preloading and Fixed Viemodels support:
+	Preloading, Fixed Viemodels and Custom Animations support:
 1. Preloading allows you to use these viewmodels in any server, regardless of sv_pure.
 This includes fully automated preloading at game start, it's highly recommended but toggleable.
 It will not mess with your autoexec or other game files.
@@ -14,6 +14,12 @@ It will not mess with your autoexec or other game files.
 This mod is fully supported and easy to install - just drop the vpk in "fixed viewmodels addon".
 More instructions and a direct link can be found in that folder.
 All credits for creating it go to the author.
+
+3. This also supports mods that change the custom animations.
+Simply drop any viewmodel animations mods in the "custom animations" folder. 
+I suggest reading "INSTRUCTIONS.txt" in that same folder
+The mods will be automatically checked and installed next time you run GENERATE.bat
+Incompatible mods will be deleted from the folder.
 	
 	Here are some of the settings:
 1. Changing positions:
@@ -33,8 +39,13 @@ Such as: draws, reloads, attacks and more. More info below.
 	When you make an animation static, it makes that animation not move and
 behave exactly like the idle animation.
 	All animations such as draws, reloads, attacks and more can be made static.
-
-5. Weapon-specific settings:
+	
+5. Removing the left arm:
+	You can remove the left arm from most weapons by enabling "Remove_left_arm" for that weapon.
+	This option is present even for weapons with no visible left arm, because it can be used to
+remove glitches at high viewmodel_fov values or for some custom animations that add the arm back.
+	
+6. Weapon-specific settings:
 	There are some settings that are specific to certain weapons.
 Such as removing shell ejection or some fancy spy knife settings.
 
@@ -65,8 +76,6 @@ Such as removing shell ejection or some fancy spy knife settings.
 				Static_backstab - makes the knife not move when actually backstabbing someone.
 	•Shotguns, scatterguns, sniper rifles:
 				Remove_shells - makes the weapon not eject shells when reloading/attacking.
-	•Thermal Thruster:
-				Remove_left_arm - removes the left arm for this weapon.
-				
-				
-	
+	•All weapons that shoot bullets (except the sniper rifle):
+				Keep_tracers_visible - keeps the tracers visible if the weapon is hidden.
+					(disabling this will cause console errors when shooting, but they're harmless)

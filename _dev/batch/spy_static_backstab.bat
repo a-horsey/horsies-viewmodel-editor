@@ -38,17 +38,17 @@ IF %backstab_stun_sequence%==none goto :apply_fade_values_done
 echo $append %backstab_stun_sequence% %fade_values% >> %qc_file%
 :apply_fade_values_done
 
-:remove_snap
-cd "%qc_folder_temp%"
+:: :remove_snap
+:: cd "%qc_folder_temp%"
 
-IF %backstab_attack_sequence%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%backstab_attack_sequence%
-call :snap_remover
+:: IF %backstab_attack_sequence%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%backstab_attack_sequence%
+:: call :snap_remover
 
-IF %backstab_stun_sequence%==none goto :remove_snap_done
-set sequence_to_remove_snap_from=%backstab_stun_sequence%
-call :snap_remover
-:remove_snap_done
+:: IF %backstab_stun_sequence%==none goto :remove_snap_done
+:: set sequence_to_remove_snap_from=%backstab_stun_sequence%
+:: call :snap_remover
+:: :remove_snap_done
 
 :delete_temp_and_exit
 cd "%smd_folder%"

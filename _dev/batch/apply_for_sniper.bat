@@ -4,7 +4,9 @@ echo		 Applying Sniper Settings...
 set settings_file=settings_sniper.txt
 set "smd_folder=%qc_folder_temp%\c_sniper_animations_anims"
 set qc_file=c_sniper_animations.qc
-
+::replace snap
+cd "%batch_folder%"
+call replace_snap.bat
 
 :sniper_rifles
 setlocal

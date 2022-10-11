@@ -4,7 +4,9 @@ echo		 Applying Heavy Settings...
 set settings_file=settings_heavy.txt
 set "smd_folder=%qc_folder_temp%\c_heavy_animations_anims"
 set qc_file=c_heavy_animations.qc
-
+::replace snap
+cd "%batch_folder%"
+call replace_snap.bat
 
 :miniguns
 setlocal

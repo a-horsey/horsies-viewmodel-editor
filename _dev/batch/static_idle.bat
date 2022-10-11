@@ -26,9 +26,9 @@ cd "%qc_folder_temp%"
 set fade_values=fadein 0.2 fadeout 0.2
 echo $append %idle_sequence% %fade_values% >> %qc_file%
 
-:remove_snap
-set sequence_to_remove_snap_from=%idle_sequence%
-call :snap_remover
+:: :remove_snap
+:: set sequence_to_remove_snap_from=%idle_sequence%
+:: call :snap_remover
 
 :delete_temp_and_exit
 cd "%smd_folder%"

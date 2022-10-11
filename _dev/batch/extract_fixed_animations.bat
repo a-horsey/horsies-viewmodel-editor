@@ -108,6 +108,18 @@ IF NOT EXIST c_medic_animations.qc goto :animation_extract_error
 IF NOT EXIST c_sniper_animations.qc goto :animation_extract_error
 IF NOT EXIST c_spy_animations.qc goto :animation_extract_error
 echo If this file exists, the files have been extracted already. > animations_already_extracted.txt
+
+::Fixes
+::fix extracted kunai-type knives and sharp dresser having jittery idle after decompiling
+IF EXIST "%dev_folder%\extra_animation_fixes\acr_idle.smd" (
+	del "%dev_folder%\decompiled_fixed_animations\c_spy_animations_anims\acr_idle.smd" >nul
+	copy "%dev_folder%\extra_animation_fixes\acr_idle.smd" "%dev_folder%\decompiled_fixed_animations\c_spy_animations_anims\acr_idle.smd" >nul )
+
+IF EXIST "%dev_folder%\extra_animation_fixes\eternal_idle.smd" (
+	del "%dev_folder%\decompiled_fixed_animations\c_spy_animations_anims\eternal_idle.smd" >nul
+	copy "%dev_folder%\extra_animation_fixes\eternal_idle.smd" "%dev_folder%\decompiled_fixed_animations\c_spy_animations_anims\eternal_idle.smd" >nul )
+
+::exit
 cls
 echo Fixed animations extracted...
 exit /b

@@ -24,12 +24,12 @@ call :smd_statinator
 
 :apply_fade_values
 cd "%qc_folder_temp%"
-set fade_values=fadein 0.2 fadeout 0.2
+set fade_values=snap fadein 0.0 fadeout 0.2
 echo $append %draw_sequence% %fade_values% >> %qc_file%
 
-:remove_snap
-set sequence_to_remove_snap_from=%idle_sequence%
-call :snap_remover
+:: :remove_snap
+:: set sequence_to_remove_snap_from=%idle_sequence%
+:: call :snap_remover
 	
 ::special check for scout to remove buggy particle if the weapon is a drink
 IF %draw_sequence%==ed_draw goto :remove_drink_particle

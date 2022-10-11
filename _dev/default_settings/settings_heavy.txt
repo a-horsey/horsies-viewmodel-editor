@@ -20,9 +20,11 @@ Heavy settings:
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::miniguns
 =========================================================================================================================================================
@@ -45,11 +47,13 @@ Heavy settings:
 			Keep_attack_visible(y/n)=n
 			Keep_reload_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
 		•Remove_shells(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::shotguns
 =========================================================================================================================================================
@@ -69,6 +73,7 @@ Heavy settings:
 			Keep_idle_visible(y/n)=n
 		•Static_draw(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::sandwich
 =========================================================================================================================================================
@@ -93,6 +98,7 @@ Heavy settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::melee
 =========================================================================================================================================================
@@ -114,6 +120,7 @@ Heavy settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::boxinggloves
 =========================================================================================================================================================
@@ -135,6 +142,7 @@ Heavy settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::breadbite
 =========================================================================================================================================================
@@ -156,6 +164,7 @@ Heavy settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::allclassmelee
 =========================================================================================================================================================
@@ -243,6 +252,7 @@ Heavy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::minigunsinspects
 =========================================================================================================================================================
@@ -258,6 +268,7 @@ Heavy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::shotgunsinspects
 =========================================================================================================================================================
@@ -273,6 +284,7 @@ Heavy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::sandwichinspects
 =========================================================================================================================================================
@@ -288,6 +300,7 @@ Heavy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::meleeinspects
 =========================================================================================================================================================
@@ -303,6 +316,7 @@ Heavy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::boxingglovesinspects
 =========================================================================================================================================================
@@ -318,6 +332,7 @@ Heavy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::breadbiteinspect
 =========================================================================================================================================================
@@ -333,6 +348,7 @@ Heavy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::evictionnoticeinspect
 =========================================================================================================================================================
@@ -348,6 +364,7 @@ Heavy settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::allclassmeleeinspects
 =========================================================================================================================================================

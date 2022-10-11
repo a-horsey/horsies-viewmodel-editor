@@ -424,6 +424,22 @@ FOR /F "tokens=*" %%A IN (%input_qc%) DO (
 move "temp_weightlist_fix" "%input_qc%" >nul
 :weightlist_fix_done_9
 
+::ball throw activity fix
+:ball_fix
+set skip_one=no
+IF NOT EXIST c_pyro_animations.qc goto :ball_fix_done
+FOR /F "tokens=*" %%A IN (c_pyro_animations.qc) DO (
+	IF NOT "%%A" EQU ""c_pyro_animations_anims\PASSTIME_ball_throw_end.smd"" IF NOT !skip_one!==yes echo.%%A
+	IF NOT "%%A" EQU ""c_pyro_animations_anims\PASSTIME_ball_throw_end.smd"" IF !skip_one!==yes set skip_one=no
+	IF "%%A" EQU ""c_pyro_animations_anims\PASSTIME_ball_throw_end.smd"" (
+		set skip_one=yes
+		echo."c_pyro_animations_anims\PASSTIME_ball_throw_end.smd"
+		echo.activity "ACT_BALL_VM_THROW_END" 1 )
+	) >> temp_ballfix
+move "temp_ballfix" "c_pyro_animations.qc" >nul
+:ball_fix_done
+
+
 ::attempt to recompile and check for errors
 cd "%tf_folder%"
 IF EXIST "models" ren "models" "models_backup" 

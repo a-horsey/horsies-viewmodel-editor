@@ -4,6 +4,9 @@ echo		 Applying Engineer Settings...
 set settings_file=settings_engineer.txt
 set "smd_folder=%qc_folder_temp%\c_engineer_animations_anims"
 set qc_file=c_engineer_animations.qc
+::replace snap
+cd "%batch_folder%"
+call replace_snap.bat
 
 
 :shotguns

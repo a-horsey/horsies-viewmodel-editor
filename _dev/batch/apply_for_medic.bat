@@ -4,7 +4,9 @@ echo		 Applying Medic Settings...
 set settings_file=settings_medic.txt
 set "smd_folder=%qc_folder_temp%\c_medic_animations_anims"
 set qc_file=c_medic_animations.qc
-
+::replace snap
+cd "%batch_folder%"
+call replace_snap.bat
 
 :syringe_guns
 setlocal

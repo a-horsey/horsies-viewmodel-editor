@@ -38,4 +38,4 @@ cd "%batch_folder%"
 IF NOT %qc_file%==c_demo_animations.qc IF NOT %qc_file%==c_medic_animations.qc IF NOT %qc_file%==c_spy_animations.qc call remove_shells.bat
 
 cd "%batch_folder%"
-IF %qc_file%==c_pyro_animations.qc call remove_left_arm.bat
+call remove_left_arm.bat

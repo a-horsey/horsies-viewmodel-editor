@@ -21,11 +21,13 @@ Scout settings:
 			Keep_reload_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n	
 		•More_static_idle(y/n)=n
 		•Remove_shells(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::scatterguns
 =========================================================================================================================================================
@@ -45,10 +47,12 @@ Scout settings:
 			Keep_attack_visible(y/n)=n
 			Keep_reload_visible(y/n)=n		
 			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
-		•More_static_idle(y/n)=n		
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::doublebarrels
 =========================================================================================================================================================
@@ -69,11 +73,13 @@ Scout settings:
 			Keep_secondary_attack_visible(y/n)=n
 			Keep_reload_visible(y/n)=n		
 			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n			
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
 		•Static_secondary_attack(y/n)=n
-		•More_static_idle(y/n)=n	
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n	
 		
 &::shortstop
 =========================================================================================================================================================
@@ -96,10 +102,12 @@ Scout settings:
 			Keep_attack_visible(y/n)=n
 			Keep_reload_visible(y/n)=n		
 			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::pistols
 =========================================================================================================================================================
@@ -121,6 +129,7 @@ Scout settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::cleaver
 =========================================================================================================================================================
@@ -142,6 +151,7 @@ Scout settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::drinks
 =========================================================================================================================================================
@@ -162,7 +172,8 @@ Scout settings:
 			Keep_idle_visible(y/n)=n
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
-		•More_static_idle(y/n)=n	
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::breadjar
 =========================================================================================================================================================
@@ -187,6 +198,7 @@ Scout settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::melee
 =========================================================================================================================================================
@@ -210,6 +222,7 @@ Scout settings:
 		•Static_attack(y/n)=n
 		•Static_secondary_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::sandman
 =========================================================================================================================================================
@@ -231,6 +244,7 @@ Scout settings:
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::allclassmelee
 =========================================================================================================================================================
@@ -317,6 +331,7 @@ Scout settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::primaryinspect
 =========================================================================================================================================================
@@ -332,6 +347,7 @@ Scout settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::shortstopinspect
 =========================================================================================================================================================
@@ -346,7 +362,8 @@ Scout settings:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
-		•Hidden(y/n)=n    	
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::doublebarrelinspect
 =========================================================================================================================================================
@@ -362,6 +379,7 @@ Scout settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::secondaryinspect
 =========================================================================================================================================================
@@ -377,6 +395,7 @@ Scout settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::cleaverinspect
 =========================================================================================================================================================
@@ -392,6 +411,7 @@ Scout settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 	
 &::drinksinspect
 =========================================================================================================================================================
@@ -407,6 +427,7 @@ Scout settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::mutatedmilkinspect
 =========================================================================================================================================================
@@ -422,6 +443,7 @@ Scout settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 		
 &::meleeinspect
 =========================================================================================================================================================
@@ -437,6 +459,7 @@ Scout settings:
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
 
 &::meleeallclassinspect
 =========================================================================================================================================================

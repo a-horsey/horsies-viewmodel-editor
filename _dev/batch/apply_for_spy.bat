@@ -4,7 +4,9 @@ echo		 Applying Spy Settings...
 set settings_file=settings_spy.txt
 set "smd_folder=%qc_folder_temp%\c_spy_animations_anims"
 set qc_file=c_spy_animations.qc
-
+::replace snap
+cd "%batch_folder%"
+call replace_snap.bat
 
 :revolvers
 setlocal
