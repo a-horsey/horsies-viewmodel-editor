@@ -1,0 +1,422 @@
+Make sure not to break the tags.
+
+
+Pyro settings:
+	
+•••Primaries:
+=========================================================================================================================================================
+&::flamethrowers
+
+	••Flame Throwers:
+		•Position: 
+			X_position=-12 
+			Y_position=0 
+			Z_position=0 
+		•Rotation: 
+			X_rotation=0 
+			Y_rotation=0 
+			Z_rotation=-1 
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_secondary_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+			Keep_flames_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•Static_secondary_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::flamethrowers
+=========================================================================================================================================================
+
+•••Secondaries:
+=========================================================================================================================================================
+&::shotguns
+
+	••Shotguns:
+		•Position: 
+			X_position=-9 
+			Y_position=0 
+			Z_position=0 
+		•Rotation: 
+			X_rotation=0 
+			Y_rotation=0 
+			Z_rotation=0 
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+			Keep_tracers_visible(y/n)=y
+		•Static_draw(y/n)=n
+		•Static_reload(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_shells(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::shotguns
+=========================================================================================================================================================
+&::flareguns
+
+	••Flare Guns:
+		•Position: 
+			X_position=-10 
+			Y_position=0 
+			Z_position=0 
+		•Rotation: 
+			X_rotation=0 
+			Y_rotation=-2 
+			Z_rotation=-2
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::flareguns
+=========================================================================================================================================================
+&::manmelter
+
+	••Manmelter:
+		•Position: 
+			X_position=-9 
+			Y_position=0 
+			Z_position=0 
+		•Rotation: 
+			X_rotation=0 
+			Y_rotation=-3 
+			Z_rotation=-1
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::manmelter
+=========================================================================================================================================================
+&::thermalthruster
+
+	••Thermal Thruster:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::thermalthruster
+=========================================================================================================================================================
+&::gaspasser
+
+	••Gas Passer:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::gaspasser
+=========================================================================================================================================================
+
+
+•••Melee:
+=========================================================================================================================================================
+&::fireaxe
+
+	••Melee:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::fireaxe
+=========================================================================================================================================================
+&::hothand
+
+	••Hot Hand:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::hothand
+=========================================================================================================================================================
+&::meleeallclass
+
+	••Melee Allclass:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n    									     
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::meleeallclass
+=========================================================================================================================================================
+
+•••Special weapons:
+&::
+=========================================================================================================================================================
+&::grapplehook
+
+	••Grappling Hook:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::grapplehook
+=========================================================================================================================================================
+&::passtimeball
+
+	••Passtime Ball:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::passtimeball
+=========================================================================================================================================================
+&::spellcast
+
+	••Spell Cast:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+
+&::spellcast
+=========================================================================================================================================================
+&::throw
+
+	••Throw:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+			Keep_draw_visible(y/n)=n
+			Keep_attack_visible(y/n)=n
+			Keep_idle_visible(y/n)=n
+		•Static_draw(y/n)=n
+		•Static_attack(y/n)=n
+		•More_static_idle(y/n)=n
+
+&::throw
+=========================================================================================================================================================
+
+•••Inspects:
+=========================================================================================================================================================
+&::flamethrowersinspect
+
+	••Flame Throwers Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::flamethrowersinspect
+=========================================================================================================================================================
+&::dragonsfuryinspect
+
+	••Dragon's Fury Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::dragonsfuryinspect
+=========================================================================================================================================================
+&::phlogistinatorinspect
+
+	••Phlogistinator Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::phlogistinatorinspect
+=========================================================================================================================================================
+&::secondariesinspect
+
+	••Shotguns Inspects:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::secondariesinspect
+=========================================================================================================================================================
+&::flaregunsinspect
+
+	••Flare Guns Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::flaregunsinspect
+=========================================================================================================================================================
+&::meleeinspect
+
+	••Melee Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::meleeinspect
+=========================================================================================================================================================
+&::hothandinspect
+
+	••Hot Hand Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::hothandinspect
+=========================================================================================================================================================
+&::meleeallclassinspect
+
+	••Melee Allclass Inspect:
+		•Position:
+			X_position=0
+			Y_position=0
+			Z_position=0
+		•Rotation: 
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=0
+		•Hidden(y/n)=n
+		•Remove_left_arm(y/n)=n
+
+&::meleeallclassinspect
+=========================================================================================================================================================
+
+
