@@ -60,6 +60,20 @@ echo.$append %sequence_10% addlayer "remove_left_arm" >> %qc_file%
 :apply_layers_done
 
 :bug_fixes
+
+:fix_static_reloads
+IF NOT %•Static_reload(y/n)%==y goto :fix_static_reloads_done
+IF NOT %reload_sequence_1%==none echo $append %reload_sequence_1% addlayer "remove_shell" >> %qc_file%
+IF NOT %reload_sequence_2%==none echo $append %reload_sequence_2% addlayer "remove_shell" >> %qc_file%
+IF NOT %reload_sequence_3%==none echo $append %reload_sequence_3% addlayer "remove_shell" >> %qc_file%
+IF NOT %reload_sequence_4%==none echo $append %reload_sequence_4% addlayer "remove_shell" >> %qc_file%
+IF NOT %reload_sequence_5%==none echo $append %reload_sequence_5% addlayer "remove_shell" >> %qc_file%
+IF NOT %reload_sequence_6%==none echo $append %reload_sequence_6% addlayer "remove_shell" >> %qc_file%
+IF NOT %reload_sequence_7%==none echo $append %reload_sequence_7% addlayer "remove_shell" >> %qc_file%
+IF NOT %reload_sequence_8%==none echo $append %reload_sequence_8% addlayer "remove_shell" >> %qc_file%
+:fix_static_reloads_done
+
+:extra fixes
 IF %custom_vm%==on IF EXIST "%dev_folder%\decompiled_custom_animations\%qc_file%" goto :bug_fixes_custom_mods
 
 :fix_shortstop_shell
@@ -101,7 +115,26 @@ IF "%settings_label%" EQU "&::revolvers" IF %qc_file%==c_spy_animations.qc (
 	echo $append reload addlayer "remove_shell" >> %qc_file%
 	echo $append reload2 addlayer "remove_shell" >> %qc_file%
 	echo $append reload blendlayer "remove_shell_fix" 0 0 8 8 noblend >> %qc_file%
-	echo $append reload2 blendlayer "remove_shell_fix" 0 0 8 8 noblend >> %qc_file% )
+	echo $append reload2 blendlayer "remove_shell_fix" 0 0 8 8 noblend >> %qc_file%
+	echo $append draw addlayer "remove_shell" >> %qc_file%
+	echo $append idle addlayer "remove_shell" >> %qc_file%
+	echo $append fire addlayer "remove_shell" >> %qc_file% )
+	
+:fix_shotgun_engi
+IF "%settings_label%" EQU "&::shotguns" IF %qc_file%==c_engineer_animations.qc (
+	echo $append fj_idle addlayer "remove_shell" >> %qc_file%
+	echo $append fj_fire addlayer "remove_shell" >> %qc_file%
+	echo $append fj_reload_start addlayer "remove_shell" >> %qc_file%
+	echo $append fj_reload_loop addlayer "remove_shell" >> %qc_file%
+	echo $append fj_reload_end addlayer "remove_shell" >> %qc_file%
+	echo $append fj_fire_alt addlayer "remove_shell" >> %qc_file%
+	echo $append fj_draw addlayer "remove_shell" >> %qc_file% )
+
+:fix_shotgun_engi_inspect
+IF "%settings_label%" EQU "&::shotgunsinspects" IF %qc_file%==c_engineer_animations.qc (
+	echo $append primary_inspect_start addlayer "remove_shell" >> %qc_file%
+	echo $append primary_inspect_idle addlayer "remove_shell" >> %qc_file%
+	echo $append primary_inspect_end addlayer "remove_shell" >> %qc_file% )
 
 
 goto :EOF
@@ -149,7 +182,26 @@ IF "%settings_label%" EQU "&::grenadelaunchers" IF %qc_file%==c_demo_animations.
 :fix_spy_revolver_reload
 IF "%settings_label%" EQU "&::revolvers" IF %qc_file%==c_spy_animations.qc (
 	echo $append reload addlayer "remove_shell" >> %qc_file%
-	echo $append reload2 addlayer "remove_shell" >> %qc_file% )
+	echo $append reload2 addlayer "remove_shell" >> %qc_file%
+	echo $append draw addlayer "remove_shell" >> %qc_file%
+	echo $append idle addlayer "remove_shell" >> %qc_file%
+	echo $append fire addlayer "remove_shell" >> %qc_file% )
+
+:fix_shotgun_engi
+IF "%settings_label%" EQU "&::shotguns" IF %qc_file%==c_engineer_animations.qc (
+	echo $append fj_idle addlayer "remove_shell" >> %qc_file%
+	echo $append fj_fire addlayer "remove_shell" >> %qc_file%
+	echo $append fj_reload_start addlayer "remove_shell" >> %qc_file%
+	echo $append fj_reload_loop addlayer "remove_shell" >> %qc_file%
+	echo $append fj_reload_end addlayer "remove_shell" >> %qc_file%
+	echo $append fj_fire_alt addlayer "remove_shell" >> %qc_file%
+	echo $append fj_draw addlayer "remove_shell" >> %qc_file% )
+
+:fix_shotgun_engi_inspect
+IF "%settings_label%" EQU "&::shotgunsinspects" IF %qc_file%==c_engineer_animations.qc (
+	echo $append primary_inspect_start addlayer "remove_shell" >> %qc_file%
+	echo $append primary_inspect_idle addlayer "remove_shell" >> %qc_file%
+	echo $append primary_inspect_end addlayer "remove_shell" >> %qc_file% )
 
 ::exit
 goto :EOF
@@ -230,7 +282,7 @@ cd "%qc_folder_temp%"
  echo."bip_hand_R" 0 >> %qc_file% 
  echo."effect_hand_L" 0 >> %qc_file% 
  echo."effect_hand_R" 0 >> %qc_file% 
- echo."vm_weapon_bone" 1 >> %qc_file% 
+ echo."vm_weapon_bone" 0 >> %qc_file% 
  echo."vm_weapon_bone_1" 0 >> %qc_file% 
  echo."vm_weapon_bone_2" 0 >> %qc_file% 
  echo."vm_weapon_bone_3" 0 >> %qc_file% 
@@ -1026,7 +1078,7 @@ cd "%qc_folder_temp%"
  echo."forearm_twist_01_L" 1 >> %qc_file% 
  echo."effect_hand_L" 1 >> %qc_file% 
  echo."effect_hand_R" 0 >> %qc_file% 
- echo."vm_weapon_bone" 1 >> %qc_file% 
+ echo."vm_weapon_bone" 0 >> %qc_file% 
  echo."vm_weapon_bone_1" 0 >> %qc_file% 
  echo."vm_weapon_bone_2" 0 >> %qc_file% 
  echo."vm_weapon_bone_3" 0 >> %qc_file% 
@@ -1082,20 +1134,20 @@ cd "%qc_folder_temp%"
  echo."bip_pinky_2_R" 0 >> %qc_file% 
  echo.} >> %qc_file% 
  
-  echo.$weightlist "remove_shell" { >> %qc_file% 
+ echo.$weightlist "remove_shell" { >> %qc_file% 
  echo."root" 0 >> %qc_file% 
- echo."bip_upperArm_L" 0 >> %qc_file% 
+ echo."bip_upperArm_L" 1 >> %qc_file% 
  echo."bip_upperArm_R" 0 >> %qc_file% 
- echo."bip_lowerArm_L" 0 >> %qc_file% 
+ echo."bip_lowerArm_L" 1 >> %qc_file% 
  echo."bip_lowerArm_R" 0 >> %qc_file% 
- echo."bip_wrist_L" 0 >> %qc_file% 
+ echo."bip_wrist_L" 1 >> %qc_file% 
  echo."bip_wrist_R" 0 >> %qc_file% 
- echo."bip_hand_L" 0 >> %qc_file% 
+ echo."bip_hand_L" 1 >> %qc_file% 
  echo."bip_hand_R" 0 >> %qc_file% 
  echo."arm_attach_R" 0 >> %qc_file% 
  echo."bip_twist_R" 0 >> %qc_file% 
- echo."forearm_twist_01_L" 0 >> %qc_file% 
- echo."effect_hand_L" 0 >> %qc_file% 
+ echo."forearm_twist_01_L" 1 >> %qc_file% 
+ echo."effect_hand_L" 1 >> %qc_file% 
  echo."effect_hand_R" 0 >> %qc_file% 
  echo."vm_weapon_bone" 1 >> %qc_file% 
  echo."vm_weapon_bone_1" 0 >> %qc_file% 
@@ -1106,50 +1158,50 @@ cd "%qc_folder_temp%"
  echo."vm_weapon_bone_6" 0 >> %qc_file% 
  echo."vm_weapon_bone_7" 0 >> %qc_file% 
  echo."vm_weapon_bone_L" 0 >> %qc_file% 
- echo."vm_weapon_bone_L_1" 0 >> %qc_file% 
- echo."vm_weapon_bone_L_2" 0 >> %qc_file% 
+ echo."vm_weapon_bone_L_1" 1 >> %qc_file% 
+ echo."vm_weapon_bone_L_2" 1 >> %qc_file% 
  echo."weapon_bone" 0 >> %qc_file% 
  echo."weapon_bone_1" 0 >> %qc_file% 
  echo."weapon_bone_2" 0 >> %qc_file% 
  echo."weapon_bone_3" 0 >> %qc_file% 
- echo."weapon_bone_L" 0 >> %qc_file% 
- echo."bip_thumb_0_L" 0 >> %qc_file% 
+ echo."weapon_bone_L" 1 >> %qc_file% 
+ echo."bip_thumb_0_L" 1 >> %qc_file% 
  echo."bip_thumb_0_R" 0 >> %qc_file% 
- echo."bip_thumb_1_L" 0 >> %qc_file% 
+ echo."bip_thumb_1_L" 1 >> %qc_file% 
  echo."bip_thumb_1_R" 0 >> %qc_file% 
- echo."bip_thumb_2_L" 0 >> %qc_file% 
+ echo."bip_thumb_2_L" 1 >> %qc_file% 
  echo."bip_thumb_2_R" 0 >> %qc_file% 
- echo."bip_index_meta_0_L" 0 >> %qc_file% 
+ echo."bip_index_meta_0_L" 1 >> %qc_file% 
  echo."bip_index_meta_0_R" 0 >> %qc_file% 
- echo."bip_index_0_L" 0 >> %qc_file% 
+ echo."bip_index_0_L" 1 >> %qc_file% 
  echo."bip_index_0_R" 0 >> %qc_file% 
- echo."bip_index_1_L" 0 >> %qc_file% 
+ echo."bip_index_1_L" 1 >> %qc_file% 
  echo."bip_index_1_R" 0 >> %qc_file% 
- echo."bip_index_2_L" 0 >> %qc_file% 
+ echo."bip_index_2_L" 1 >> %qc_file% 
  echo."bip_index_2_R" 0 >> %qc_file% 
- echo."bip_middle_meta_0_L" 0 >> %qc_file% 
+ echo."bip_middle_meta_0_L" 1 >> %qc_file% 
  echo."bip_middle_meta_0_R" 0 >> %qc_file% 
- echo."bip_middle_0_L" 0 >> %qc_file% 
+ echo."bip_middle_0_L" 1 >> %qc_file% 
  echo."bip_middle_0_R" 0 >> %qc_file% 
- echo."bip_middle_1_L" 0 >> %qc_file% 
+ echo."bip_middle_1_L" 1 >> %qc_file% 
  echo."bip_middle_1_R" 0 >> %qc_file% 
- echo."bip_middle_2_L" 0 >> %qc_file% 
+ echo."bip_middle_2_L" 1 >> %qc_file% 
  echo."bip_middle_2_R" 0 >> %qc_file% 
- echo."bip_ring_meta_0_L" 0 >> %qc_file% 
+ echo."bip_ring_meta_0_L" 1 >> %qc_file% 
  echo."bip_ring_meta_0_R" 0 >> %qc_file% 
- echo."bip_ring_0_L" 0 >> %qc_file% 
+ echo."bip_ring_0_L" 1 >> %qc_file% 
  echo."bip_ring_0_R" 0 >> %qc_file% 
- echo."bip_ring_1_L" 0 >> %qc_file% 
+ echo."bip_ring_1_L" 1 >> %qc_file% 
  echo."bip_ring_1_R" 0 >> %qc_file% 
- echo."bip_ring_2_L" 0 >> %qc_file% 
+ echo."bip_ring_2_L" 1 >> %qc_file% 
  echo."bip_ring_2_R" 0 >> %qc_file% 
- echo."bip_pinky_meta_0_L" 0 >> %qc_file% 
+ echo."bip_pinky_meta_0_L" 1 >> %qc_file% 
  echo."bip_pinky_meta_0_R" 0 >> %qc_file% 
- echo."bip_pinky_0_L" 0 >> %qc_file% 
+ echo."bip_pinky_0_L" 1 >> %qc_file% 
  echo."bip_pinky_0_R" 0 >> %qc_file% 
- echo."bip_pinky_1_L" 0 >> %qc_file% 
+ echo."bip_pinky_1_L" 1 >> %qc_file% 
  echo."bip_pinky_1_R" 0 >> %qc_file% 
- echo."bip_pinky_2_L" 0 >> %qc_file% 
+ echo."bip_pinky_2_L" 1 >> %qc_file% 
  echo."bip_pinky_2_R" 0 >> %qc_file% 
  echo.} >> %qc_file% 
 
