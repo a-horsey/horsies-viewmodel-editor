@@ -1,4 +1,4 @@
-SETLOCAL ENABLEDELAYEDEXPANSION
+setlocal ENABLEDELAYEDEXPANSION ENABLEEXTENSIONS
 @echo off
 color E0
 title Horsie's Viewmodel Editor
@@ -207,9 +207,21 @@ IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" set toggle_custom_v
 
 :install_for_all_classes_prompt
 cls 
+echo.                       ~~%%%%%%%%_,_,
+echo.                  ~~%%%%%%%%%-"/./
+echo.                 ~~%%%%%%%-'   /  `.
+echo.               ~~%%%%%%%%'  .     ,__;
+echo.             ~~%%%%%%%%'   :       \O\
+echo.          ~~%%%%%%%%'    :          `.
+echo.        ~~%%%%%%%%'       `. _,        '
+echo.     ~~%%%%%%%%'          .'`-._        `.
+echo.  ~~%%%%%%%%%'           :     `-.     (,;
+echo. ~~%%%%%%%%'             :         `._\_.'
+echo. ~~%%%%%%' Welcome to Horsie's Viewmodel Editor!
+echo.
 echo You're about to install the mod for all the classes.
 echo.
-SET /P M=Proceed (Y/N):
+SET /P M=Proceed? (Y/N):
 IF /i %M%==y (
 	set apply_for_specific_classes=false
 	goto :exit_menu )
@@ -219,10 +231,22 @@ goto :main_menu
 
 :preloading_off
 cls
-echo Warning: Automatic preloading is highly recommended.
-echo The edited viewmodels will not work in most servers without it.
+echo.                       ~~%%%%%%%%_,_,
+echo.                  ~~%%%%%%%%%-"/./
+echo.                 ~~%%%%%%%-'   /  `.
+echo.               ~~%%%%%%%%'  .     ,__;
+echo.             ~~%%%%%%%%'   :       \O\
+echo.          ~~%%%%%%%%'    :          `.
+echo.        ~~%%%%%%%%'       `. _,        '
+echo.     ~~%%%%%%%%'          .'`-._        `.
+echo.  ~~%%%%%%%%%'           :     `-.     (,;
+echo. ~~%%%%%%%%'             :         `._\_.'
+echo. ~~%%%%%%' Warning:
 echo.
-SET /P M=Are you sure that you want to proceed (Y/N):
+echo.Automatic preloading is highly recommended.
+echo.The viewmodels won't work in most servers without it.
+echo.
+SET /P M=Are you sure that you want to disable it? (Y/N):
 IF /i %M%==n goto :main_menu
 IF /i NOT %M%==y IF /i NOT %M%==n goto :preloading_off
 set automatic_preloading=off
@@ -246,10 +270,22 @@ goto :main_menu
 
 :hide_errors_off
 cls
-echo This option hides the console errors caused by some of the mod's options.
-echo Without it, the console might be hard to read due to spam.
+echo.                       ~~%%%%%%%%_,_,
+echo.                  ~~%%%%%%%%%-"/./
+echo.                 ~~%%%%%%%-'   /  `.
+echo.               ~~%%%%%%%%'  .     ,__;
+echo.             ~~%%%%%%%%'   :       \O\
+echo.          ~~%%%%%%%%'    :          `.
+echo.        ~~%%%%%%%%'       `. _,        '
+echo.     ~~%%%%%%%%'          .'`-._        `.
+echo.  ~~%%%%%%%%%'           :     `-.     (,;
+echo. ~~%%%%%%%%'             :         `._\_.'
+echo. ~~%%%%%%' Warning:
 echo.
-SET /P M=Are you sure that you want to proceed (Y/N):
+echo.This option hides the console errors caused by some of the mod's options.
+echo.Without this, the console might be hard to read due to spam.
+echo.
+SET /P M=Are you sure that you want to disable it? (Y/N):
 IF /i %M%==n goto :main_menu
 IF /i NOT %M%==y IF /i NOT %M%==n goto :hide_errors_off
 set hide_errors=off
@@ -492,7 +528,7 @@ IF %medic_status%==X echo  - Medic
 IF %sniper_status%==X echo  - Sniper
 IF %spy_status%==X echo  - Spy
 echo.
-SET /P M=Proceed (Y/N):
+SET /P M=Proceed? (Y/N):
 IF /i %M%==y (
 	set apply_for_specific_classes=true
 	goto :exit_menu )
@@ -674,6 +710,7 @@ echo     ~~%%%%%%%%'          .'`-._        `.
 echo  ~~%%%%%%%%%'           :     `-.     (,;
 echo ~~%%%%%%%%'             :         `._\_.'
 echo ~~%%%%%%'              ;  Done! Your edited viewmodels have been installed.
-pause
 endlocal
+pause
+
 
