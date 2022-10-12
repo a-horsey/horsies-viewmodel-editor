@@ -1,4 +1,4 @@
-	This program fully supports the Fixed Viewmodels pack
+	This tool fully supports the Fixed Viewmodels pack
 	It fixes hundreds of default viewmodel animations, such as the extra hands on The Originals and sappers
 	https://gamebanana.com/mods/206440 - all credits go to the author
 
