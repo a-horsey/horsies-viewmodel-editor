@@ -28,6 +28,12 @@ A powerful viewmodel editor for Team Fortress 2
 - Extract the main vpk in "fixed viewmodels addon"
 - Done, the tool will automatically install it next time you run GENERATE.bat
 
+## Installing custom animations:
+- Download any custom viewmodel animation mod
+- Place the VPK in the "custom animation" folder (loose files currently not supported)
+- Lanch GENERATE.bat and install
+- All mods will be automaticall checked. If they're compatible they get installed. If not, the VPK is deleted from the folder.
+
 ## Credits:
 - UltraTechX - made [CrowbarCommandLine](https://github.com/UltraTechX/Crowbar-Command-Line)
 - [Ryan "Nemesis" Gregg](https://developer.valvesoftware.com/wiki/User:Nem) - made [HLLib](https://developer.valvesoftware.com/wiki/HLLib)
