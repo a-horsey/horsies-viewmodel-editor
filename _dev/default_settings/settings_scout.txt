@@ -18,8 +18,8 @@ Scout settings:
 			Z_rotation=0
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
-			Keep_reload_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
+			Keep_reload_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
 			Keep_tracers_visible(y/n)=y
 		•Static_draw(y/n)=n
