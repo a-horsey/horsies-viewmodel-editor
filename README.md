@@ -33,7 +33,7 @@ A powerful viewmodel editor for Team Fortress 2
 ## Installing custom animations:
 - Download any custom viewmodel animation mods
 - Place the VPKs in the "custom animations" folder (loose files currently not supported)
-- Lanch GENERATE.bat and install
+- Launch GENERATE.bat and install
 - All mods will be automatically checked. If they're compatible they get installed. If not, the VPK is deleted from the folder.
 - I suggest reading INSTRUCTIONS.txt from the custom animations folder
 
