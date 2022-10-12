@@ -8,7 +8,6 @@ Scout settings:
 &::scatterguns
 
 	••Scatterguns:
-		•Position:
 		•Position: 
 			X_position=-10
 			Y_position=0 
