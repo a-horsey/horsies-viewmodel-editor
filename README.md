@@ -42,5 +42,5 @@ A powerful viewmodel editor for Team Fortress 2
 - Flewvar - made some assets for left arm removal (not used anymore), also helped test a lot of theories related to viewmodels
 - [newguy111](https://gamebanana.com/members/1609859) for telling me how to fix the buggy kunai/eternal reward/sharp dresser idles. And [N-Cognito](https://gamebanana.com/members/1300652) for actually making the files used in the fix.
 - Discord user Arlwiss - did extensive testing and found a lot of bugs/issues
-- Peaches because I kinda took over his discord for debugging
+- Peaches because I kinda took over his discord for debugging and helped test
 - [Valve Developer Community](https://developer.valvesoftware.com/wiki/Main_Page) - contains all the information needed to make something like this 
