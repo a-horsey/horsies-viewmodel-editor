@@ -5,15 +5,16 @@ IF NOT %•Hidden(y/n)%==y goto :EOF
 
 ::set values
 set hide_origin_value=origin 0 -170 5
-set hide_origin_value_keep_flames_visible=origin 0 -85 35
-set hide_origin_value_keep_beam_visible=origin 0 -85 50
 ::apply values for beam/flames
-IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 0 -9999 -9999
-IF %attack_sequence_1%==ft_fire set hide_origin_value=origin -999 -999 -999
-IF %Keep_flames_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_flames_visible(y/n)%
-IF %Keep_beam_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_beam_visible(y/n)%
-::change values for other specific weapons
+IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 0 -9999 9999
+IF %attack_sequence_1%==ft_fire set hide_origin_value=origin 0 -999 -999
+::value for visible flames
+IF %Keep_flames_visible(y/n)%==y set hide_origin_value=origin 0 -85 35
+::value for visible beam
+IF %Keep_beam_visible(y/n)%==y set hide_origin_value=origin 0 -85 50
+::value for visible tracers on double barrels
 IF %attack_sequence_1%==db_fire set hide_origin_value=origin 0 -242 5
+::special value if tracers not visible
 
 cd "%qc_folder_temp%"
 
@@ -35,14 +36,14 @@ IF NOT %Keep_idle_visible(y/n)%==y call :blend_remover
 
 ::set values for attacks
 set hide_origin_value=origin 0 -170 5
-set hide_origin_value_keep_flames_visible=origin 0 -85 35
-set hide_origin_value_keep_beam_visible=origin 0 -85 50
 ::apply values for beam/flames
-IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 0 -9999 -9999
+IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 0 -9999 9999
 IF %attack_sequence_1%==ft_fire set hide_origin_value=origin 0 -999 -999 blend "animation_destroyer" 0 0
-IF %Keep_flames_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_flames_visible(y/n)%
-IF %Keep_beam_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_beam_visible(y/n)%
-::change values for other specific weapons
+::value for visible flames
+IF %Keep_flames_visible(y/n)%==y set hide_origin_value=origin 0 -85 35
+::value for visible beam
+IF %Keep_beam_visible(y/n)%==y set hide_origin_value=origin 0 -85 50
+::value for visible tracers on double barrels
 IF %attack_sequence_1%==db_fire set hide_origin_value=origin 0 -242 5
 ::special value if tracers not visible
 IF NOT %attack_sequence_2%==fire IF NOT %attack_sequence_1%==ft_fire IF %Keep_tracers_visible(y/n)%==n set hide_origin_value=origin 0 -400 0 blend "animation_destroyer" 0 0
@@ -93,14 +94,14 @@ IF NOT %Keep_attack_visible(y/n)%==y call :blend_remover
 
 ::set values back after attacks
 set hide_origin_value=origin 0 -170 5
-set hide_origin_value_keep_flames_visible=origin 0 -85 35
-set hide_origin_value_keep_beam_visible=origin 0 -85 50
 ::apply values for beam/flames
-IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 0 -9999 -9999
-IF %attack_sequence_1%==ft_fire set hide_origin_value=origin -999 -999 -999
-IF %Keep_flames_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_flames_visible(y/n)%
-IF %Keep_beam_visible(y/n)%==y set hide_origin_value=%hide_origin_value_keep_beam_visible(y/n)%
-::change values for other specific weapons
+IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 0 -9999 999
+IF %attack_sequence_1%==ft_fire set hide_origin_value=origin 0 -999 -999
+::value for visible flames
+IF %Keep_flames_visible(y/n)%==y set hide_origin_value=origin 0 -85 35
+::value for visible beam
+IF %Keep_beam_visible(y/n)%==y set hide_origin_value=origin 0 -85 50
+::value for visible tracers on double barrels
 IF %attack_sequence_1%==db_fire set hide_origin_value=origin 0 -242 5
 
 :hide_reload
