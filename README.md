@@ -39,7 +39,8 @@ A powerful viewmodel editor for Team Fortress 2
 - UltraTechX - made [CrowbarCommandLine](https://github.com/UltraTechX/Crowbar-Command-Line)
 - [Ryan "Nemesis" Gregg](https://developer.valvesoftware.com/wiki/User:Nem) - made [HLLib](https://developer.valvesoftware.com/wiki/HLLib)
 - yttrium, JarateKing, mastercoms and other users in the mastercomfig discord - provided a lot of important information when I first started making viewmodel stuff
-- Flewvar - made some assets for left arm removal, also helped test a lot of theories related to viewmodels
+- Flewvar - made some assets for left arm removal (not used anymore), also helped test a lot of theories related to viewmodels
+- [newguy111](https://gamebanana.com/members/1609859) for telling me how to fix the buggy kunai/eternal reward/sharp dresser idles. And [N-Cognito](https://gamebanana.com/members/1300652) for actually making the files used in the fix.
 - Discord user Arlwiss - did extensive testing and found a lot of bugs/issues
 - Peaches because I kinda took over his discord for debugging
 - [Valve Developer Community](https://developer.valvesoftware.com/wiki/Main_Page) - contains all the information needed to make something like this 
