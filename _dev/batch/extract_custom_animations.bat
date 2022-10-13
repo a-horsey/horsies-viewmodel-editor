@@ -8,9 +8,10 @@ echo Checking custom animations:
 
 ::delete temp just in case
 cd "%vm_customizer_folder%\custom animations"
-IF EXIST custom_vm_temp del custom_vm_temp
+IF EXIST custom_vm_temp del custom_vm_temp >nul
 IF EXIST custom_vm_temp_1 del custom_vm_temp_1
 IF EXIST custom_vm_temp_2 del custom_vm_temp_2
+IF EXIST last_used_vpks del last_used_vpks
 
 :check_for_vpks
 cd "%vm_customizer_folder%\custom animations"
@@ -18,10 +19,15 @@ dir "%cd%" /b >> custom_vm_temp_1
 findstr /e /C:".vpk" "custom_vm_temp_1" >> custom_vm_temp_2
 IF EXIST custom_vm_temp_1 del custom_vm_temp_1
 IF EXIST custom_vm_temp_2 ren "custom_vm_temp_2" "custom_vm_temp"
+::make list of files to compare changes
+dir "%cd%" >> last_used_vpks_temp_1
+findstr /e /C:".vpk" "last_used_vpks_temp_1" >> last_used_vpks_temp_2
+IF EXIST last_used_vpks_temp_1 del last_used_vpks_temp_1
+IF EXIST last_used_vpks_temp_2 ren "last_used_vpks_temp_2" "last_used_vpks"
 
 :check_for_changes
 IF NOT EXIST "%dev_folder%\decompiled_custom_animations\last_used_vpks" goto :check_for_changes_done
-FC "%vm_customizer_folder%\custom animations\custom_vm_temp" "%dev_folder%\decompiled_custom_animations\last_used_vpks" >nul
+FC "%vm_customizer_folder%\custom animations\last_used_vpks" "%dev_folder%\decompiled_custom_animations\last_used_vpks" >nul
 IF %errorlevel%==0 goto :check_for_changes_done
 cd "%dev_folder%"
 IF EXIST "decompiled_custom_animations_temp"  rd /s /q "decompiled_custom_animations_temp"
@@ -519,7 +525,6 @@ cd "%dev_folder%\decompiled_custom_animations_temp"
 echo If this file exists, %custom_animation% has already been checked and extracted > "%custom_animation%.extracted"
 
 
-
 :check_loop
 echo		 %custom_animation% checked and installed.
 cd "%dev_folder%"
@@ -550,13 +555,14 @@ cd "%vm_customizer_folder%\custom animations"
 IF EXIST custom_vm_temp del custom_vm_temp
 IF EXIST custom_vm_temp_1 del custom_vm_temp_1
 IF EXIST custom_vm_temp_2 del custom_vm_temp_2
+IF EXIST last_used_vpks del last_used_vpks
 cd "%dev_folder%\decompiled_custom_animations"
 IF EXIST error_check.txt del error_check.txt >nul
 ::make list of last used vpks
 cd "%vm_customizer_folder%\custom animations"
-dir "%cd%" /b >> last_used_vpks_1
-findstr /e /C:".vpk" "last_used_vpks_1" >> last_used_vpks_2
-IF EXIST last_used_vpks_1 del last_used_vpks_1
-IF EXIST last_used_vpks_2 ren "last_used_vpks_2" "last_used_vpks"
-move "last_used_vpks" "%dev_folder%\decompiled_custom_animations" >nul
+dir "%cd%" >> last_used_vpks_temp_1
+findstr /e /C:".vpk" "last_used_vpks_temp_1" >> last_used_vpks_temp_2
+IF EXIST last_used_vpks_temp_1 del last_used_vpks_temp_1
+IF EXIST last_used_vpks_temp_2 ren "last_used_vpks_temp_2" "last_used_vpks"
+move "last_used_vpks" "%dev_folder%\decompiled_custom_animations\last_used_vpks" >nul
 goto :EOF
