@@ -8,7 +8,7 @@ echo Checking custom animations:
 
 ::delete temp just in case
 cd "%vm_customizer_folder%\custom animations"
-IF EXIST custom_vm_temp del custom_vm_temp >nul
+IF EXIST custom_vm_temp del custom_vm_temp
 IF EXIST custom_vm_temp_1 del custom_vm_temp_1
 IF EXIST custom_vm_temp_2 del custom_vm_temp_2
 IF EXIST last_used_vpks del last_used_vpks
