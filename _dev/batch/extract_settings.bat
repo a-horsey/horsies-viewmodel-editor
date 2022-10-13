@@ -47,11 +47,13 @@ IF EXIST settings_temp del settings_temp >nul
 
 ::check if labels are intact first
 set labels_number=0
+IF EXIST label_check_temp del label_check_temp >nul
 IF EXIST label_check del label_check >nul
-findstr /R /C:"\<%settings_label%\>" "%settings_file%" | find /c "%settings_label%" > label_check
-FOR /F %%b in (label_check) do set labels_number=%%b
+findstr /R /C:"\<%settings_label%\>" "%settings_file%" > label_check_temp
+find "%settings_label%" "label_check_temp" /c > label_check
+FOR /F "tokens=3" %%b in (label_check) do set labels_number=%%b
 IF NOT %labels_number%==2 (
-	ECHO.		^%settings_label% label missing, skipping weapon
+	ECHO.		^%settings_label% label duplicate or missing from settings file, skipping weapon...
 	goto :process_settings )
 
 ::extract settings and turn into bat - this automatically removes extra spaces and tabs, as well as useless lines
