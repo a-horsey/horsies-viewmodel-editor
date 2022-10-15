@@ -15,7 +15,7 @@ This mod is fully supported and easy to install - just drop the vpk in "fixed vi
 More instructions and a direct link can be found in that folder.
 All credits for creating it go to the author.
 
-3. This also supports mods that change the custom animations.
+3. This also supports mods that change the viewmodel animations.
 Simply drop any viewmodel animations mods in the "custom animations" folder. 
 I suggest reading "INSTRUCTIONS.txt" in that same folder
 The mods will be automatically checked and installed next time you run GENERATE.bat
