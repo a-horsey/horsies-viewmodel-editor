@@ -2,9 +2,6 @@ IF NOT %•Remove_shells(y/n)%==y goto :EOF
 cd "%qc_folder_temp%"
 
 :process_attacks
-::hidden check
-IF %•Hidden(y/n)%==y IF NOT %Keep_attack_visible(y/n)%==y goto :process_attacks_done
-
 IF %attack_sequence_1%==none goto :process_attacks_done
 set sequence_to_remove_shell_from=%attack_sequence_1%
 call :shell_remover
@@ -31,9 +28,6 @@ call :shell_remover
 :process_attacks_done
 
 :process_reloads
-::hidden check
-IF %•Hidden(y/n)%==y IF NOT %Keep_reload_visible(y/n)%==y goto :process_reloads_done
-
 IF %reload_sequence_1%==none goto :process_reloads_done
 set sequence_to_remove_shell_from=%reload_sequence_1%
 call :shell_remover
