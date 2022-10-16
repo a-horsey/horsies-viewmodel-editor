@@ -1,30 +1,71 @@
 IF NOT %•Remove_shells(y/n)%==y goto :EOF
 cd "%qc_folder_temp%"
 
-::set sequences to check based on weapon
-::empty value just in case
-set sequence_to_remove_shell_from=none
-::sniper
-IF %qc_file%==c_sniper_animations.qc IF "%settings_label%" EQU "&::sniperrifles" set sequence_to_remove_shell_from=fire
-IF %qc_file%==c_sniper_animations.qc IF "%settings_label%" EQU "&::smgs" set sequence_to_remove_shell_from=smg_fire
-::scout
-IF %qc_file%==c_scout_animations.qc IF "%settings_label%" EQU "&::scatterguns" set sequence_to_remove_shell_from=sg_reload_loop
-IF %qc_file%==c_scout_animations.qc IF "%settings_label%" EQU "&::pistols" set sequence_to_remove_shell_from=p_fire
-::engi
-IF %qc_file%==c_engineer_animations.qc IF "%settings_label%" EQU "&::shotguns" set sequence_to_remove_shell_from=fj_fire
-IF %qc_file%==c_engineer_animations.qc IF "%settings_label%" EQU "&::pistols" set sequence_to_remove_shell_from=pstl_fire
-::pyro
-IF %qc_file%==c_pyro_animations.qc IF "%settings_label%" EQU "&::shotguns" set sequence_to_remove_shell_from=fire
-::soldier
-IF %qc_file%==c_soldier_animations.qc IF "%settings_label%" EQU "&::shotguns" set sequence_to_remove_shell_from=fire
-::heavy
-IF %qc_file%==c_heavy_animations.qc IF "%settings_label%" EQU "&::shotguns" set sequence_to_remove_shell_from=fire
+:process_attacks
+::hidden check
+IF %•Hidden(y/n)%==y IF NOT %Keep_attack_visible(y/n)%==y goto :process_attacks_done
 
-::exit if still empty
-IF %sequence_to_remove_shell_from%==none goto :EOF
-
-::call remover
+IF %attack_sequence_1%==none goto :process_attacks_done
+set sequence_to_remove_shell_from=%attack_sequence_1%
 call :shell_remover
+
+IF %attack_sequence_2%==none goto :process_attacks_done
+set sequence_to_remove_shell_from=%attack_sequence_2%
+call :shell_remover
+
+IF %attack_sequence_3%==none goto :process_attacks_done
+set sequence_to_remove_shell_from=%attack_sequence_3%
+call :shell_remover
+
+IF %attack_sequence_4%==none goto :process_attacks_done
+set sequence_to_remove_shell_from=%attack_sequence_4%
+call :shell_remover
+
+IF %attack_sequence_5%==none goto :process_attacks_done
+set sequence_to_remove_shell_from=%attack_sequence_5%
+call :shell_remover
+
+IF %attack_sequence_6%==none goto :process_attacks_done
+set sequence_to_remove_shell_from=%attack_sequence_6%
+call :shell_remover
+:process_attacks_done
+
+:process_reloads
+::hidden check
+IF %•Hidden(y/n)%==y IF NOT %Keep_reload_visible(y/n)%==y goto :process_reloads_done
+
+IF %reload_sequence_1%==none goto :process_reloads_done
+set sequence_to_remove_shell_from=%reload_sequence_1%
+call :shell_remover
+
+IF %reload_sequence_2%==none goto :process_reloads_done
+set sequence_to_remove_shell_from=%reload_sequence_2%
+call :shell_remover
+
+IF %reload_sequence_3%==none goto :process_reloads_done
+set sequence_to_remove_shell_from=%reload_sequence_3%
+call :shell_remover
+
+IF %reload_sequence_4%==none goto :process_reloads_done
+set sequence_to_remove_shell_from=%reload_sequence_4%
+call :shell_remover
+
+IF %reload_sequence_5%==none goto :process_reloads_done
+set sequence_to_remove_shell_from=%reload_sequence_5%
+call :shell_remover
+
+IF %reload_sequence_6%==none goto :process_reloads_done
+set sequence_to_remove_shell_from=%reload_sequence_6%
+call :shell_remover
+
+IF %reload_sequence_7%==none goto :process_reloads_done
+set sequence_to_remove_shell_from=%reload_sequence_7%
+call :shell_remover
+
+IF %reload_sequence_8%==none goto :process_reloads_done
+set sequence_to_remove_shell_from=%reload_sequence_8%
+call :shell_remover
+:process_reloads_done
 
 ::exit
 goto :EOF
@@ -32,17 +73,27 @@ goto :EOF
 :shell_remover
 cd "%qc_folder_temp%"
 ::del temp just in case
+IF EXIST remove_shell_temp del remove_shell_temp >nul
 IF EXIST noshell.qc del noshell.qc >nul
-::remove event from sequence
+:extract_sequence
+set sequence_found=no
+for /f "usebackq tokens=*" %%x in (`findstr /v /i /c:"{ event 6002" "%qc_file%"`) do (
+	IF "%%x" EQU "$sequence "%sequence_to_remove_shell_from%" {" set sequence_found=yes
+	IF !sequence_found!==yes IF "%%x" EQU "}" goto :sequence_extracted
+	IF !sequence_found!==yes IF NOT "%%x" EQU "$sequence "%sequence_to_remove_shell_from%" {" IF NOT "%%x" EQU "}" echo.%%x ) >> remove_shell_temp
+:sequence_extracted
+::replace_sequence
 set sequence_found=no
 for /f "tokens=*" %%a in (%qc_file%) do (
 	IF "%%a" EQU "$sequence "%sequence_to_remove_shell_from%" {" set sequence_found=yes
-	IF NOT "%%a" EQU "}" IF NOT !sequence_found!==yes echo.%%a
-	IF "%%a" EQU "}" (
-		set sequence_found=no
-		echo.%%a )
-    IF !sequence_found!==yes for /f "usebackq tokens=*" %%x in (`echo.%%a ^| findstr /v /i /c:"{ event 6002"`) do echo.%%x ) >> noshell.qc
-::replace original qc
-MOVE "noshell.qc" "%qc_file%" >nul
-::exit call
+	IF !sequence_found!==yes IF "%%a" EQU "}" (
+		echo.$sequence "%sequence_to_remove_shell_from%" {
+		type remove_shell_temp
+		set sequence_found=no )
+	IF NOT !sequence_found!==yes IF NOT "%%a" EQU "$sequence "%sequence_to_remove_shell_from%" {" echo.%%a ) >> noshell.qc
+::replace qc file
+move "noshell.qc" "%qc_file%" >nul
+::del temp and exit
+IF EXIST remove_shell_temp del remove_shell_temp >nul
+IF EXIST noshell.qc del noshell.qc >nul
 exit /b
