@@ -45,25 +45,23 @@ set •Static_secondary_attack(y/n)=n
 cd "%qc_folder_temp%"
 IF EXIST settings_temp del settings_temp >nul
 
-::check if labels are intact first
-set labels_number=0
-IF EXIST label_check_temp del label_check_temp >nul
-IF EXIST label_check del label_check >nul
-findstr /R /C:"\<%settings_label%\>" "%settings_file%" > label_check_temp
-find "%settings_label%" "label_check_temp" /c > label_check
-FOR /F "tokens=3" %%b in (label_check) do set labels_number=%%b
-IF NOT %labels_number%==2 (
-	ECHO.		^%settings_label% label duplicate or missing from settings file, skipping weapon...
-	goto :process_settings )
-
 ::extract settings and turn into bat - this automatically removes extra spaces and tabs, as well as useless lines
 set start_echo=off
 set echod_once=off
+set two_labels_found=no
 FOR /F "tokens=1" %%A IN (%settings_file%) DO (
 	set "echo_this=%%A"
 	IF "!echo_this!" EQU "%settings_label%" set start_echo=on
 	IF NOT "!echo_this!" EQU "•Position:" IF NOT "!echo_this!" EQU "•Rotation:" IF NOT "!echo_this!" EQU "%settings_label%" IF !start_echo!==on echo. set !echo_this! && set echod_once=on
-	IF "!echo_this!" EQU "%settings_label%" IF !echod_once!==on goto :settings_extracted ) >>settings_temp	
+	IF "!echo_this!" EQU "%settings_label%" IF !echod_once!==on (
+		set two_labels_found=yes
+		goto :settings_extracted )
+) >>settings_temp	
+::check for missing labels
+IF NOT %two_labels_found%==yes (
+	echo 		^%settings_label% label missing, skipping weapon...
+	goto :process_settings )
+
 :settings_extracted
 more +1 settings_temp > extracted_settings.bat
 ::delete temp
