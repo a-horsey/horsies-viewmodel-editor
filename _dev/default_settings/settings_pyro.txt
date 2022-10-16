@@ -54,7 +54,7 @@ Pyro settings:
 		•Static_reload(y/n)=n
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
-		•Remove_shells(y/n)=n
+		•Remove_shells(y/n)=y
 		•Remove_left_arm(y/n)=n
 
 &::shotguns
