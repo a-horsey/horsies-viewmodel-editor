@@ -1,6 +1,6 @@
 	This tool supports some custom viewmodel animations.
 	It automatically checks if the mod is compatible and installs it.
-	Incompatible mods will be automatically deleted from this folder.
+	Incompatible mods will be moved into a "incompatible animations" folder.
 
 How to install custom animations:
 	1. Download any viewmodel animations you wish to use
