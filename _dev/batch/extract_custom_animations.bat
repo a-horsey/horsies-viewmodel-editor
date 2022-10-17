@@ -536,9 +536,13 @@ IF EXIST "custom_vm_temp_2" move "custom_vm_temp_2" "custom_vm_temp" >nul
 goto :loop
 
 :incompatible_mod
-echo		 %custom_animation% is not compatible. Removing...
+echo		 %custom_animation% is not compatible. Moving to "incompatible animations" folder...
 cd "%vm_customizer_folder%\custom animations"
-del "%custom_animation%" >nul
+IF NOT EXIST "incompatible animations" (
+	mkdir "incompatible animations"
+	echo This folder contains all the incompatible animations. >> "%vm_customizer_folder%\custom animations\incompatible animations\info.txt"
+	echo It is safe to delete. >> "%vm_customizer_folder%\custom animations\incompatible animations\info.txt" )
+move "%custom_animation%" "incompatible animations\%custom_animation%" >nul
 cd "%dev_folder%"
 IF EXIST "decompiled_custom_animations_temp"  rd /s /q "decompiled_custom_animations_temp"
 cd "%vm_customizer_folder%\custom animations"
