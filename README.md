@@ -38,11 +38,12 @@ A powerful viewmodel editor for Team Fortress 2
 - I suggest reading INSTRUCTIONS.txt from the custom animations folder
 
 ## Credits:
-- UltraTechX - made [CrowbarCommandLine](https://github.com/UltraTechX/Crowbar-Command-Line)
-- [Ryan "Nemesis" Gregg](https://developer.valvesoftware.com/wiki/User:Nem) - made [HLLib](https://developer.valvesoftware.com/wiki/HLLib)
-- yttrium, JarateKing, mastercoms and other users in the mastercomfig discord - provided a lot of important information when I first started making viewmodel stuff
-- Flewvar - made some assets for left arm removal (not used anymore), also helped test a lot of theories related to viewmodels
-- [newguy111](https://gamebanana.com/members/1609859) for telling me how to fix the buggy kunai/eternal reward/sharp dresser idles. And [N-Cognito](https://gamebanana.com/members/1300652) for actually making the files used in the fix.
+- [mrglaster](https://github.com/mrglaster) for making [CrowbarDecompiler](https://github.com/mrglaster/Source-models-decompiler-cmd), an updated version of CrowbarCommandLine
+- [UltraTechX](https://github.com/UltraTechX/) for making [CrowbarCommandLine](https://github.com/UltraTechX/Crowbar-Command-Line) (no longer used)
+- [Ryan "Nemesis" Gregg](https://developer.valvesoftware.com/wiki/User:Nem) for making [HLLib](https://developer.valvesoftware.com/wiki/HLLib)
+- [yttrium](https://github.com/Yttrium-tYcLief), [JarateKing](https://github.com/JarateKing), [mastercoms](https://github.com/mastercoms) and other users in the mastercomfig discord for providing a lot of important information when I first started making viewmodel related mods
+- [Flewvar](https://gamebanana.com/members/1764119) for making a few assets for left-arm removal (no longer used)
+- [newguy111](https://gamebanana.com/members/1609859) for telling me how to fix the buggy kunai/eternal reward/sharp dresser idles. And [N-Cognito](https://gamebanana.com/members/1300652) for actually making the files used in the fix
 - Discord user Arlwiss - did extensive testing and found a lot of bugs/issues
-- Peaches because I kinda took over his discord for debugging and helped me test stuff
-- [Valve Developer Community](https://developer.valvesoftware.com/wiki/Main_Page) - contains all the information needed to make something like this 
+- [Peaches](https://github.com/PapaPeach) because I kinda took over his discord for debugging and helped me test it
+- [Valve Developer Community](https://developer.valvesoftware.com/wiki/Main_Page) for all the infomation needed to make this
