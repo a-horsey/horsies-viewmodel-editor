@@ -13,9 +13,12 @@ How to uninstall a mod:
 
 Debugging:
 	For more information on why a mod is incompatible, you can check error_log.txt inside custom animations/incompatible animations.
+
+Keep in mind:
+	This will only use and edit the animations of any mod you give it. If you try using mods that also alter models/textures/anything else, it will not include those. To get around that, I suggest having that mod both in here and in your custom folder. That way it should override the animations but still use the other files from the mod itself. Only do this for mods that do more than change animations, generally I don't recommend keeping the same animation mods inside custom too as it can cause issues depending on the load order (it's based on file name).
 	
-WARNING: even if a mod passes the check and installs properly, there's no guarantee that it will work without issues.
-	It is possible that some settings might not work as intended for some mods, or some other issues could show up.
+WARNING: 
+	Even if a mod passes the check and installs properly, there's no guarantee that it will work without issues. It is possible that some settings might not work as intended for some mods, or some other issues could show up.
 
 
 
