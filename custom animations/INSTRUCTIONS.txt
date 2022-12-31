@@ -4,7 +4,7 @@
 
 How to install custom animations:
 	1. Download any viewmodel animations you wish to use
-	2. Place the VPKs in this folder ("custom animations"). Currently only supports VPKs and not loose files.
+	2. Place the VPKs in this folder (custom animations). Currently only supports VPKs and not loose files.
 	3. Run GENERATE.bat again and install
 
 How to uninstall a mod:
