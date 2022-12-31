@@ -1,6 +1,6 @@
 	This tool supports some custom viewmodel animations.
 	It automatically checks if the mod is compatible and installs it.
-	Incompatible mods will be moved into a folder named "incompatible animations".
+	Incompatible mods will be moved into a folder named "incompatible animations", located inside this folder. It only gets created when needed.
 
 How to install custom animations:
 	1. Download any viewmodel animations you wish to use
@@ -10,6 +10,9 @@ How to install custom animations:
 How to uninstall a mod:
 	1. Remove its VPK from this folder
 	2. Run GENERATE.bat again and install
+
+Debugging:
+	For more information on why a mod is incompatible, you can check error_log.txt inside custom animations/incompatible animations.
 	
 WARNING: even if a mod passes the check and installs properly, there's no guarantee that it will work without issues.
 	It is possible that some settings might not work as intended for some mods, or some other issues could show up.
