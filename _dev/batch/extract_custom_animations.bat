@@ -6,6 +6,10 @@ IF NOT EXIST "*.vpk" goto :EOF
 title Checking animations...
 echo Checking custom animations:
 
+::set session started time and date for error log
+set session_time=%time%
+set session_date=%date%
+
 ::delete temp just in case
 cd "%vm_customizer_folder%\custom animations"
 IF EXIST custom_vm_temp del custom_vm_temp
@@ -48,6 +52,9 @@ for /f "delims=*" %%f in (custom_vm_temp) do (
 	goto :check_mod )
 	
 :check_mod
+::set title
+title Checking %custom_animation%...
+echo Checking %custom_animation%:
 ::make required folders
 cd "%dev_folder%"
 IF NOT EXIST decompiled_custom_animations mkdir decompiled_custom_animations
@@ -72,7 +79,9 @@ HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%
 
 ::mark as incompatible if no animation models exist
 cd "%dev_folder%\decompiled_custom_animations_temp"
-IF NOT EXIST c_scout_animations.mdl IF NOT EXIST c_soldier_animations.mdl IF NOT EXIST c_pyro_animations.mdl IF NOT EXIST c_demo_animations.mdl IF NOT EXIST c_heavy_animations.mdl IF NOT EXIST c_engineer_animations.mdl IF NOT EXIST c_medic_animations.mdl IF NOT EXIST c_sniper_animations.mdl IF NOT EXIST c_spy_animations.mdl goto :incompatible_mod
+IF NOT EXIST c_scout_animations.mdl IF NOT EXIST c_soldier_animations.mdl IF NOT EXIST c_pyro_animations.mdl IF NOT EXIST c_demo_animations.mdl IF NOT EXIST c_heavy_animations.mdl IF NOT EXIST c_engineer_animations.mdl IF NOT EXIST c_medic_animations.mdl IF NOT EXIST c_sniper_animations.mdl IF NOT EXIST c_spy_animations.mdl (
+ set incompatibility_reason=no_files
+ goto :incompatible_mod )
 
 ::Decompile them
 ::Workaround for crowbar settings bug present in CrowbarCommandLine - part 1
@@ -85,8 +94,6 @@ IF EXIST "Crowbar Settings.xml" ren "Crowbar Settings.xml" "Crowbar Settings Bac
 ::Actual decompiling
 :start_decompiling
 cd /d "%dev_folder%"
-title Checking %custom_animation%...
-echo Checking %custom_animation%:
 IF EXIST "%dev_folder%\decompiled_custom_animations_temp\c_scout_animations.mdl" (
 	CrowbarDecompiler.exe "%dev_folder%\decompiled_custom_animations_temp\c_scout_animations.mdl" "%dev_folder%\decompiled_custom_animations_temp" >nul )
 IF EXIST "%dev_folder%\decompiled_custom_animations_temp\c_soldier_animations.mdl" (	
@@ -445,7 +452,6 @@ FOR /F "tokens=*" %%A IN (c_pyro_animations.qc) DO (
 move "temp_ballfix" "c_pyro_animations.qc" >nul
 :ball_fix_done
 
-
 ::attempt to recompile and check for errors
 cd "%tf_folder%"
 IF EXIST "models" ren "models" "models_backup" 
@@ -469,55 +475,64 @@ IF EXIST "models"  rd /s /q "models"
 IF EXIST "models_backup" ren "models_backup" "models"
 
 cd "%dev_folder%\decompiled_custom_animations_temp"
-for /f "usebackq" %%b in (`type error_check.txt ^| find /I "error"`) do (
-  goto :incompatible_mod
-  )
+	for /f "usebackq" %%b in (`type error_check.txt ^| find /I "error"`) do (
+		set incompatibility_reason=compile_error
+		goto :incompatible_mod )
 )
 
 cd "%dev_folder%\decompiled_custom_animations_temp"
 
 IF EXIST c_scout_animations.qc (
 	for /f "usebackq" %%b in (`type c_scout_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
 IF EXIST c_soldier_animations.qc (
 	for /f "usebackq" %%b in (`type c_soldier_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
 IF EXIST c_pyro_animations.qc (
 	for /f "usebackq" %%b in (`type c_pyro_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
 IF EXIST c_demo_animations.qc (
 	for /f "usebackq" %%b in (`type c_demo_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
 IF EXIST c_heavy_animations.qc (
 	for /f "usebackq" %%b in (`type c_heavy_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
 IF EXIST c_engineer_animations.qc (
 	for /f "usebackq" %%b in (`type c_engineer_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
 IF EXIST c_medic_animations.qc (
 	for /f "usebackq" %%b in (`type c_medic_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
 IF EXIST c_sniper_animations.qc (
 	for /f "usebackq" %%b in (`type c_sniper_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
 IF EXIST c_spy_animations.qc (
 	for /f "usebackq" %%b in (`type c_spy_animations.qc ^| find /I "$includemodel"`) do (
+		set incompatibility_reason=sca
 		goto :incompatible_mod )
 )
 
@@ -530,24 +545,49 @@ echo		 %custom_animation% checked and installed.
 cd "%dev_folder%"
 xcopy /y "decompiled_custom_animations_temp" "decompiled_custom_animations" /e /q >nul
 IF EXIST "decompiled_custom_animations_temp"  rd /s /q "decompiled_custom_animations_temp"
+::increment temp mod list
 cd "%vm_customizer_folder%\custom animations"
 IF EXIST "custom_vm_temp" more +1 "custom_vm_temp" > "custom_vm_temp_2"
 IF EXIST "custom_vm_temp_2" move "custom_vm_temp_2" "custom_vm_temp" >nul
+::repeat loop
 goto :loop
 
 :incompatible_mod
 echo		 %custom_animation% is not compatible. Moving to "incompatible animations" folder...
 cd "%vm_customizer_folder%\custom animations"
+::create incompatible animations folder and move mod
 IF NOT EXIST "incompatible animations" (
 	mkdir "incompatible animations"
 	echo This folder contains all the incompatible animations. >> "%vm_customizer_folder%\custom animations\incompatible animations\info.txt"
 	echo It is safe to delete. >> "%vm_customizer_folder%\custom animations\incompatible animations\info.txt" )
 move "%custom_animation%" "incompatible animations\%custom_animation%" >nul
+::create error log if needed
+cd "%vm_customizer_folder%\custom animations\incompatible animations"
+IF NOT EXIST "error_log.txt" echo This file contains a list of all the errors encountered when trying to apply custom animations. >> error_log.txt
+::log errors
+echo. >> error_log.txt
+echo =================================================================================================================================================================================================================================================================== >> error_log.txt
+echo Package name: %custom_animation% >> error_log.txt
+echo Session start time: %session_time% / %session_date% >> error_log.txt
+IF NOT DEFINED incompatibility_reason set incompatibility_reason=unknown
+IF %incompatibility_reason%==unknown echo Error: unknown >> error_log.txt
+IF %incompatibility_reason%==no_files echo Error: VPK does not contain any viewmodel animation files. >> error_log.txt
+IF %incompatibility_reason%==sca echo Error: Mod uses the Separated C_animations format. Only the default TF2 viewmodel animation format is supported. >> error_log.txt
+IF %incompatibility_reason%==compile_error (
+	echo Error: Failed to compile back after decompiling. >> error_log.txt
+	echo StudioMDL log: >> error_log.txt
+	type "%dev_folder%\decompiled_custom_animations_temp\error_check.txt" >> error_log.txt )
+echo =================================================================================================================================================================================================================================================================== >> error_log.txt
+::remove temp
 cd "%dev_folder%"
 IF EXIST "decompiled_custom_animations_temp"  rd /s /q "decompiled_custom_animations_temp"
+cd "%dev_folder%\decompiled_custom_animations"
+IF EXIST error_check.txt del error_check.txt >nul
+::increment temp mod list
 cd "%vm_customizer_folder%\custom animations"
 IF EXIST "custom_vm_temp" more +1 "custom_vm_temp" > "custom_vm_temp_2"
 IF EXIST "custom_vm_temp_2" move "custom_vm_temp_2" "custom_vm_temp" >nul
+::repeat loop
 goto :loop
 
 :custom_mods_installed
@@ -569,4 +609,5 @@ findstr /e /C:".vpk" "last_used_vpks_temp_1" >> last_used_vpks_temp_2
 IF EXIST last_used_vpks_temp_1 del last_used_vpks_temp_1
 IF EXIST last_used_vpks_temp_2 ren "last_used_vpks_temp_2" "last_used_vpks"
 move "last_used_vpks" "%dev_folder%\decompiled_custom_animations\last_used_vpks" >nul
+::exit
 goto :EOF
