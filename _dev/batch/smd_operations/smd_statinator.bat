@@ -36,7 +36,7 @@ IF NOT EXIST "%idle_smd%" goto :EOF
 
 :extract_nodes_and_first_frame
 ::only extract once per weapon
-IF NOT DEFINED last_smd set last_sequence=none
+IF NOT DEFINED last_sequence set last_sequence=none
 IF "%last_sequence%" EQU "%idle_sequence%" goto :extract_nodes_and_first_frame_done
 set "last_sequence=%idle_sequence%"
 ::extract nodes

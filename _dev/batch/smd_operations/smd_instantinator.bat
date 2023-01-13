@@ -39,9 +39,9 @@ IF NOT EXIST "%extract_first_frame_from%" goto :EOF
 
 :extract_nodes
 ::only extract once per weapon
-IF NOT DEFINED last_smd set last_sequence=none
-IF "%last_sequence%" EQU "%idle_sequence%" goto :extract_nodes_and_first_frame_done
-set "last_sequence=%idle_sequence%"
+IF NOT DEFINED last_sequence_i set last_sequence_i=none
+IF "%last_sequence_i%" EQU "%idle_sequence%" goto :extract_nodes_done
+set "last_sequence_i=%idle_sequence%"
 ::extract nodes
 cd "%smd_folder%"
 IF EXIST nodes del nodes >nul
@@ -102,7 +102,7 @@ cd "%smd_folder%"
 IF EXIST first_frame del first_frame >nul
 IF EXIST framecount del framecount >nul
 IF EXIST addedframes del addedframes >nul
-IF EXIST static.smd del static.smd >nul
+IF EXIST instant.smd del instant.smd >nul
 ::extract first frame
 set echo_now=off
 FOR /F "tokens=*" %%A IN (%extract_first_frame_from%) DO (
@@ -117,13 +117,13 @@ FOR /F "tokens=*" %%A IN (framecount) DO (
 	echo %%A
 	type first_frame ) >> addedframes
 ::build file and replace original
-copy "nodes" + "addedframes" "static.smd" >nul
-echo end >> static.smd
-move "static.smd" "%smd_to_make_instant%" >nul
+copy "nodes" + "addedframes" "instant.smd" >nul
+echo end >> instant.smd
+move "instant.smd" "%smd_to_make_instant%" >nul
 ::delete temp
 IF EXIST first_frame del first_frame >nul
 IF EXIST framecount del framecount >nul
 IF EXIST addedframes del addedframes >nul
-IF EXIST static.smd del static.smd >nul
+IF EXIST instant.smd del instant.smd >nul
 ::exit call
 exit /b
