@@ -72,7 +72,7 @@ goto :check_and_set_folders_done
 :check_and_set_folders_done
 
 :check_if_vpk_is_in_use
-set vpk_name=_Horsie'sViewmodelEditor
+set vpk_name=__Horsie'sViewmodelEditor
 cd %custom_folder%
 IF NOT EXIST "%vpk_name%.vpk" goto :del_temp
 2>nul (
@@ -98,6 +98,9 @@ IF EXIST "decompiled_animations_temp" rd /s /q "decompiled_animations_temp"
 IF EXIST "decompiled_custom_animations_temp" rd /s /q "decompiled_custom_animations_temp"
 ::delete custom animations folder if no vpks detected
 IF NOT EXIST "%vm_customizer_folder%\custom animations\*.vpk" IF EXIST "%dev_folder%\decompiled_custom_animations" rd /s /q "decompiled_custom_animations"
+::delete fixed animations folder if no vpk detected
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations" rd /s /q "decompiled_fixed_animations"
+
 
 ::restore default settings files if they are missing
 cd "%vm_customizer_folder%"
@@ -120,7 +123,9 @@ set custom_vm=on
 set apply_for_specific_classes=false
 
 ::fixed viewmodels files check
-IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set fixed_vm_addon=off
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" set fixed_vm_addon=off
+::custom viewmodels files check
+IF NOT EXIST "%vm_customizer_folder%\custom animations\*.vpk" set custom_vm=off
 
 
 :main_menu
@@ -175,35 +180,57 @@ echo.
 echo.Install: 
 echo.	1. Install for all classes
 echo.	2. Install for specific classes
+IF  EXIST "%custom_folder%\%vpk_name%.vpk"	echo.	3. Uninstall
 echo.
 echo.Options:
-echo. 	3. [%automatic_preloading_status%] Include automatic preloading
-echo. 	4. [%disable_tracers_status%] Remove 1st person bullet tracers
-echo.	5. [%hide_errors_status%] Hide console errors
+echo. 	4. [%automatic_preloading_status%] Include automatic preloading
+echo. 	5. [%disable_tracers_status%] Remove 1st person bullet tracers
+echo.	6. [%hide_errors_status%] Hide console errors
 echo. 	0. Developer settings
-set custom_or_fixed_vm_present=false
-IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" set custom_or_fixed_vm_present=true
-IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set custom_or_fixed_vm_present=true
-IF EXIST "%vm_customizer_folder%\custom animations\*vpk" set custom_or_fixed_vm_present=true
-IF %custom_or_fixed_vm_present%==true (
+::fixed and custom animation prompts
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" (
 	echo.
-	echo Toggle animations: )
-IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo. 	6. [%fixed_vm_addon_status%] Include Fixed Viewmodels
-IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" echo. 	5. [%fixed_vm_addon_status%] Include Fixed Viewmodels
-IF EXIST "%vm_customizer_folder%\custom animations\*vpk" echo. 	7. [%custom_vm_status%] Include Custom Animations
+	echo Toggle animations:
+	echo. 	7. [%fixed_vm_addon_status%] Include Fixed Viewmodels )
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" (
+	echo.
+	echo Toggle animations:
+	echo. 	7. [%custom_vm_status%] Include Custom Animations )
+IF  EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" (
+	echo.
+	echo Toggle animations:
+	echo. 	7. [%fixed_vm_addon_status%] Include Fixed Viewmodels
+	echo. 	8. [%custom_vm_status%] Include Custom Animations )
 echo.
+
+set M=none
 SET /P M=Choose an option: 
+IF NOT "%M%"=="0" IF NOT "%M%"=="1" IF NOT "%M%"=="2" IF NOT "%M%"=="3"  IF NOT "%M%"=="4" IF NOT "%M%"=="5" IF NOT "%M%"=="6" IF NOT "%M%"=="7" IF NOT "%M%"=="8" goto :main_menu
+
 IF %M%==0 goto :dev_menu
 IF %M%==1 goto :install_for_all_classes_prompt
 IF %M%==2 goto :pick_classes_menu
-IF %M%==3 %toggle_preloading%
-IF %M%==4 %toggle_tracers%
-IF %M%==5 %toggle_errors%
-IF %M%==6 %toggle_fixed_vm_addon%
-IF %M%==7 %toggle_custom_vm%
-IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3  IF NOT %M%==4 IF NOT %M%==5 IF NOT %M%==6 IF NOT %M%==7 goto :main_menu
-IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\animations_already_extracted.txt" set toggle_fixed_vm_addon=goto :main_menu
-IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" set toggle_custom_vm=goto :main_menu
+IF %M%==3 (
+	IF NOT EXIST "%custom_folder%\%vpk_name%.vpk" goto :main_menu
+	IF EXIST "%custom_folder%\%vpk_name%.vpk" goto :uninstall_prompt)
+IF %M%==3 goto :uninstall_prompt
+IF %M%==4 %toggle_preloading%
+IF %M%==5 %toggle_tracers%
+IF %M%==6 %toggle_errors%
+::fixed and custom animations logic
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==7 goto :main_menu
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==8 goto :main_menu
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==7 %toggle_fixed_vm_addon%
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==8 goto :main_menu
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==7 %toggle_custom_vm%
+IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==8 goto :main_menu
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==7 %toggle_fixed_vm_addon%
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==8 %toggle_custom_vm%
+
+
+
+
+
 
 :install_for_all_classes_prompt
 cls 
@@ -221,12 +248,14 @@ echo. ~~%%%%%%' Welcome to Horsie's Viewmodel Editor!
 echo.
 echo You're about to install the mod for all the classes.
 echo.
+set M=none
 SET /P M=Proceed? (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :install_for_all_classes_prompt
 IF /i %M%==y (
 	set apply_for_specific_classes=false
 	goto :exit_menu )
 IF /i %M%==n goto :main_menu
-IF /i NOT %M%==y IF /i NOT %M%==n goto :install_for_all_classes_prompt
+
 goto :main_menu
 
 :preloading_off
@@ -246,9 +275,10 @@ echo.
 echo.Automatic preloading is highly recommended.
 echo.The viewmodels won't work in most servers without it.
 echo.
+set M=none
 SET /P M=Are you sure that you want to disable it? (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :preloading_off
 IF /i %M%==n goto :main_menu
-IF /i NOT %M%==y IF /i NOT %M%==n goto :preloading_off
 set automatic_preloading=off
 set toggle_preloading=goto :preloading_on
 goto :main_menu
@@ -285,9 +315,10 @@ echo.
 echo.This option hides the console errors caused by some of the mod's options.
 echo.Without this, the console might be hard to read due to spam.
 echo.
+set M=none
 SET /P M=Are you sure that you want to disable it? (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :hide_errors_off
 IF /i %M%==n goto :main_menu
-IF /i NOT %M%==y IF /i NOT %M%==n goto :hide_errors_off
 set hide_errors=off
 set toggle_errors=goto :hide_errors_on
 goto :main_menu
@@ -316,6 +347,33 @@ goto :main_menu
 set custom_vm=on
 set toggle_custom_vm=goto :custom_vm_off
 goto :main_menu
+
+:uninstall_prompt
+cls
+echo.                       ~~%%%%%%%%_,_,
+echo.                  ~~%%%%%%%%%-"/./
+echo.                 ~~%%%%%%%-'   /  `.
+echo.               ~~%%%%%%%%'  .     ,__;
+echo.             ~~%%%%%%%%'   :       \O\
+echo.          ~~%%%%%%%%'    :          `.
+echo.        ~~%%%%%%%%'       `. _,        '
+echo.     ~~%%%%%%%%'          .'`-._        `.
+echo.  ~~%%%%%%%%%'           :     `-.     (,;
+echo. ~~%%%%%%%%'             :         `._\_.'
+echo. ~~%%%%%%' Warning:
+echo.
+echo This will remove the generated VPK mod from your custom folder.
+echo You don't have to do this before applying new settings, only if you just want to uninstall the mod.
+echo.
+set M=none
+SET /P M=Do you want to proceed (Y/N):
+IF /i %M%==y (
+	echo Removing VPK...
+	IF EXIST  "%custom_folder%\%vpk_name%.vpk" del "%custom_folder%\%vpk_name%.vpk"
+	IF EXIST  "%custom_folder%\%vpk_name%.vpk.sound.cache" del "%custom_folder%\%vpk_name%.vpk.sound.cache"
+	goto :main_menu )
+IF /i %M%==n goto :main_menu
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :uninstall_prompt
 
 :pick_classes_menu
 set scout_status=_
@@ -377,8 +435,9 @@ echo Options:
 echo.	10. Install for selected classes
 echo.	0.  Go back
 echo.
+set M=none
 SET /P M=Choose an option:
-IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3 IF NOT %M%==4 IF NOT %M%==5 IF NOT %M%==6 IF NOT %M%==7 IF NOT %M%==8 IF NOT %M%==9 IF NOT %M%==10 IF NOT %M%==0 goto :pick_classes_menu_2
+IF NOT "%M%"=="0" IF NOT "%M%"=="1" IF NOT "%M%"=="2" IF NOT "%M%"=="3" IF NOT "%M%"=="4" IF NOT "%M%"=="5" IF NOT "%M%"=="6" IF NOT "%M%"=="7" IF NOT "%M%"=="8" IF NOT "%M%"=="9" IF NOT "%M%"=="10" IF NOT "%M%"=="0" goto :pick_classes_menu_2
 
 IF %M%==1 %toggle_scout_status%
 IF %M%==2 %toggle_soldier_status%
@@ -528,12 +587,13 @@ IF %medic_status%==X echo  - Medic
 IF %sniper_status%==X echo  - Sniper
 IF %spy_status%==X echo  - Spy
 echo.
+set M=none
 SET /P M=Proceed? (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :apply_for_selected_classes_prompt
 IF /i %M%==y (
 	set apply_for_specific_classes=true
 	goto :exit_menu )
 IF /i %M%==n goto :pick_classes_menu_2
-IF /i NOT %M%==y IF /i NOT %M%==n goto :apply_for_selected_classes_prompt
 
 
 :dev_menu
@@ -556,14 +616,13 @@ echo. 	2. Restore settings files to default
 IF EXIST "%custom_folder%\%vpk_name%.vpk" echo.	3. Remove VPK from custom
 echo 	0. Go back
 echo.
+set M=none
 SET /P M=Choose dev option:
-IF NOT %M%==0 IF NOT %M%==1 IF NOT %M%==2 IF NOT %M%==3 goto :dev_menu
-IF NOT EXIST "%custom_folder%\%vpk_name%.vpk" IF %M%==3 goto :dev_menu
+IF NOT "%M%"=="0" IF NOT "%M%"=="1" IF NOT "%M%"=="2" goto :dev_menu
 
 IF %M%==0 goto :main_menu
 IF %M%==1 goto :remove_extracted_animations_prompt
 IF %M%==2 goto :restore_settings_prompt
-IF %M%==3 goto :remove_vpks_prompt
 
 :remove_extracted_animations_prompt
 cls
@@ -571,7 +630,9 @@ echo This removes all the files extracted from the game, the fixed viewmodels pa
 echo They will be extracted again when you press start.
 echo Only recommended if something is really wrong or the game got updated.
 echo.
+set M=none
 SET /P M=Do you want to proceed (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :remove_extracted_animations_prompt
 IF /i %M%==y (
 	echo Removing all extracted animations...
 	IF EXIST  "%dev_folder%\decompiled_animations" rd /s /q "%dev_folder%\decompiled_animations"
@@ -580,35 +641,20 @@ IF /i %M%==y (
 	IF EXIST  "%dev_folder%\decompiled_custom_animations_temp" rd /s /q "%dev_folder%\decompiled_custom_animations_temp"
 	goto :dev_menu )
 IF /i %M%==n goto :dev_menu
-IF /i NOT %M%==y IF /i NOT %M%==n goto :remove_extracted_animations_prompt
 
 :restore_settings_prompt
 cls
 echo This restores all the settings_class.txt files to default. 
 echo There is no way to recover your previous settings if you do this.
 echo. 
+set M=none
 SET /P M=Are you sure you want to proceed (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :restore_settings_prompt
 IF /i %M%==y (
 	echo Restoring settings...
 	xcopy /y "%dev_folder%\default_settings" "%vm_customizer_folder%" /e /q >nul
 	goto :dev_menu )
 IF /i %M%==n goto :dev_menu
-IF /i NOT %M%==y IF /i NOT %M%==n goto :restore_settings_prompt
-
-:remove_vpks_prompt
-cls
-echo This removes the generated VPK from your custom folder.
-echo You don't have to do this before applying new settings, only if you just want to remove the mod.
-echo.
-SET /P M=Do you want to proceed (Y/N):
-IF /i %M%==y (
-	echo Removing VPK...
-	IF EXIST  "%custom_folder%\%vpk_name%.vpk" del "%custom_folder%\%vpk_name%.vpk"
-	IF EXIST  "%custom_folder%\%vpk_name%.vpk.sound.cache" del "%custom_folder%\%vpk_name%.vpk.sound.cache"
-
-	goto :dev_menu )
-IF /i %M%==n goto :dev_menu
-IF /i NOT %M%==y IF /i NOT %M%==n goto :remove_vpks_prompt
 
 :exit_menu
 cls
@@ -710,7 +756,8 @@ echo     ~~%%%%%%%%'          .'`-._        `.
 echo  ~~%%%%%%%%%'           :     `-.     (,;
 echo ~~%%%%%%%%'             :         `._\_.'
 echo ~~%%%%%%'              ;  Done! Your edited viewmodels have been installed.
+echo Press any key to exit.
 endlocal
-pause
+pause >nul
 
 
