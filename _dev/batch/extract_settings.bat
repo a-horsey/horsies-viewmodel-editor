@@ -46,6 +46,8 @@ set •Static_backstab(y/n)=n
  ::secondary attack
 set Keep_secondary_attack_visible(y/n)=n
 set •Static_secondary_attack(y/n)=n
+ ::hidden settings
+set •Turn_beam_into_trail_when_hidden(y/n)=n
 
 ::delete temp files just in case
 cd "%qc_folder_temp%"
@@ -116,7 +118,8 @@ IF NOT DEFINED •Static_backstab(y/n) set •Static_backstab(y/n)=n
  ::secondary attack
 IF NOT DEFINED Keep_secondary_attack_visible(y/n) set Keep_secondary_attack_visible(y/n)=n
 IF NOT DEFINED •Static_secondary_attack(y/n) set •Static_secondary_attack(y/n)=n
-
+ ::hidden settings
+IF NOT DEFINED •Turn_beam_into_trail_when_hidden(y/n) set •Turn_beam_into_trail_when_hidden(y/n)=n
 ::remove caps from yes values for all variables
 ::could just use "IF /I" to avoid this but am too big brain
 SET •Hidden(y/n)=%•Hidden(y/n):Y=y%
@@ -149,9 +152,10 @@ set •Static_backstab(y/n)=%•Static_backstab(y/n):Y=y%
  ::secondary attack
 set Keep_secondary_attack_visible(y/n)=%Keep_secondary_attack_visible(y/n):Y=y%
 set •Static_secondary_attack(y/n)=%•Static_secondary_attack(y/n):Y=y%
-
 ::extra fixes
 ::used for other special condition settings
 IF NOT %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==poke IF NOT %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==horizontal_swipe IF NOT %Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)%==diagonal_swipe set Choose_normal_attack(poke/horizontal_swipe/diagonal_swipe)=horizontal_swipe
+ ::hidden settings
+set •Turn_beam_into_trail_when_hidden(y/n)=%•Turn_beam_into_trail_when_hidden(y/n):Y=y%
 
 

@@ -7,21 +7,7 @@ cd "%vm_customizer_folder%\fixed viewmodels addon"
 IF EXIST fixed_vm_temp del fixed_vm_temp
 IF EXIST fixed_vm_temp_1 del fixed_vm_temp_1
 IF EXIST fixed_vm_temp_2 del fixed_vm_temp_2
-
-::check if extracted already
-cd %dev_folder%
-IF NOT EXIST "decompiled_fixed_animations" goto :check_for_vpk
-cd "decompiled_fixed_animations"
-IF NOT EXIST c_scout_animations.qc goto :check_for_vpk
-IF NOT EXIST c_soldier_animations.qc goto :check_for_vpk
-IF NOT EXIST c_pyro_animations.qc goto :check_for_vpk
-IF NOT EXIST c_demo_animations.qc goto :check_for_vpk
-IF NOT EXIST c_heavy_animations.qc goto :check_for_vpk
-IF NOT EXIST c_engineer_animations.qc goto :check_for_vpk
-IF NOT EXIST c_medic_animations.qc goto :check_for_vpk
-IF NOT EXIST c_sniper_animations.qc goto :check_for_vpk
-IF NOT EXIST c_spy_animations.qc goto :check_for_vpk
-IF EXIST "animations_already_extracted.txt" goto :animations_already_extracted
+IF EXIST last_used_vpks del last_used_vpks
 
 :check_for_vpk
 cd "%vm_customizer_folder%\fixed viewmodels addon"
@@ -34,12 +20,43 @@ IF EXIST fixed_vm_temp del fixed_vm_temp
 IF EXIST fixed_vm_temp_1 del fixed_vm_temp_1
 IF EXIST fixed_vm_temp_2 del fixed_vm_temp_2
 
+::make list of files to compare changes
+dir "%cd%" >> last_used_vpks_temp_1
+findstr /e /C:".vpk" "last_used_vpks_temp_1" >> last_used_vpks_temp_2
+IF EXIST last_used_vpks_temp_1 del last_used_vpks_temp_1
+IF EXIST last_used_vpks_temp_2 ren "last_used_vpks_temp_2" "last_used_vpks"
+
+:check_for_changes
+IF NOT EXIST "%dev_folder%\decompiled_fixed_animations\last_used_vpks" goto :check_for_changes_done
+FC "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" "%dev_folder%\decompiled_fixed_animations\last_used_vpks" >nul
+IF %errorlevel%==0 goto :check_for_changes_done
+cd "%dev_folder%"
+IF EXIST "decompiled_fixed_animations" rd /s /q "decompiled_fixed_animations"
+:check_for_changes_done
+
+::check if extracted already
+cd "%dev_folder%"
+IF NOT EXIST "decompiled_fixed_animations" goto :extract_vpk
+cd "decompiled_fixed_animations"
+IF NOT EXIST c_scout_animations.qc goto :extract_vpk
+IF NOT EXIST c_soldier_animations.qc goto :extract_vpk
+IF NOT EXIST c_pyro_animations.qc goto :extract_vpk
+IF NOT EXIST c_demo_animations.qc goto :extract_vpk
+IF NOT EXIST c_heavy_animations.qc goto :extract_vpk
+IF NOT EXIST c_engineer_animations.qc goto :extract_vpk
+IF NOT EXIST c_medic_animations.qc goto :extract_vpk
+IF NOT EXIST c_sniper_animations.qc goto :extract_vpk
+IF NOT EXIST c_spy_animations.qc goto :extract_vpk
+IF EXIST "animations_already_extracted.txt" goto :animations_already_extracted
+
+::check if vpk exists
+cd "%vm_customizer_folder%\fixed viewmodels addon"
 IF EXIST "%fixed_vm_vpk%" goto :extract_vpk
 IF NOT EXIST "%fixed_vm_vpk%" goto :no_vpk_detected
 
 :extract_vpk
 ::extract models from fixed vm pack
-cd %dev_folder%
+cd "%dev_folder%"
 IF NOT EXIST decompiled_fixed_animations mkdir decompiled_fixed_animations
 del /Q "%dev_folder%\decompiled_fixed_animations\*"
 
@@ -129,15 +146,15 @@ cd "%dev_folder%\decompiled_fixed_animations"
 
 ::Mark them as extracted to avoid extracting on each run
 cd "%dev_folder%\decompiled_fixed_animations"
-IF NOT EXIST c_scout_animations.qc goto :animation_extract_error
-IF NOT EXIST c_soldier_animations.qc goto :animation_extract_error
-IF NOT EXIST c_pyro_animations.qc goto :animation_extract_error
-IF NOT EXIST c_demo_animations.qc goto :animation_extract_error
-IF NOT EXIST c_heavy_animations.qc goto :animation_extract_error
-IF NOT EXIST c_engineer_animations.qc goto :animation_extract_error
-IF NOT EXIST c_medic_animations.qc goto :animation_extract_error
-IF NOT EXIST c_sniper_animations.qc goto :animation_extract_error
-IF NOT EXIST c_spy_animations.qc goto :animation_extract_error
+IF NOT EXIST c_scout_animations.qc goto :incompatible_mod
+IF NOT EXIST c_soldier_animations.qc goto :incompatible_mod
+IF NOT EXIST c_pyro_animations.qc goto :incompatible_mod
+IF NOT EXIST c_demo_animations.qc goto :incompatible_mod
+IF NOT EXIST c_heavy_animations.qc goto :incompatible_mod
+IF NOT EXIST c_engineer_animations.qc goto :incompatible_mod
+IF NOT EXIST c_medic_animations.qc goto :incompatible_mod
+IF NOT EXIST c_sniper_animations.qc goto :incompatible_mod
+IF NOT EXIST c_spy_animations.qc goto :incompatible_mod
 echo If this file exists, the files have been extracted already. > animations_already_extracted.txt
 
 ::Fixes
@@ -153,23 +170,38 @@ IF EXIST "%dev_folder%\extra_animation_fixes\eternal_idle.smd" (
 ::exit
 cls
 echo Fixed animations extracted...
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" move "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" "%dev_folder%\decompiled_fixed_animations\last_used_vpks" >nul
+cd "%dev_folder%\decompiled_fixed_animations"
+IF EXIST "error_check.txt" del "error_check.txt" >nul
 exit /b
 
 :no_vpk_detected
 echo No fixed viewmodels VPK detected, skipping...
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" del "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" >nul
+cd "%dev_folder%\decompiled_fixed_animations"
+IF EXIST "error_check.txt" del "error_check.txt" >nul
 exit /b
 
 :animations_already_extracted
 echo Fixed animations already extracted. Skipping...
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" del "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" >nul
+cd "%dev_folder%\decompiled_fixed_animations"
+IF EXIST "error_check.txt" del "error_check.txt" >nul
 exit /b
 
 :incompatible_mod
 echo Bad fixed animations VPK detected. Skipping...
 cd "%dev_folder%"
 IF EXIST "decompiled_fixed_animations" rd /s /q "decompiled_fixed_animations"
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" del "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" >nul
+cd "%dev_folder%\decompiled_fixed_animations"
+IF EXIST "error_check.txt" del "error_check.txt" >nul
 exit /b
 
 
 :animation_extract_error
 title Fixed animations extraction failed. Aborting...
 echo Fixed animations extraction failed. Aborting...
+IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" del "%vm_customizer_folder%\fixed viewmodels addon\last_used_vpks" >nul
+cd "%dev_folder%\decompiled_fixed_animations"
+IF EXIST "error_check.txt" del "error_check.txt" >nul

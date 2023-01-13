@@ -46,6 +46,8 @@ IF %attack_sequence_1%==db_fire set hide_origin_value=origin 0 -242 5
 IF "%settings_label%" EQU "&::sapper" set hide_origin_value=origin 0 -9999 9999
 ::special value if tracers not visible
 IF NOT %attack_sequence_2%==fire IF NOT %attack_sequence_1%==ft_fire IF %Keep_tracers_visible(y/n)%==n set hide_origin_value=origin 0 -400 0 blend "animation_destroyer" 0 0
+::values for hidden beam trail setting
+IF %•Turn_beam_into_trail_when_hidden(y/n)%==y IF %attack_sequence_2%==fire_loop set hide_origin_value=origin 0 -9999 999 blend "animation_destroyer" 0 0
 
 :hide_attack
 :hide_attack_1
@@ -92,6 +94,7 @@ IF %Keep_beam_visible(y/n)%==y set hide_origin_value=origin 0 -85 50
 IF %attack_sequence_1%==db_fire set hide_origin_value=origin 0 -242 5
 ::value for sappers to prevent bugs
 IF "%settings_label%" EQU "&::sapper" set hide_origin_value=origin 0 -9999 9999
+
 
 :hide_reload
 :hide_reload_1
