@@ -180,13 +180,13 @@ echo.
 echo.Install: 
 echo.	1. Install for all classes
 echo.	2. Install for specific classes
-IF  EXIST "%custom_folder%\%vpk_name%.vpk"	echo.	3. Uninstall
+IF  EXIST "%custom_folder%\%vpk_name%.vpk"	echo.	0. Uninstall
 echo.
 echo.Options:
-echo. 	4. [%automatic_preloading_status%] Include automatic preloading
-echo. 	5. [%disable_tracers_status%] Remove 1st person bullet tracers
-echo.	6. [%hide_errors_status%] Hide console errors
-echo. 	0. Developer settings
+echo. 	3. [%automatic_preloading_status%] Include automatic preloading
+echo. 	4. [%disable_tracers_status%] Remove 1st person bullet tracers
+echo.	5. [%hide_errors_status%] Hide console errors
+echo. 	6. Developer settings
 ::fixed and custom animation prompts
 IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" (
 	echo.
@@ -207,16 +207,16 @@ set M=none
 SET /P M=Choose an option: 
 IF NOT "%M%"=="0" IF NOT "%M%"=="1" IF NOT "%M%"=="2" IF NOT "%M%"=="3"  IF NOT "%M%"=="4" IF NOT "%M%"=="5" IF NOT "%M%"=="6" IF NOT "%M%"=="7" IF NOT "%M%"=="8" goto :main_menu
 
-IF %M%==0 goto :dev_menu
-IF %M%==1 goto :install_for_all_classes_prompt
-IF %M%==2 goto :pick_classes_menu
-IF %M%==3 (
+IF %M%==0 (
 	IF NOT EXIST "%custom_folder%\%vpk_name%.vpk" goto :main_menu
 	IF EXIST "%custom_folder%\%vpk_name%.vpk" goto :uninstall_prompt)
-IF %M%==3 goto :uninstall_prompt
-IF %M%==4 %toggle_preloading%
-IF %M%==5 %toggle_tracers%
-IF %M%==6 %toggle_errors%
+IF %M%==1 goto :install_for_all_classes_prompt
+IF %M%==2 goto :pick_classes_menu
+IF %M%==3 %toggle_preloading%
+IF %M%==4 %toggle_tracers%
+IF %M%==5 %toggle_errors%
+IF %M%==6 goto :dev_menu
+
 ::fixed and custom animations logic
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==7 goto :main_menu
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF NOT EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==8 goto :main_menu
@@ -366,14 +366,14 @@ echo This will remove the generated VPK mod from your custom folder.
 echo You don't have to do this before applying new settings, only if you just want to uninstall the mod.
 echo.
 set M=none
-SET /P M=Do you want to proceed (Y/N):
+SET /P M=Do you want to proceed? (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :uninstall_prompt
 IF /i %M%==y (
 	echo Removing VPK...
 	IF EXIST  "%custom_folder%\%vpk_name%.vpk" del "%custom_folder%\%vpk_name%.vpk"
 	IF EXIST  "%custom_folder%\%vpk_name%.vpk.sound.cache" del "%custom_folder%\%vpk_name%.vpk.sound.cache"
 	goto :main_menu )
 IF /i %M%==n goto :main_menu
-IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :uninstall_prompt
 
 :pick_classes_menu
 set scout_status=_
@@ -613,7 +613,6 @@ echo.
 echo Dev Options: 
 echo. 	1. Remove all extracted animations
 echo. 	2. Restore settings files to default
-IF EXIST "%custom_folder%\%vpk_name%.vpk" echo.	3. Remove VPK from custom
 echo 	0. Go back
 echo.
 set M=none
@@ -631,7 +630,7 @@ echo They will be extracted again when you press start.
 echo Only recommended if something is really wrong or the game got updated.
 echo.
 set M=none
-SET /P M=Do you want to proceed (Y/N):
+SET /P M=Do you want to proceed? (Y/N):
 IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :remove_extracted_animations_prompt
 IF /i %M%==y (
 	echo Removing all extracted animations...
@@ -648,7 +647,7 @@ echo This restores all the settings_class.txt files to default.
 echo There is no way to recover your previous settings if you do this.
 echo. 
 set M=none
-SET /P M=Are you sure you want to proceed (Y/N):
+SET /P M=Are you sure you want to proceed? (Y/N):
 IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :restore_settings_prompt
 IF /i %M%==y (
 	echo Restoring settings...
@@ -756,6 +755,7 @@ echo     ~~%%%%%%%%'          .'`-._        `.
 echo  ~~%%%%%%%%%'           :     `-.     (,;
 echo ~~%%%%%%%%'             :         `._\_.'
 echo ~~%%%%%%'              ;  Done! Your edited viewmodels have been installed.
+echo.
 echo Press any key to exit.
 endlocal
 pause >nul
