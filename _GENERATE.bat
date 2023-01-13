@@ -754,7 +754,7 @@ echo        ~~%%%%%%%%'       `. _,        '
 echo     ~~%%%%%%%%'          .'`-._        `.
 echo  ~~%%%%%%%%%'           :     `-.     (,;
 echo ~~%%%%%%%%'             :         `._\_.'
-echo ~~%%%%%%'              ;  Done! Your edited viewmodels have been installed.
+echo ~~%%%%%%'              ;  Done^^! Your edited viewmodels have been installed.
 echo.
 echo Press any key to exit.
 endlocal
