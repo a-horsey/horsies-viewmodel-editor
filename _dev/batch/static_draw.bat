@@ -38,6 +38,9 @@ set operating_smd_9=none
 set operating_smd_10=none
 call "%dev_folder%\batch\smd_operations\smd_statinator.bat"
 
+::blend removal disabled for now, causes issues with some animations that use blends for fixing positions
+goto :EOF
+
 ::delete blends only if using custom animations - wastes time otherwise
 IF %custom_vm%==on IF EXIST "%dev_folder%\decompiled_custom_animations\%qc_file%" goto :delete_blends
 goto :EOF
