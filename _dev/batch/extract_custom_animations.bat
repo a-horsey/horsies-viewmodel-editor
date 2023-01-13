@@ -77,6 +77,28 @@ HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%
 HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "models\weapons\c_models\c_sniper_animations.mdl" >nul
 HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "models\weapons\c_models\c_spy_animations.mdl" >nul
 
+::extract extra files from the mod - disabled for now - check commented code in compile_and_pack.bat too for continuation
+::cd "%dev_folder%"
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::HLExtract.exe -s -p "%vm_customizer_folder%\custom animations\%custom_animation%" -d "%dev_folder%\decompiled_custom_animations_temp" -e "root" >nul
+::remove animation related files from the extra files
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_scout_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_scout_animations.mdl" >nul
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_soldier_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_soldier_animations.mdl" >nul
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_pyro_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_pyro_animations.mdl" >nul
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_demo_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_demo_animations.mdl" >nul
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_heavy_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_heavy_animations.mdl" >nul
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_engineer_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_engineer_animations.mdl" >nul
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_medic_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_medic_animations.mdl" >nul
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_sniper_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_sniper_animations.mdl" >nul
+::IF EXIST "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_spy_animations.mdl" del "%dev_folder%\decompiled_custom_animations_temp\root\models\weapons\c_models\c_spy_animations.mdl" >nul
+
 ::mark as incompatible if no animation models exist
 cd "%dev_folder%\decompiled_custom_animations_temp"
 IF NOT EXIST c_scout_animations.mdl IF NOT EXIST c_soldier_animations.mdl IF NOT EXIST c_pyro_animations.mdl IF NOT EXIST c_demo_animations.mdl IF NOT EXIST c_heavy_animations.mdl IF NOT EXIST c_engineer_animations.mdl IF NOT EXIST c_medic_animations.mdl IF NOT EXIST c_sniper_animations.mdl IF NOT EXIST c_spy_animations.mdl (
@@ -558,26 +580,26 @@ cd "%vm_customizer_folder%\custom animations"
 ::create incompatible animations folder and move mod
 IF NOT EXIST "incompatible animations" (
 	mkdir "incompatible animations"
-	echo This folder contains all the incompatible animations. >> "%vm_customizer_folder%\custom animations\incompatible animations\info.txt"
-	echo It is safe to delete. >> "%vm_customizer_folder%\custom animations\incompatible animations\info.txt" )
+	echo This folder contains all the incompatible animations. >> "%vm_customizer_folder%\custom animations\incompatible animations\_info.txt"
+	echo It is safe to delete. >> "%vm_customizer_folder%\custom animations\incompatible animations\_info.txt" )
 move "%custom_animation%" "incompatible animations\%custom_animation%" >nul
 ::create error log if needed
 cd "%vm_customizer_folder%\custom animations\incompatible animations"
-IF NOT EXIST "error_log.txt" echo This file contains a list of all the errors encountered when trying to apply custom animations. >> error_log.txt
+IF NOT EXIST "_error_log.txt" echo This file contains a list of all the errors encountered when trying to apply custom animations. >> _error_log.txt
 ::log errors
-echo. >> error_log.txt
-echo =================================================================================================================================================================================================================================================================== >> error_log.txt
-echo Package name: %custom_animation% >> error_log.txt
-echo Session start time: %session_time% / %session_date% >> error_log.txt
+echo. >> _error_log.txt
+echo =================================================================================================================================================================================================================================================================== >> _error_log.txt
+echo Package name: %custom_animation% >> _error_log.txt
+echo Session start time: %session_time% / %session_date% >> _error_log.txt
 IF NOT DEFINED incompatibility_reason set incompatibility_reason=unknown
-IF %incompatibility_reason%==unknown echo Error: unknown >> error_log.txt
-IF %incompatibility_reason%==no_files echo Error: VPK does not contain any viewmodel animation files. >> error_log.txt
-IF %incompatibility_reason%==sca echo Error: Mod uses the Separated C_animations format. Only the default TF2 viewmodel animation format is supported. >> error_log.txt
+IF %incompatibility_reason%==unknown echo Error: unknown >> _error_log.txt
+IF %incompatibility_reason%==no_files echo Error: VPK does not contain any viewmodel animation files. >> _error_log.txt
+IF %incompatibility_reason%==sca echo Error: Mod uses the Separated C_animations format. Only the default TF2 viewmodel animation format is supported. >> _error_log.txt
 IF %incompatibility_reason%==compile_error (
-	echo Error: Failed to compile back after decompiling. >> error_log.txt
-	echo StudioMDL log: >> error_log.txt
-	type "%dev_folder%\decompiled_custom_animations_temp\error_check.txt" >> error_log.txt )
-echo =================================================================================================================================================================================================================================================================== >> error_log.txt
+	echo Error: Failed to compile back after decompiling. >> _error_log.txt
+	echo StudioMDL log: >> _error_log.txt
+	type "%dev_folder%\decompiled_custom_animations_temp\error_check.txt" >> _error_log.txt )
+echo =================================================================================================================================================================================================================================================================== >> _error_log.txt
 ::remove temp
 cd "%dev_folder%"
 IF EXIST "decompiled_custom_animations_temp"  rd /s /q "decompiled_custom_animations_temp"

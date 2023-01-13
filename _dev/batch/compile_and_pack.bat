@@ -153,6 +153,9 @@ xcopy "preload_files" "%vpk_name%" /e /q >nul
 cd "%dev_folder%\%vpk_name%"
 IF NOT EXIST "cfg" mkdir "cfg"
 
+::copy extra files from custom animation mods if needed - disabled for now
+::IF EXIST "%dev_folder%\decompiled_custom_animations\root" xcopy "%dev_folder%\decompiled_custom_animations\root" "%dev_folder%\%vpk_name%" /e /q >nul
+
 :automatic_preloading
 IF %automatic_preloading%==off IF %disable_tracers%==off IF %hide_errors%==off goto :automatic_preloading_end
 
@@ -176,7 +179,7 @@ IF EXIST "%custom_valve_rc%" copy "%custom_valve_rc%" "%dev_folder%\%vpk_name%\c
 cd "%dev_folder%\%vpk_name%\cfg"
 IF EXIST valve_rc_temp ren "valve_rc_temp" "valve.rc"
 
-::add preloading, tracer disabling and error hiding
+::add preloading, tracer disabling and error hiding - disabled for now
 IF %automatic_preloading%==on echo exec preloading.cfg >> valve.rc
 IF %disable_tracers%==on echo r_drawtracers_firstperson 0 >> valve.rc
 IF %hide_errors%==on echo con_filter_enable 1; con_filter_text_out "particle" >> valve.rc
@@ -202,6 +205,10 @@ IF EXIST "_Horsie'sViewmodelEditor_001.vpk" del "_Horsie'sViewmodelEditor_001.vp
 IF EXIST "_Horsie'sViewmodelEditor_002.vpk" del "_Horsie'sViewmodelEditor_002.vpk"
 IF EXIST "_Horsie'sViewmodelEditor_003.vpk" del "_Horsie'sViewmodelEditor_003.vpk"
 IF EXIST "_Horsie'sViewmodelEditor_004.vpk" del "_Horsie'sViewmodelEditor_004.vpk"
+
+::delete more legacy vpk names
+IF EXIST "_Horsie'sViewmodelEditor.vpk" del "_Horsie'sViewmodelEditor.vpk"
+IF EXIST "_Horsie'sViewmodelEditor.vpk.sound.cache" del "_Horsie'sViewmodelEditor.vpk.sound.cache"
 
 ::move vpks
 cd "%dev_folder%" 

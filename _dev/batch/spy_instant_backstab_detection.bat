@@ -10,28 +10,6 @@ IF %•Hidden(y/n)%==y IF %Keep_backstab_detection_visible(y/n)%==y goto :proces
 :process_backstab_detections
 IF %backstab_detect_smd_idle%==none goto :EOF
 
-:extract_nodes
-cd "%smd_folder%"
-IF EXIST nodes del nodes >nul
-FOR /F "tokens=*" %%A IN (%backstab_detect_smd_idle%) DO (
-	echo %%A
-	IF %%A==skeleton goto :nodes_extracted ) >> nodes
-:nodes_extracted
-
-:instant_backstab_detection
-IF %backstab_detect_smd_up%==none goto :instant_backstab_detection_done
-set smd_to_make_instant=%backstab_detect_smd_up%
-call :backstab_instantinator
-
-IF %backstab_detect_smd_down%==none goto :instant_backstab_detection_done
-set smd_to_make_static=%backstab_detect_smd_down%
-call :smd_statinator
-
-IF %backstab_detect_smd_idle%==none goto :instant_backstab_detection_done
-set smd_to_make_instant=%backstab_detect_smd_idle%
-call :backstab_instantinator
-:instant_backstab_detection_done
-
 :apply_fade_values
 cd "%qc_folder_temp%"
 set fade_values=snap fadein 0.0 fadeout 0.0
@@ -46,72 +24,47 @@ IF %backstab_detect_sequence_idle%==none goto :apply_fade_values_done
 echo $append %backstab_detect_sequence_idle% %fade_values% >> %qc_file%
 :apply_fade_values_done
 
+:turn_instant
+set extract_first_frame_from=%backstab_detect_smd_idle%
+set operating_smd_1=%backstab_detect_smd_up%
+set operating_smd_2=%backstab_detect_smd_idle%
+set operating_smd_3=none
+set operating_smd_4=none
+set operating_smd_5=none
+set operating_smd_6=none
+set operating_smd_7=none
+set operating_smd_8=none
+set operating_smd_9=none
+set operating_smd_10=none
+call "%dev_folder%\batch\smd_operations\smd_instantinator.bat"
 
-:delete_temp_and_exit
-cd "%smd_folder%"
-IF EXIST nodes del nodes >nul
+:turn_static
+set operating_smd_1=%backstab_detect_smd_down%
+set operating_smd_2=none
+set operating_smd_3=none
+set operating_smd_4=none
+set operating_smd_5=none
+set operating_smd_6=none
+set operating_smd_7=none
+set operating_smd_8=none
+set operating_smd_9=none
+set operating_smd_10=none
+call "%dev_folder%\batch\smd_operations\smd_statinator.bat"
+
+::delete blends only if using custom animations - wastes time otherwise
+IF %custom_vm%==on IF EXIST "%dev_folder%\decompiled_custom_animations\%qc_file%" goto :delete_blends
 goto :EOF
+:delete_blends
+set operating_sequence_1=%backstab_detect_sequence_up%
+set operating_sequence_2=%backstab_detect_sequence_down%
+set operating_sequence_3=%backstab_detect_sequence_idle%
+set operating_sequence_4=none
+set operating_sequence_5=none
+set operating_sequence_6=none
+set operating_sequence_7=none
+set operating_sequence_8=none
+set operating_sequence_9=none
+set operating_sequence_10=none
+call "%dev_folder%\batch\sequence_operations\remove_blend_from_sequences.bat"
 
-:backstab_instantinator
-cd "%smd_folder%"
-::delete temp - except nodes
-IF EXIST first_frame del first_frame >nul
-IF EXIST framecount del framecount >nul
-IF EXIST addedframes del addedframes >nul
-IF EXIST static.smd del static.smd >nul
-::extract first frame of idle
-set echo_now=off
-FOR /F "tokens=*" %%A IN (%backstab_detect_smd_idle%) DO (
-	IF "%%A" EQU "time 0" set echo_now=on
-	IF NOT "%%A" EQU "time 0" IF NOT "%%A" EQU "time 1" IF !echo_now!==on ECHO %%A
-	IF "%%A" EQU "time 1" goto :first_frame_extracted_instant ) >> first_frame
-:first_frame_extracted_instant
-::extract number of frames
-findstr /i /c:"time" "%smd_to_make_instant%" > framecount
-::add frames
-FOR /F "tokens=*" %%A IN (framecount) DO (
-	echo %%A
-	type first_frame ) >> addedframes
-::build file and replace original
-copy "nodes" + "addedframes" "static.smd" >nul
-echo end >> static.smd
-move "static.smd" "%smd_to_make_instant%" >nul
-::delete temp
-IF EXIST first_frame del first_frame >nul
-IF EXIST framecount del framecount >nul
-IF EXIST addedframes del addedframes >nul
-IF EXIST static.smd del static.smd >nul
-::exit call
-exit /b
 
-:smd_statinator
-cd "%smd_folder%"
-::delete temp - except nodes
-IF EXIST first_frame del first_frame >nul
-IF EXIST framecount del framecount >nul
-IF EXIST addedframes del addedframes >nul
-IF EXIST static.smd del static.smd >nul
-::extract first frame of idle
-set echo_now=off
-FOR /F "tokens=*" %%A IN (%idle_smd%) DO (
-	IF "%%A" EQU "time 0" set echo_now=on
-	IF NOT "%%A" EQU "time 0" IF NOT "%%A" EQU "time 1" IF !echo_now!==on ECHO %%A
-	IF "%%A" EQU "time 1" goto :first_frame_extracted ) >> first_frame
-:first_frame_extracted
-::extract number of frames
-findstr /i /c:"time" "%smd_to_make_static%" > framecount
-::add frames
-FOR /F "tokens=*" %%A IN (framecount) DO (
-	echo %%A
-	type first_frame ) >> addedframes
-::build file and replace original
-copy "nodes" + "addedframes" "static.smd" >nul
-echo end >> static.smd
-move "static.smd" "%smd_to_make_static%" >nul
-::delete temp
-IF EXIST first_frame del first_frame >nul
-IF EXIST framecount del framecount >nul
-IF EXIST addedframes del addedframes >nul
-IF EXIST static.smd del static.smd >nul
-::exit call
-exit /b

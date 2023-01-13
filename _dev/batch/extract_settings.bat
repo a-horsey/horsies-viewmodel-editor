@@ -3,7 +3,13 @@
 cd "%decompiled_animations_temp%"
 IF EXIST %settings_file% goto :extract_settings
 cd "%vm_customizer_folder%"
-copy "%settings_file%" "%decompiled_animations_temp%\%settings_file%" >nul
+::extract without spaces/tabs
+FOR /F "tokens=1 delims=" %%A IN (%settings_file%) DO (
+	set "space_remover=%%A"
+	set "space_remover=!space_remover: =!"
+	set "space_remover=!space_remover:	=!"
+	echo.!space_remover! 
+) >> "%decompiled_animations_temp%\%settings_file%"
 
 :extract_settings
 ::set all possible settings to default values before - prevents crashes
@@ -45,7 +51,7 @@ set •Static_secondary_attack(y/n)=n
 cd "%qc_folder_temp%"
 IF EXIST settings_temp del settings_temp >nul
 
-::extract settings and turn into bat - this automatically removes extra spaces and tabs, as well as useless lines
+::extract settings and turn into bat - automatically removes useless lines
 set start_echo=off
 set echod_once=off
 set two_labels_found=no
@@ -98,6 +104,7 @@ IF NOT DEFINED •More_static_idle(y/n) set •More_static_idle(y/n)=n
 IF NOT DEFINED •Remove_shells(y/n) set •Remove_shells(y/n)=n
 IF NOT DEFINED •Remove_left_arm(y/n) set •Remove_left_arm(y/n)=n
 IF NOT DEFINED •Remove_right_arm(y/n) set •Remove_right_arm(y/n)=n
+IF NOT DEFINED •Replace_reload_sound_with_stock(y/n) set •Replace_reload_sound_with_stock(y/n)=n
  ::spy stuff 
 IF NOT DEFINED Keep_backstab_detection_visible(y/n) set Keep_backstab_detection_visible(y/n)=n
 IF NOT DEFINED Keep_backstab_visible(y/n) set Keep_backstab_visible(y/n)=n
@@ -128,6 +135,7 @@ SET •More_static_idle(y/n)=%•More_static_idle(y/n):Y=y%
 SET •Remove_shells(y/n)=%•Remove_shells(y/n):Y=y%
 SET •Remove_left_arm(y/n)=%•Remove_left_arm(y/n):Y=y%
 SET •Remove_right_arm(y/n)=%•Remove_right_arm(y/n):Y=y%
+SET •Replace_reload_sound_with_stock(y/n)=%•Replace_reload_sound_with_stock(y/n):Y=y%
  ::spy stuff
 set Keep_backstab_detection_visible(y/n)=%Keep_backstab_detection_visible(y/n):Y=y%
 set Keep_backstab_visible(y/n)=%Keep_backstab_visible(y/n):Y=y%

@@ -45,15 +45,20 @@ del /Q "%dev_folder%\decompiled_fixed_animations\*"
 
 title Extracting fixed animations...
 echo Extracting fixed animations...
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_scout_animations.mdl"
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_soldier_animations.mdl"
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_pyro_animations.mdl"
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_demo_animations.mdl"
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_heavy_animations.mdl"
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_engineer_animations.mdl"
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_medic_animations.mdl"
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_sniper_animations.mdl"
-HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_spy_animations.mdl"
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_scout_animations.mdl" >nul
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_soldier_animations.mdl" >nul
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_pyro_animations.mdl" >nul
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_demo_animations.mdl" >nul
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_heavy_animations.mdl" >nul
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_engineer_animations.mdl" >nul
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_medic_animations.mdl" >nul
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_sniper_animations.mdl" >nul
+HLExtract.exe -s -p "%fixed_vm_vpk%" -d "%dev_folder%\decompiled_fixed_animations" -e "models\weapons\c_models\c_spy_animations.mdl" >nul
+
+::mark as incompatible if no animation models exist
+cd "%dev_folder%\decompiled_fixed_animations"
+IF NOT EXIST c_scout_animations.mdl IF NOT EXIST c_soldier_animations.mdl IF NOT EXIST c_pyro_animations.mdl IF NOT EXIST c_demo_animations.mdl IF NOT EXIST c_heavy_animations.mdl IF NOT EXIST c_engineer_animations.mdl IF NOT EXIST c_medic_animations.mdl IF NOT EXIST c_sniper_animations.mdl IF NOT EXIST c_spy_animations.mdl goto :incompatible_mod
+
 
 ::Decompile them
 ::Workaround for crowbar settings bug present in CrowbarCommandLine - part 1
@@ -86,15 +91,41 @@ IF EXIST "Crowbar Settings Backup.xml" (
 cd /d "%dev_folder%"
 
 ::Delete raw MDLs
-del "%dev_folder%\decompiled_fixed_animations\c_scout_animations.mdl"
-del "%dev_folder%\decompiled_fixed_animations\c_soldier_animations.mdl"
-del "%dev_folder%\decompiled_fixed_animations\c_pyro_animations.mdl"
-del "%dev_folder%\decompiled_fixed_animations\c_demo_animations.mdl"
-del "%dev_folder%\decompiled_fixed_animations\c_heavy_animations.mdl"
-del "%dev_folder%\decompiled_fixed_animations\c_engineer_animations.mdl"
-del "%dev_folder%\decompiled_fixed_animations\c_medic_animations.mdl"
-del "%dev_folder%\decompiled_fixed_animations\c_sniper_animations.mdl"
-del "%dev_folder%\decompiled_fixed_animations\c_spy_animations.mdl"
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_scout_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_scout_animations.mdl" >nul
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_soldier_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_soldier_animations.mdl" >nul
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_pyro_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_pyro_animations.mdl" >nul
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_demo_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_demo_animations.mdl" >nul
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_heavy_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_heavy_animations.mdl" >nul
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_engineer_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_engineer_animations.mdl" >nul
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_medic_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_medic_animations.mdl" >nul
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_sniper_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_sniper_animations.mdl" >nul
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_spy_animations.mdl" del "%dev_folder%\decompiled_fixed_animations\c_spy_animations.mdl" >nul
+
+::attempt to recompile and check for errors
+cd "%tf_folder%"
+IF EXIST "models" ren "models" "models_backup" 
+
+cd "%dev_folder%\decompiled_fixed_animations"
+IF EXIST "error_check.txt" del "error_check.txt" >nul
+
+cd "%bin_folder%"
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_scout_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_scout_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_soldier_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_soldier_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_pyro_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_pyro_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_demo_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_demo_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_heavy_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_heavy_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_engineer_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_engineer_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_medic_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_medic_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_sniper_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_sniper_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+IF EXIST "%dev_folder%\decompiled_fixed_animations\c_spy_animations.qc" studiomdl -quiet -fastbuild -nop4 "%dev_folder%\decompiled_fixed_animations\c_spy_animations.qc" >> "%dev_folder%\decompiled_fixed_animations\error_check.txt" 
+
+cd "%tf_folder%"
+IF EXIST "models"  rd /s /q "models"
+IF EXIST "models_backup" ren "models_backup" "models"
+
+cd "%dev_folder%\decompiled_fixed_animations"
+	for /f "usebackq" %%b in (`type error_check.txt ^| find /I "error"`) do (
+		goto :incompatible_mod )
 
 ::Mark them as extracted to avoid extracting on each run
 cd "%dev_folder%\decompiled_fixed_animations"
@@ -132,7 +163,13 @@ exit /b
 echo Fixed animations already extracted. Skipping...
 exit /b
 
+:incompatible_mod
+echo Bad fixed animations VPK detected. Skipping...
+cd "%dev_folder%"
+IF EXIST "decompiled_fixed_animations" rd /s /q "decompiled_fixed_animations"
+exit /b
+
+
 :animation_extract_error
-cls
-title Animation extraction failed. Aborting...
-echo Animation extraction failed. Aborting...
+title Fixed animations extraction failed. Aborting...
+echo Fixed animations extraction failed. Aborting...

@@ -38,4 +38,7 @@ cd "%batch_folder%"
 IF NOT %qc_file%==c_demo_animations.qc IF NOT %qc_file%==c_medic_animations.qc IF NOT %qc_file%==c_spy_animations.qc call remove_shells.bat
 
 cd "%batch_folder%"
+IF "%settings_label%" EQU "&::original" call original_sound_to_stock.bat
+
+cd "%batch_folder%"
 call remove_left_arm.bat

@@ -23,16 +23,12 @@ cd "%qc_folder_temp%"
 IF %draw_sequence%==none goto :hide_draw_end
 IF %Keep_draw_visible(y/n)%==y echo $append %draw_sequence% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_draw_visible(y/n)%==y echo $append %draw_sequence% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_draw_visible(y/n)%==y set sequence_to_remove_blend_from=%draw_sequence%
-IF NOT %Keep_draw_visible(y/n)%==y call :blend_remover
 :hide_draw_end
 
 :hide_idle
 IF %idle_sequence%==none goto :hide_idle_end
 IF %Keep_idle_visible(y/n)%==y echo $append %idle_sequence% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_idle_visible(y/n)%==y echo $append %idle_sequence% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file%
-IF NOT %Keep_idle_visible(y/n)%==y set sequence_to_remove_blend_from=%idle_sequence%
-IF NOT %Keep_idle_visible(y/n)%==y call :blend_remover
 :hide_idle_end
 
 ::set values for attacks
@@ -56,43 +52,31 @@ IF NOT %attack_sequence_2%==fire IF NOT %attack_sequence_1%==ft_fire IF %Keep_tr
 IF %attack_sequence_1%==none goto :hide_attack_end
 IF %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_1% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_1% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%attack_sequence_1%
-IF NOT %Keep_attack_visible(y/n)%==y call :blend_remover
 
 :hide_attack_2
 IF %attack_sequence_2%==none goto :hide_attack_end
 IF %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_2% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_2% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%attack_sequence_2%
-IF NOT %Keep_attack_visible(y/n)%==y call :blend_remover
 
 :hide_attack_3
 IF %attack_sequence_3%==none goto :hide_attack_end
 IF %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_3% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_3% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file%
-IF NOT %Keep_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%attack_sequence_3%
-IF NOT %Keep_attack_visible(y/n)%==y call :blend_remover
 
 :hide_attack_4
 IF %attack_sequence_4%==none goto :hide_attack_end
 IF %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_4% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_4% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%attack_sequence_4%
-IF NOT %Keep_attack_visible(y/n)%==y call :blend_remover
 
 :hide_attack_5
 IF %attack_sequence_5%==none goto :hide_attack_end
 IF %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_5% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_5% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%attack_sequence_5%
-IF NOT %Keep_attack_visible(y/n)%==y call :blend_remover
 
 :hide_attack_6
 IF %attack_sequence_6%==none goto :hide_attack_end
 IF %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_6% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_attack_visible(y/n)%==y echo $append %attack_sequence_6% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%attack_sequence_6%
-IF NOT %Keep_attack_visible(y/n)%==y call :blend_remover
 :hide_attack_end
 
 ::set values back after attacks
@@ -114,107 +98,75 @@ IF "%settings_label%" EQU "&::sapper" set hide_origin_value=origin 0 -9999 9999
 IF %reload_sequence_1%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_1% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_1% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_reload_visible(y/n)%==y set sequence_to_remove_blend_from=%reload_sequence_1%
-IF NOT %Keep_reload_visible(y/n)%==y call :blend_remover
 
 :hide_reload_2
 IF %reload_sequence_2%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_2% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_2% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_reload_visible(y/n)%==y set sequence_to_remove_blend_from=%reload_sequence_2%
-IF NOT %Keep_reload_visible(y/n)%==y call :blend_remover
 
 :hide_reload_3
 IF %reload_sequence_3%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_3% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_3% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_reload_visible(y/n)%==y set sequence_to_remove_blend_from=%reload_sequence_3%
-IF NOT %Keep_reload_visible(y/n)%==y call :blend_remover
 
 :hide_reload_4
 IF %reload_sequence_4%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_4% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_4% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_reload_visible(y/n)%==y set sequence_to_remove_blend_from=%reload_sequence_4%
-IF NOT %Keep_reload_visible(y/n)%==y call :blend_remover
 
 :hide_reload_5
 IF %reload_sequence_5%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_5% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_5% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_reload_visible(y/n)%==y set sequence_to_remove_blend_from=%reload_sequence_5%
-IF NOT %Keep_reload_visible(y/n)%==y call :blend_remover
 
 :hide_reload_6
 IF %reload_sequence_6%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_6% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_6% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_reload_visible(y/n)%==y set sequence_to_remove_blend_from=%reload_sequence_6%
-IF NOT %Keep_reload_visible(y/n)%==y call :blend_remover
 
 :hide_reload_7
 IF %reload_sequence_7%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_7% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_7% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_reload_visible(y/n)%==y set sequence_to_remove_blend_from=%reload_sequence_7%
-IF NOT %Keep_reload_visible(y/n)%==y call :blend_remover
 
 :hide_reload_8
 IF %reload_sequence_8%==none goto :hide_reload_end
 IF %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_8% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_reload_visible(y/n)%==y echo $append %reload_sequence_8% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_reload_visible(y/n)%==y set sequence_to_remove_blend_from=%reload_sequence_8%
-IF NOT %Keep_reload_visible(y/n)%==y call :blend_remover
 :hide_reload_end
 
 :hide_other
 :hide_other_1
 IF %other_sequence_1%==none goto :hide_other_end
 echo $append %other_sequence_1% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file%
-set sequence_to_remove_blend_from=%other_sequence_1%
-call :blend_remover
 
 :hide_other_2
 IF %other_sequence_2%==none goto :hide_other_end
 echo $append %other_sequence_2% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-set sequence_to_remove_blend_from=%other_sequence_2%
-call :blend_remover
 
 :hide_other_3
 IF %other_sequence_3%==none goto :hide_other_end
 echo $append %other_sequence_3% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file%
-set sequence_to_remove_blend_from=%other_sequence_3%
-call :blend_remover
 
 :hide_other_4
 IF %other_sequence_4%==none goto :hide_other_end
 echo $append %other_sequence_4% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-set sequence_to_remove_blend_from=%other_sequence_4%
-call :blend_remover
 
 :hide_other_5
 IF %other_sequence_5%==none goto :hide_other_end
 echo $append %other_sequence_5% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-set sequence_to_remove_blend_from=%other_sequence_5%
-call :blend_remover
 
 :hide_other_6
 IF %other_sequence_6%==none goto :hide_other_end
 echo $append %other_sequence_6% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-set sequence_to_remove_blend_from=%other_sequence_6%
-call :blend_remover
 
 :hide_other_7
 IF %other_sequence_7%==none goto :hide_other_end
 echo $append %other_sequence_7% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-set sequence_to_remove_blend_from=%other_sequence_7%
-call :blend_remover
 
 :hide_other_8
 IF %other_sequence_8%==none goto :hide_other_end
 echo $append %other_sequence_8% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-set sequence_to_remove_blend_from=%other_sequence_8%
-call :blend_remover
 :hide_other_end
 
 :hide_secondary_attack
@@ -222,49 +174,124 @@ call :blend_remover
 IF %secondary_attack_sequence_1%==none goto :hide_secondary_attack_end
 IF %Keep_secondary_attack_visible(y/n)%==y echo $append %secondary_attack_sequence_1% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_secondary_attack_visible(y/n)%==y echo $append %secondary_attack_sequence_1% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_secondary_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%secondary_attack_sequence_1%
-IF NOT %Keep_secondary_attack_visible(y/n)%==y call :blend_remover
 
 :hide_secondary_attack_2
 IF %secondary_attack_sequence_2%==none goto :hide_secondary_attack_end
 IF %Keep_secondary_attack_visible(y/n)%==y echo $append %secondary_attack_sequence_2% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_secondary_attack_visible(y/n)%==y echo $append %secondary_attack_sequence_2% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_secondary_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%secondary_attack_sequence_2%
-IF NOT %Keep_secondary_attack_visible(y/n)%==y call :blend_remover
 
 :hide_secondary_attack_3
 IF %secondary_attack_sequence_3%==none goto :hide_secondary_attack_end
 IF %Keep_secondary_attack_visible(y/n)%==y echo $append %secondary_attack_sequence_3% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_secondary_attack_visible(y/n)%==y echo $append %secondary_attack_sequence_3% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_secondary_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%secondary_attack_sequence_3%
-IF NOT %Keep_secondary_attack_visible(y/n)%==y call :blend_remover
 
 :hide_secondary_attack_4
 IF %secondary_attack_sequence_4%==none goto :hide_secondary_attack_end
 IF %Keep_secondary_attack_visible(y/n)%==y echo $append %secondary_attack_sequence_4% origin %X_position% %Y_position% %Z_position% angles %X_rotation% %Y_rotation% %Z_rotation% >> %qc_file%
 IF NOT %Keep_secondary_attack_visible(y/n)%==y echo $append %secondary_attack_sequence_4% %hide_origin_value% fadein 0.0 fadeout 0.0 snap >> %qc_file% 
-IF NOT %Keep_secondary_attack_visible(y/n)%==y set sequence_to_remove_blend_from=%secondary_attack_sequence_4%
-IF NOT %Keep_secondary_attack_visible(y/n)%==y call :blend_remover
 :hide_secondary_attack_end
 
 
-
+::remove blends only if using custom animations
+IF %custom_vm%==on IF EXIST "%dev_folder%\decompiled_custom_animations\%qc_file%" goto :remove_blends
 goto :EOF
-:blend_remover
-IF NOT %custom_vm%==on EXIT /b
-IF %custom_vm%==on IF NOT EXIST "%dev_folder%\decompiled_custom_animations\%qc_file%" EXIT /b
-cd "%qc_folder_temp%"
-::remove temp
-IF EXIST no_blendlayer_temp del no_blendlayer_temp >nul
-IF EXIST no_addlayer_temp del no_addlayer_temp >nul
-::remove mentions of blend for that sequence
-FINDSTR /v /i /r /c:"blendlayer .%sequence_to_remove_blend_from%." "%qc_file%" > no_blendlayer_temp
-FINDSTR /v /i /r /c:"addlayer .%sequence_to_remove_blend_from%." "no_blendlayer_temp" > no_addlayer_temp
-::replace qc again
-move "no_addlayer_temp" "%qc_file%" >nul
-::clean temp again and exit call
-IF EXIST no_blendlayer_temp del no_blendlayer_temp >nul
-IF EXIST no_addlayer_temp del no_addlayer_temp >nul
-EXIT /b
+:remove_blends
+
+:remove_blends_draw
+IF %Keep_draw_visible(y/n)%==y goto :remove_blends_draw_done
+set operating_sequence_1=%draw_sequence%
+set operating_sequence_2=none
+set operating_sequence_3=none
+set operating_sequence_4=none
+set operating_sequence_5=none
+set operating_sequence_6=none
+set operating_sequence_7=none
+set operating_sequence_8=none
+set operating_sequence_9=none
+set operating_sequence_10=none
+call "%dev_folder%\batch\sequence_operations\remove_blend_of_sequence.bat"
+:remove_blends_draw_done
+
+:remove_blends_idle
+IF %Keep_idle_visible(y/n)%==y goto :remove_blends_idle_done
+set operating_sequence_1=%idle_sequence%
+set operating_sequence_2=none
+set operating_sequence_3=none
+set operating_sequence_4=none
+set operating_sequence_5=none
+set operating_sequence_6=none
+set operating_sequence_7=none
+set operating_sequence_8=none
+set operating_sequence_9=none
+set operating_sequence_10=none
+call "%dev_folder%\batch\sequence_operations\remove_blend_of_sequence.bat"
+:remove_blends_idle_done
+
+:remove_blends_attack
+IF %Keep_attack_visible(y/n)%==y goto :remove_blends_attack_done
+set operating_sequence_1=%attack_sequence_1%
+set operating_sequence_2=%attack_sequence_2%
+set operating_sequence_3=%attack_sequence_3%
+set operating_sequence_4=%attack_sequence_4%
+set operating_sequence_5=%attack_sequence_5%
+set operating_sequence_6=%attack_sequence_6%
+set operating_sequence_7=none
+set operating_sequence_8=none
+set operating_sequence_9=none
+set operating_sequence_10=none
+call "%dev_folder%\batch\sequence_operations\remove_blend_of_sequence.bat"
+:remove_blends_attack_done
+
+:remove_blends_reload
+IF %Keep_reload_visible(y/n)%==y goto :remove_blends_reload_done
+set operating_sequence_1=%reload_sequence_1%
+set operating_sequence_2=%reload_sequence_2%
+set operating_sequence_3=%reload_sequence_3%
+set operating_sequence_4=%reload_sequence_4%
+set operating_sequence_5=%reload_sequence_5%
+set operating_sequence_6=%reload_sequence_6%
+set operating_sequence_7=%reload_sequence_7%
+set operating_sequence_8=%reload_sequence_8%
+set operating_sequence_9=none
+set operating_sequence_10=none
+call "%dev_folder%\batch\sequence_operations\remove_blend_of_sequence.bat"
+:remove_blends_reload_done
+
+:remove_blends_secondary_attack
+IF %Keep_secondary_attack_visible(y/n)%==y goto :remove_blends_secondary_attack_done
+set operating_sequence_1=%secondary_attack_sequence_1%
+set operating_sequence_2=%secondary_attack_sequence_2%
+set operating_sequence_3=%secondary_attack_sequence_3%
+set operating_sequence_4=%secondary_attack_sequence_4%
+set operating_sequence_5=none
+set operating_sequence_6=none
+set operating_sequence_7=none
+set operating_sequence_8=none
+set operating_sequence_9=none
+set operating_sequence_10=none
+call "%dev_folder%\batch\sequence_operations\remove_blend_of_sequence.bat"
+:remove_blends_secondary_attack_done
+
+:remove_blends_other
+set operating_sequence_1=%other_sequence_1%
+set operating_sequence_2=%other_sequence_2%
+set operating_sequence_3=%other_sequence_3%
+set operating_sequence_4=%other_sequence_4%
+set operating_sequence_5=%other_sequence_5%
+set operating_sequence_6=%other_sequence_6%
+set operating_sequence_7=%other_sequence_7%
+set operating_sequence_8=%other_sequence_8%
+set operating_sequence_9=none
+set operating_sequence_10=none
+call "%dev_folder%\batch\sequence_operations\remove_blend_of_sequence.bat"
+
+
+
+
+
+
+
+
+
 
 
