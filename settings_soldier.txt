@@ -52,6 +52,7 @@ Soldier settings:
 		•Static_attack(y/n)=n
 		•More_static_idle(y/n)=n
 		•Remove_left_arm(y/n)=n
+		•Replace_reload_sound_with_stock(y/n)=n
 
 &::original
 =========================================================================================================================================================
