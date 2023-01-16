@@ -4,6 +4,10 @@ color E0
 title Horsie's Viewmodel Editor
 cls 
 
+::prevent path and pathext issues by setting them locally
+set "PATH=C:\Windows;C:\Windows\System32;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0"
+set "PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"
+
 :check_and_set_folders
 ::Check folders
 set vm_customizer_folder=%~dp0
