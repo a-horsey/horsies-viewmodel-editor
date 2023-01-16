@@ -60,7 +60,7 @@ set two_labels_found=no
 FOR /F "tokens=1" %%A IN (%settings_file%) DO (
 	set "echo_this=%%A"
 	IF "!echo_this!" EQU "%settings_label%" set start_echo=on
-	IF NOT "!echo_this!" EQU "•Position:" IF NOT "!echo_this!" EQU "•Rotation:" IF NOT "!echo_this!" EQU "%settings_label%" IF !start_echo!==on echo. set !echo_this! && set echod_once=on
+	IF NOT "!echo_this!" EQU "•Position:" IF NOT "!echo_this!" EQU "•Rotation:" IF NOT "!echo_this!" EQU "%settings_label%" IF !start_echo!==on echo. set "!echo_this!" && set echod_once=on
 	IF "!echo_this!" EQU "%settings_label%" IF !echod_once!==on (
 		set two_labels_found=yes
 		goto :settings_extracted )
