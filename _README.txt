@@ -5,6 +5,9 @@ https://github.com/a-horsey/horsies-viewmodel-editor
 	For example, to change scout settings open settings_scout.txt
 	To apply the settings, run GENERATE.bat
 	
+	If you're having issues running it, such as seeing errors when generating,
+	please scroll to the bottom for a list of issues and fixes.
+	
 	Preloading, Fixed Viemodels and Custom Animations support:
 1. Preloading allows you to use these viewmodels in any server, regardless of sv_pure.
 This includes fully automated preloading at game start, it's highly recommended but toggleable.
@@ -79,3 +82,23 @@ Such as removing shell ejection or some fancy spy knife settings.
 	•All weapons that shoot bullets (except the sniper rifle):
 				Keep_tracers_visible - keeps the tracers visible if the weapon is hidden.
 					(disabling this will cause console errors when shooting, but they're harmless)
+
+	Issues and potential fixes:
+1. Errors such as "X command not found" or "No such file or directory"
+	Commands not behaving properly are usually caused by your Windows' PATH and PATHEXT variables being messed up.
+	It can be caused by programs editing them, usually without your knowledge. And they can affect other batch files as well.
+	Usually a messed up PATH will only result in errors related to the "find" command. While a messed up PATHEXT will result in
+	a lot of errors being spammed, like "X command not found".
+	To check your environment variables, navigate to:
+		"This PC", right click > properties > Advanced  system settings > Environment Variables (under the "Advanced" tab)
+	From there just check the PATH and PATHEXT variables, the windows defaults are usually:
+		For PATH: "C:\Windows;C:\Windows\System32;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0"
+		For PATHEXT ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC"
+	Warning: Be careful when editing PATH, as some programs DO need it. Only make changes if you have to.
+2. Other errors
+	Currently there are no other issues with running it on Windows, at least not that I am aware of.
+	If you're having problems please open a GitHub issue(ideally this) or leave a comment on Gamebanana.
+	
+
+	
+	
