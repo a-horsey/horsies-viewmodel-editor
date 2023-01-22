@@ -82,14 +82,6 @@ call extracted_settings.bat
 del extracted_settings.bat >nul
 
 :process_settings
-::make sure the pos and rot values are numbers
-set /A X_position=%X_position%
-set /A Y_position=%Y_position%
-set /A Z_position=%Z_position%
-set /A X_rotation=%X_rotation%
-set /A Y_rotation=%Y_rotation%
-set /A Z_rotation=%Z_rotation%
-
 ::reset not defined variables
 IF NOT DEFINED •Hidden(y/n) set •Hidden(y/n)=n
 IF NOT DEFINED Keep_draw_visible(y/n) set Keep_draw_visible(y/n)=n
@@ -120,6 +112,21 @@ IF NOT DEFINED Keep_secondary_attack_visible(y/n) set Keep_secondary_attack_visi
 IF NOT DEFINED •Static_secondary_attack(y/n) set •Static_secondary_attack(y/n)=n
  ::hidden settings
 IF NOT DEFINED •Turn_beam_into_trail_when_hidden(y/n) set •Turn_beam_into_trail_when_hidden(y/n)=n
+ ::positions
+IF NOT DEFINED X_position set X_position=0
+IF NOT DEFINED Y_position set Y_position=0
+IF NOT DEFINED Z_position set Z_position=0
+IF NOT DEFINED X_rotation set X_rotation=0
+IF NOT DEFINED Y_rotation set Y_rotation=0
+IF NOT DEFINED Z_rotation set Z_rotation=0
+ ::make sure the pos and rot values are numbers
+set /A X_position=%X_position%
+set /A Y_position=%Y_position%
+set /A Z_position=%Z_position%
+set /A X_rotation=%X_rotation%
+set /A Y_rotation=%Y_rotation%
+set /A Z_rotation=%Z_rotation%
+
 ::remove caps from yes values for all variables
 ::could just use "IF /I" to avoid this but am too big brain
 SET •Hidden(y/n)=%•Hidden(y/n):Y=y%
