@@ -178,9 +178,9 @@ IF %disable_tracers%==off echo set disable_tracers=off >> "%dev_folder%\saved_se
 IF %hide_errors%==on echo set hide_errors=on >> "%dev_folder%\saved_settings.bat"
 IF %hide_errors%==off echo set hide_errors=off >> "%dev_folder%\saved_settings.bat"
 IF %fixed_vm_addon%==on echo set fixed_vm_addon=on >> "%dev_folder%\saved_settings.bat"
-IF %fixed_vm_addon%==off echo set fixed_vm_addon=off >> "%dev_folder%\saved_settings.bat"
+IF %fixed_vm_addon%==off IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" echo set fixed_vm_addon=off >> "%dev_folder%\saved_settings.bat"
 IF %custom_vm%==on echo set custom_vm=on >> "%dev_folder%\saved_settings.bat"
-IF %custom_vm%==off echo set custom_vm=off >> "%dev_folder%\saved_settings.bat"
+IF %custom_vm%==off IF EXIST "%vm_customizer_folder%\custom animations\*.vpk" echo set custom_vm=off >> "%dev_folder%\saved_settings.bat"
 
 cls
 echo.                       ~~%%%%%%%%_,_,
@@ -244,10 +244,6 @@ IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==8 goto :main_menu
 IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==7 %toggle_fixed_vm_addon%
 IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" IF EXIST "%vm_customizer_folder%\custom animations\*vpk" IF %M%==8 %toggle_custom_vm%
-
-
-
-
 
 
 :install_for_all_classes_prompt
@@ -633,15 +629,17 @@ echo.
 echo Dev Options: 
 echo. 	1. Remove all extracted animations
 echo. 	2. Restore settings files to default
+echo.	3. Restore main menu settings to default
 echo 	0. Go back
 echo.
 set M=none
 SET /P M=Choose dev option:
-IF NOT "%M%"=="0" IF NOT "%M%"=="1" IF NOT "%M%"=="2" goto :dev_menu
+IF NOT "%M%"=="0" IF NOT "%M%"=="1" IF NOT "%M%"=="2" IF NOT "%M%"=="3" goto :dev_menu
 
 IF %M%==0 goto :main_menu
 IF %M%==1 goto :remove_extracted_animations_prompt
 IF %M%==2 goto :restore_settings_prompt
+IF %M%==3 GOTO :restore_menu_settings_prompt
 
 :remove_extracted_animations_prompt
 cls
@@ -672,6 +670,24 @@ IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :restore_settings_prompt
 IF /i %M%==y (
 	echo Restoring settings...
 	xcopy /y "%dev_folder%\default_settings" "%vm_customizer_folder%" /e /q >nul
+	goto :dev_menu )
+IF /i %M%==n goto :dev_menu
+
+:restore_menu_settings_prompt
+cls
+echo This restores the main menu settings to their default values.
+echo. 
+set M=none
+SET /P M=Are you sure you want to proceed? (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :restore_menu_settings_prompt
+IF /i %M%==y (
+	IF EXIST "%dev_folder%\saved_settings.bat" del "%dev_folder%\saved_settings.bat" >nul
+	set automatic_preloading=off
+	IF EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" set fixed_vm_addon=on
+	set disable_tracers=off
+	set hide_errors=on
+	IF EXIST "%vm_customizer_folder%\custom animations\*.vpk" set custom_vm=on
+	set apply_for_specific_classes=false
 	goto :dev_menu )
 IF /i %M%==n goto :dev_menu
 
