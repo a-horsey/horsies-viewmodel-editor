@@ -114,23 +114,26 @@ IF NOT EXIST settings_medic.txt copy "%dev_folder%\default_settings\settings_med
 IF NOT EXIST settings_sniper.txt copy "%dev_folder%\default_settings\settings_sniper.txt" "%vm_customizer_folder%\settings_sniper.txt" >nul
 IF NOT EXIST settings_spy.txt copy "%dev_folder%\default_settings\settings_spy.txt" "%vm_customizer_folder%\settings_spy.txt" >nul
 
-::set default options
-set automatic_preloading=on
-set fixed_vm_addon=on
-set disable_tracers=off
-set hide_errors=on
-set custom_vm=on
-set apply_for_specific_classes=false
+::restore previous settings if possible
+IF EXIST "%dev_folder%\saved_settings.bat" call "%dev_folder%\saved_settings.bat"
+
+::set default options if needed
+IF NOT DEFINED automatic_preloading set automatic_preloading=off
+IF NOT DEFINED fixed_vm_addon set fixed_vm_addon=on
+IF NOT DEFINED disable_tracers set disable_tracers=off
+IF NOT DEFINED hide_errors set hide_errors=on
+IF NOT DEFINED custom_vm set custom_vm=on
+IF NOT DEFINED apply_for_specific_classes set apply_for_specific_classes=false
 
 ::fixed viewmodels files check
 IF NOT EXIST "%vm_customizer_folder%\fixed viewmodels addon\*.vpk" set fixed_vm_addon=off
 ::custom viewmodels files check
 IF NOT EXIST "%vm_customizer_folder%\custom animations\*.vpk" set custom_vm=off
 
-
 :main_menu
 ::set some menu variables
 IF %automatic_preloading%==on set toggle_preloading=goto :preloading_off
+IF %automatic_preloading%==off set toggle_preloading=goto :preloading_on
 IF %automatic_preloading%==on set automatic_preloading_status=X
 IF %automatic_preloading%==off set automatic_preloading_status=_
 
@@ -140,6 +143,7 @@ IF %disable_tracers%==on set disable_tracers_status=X
 IF %disable_tracers%==off set disable_tracers_status=_
 
 IF %hide_errors%==on set toggle_errors=goto :hide_errors_off
+IF %hide_errors%==off set toggle_errors=goto :hide_errors_on
 IF %hide_errors%==on set hide_errors_status=X
 IF %hide_errors%==off set hide_errors_status=_
 
@@ -153,6 +157,7 @@ IF %custom_vm%==off set toggle_custom_vm=goto :custom_vm_on%
 IF %custom_vm%==on set custom_vm_status=X
 IF %custom_vm%==off set custom_vm_status=_
 
+::reset per-class install settings
 set apply_for_specific_classes=false
 set apply_per_class_scout=false
 set apply_per_class_soldier=false
@@ -163,6 +168,19 @@ set apply_per_class_engineer=false
 set apply_per_class_medic=false
 set apply_per_class_sniper=false
 set apply_per_class_spy=false
+
+::store settings
+IF EXIST "%dev_folder%\saved_settings.bat" del "%dev_folder%\saved_settings.bat" >nul
+IF %automatic_preloading%==on echo set automatic_preloading=on >> "%dev_folder%\saved_settings.bat"
+IF %automatic_preloading%==off echo set automatic_preloading=off >> "%dev_folder%\saved_settings.bat"
+IF %disable_tracers%==on echo set disable_tracers=on >> "%dev_folder%\saved_settings.bat"
+IF %disable_tracers%==off echo set disable_tracers=off >> "%dev_folder%\saved_settings.bat"
+IF %hide_errors%==on echo set hide_errors=on >> "%dev_folder%\saved_settings.bat"
+IF %hide_errors%==off echo set hide_errors=off >> "%dev_folder%\saved_settings.bat"
+IF %fixed_vm_addon%==on echo set fixed_vm_addon=on >> "%dev_folder%\saved_settings.bat"
+IF %fixed_vm_addon%==off echo set fixed_vm_addon=off >> "%dev_folder%\saved_settings.bat"
+IF %custom_vm%==on echo set custom_vm=on >> "%dev_folder%\saved_settings.bat"
+IF %custom_vm%==off echo set custom_vm=off >> "%dev_folder%\saved_settings.bat"
 
 cls
 echo.                       ~~%%%%%%%%_,_,
@@ -183,7 +201,7 @@ echo.	2. Install for specific classes
 IF  EXIST "%custom_folder%\%vpk_name%.vpk"	echo.	0. Uninstall
 echo.
 echo.Options:
-echo. 	3. [%automatic_preloading_status%] Include automatic preloading
+echo. 	3. [%automatic_preloading_status%] Include automatic preloading (recommended)
 echo. 	4. [%disable_tracers_status%] Remove 1st person bullet tracers
 echo.	5. [%hide_errors_status%] Hide console errors
 echo. 	6. Developer settings
@@ -259,6 +277,11 @@ IF /i %M%==n goto :main_menu
 goto :main_menu
 
 :preloading_off
+set automatic_preloading=off
+set toggle_preloading=goto :preloading_on
+goto :main_menu
+
+:preloading_on
 cls
 echo.                       ~~%%%%%%%%_,_,
 echo.                  ~~%%%%%%%%%-"/./
@@ -272,18 +295,15 @@ echo.  ~~%%%%%%%%%'           :     `-.     (,;
 echo. ~~%%%%%%%%'             :         `._\_.'
 echo. ~~%%%%%%' Warning:
 echo.
-echo.Automatic preloading is highly recommended.
-echo.The viewmodels won't work in most servers without it.
+echo.Automatic preloading will allow you to use the custom viewmodels in any server.
+echo.It's highly recommended to enable it.
+echo.But it can cause crashes in casual if you are using mods that include custom models. 
+echo.Only enable it if you are not using such mods.
 echo.
 set M=none
-SET /P M=Are you sure that you want to disable it? (Y/N):
-IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :preloading_off
+SET /P M=Are you sure that you want to enable it? (Y/N):
+IF /i NOT "%M%"=="y" IF /i NOT "%M%"=="n" goto :preloading_on
 IF /i %M%==n goto :main_menu
-set automatic_preloading=off
-set toggle_preloading=goto :preloading_on
-goto :main_menu
-
-:preloading_on
 set automatic_preloading=on
 set toggle_preloading=goto :preloading_off
 goto :main_menu
