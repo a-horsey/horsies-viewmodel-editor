@@ -180,7 +180,7 @@ cd "%dev_folder%\%vpk_name%\cfg"
 IF EXIST valve_rc_temp ren "valve_rc_temp" "valve.rc"
 
 ::add preloading, tracer disabling and error hiding - disabled for now
-IF %automatic_preloading%==on echo exec preloading.cfg >> valve.rc
+IF %automatic_preloading%==on echo exec horsies_viewmodel_editor/preloading.cfg >> valve.rc
 IF %disable_tracers%==on echo r_drawtracers_firstperson 0 >> valve.rc
 IF %hide_errors%==on echo con_filter_enable 1; con_filter_text_out "particle" >> valve.rc
 
