@@ -2,20 +2,20 @@ Make sure not to break the tags.
 
 
 Demoman settings:
-	
+
 •••Primaries:
 =========================================================================================================================================================
 &::grenadelaunchers
 
 	••Grenade Launchers:
-		•Position: 
-			X_position=-17 
-			Y_position=2 
-			Z_position=0 
-		•Rotation: 
-			X_rotation=0 
-			Y_rotation=2 
-			Z_rotation=-11 
+		•Position:
+			X_position=-17
+			Y_position=2
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=2
+			Z_rotation=-11
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
@@ -35,14 +35,14 @@ Demoman settings:
 &::stickybomblaunchers
 
 	••Stickybomb Launchers:
-		•Position: 
-			X_position=-15 
-			Y_position=0 
-			Z_position=0 
-		•Rotation: 
-			X_rotation=0 
-			Y_rotation=2 
-			Z_rotation=-7 
+		•Position:
+			X_position=-15
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=2
+			Z_rotation=-7
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
@@ -66,7 +66,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -88,7 +88,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -110,13 +110,13 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
-			Keep_attack_visible(y/n)=n	
+			Keep_attack_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
@@ -135,7 +135,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -150,7 +150,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -165,7 +165,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -180,7 +180,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -204,7 +204,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -220,7 +220,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -236,7 +236,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -252,7 +252,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -268,7 +268,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -284,7 +284,7 @@ Demoman settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0

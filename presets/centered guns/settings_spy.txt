@@ -1,20 +1,20 @@
 Make sure not to break the tags.
 
 Spy settings:
-	
+
 •••Primaries:
 =========================================================================================================================================================
 &::revolvers
 
 	••Revolvers:
-		•Position: 
-			X_position=-13 
-			Y_position=0 
-			Z_position=0 
-		•Rotation: 
-			X_rotation=0 
-			Y_rotation=2 
-			Z_rotation=-9 
+		•Position:
+			X_position=-13
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=2
+			Z_rotation=-9
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
@@ -39,7 +39,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -59,7 +59,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -79,7 +79,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -102,7 +102,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -131,7 +131,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -160,7 +160,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -189,7 +189,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -214,7 +214,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -229,7 +229,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -244,7 +244,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -259,7 +259,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -283,7 +283,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -299,7 +299,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -315,7 +315,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -331,7 +331,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -347,7 +347,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -363,7 +363,7 @@ Spy settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0

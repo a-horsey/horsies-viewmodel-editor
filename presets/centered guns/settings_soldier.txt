@@ -8,14 +8,14 @@ Soldier settings:
 &::rocketlaunchers
 
 	••Rocket Launchers (doesn't include The Original):
-		•Position: 
-			X_position=-10 
-			Y_position=0 
-			Z_position=0 
-		•Rotation: 
-			X_rotation=0 
-			Y_rotation=0 
-			Z_rotation=-7 
+		•Position:
+			X_position=-10
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=-7
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
@@ -34,14 +34,14 @@ Soldier settings:
 &::original
 
 	••Original:
-		•Position: 
-			X_position=-1 
-			Y_position=0 
-			Z_position=0 
-		•Rotation: 
-			X_rotation=0 
-			Y_rotation=1 
-			Z_rotation=0 
+		•Position:
+			X_position=-1
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=1
+			Z_rotation=0
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
@@ -63,14 +63,14 @@ Soldier settings:
 
 	••Shotguns:
 		•Position:
-		•Position: 
-			X_position=-9 
-			Y_position=0 
-			Z_position=0 
-		•Rotation: 
-			X_rotation=0 
-			Y_rotation=0 
-			Z_rotation=-1 
+		•Position:
+			X_position=-9
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=0
+			Z_rotation=-1
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
@@ -89,14 +89,14 @@ Soldier settings:
 &::bison
 
 	••Bison:
-		•Position: 
-			X_position=-9 
-			Y_position=0 
-			Z_position=0 
-		•Rotation: 
-			X_rotation=0 
-			Y_rotation=-7 
-			Z_rotation=-6 
+		•Position:
+			X_position=-9
+			Y_position=0
+			Z_position=0
+		•Rotation:
+			X_rotation=0
+			Y_rotation=-7
+			Z_rotation=-6
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
@@ -117,7 +117,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -139,7 +139,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -164,13 +164,13 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
 		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
-			Keep_attack_visible(y/n)=n		
+			Keep_attack_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
 		•Static_draw(y/n)=n
 		•Static_attack(y/n)=n
@@ -186,7 +186,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -211,7 +211,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -226,7 +226,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -241,7 +241,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -256,7 +256,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -280,7 +280,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -296,7 +296,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -312,7 +312,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -328,7 +328,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -344,7 +344,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -360,7 +360,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -376,7 +376,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -408,7 +408,7 @@ Soldier settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
