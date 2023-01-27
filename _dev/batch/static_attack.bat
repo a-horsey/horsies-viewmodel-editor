@@ -10,6 +10,9 @@ IF %•Hidden(y/n)%==y IF %Keep_attack_visible(y/n)%==y goto :process_attack
 IF %idle_smd%==none goto :EOF
 
 :apply_fade_values
+:: skip this if static idle is on
+IF %•More_static_idle(y/n):Y=y%==y goto :apply_fade_values_done
+
 cd "%qc_folder_temp%"
 set fade_values=fadein 0.2 fadeout 0.2
 
