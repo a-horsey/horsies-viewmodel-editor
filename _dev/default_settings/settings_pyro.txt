@@ -2,7 +2,7 @@ Make sure not to break the tags.
 
 
 Pyro settings:
-	
+
 •••Primaries:
 =========================================================================================================================================================
 &::flamethrowers
@@ -12,7 +12,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -40,7 +40,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -66,7 +66,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -88,7 +88,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -110,7 +110,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -132,7 +132,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -158,7 +158,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -180,7 +180,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -202,11 +202,11 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
-		•Hidden(y/n)=n    									     
+		•Hidden(y/n)=n
 			Keep_draw_visible(y/n)=n
 			Keep_attack_visible(y/n)=n
 			Keep_idle_visible(y/n)=n
@@ -228,7 +228,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -243,7 +243,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -258,7 +258,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -297,7 +297,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -313,7 +313,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -345,7 +345,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -361,7 +361,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -377,7 +377,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -393,7 +393,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
@@ -409,7 +409,7 @@ Pyro settings:
 			X_position=0
 			Y_position=0
 			Z_position=0
-		•Rotation: 
+		•Rotation:
 			X_rotation=0
 			Y_rotation=0
 			Z_rotation=0
