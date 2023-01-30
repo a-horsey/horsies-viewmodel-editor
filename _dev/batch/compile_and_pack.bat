@@ -169,7 +169,7 @@ IF EXIST valve.rc ren "valve.rc" "valve_rc_temp"
 ::scan for other valve.rc files in custom
 cd "%dev_folder%\%vpk_name%"
 IF EXIST preloading_temp del preloading_temp
-dir "%custom_folder%" /s /b | find /i "valve.rc" >> preloading_temp
+dir "%custom_folder%" /s /b | findstr /I /R /C:"\<valve.rc\>" >> preloading_temp
 set "custom_valve_rc=""
 for /f "delims=*" %%f in (preloading_temp) do set custom_valve_rc=%%f
 
@@ -180,6 +180,12 @@ cd "%dev_folder%\%vpk_name%\cfg"
 IF EXIST valve_rc_temp ren "valve_rc_temp" "valve.rc"
 
 ::add preloading, tracer disabling and error hiding - disabled for now
+set echo_newline=false
+IF %automatic_preloading%==on set echo_newline=true
+IF %disable_tracers%==on set echo_newline=true
+IF %hide_errors%==on set echo_newline=true
+IF %echo_newline%==true echo: >> valve.rc
+
 IF %automatic_preloading%==on echo exec horsies_viewmodel_editor/preloading.cfg >> valve.rc
 IF %disable_tracers%==on echo r_drawtracers_firstperson 0 >> valve.rc
 IF %hide_errors%==on echo con_filter_enable 1; con_filter_text_out "particle" >> valve.rc
